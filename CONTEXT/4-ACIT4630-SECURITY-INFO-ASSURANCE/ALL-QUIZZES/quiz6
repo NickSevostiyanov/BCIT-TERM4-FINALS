@@ -1,0 +1,111 @@
+ck Sevostiyanov
+Week 7 - Quiz 6 - Results
+Attempt 1 of 1
+Written Feb 17, 2026 8:32 AM - Feb 17, 2026 8:35 AM
+Attempt Score	
+9 / 10 - 90 %
+Overall Grade (Highest Attempt)	
+9 / 10 - 90 %
+Question 1		1 / 1 point
+What standard governs the structure and content of digital certificates?
+
+Unselected
+X.500
+
+Unselected
+802.1x
+
+Unselected
+802.11ac
+
+Selected
+X.509
+
+Question 2		1 / 1 point
+Digital certificates are used to vouch for the certificate subject's identity and the public key associated with them.
+
+Selected	True
+Unselected	False
+Question 3		1 / 1 point
+Who provides the digital signature on a digital certificate?
+
+Unselected
+server using the certificate
+
+Selected
+certificate authority
+
+Unselected
+certificate owner
+
+Unselected
+certificate recipient
+
+Question 4		1 / 1 point
+Self-signed certificates signed by internal CAs in an organization are trusted by the outside world, and can also be used for internal purposes in the organization.
+
+Unselected	True
+Selected	False
+Question 5		1 / 1 point
+Which certificate provides the lowest level of trust?
+
+Selected
+Domain validation (DV)
+
+Unselected
+Extended validation (EV)
+
+Unselected
+They all provide same level of trust.
+
+Unselected
+Organization validation (OV)
+
+Question 6		1 / 1 point
+To protect the private key of a root CA, these CAs are usually offline and only occasionally sign the certificates of intermediate CAs that actually issue certificates to customers.
+
+Selected	True
+Unselected	False
+Question 7		1 / 1 point
+What's not true about certificate pinning?
+
+Selected
+It is used to create a false certificate for a site.
+
+Unselected
+It can be used by users of certificates to report any changes to the certificate as a potential security issue.
+
+Unselected
+It is used to protect the certificates against fraud. 
+
+Unselected
+It tells users of certificates that they should not expect a certificate to change over time.
+
+Question 8		0 / 1 point
+Eavesdropping protection is needed during asymmetric cryptography key exchange.
+
+Incorrect Response
+Selected	True
+Correct Answer
+Unselected	False
+Question 9		1 / 1 point
+The Subject Alternative Name or SAN attribute on an X.509 certificate lists all other domain names that are covered by the same certificate.
+
+Selected	True
+Unselected	False
+Question 10		1 / 1 point
+What is the most effective method of revoking digital certificates?
+
+Unselected
+Transport Layer Security
+
+Selected
+Online Certificate Status Protocol
+
+Unselected
+Certificate Revocation Lists
+
+Unselected
+Certificate Revocation Bulletins
+
+

@@ -1,0 +1,172 @@
+kip to main content
+
+ACIT-4850-0 - Enterprise System Integration (merge 202610 89231 73676 87190 73675)
+
+
+
+
+Update alerts - You have new alerts
+
+NS
+
+Course Home
+Content
+
+Activities
+Grades
+
+Course Tools
+
+myTools
+E-Mail
+Help!
+Edit Course
+News
+Search For…
+Show Search Options
+Title	Start Date
+Lesson 10 Pre-Reading and Quiz Topics
+Mar 20, 2026 8:51 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson10_PreReading.pdf in the Lesson 10 folder
+Quiz Topics
+
+Quiz 9 will cover the concepts in the above reading
+
+Lesson 8 Pre-Reading and Quiz Topics
+Mar 2, 2026 8:51 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson8_PreReading.pdf in the Lesson 8 folder
+Quiz Topics
+
+Quiz 7 will cover the concepts in the above reading
+
+Midterm Exam
+Feb 21, 2026 11:29 AM
+Just a reminder that the Midterm Review Exam will be Thursday, Feb. 26 at 1:00pm in DTC 825
+
+Review the Lesson 7 slides for details. It will be 2 hours in length and there will be two parts:
+
+First part is closed book and on paper. Make sure you bring a pen or pencil. This part is worth about 70% of your exam mark.
+Second part will be using your Apache/Jenkins/GitLab VMs so make sure you bring your laptop and have those VMs ready.
+You will need your Python repos available on your GitLab instance (point and carlot)
+You will need to create a pipeline in Jenkins (with a Jenkinsfile in your repo). The stages will be defined in the exam.
+This part is worth about 30% of your exam mark.
+Please do not come into the exam room until you are asked to do so. The seating assignments will be posted outside the doors.
+
+No electronic devices other than your laptop (in Part 2 only) are allowed, including headphones or earbuds. Your phone must be placed face down on the exam table.
+
+Lesson 7 Pre-Reading and Quiz Topics
+Feb 13, 2026 8:18 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson7_PreReading.pdf in the Lesson 7 folder
+Quiz Topics
+
+Quiz 6 will cover the concepts in the above readings, including:
+
+Definition and Benefits of Static Code Analysis
+SonarQube - Quality Gate, Types of Issues, Snapshots, Scanner
+SonarQube Platform
+Lesson 6 Pre-Reading and Quiz Topics
+Feb 9, 2026 6:09 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson6_PreReading.pdf in the Lesson 6 folder
+Quiz Topics
+
+Including but not limited to:
+
+Jenkins Shared Libraries
+Debugging Tools
+Global Shared Libraries
+Lesson 5 Pre-Reading and Quiz Topics
+Feb 2, 2026 7:04 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson5_PreReading.pdf in the Lesson 5 folder
+Quiz Topics
+
+Quiz 4 will cover the concepts in the above readings including:
+
+Typical CI Pipeline Stages
+Purpose of a Jenkins Pipeline
+Pipeline Concepts
+Declarative Pipeline vs. Scripted Pipeline
+Controller, Nodes, Agents, Executors
+Office Hours on Jan. 29th Canceled for Mike Mulder (Sets B and C)
+Jan 28, 2026 5:38 PM
+Just a note that I will not have office hours at noon in the Tech Hub on Thursday, Jan 29th due to a faculty meeting.
+
+I will be available by appointment after class (at 4:30pm) or via Discord.
+
+Lesson 4 Pre-Reading and Quiz Topics
+Jan 26, 2026 4:26 PM
+Reading
+
+Document ACIT4850_Winter2026_Lesson4_PreReading.pdf in the Lesson 4 folder
+Quiz Topics
+
+Quiz 3 will cover the concepts in the above readings including:
+
+Identifying stakeholders and their needs
+DevOps definition and the Practices of DevOps
+The practices of Continuous Integration
+Lesson 3 Pre-Reading and Quiz Topics
+Jan 19, 2026 6:13 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson3_PreReading.pdf in the Lesson 3 folder
+Quiz Topics
+
+You will be asked to:
+
+Define Functional and Non-Functional Requirements
+Identify Functional Requirements
+Identify Non-Functional Requirements
+Lesson 2 Pre-Reading and Quiz Topics
+Jan 11, 2026 10:01 AM
+Reading
+
+Document ACIT4850_Winter2026_Lesson2_PreReading.pdf in the Lesson 2 folder
+Quiz Topics
+
+Review
+Definitions: Enterprise, System, Integration, Enterprise System, Enterprise System Integration, On Premise vs. Cloud
+Criteria for tool evaluation
+Reading
+Definitions: Work Management and Knowledge Base
+JIRA/Confluence installation methods and minimum system requirements
+Instructor Office Hours
+Jan 4, 2026 7:30 AM
+Office hours for Mike Mulder are as follows:
+
+In Person on Tuesdays and Thursdays from noon-1pm in the Tech Hub
+Discord (asynchronous or by appointment for voice channel)
+Office hours for Johnny Zhang (4A) are as follows:
+
+In Person on Wednesdays from 10:30-11:30 am and Fridays from noon-1pm in the Teach Hub
+Email to schedule an appointment if you are not available during the times above.
+Welcome to ACIT 4850
+Jan 4, 2026 7:23 AM
+Welcome to the Winter 2026 term of ACIT 4850 - Enterprise Systems Integration. In this course we will be installing, configuring and integrating the tools that are used by software development teams for building software applications.
+
+We have setup a Discord server that may be used for questions and help outside of class time.
+
+https://discord.gg/WUTeX6MfUW
+
+We have also setup Lab Groups (Course Tools -> Groups). For this course you may work with a partner for the labs (it will be the same partner for all applicable labs). Your partner must be in the same set. You may work individually if you wish, but we will be using Azure cloud infrastructure for the class and you will be able to share the costs with a partner (there should be an initial $100 credit per student).
+
+The first classes are on Tuesday, Jan. 6th for Sets B and C and Wednesday, Jan. 7th for Set A.
+
+If you have any questions, contact Johnny (johnny_zhang@bcit.ca) for Set A or Mike on Discord or by e-mail (mmulder10@bcit.ca) for Sets B and C.
+
+See you in class.
+
+Johnny and Mike
+
+Results Per Page
+20 per page
+

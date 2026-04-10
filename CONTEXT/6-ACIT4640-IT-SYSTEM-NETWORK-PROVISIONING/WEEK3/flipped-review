@@ -1,0 +1,25 @@
+Instructions
+In groups of 2-3, use the AWS documentation to answer the questions below.
+
+You can ignore the MacOS and Windows sections for this assignment.
+
+- questions:  
+        - Using the documentation provided below, describe how the AWS CLI authenticates a user.  
+            - What are the neccesarry files?  
+                - Where are the files on your system?  
+                - What purpose does each file serve?  
+            - What AWS resources do you need?
+
+Your document should include clear file paths, and sufficient information as to demonstrate your understanding of the material.  
+More than bullet points, less than a full page.
+
+AWS documentation:
+
+[https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html)
+
+[https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+
+  
+Submit a single pdf document 'flipped-review-three.pdf' on D2L.     
+Include a note on who is in your team.     
+Only 1 team member needs to submit the document.

@@ -1,0 +1,130 @@
+ck Sevostiyanov
+Week 10 - Quiz 8 - Results
+Attempt 1 of 1
+Written Mar 10, 2026 8:31 AM - Mar 10, 2026 8:34 AM
+You successfully submitted your quiz.
+Attempt Score	
+9 / 10 - 90 %
+Overall Grade (Highest Attempt)	
+9 / 10 - 90 %
+Question 1		1 / 1 point
+What is true about SSH?
+
+Unselected
+It is the same as Telnet
+
+Unselected
+It runs on port 23 by default
+
+Unselected
+It is insecure 
+
+Selected
+It uses public key cryptography to exchange an ephemeral session key
+
+Question 2		1 / 1 point
+Which one of the following is the most secure way for web servers and web browsers to communicate with each other?
+
+Selected
+TLS
+
+Unselected
+SSLv1
+
+Unselected
+SSLv2
+
+Unselected
+SSLv3
+
+Question 3		1 / 1 point
+Which one is not a secure protocol to transfer files between two systems?
+
+Unselected
+SCP
+
+Unselected
+FTPS
+
+Selected
+FTP
+
+Unselected
+SFTP
+
+Question 4		1 / 1 point
+What's the first step to initiate a secure session protected by TLS between two systems?
+
+Unselected
+Server sends a request including a list of the cipher suite supported by the client
+
+Unselected
+Server sends its digital certificate
+
+Unselected
+Client sends its digital certificate
+
+Selected
+Client sends a request including a list of the cipher suite supported by the client
+
+Question 5		1 / 1 point
+What's true about TLS? (Select all that applies)
+
+Unselected
+It's an encryption algorithm
+
+Selected
+It can be used insecurely based on the chosen cipher suite
+
+Selected
+It has evolved from its predecessors SSL
+
+Selected
+It's a protocol for providing secure communication channel
+
+Question 6		1 / 1 point
+SSL inspection technology performs a "friendly" man-in-the-middle attack against an organization's own users to examine the contents of network traffic.
+
+Selected	True
+Unselected	False
+Question 7		1 / 1 point
+Communication taking place over the standard HTTP protocol is not encrypted, and anyone who can eavesdrop on the network connection can see it.
+
+Selected	True
+Unselected	False
+Question 8		1 / 1 point
+Current implementation of OpenSSL has a vulnerability called Heartbleed, so you should not use it.
+
+Unselected	True
+Selected	False
+Question 9		0 / 1 point
+What's true about the ephemeral key used in a TLS connection?
+
+Correct AnswerIncorrect ResponseUnselected
+It is encrypted using server's public key
+
+Correct AnswerIncorrect ResponseUnselected
+It is decrypted using server's private key
+
+Correct AnswerSelected
+It is used only for one communication session
+
+Correct AnswerSelected
+It is also referred to as session key
+
+Question 10		1 / 1 point
+What is not true about visiting a website using HTTPS protocol?
+
+Unselected
+It uses transport encryption technology such as transport layer security (TLS)
+
+Selected
+The communication is not encrypted
+
+Unselected
+The website's digital certificate is verified by the user's browser
+
+Unselected
+An ephemeral session key is used to encrypt all of the communications
+
+

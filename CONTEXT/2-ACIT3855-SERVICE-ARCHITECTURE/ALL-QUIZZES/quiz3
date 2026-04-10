@@ -1,0 +1,157 @@
+ck Sevostiyanov
+Quiz 3 - Results
+Attempt 1 of 1
+Written Jan 29, 2026 1:48 PM - Jan 29, 2026 1:52 PM
+You successfully submitted your quiz.
+Attempt Score	
+8 / 10 - 80 %
+Overall Grade (Highest Attempt)	
+8 / 10 - 80 %
+Question 1		
+Which of the following are the characteristics of event logging?
+
+Correct AnswerSelected
+Logs "high level" information (e.g. failed installation of a program)
+
+Unselected
+Can be noisy
+
+Correct AnswerIncorrect ResponseUnselected
+Consumed primarily by system administrators
+
+Correct AnswerSelected
+Must not be too "noisy" (containing many duplicate events or information is not helpful to its intended audience)
+
+Unselected
+Logs "low level" information
+
+Unselected
+Consumed primarily by developers
+
+Question 2		
+Which of the following are the characteristics of software tracing?
+
+Unselected
+Must not be too "noisy" (containing many duplicate events or information is not helpful to its intended audience)
+
+Selected
+Consumed primarily by developers
+
+Unselected
+Logs "high level" information (e.g. failed installation of a program)
+
+Selected
+Can be noisy
+
+Unselected
+Consumed primarily by system administrators
+
+Selected
+Logs "low level" information
+
+Question 3		
+Tracing involves a specialized use of logging to record information about a program's execution used by system administrators.
+
+Incorrect Response
+Selected	True
+Correct Answer
+Unselected	False
+
+Hide question 3 feedback
+Feedback
+Tracing is typically used by software developers for debugging purposes.
+
+Question 4		
+Event logging provides system administrators with information useful for diagnostics and auditing.
+
+Selected	True
+Unselected	False
+Question 5		
+By default in the Python logging module, there are 5 standard levels indicating the severity of events.
+
+Which of the following are the 5 standard logging levels?
+
+Selected
+DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+Unselected
+EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE
+
+Unselected
+TEST, INFO, WARNING, ERROR, FATAL
+
+Unselected
+ONE, TWO, THREE, FOUR, FIVE
+
+Question 6		
+In the Python logging module, what does the level represent in the configuration?
+
+Selected
+The minimum severity logging level reported
+
+Unselected
+The maximum severity logging level before the program crashes
+
+Unselected
+The number of logging levels reported
+
+Unselected
+The maximum severity logging level reported
+
+Question 7		
+Which of the following are examples of configuration file formats that may be used by a Python program (as per the reading)?
+
+Selected
+XML
+
+Selected
+INI
+
+Selected
+YAML
+
+Selected
+Python
+
+Selected
+JSON
+
+Question 8		
+Most software programs have some type of externalized configuration.
+
+Selected	True
+Unselected	False
+Question 9		
+Why would we want an external configuration file for our program?
+
+Unselected
+To make our programs more complex to deploy
+
+Unselected
+To make our programs more complex to build
+
+Selected
+Allow system administrators to configure the system for their environment
+
+Unselected
+Act as a database for data stored by the program
+
+Question 10		
+The Python logging module can be configured in which of the following ways:
+
+Selected
+Using an external configuration file
+
+Unselected
+Using a SQL database
+
+Selected
+As Default Root Logger
+
+Selected
+Using basicConfig
+
+Unselected
+Using a RESTful API
+
+

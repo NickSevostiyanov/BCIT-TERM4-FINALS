@@ -1,0 +1,226 @@
+ck Sevostiyanov
+Quiz 4 - Results
+Attempt 1 of 1
+Written Feb 4, 2026 11:42 AM - Feb 4, 2026 11:46 AM
+Released Jun 15, 2023 7:55 PM
+Attempt Score	
+14 / 15 - 93.33 %
+Overall Grade (Highest Attempt)	
+14 / 15 - 93.33 %
+Question 1		1 / 1 point
+The definition of a Jenkins pipeline is written in a text file. What is this text file called?
+
+Question options:
+Unselected
+Definitionfile
+
+Unselected
+Textfile
+
+Selected
+Jenkinsfile
+
+Unselected
+Pipelinefile
+
+Question 2		1 / 1 point
+What are the advantages of defining a Jenkins pipeline in a file in source control (and in general)?
+
+Question options:
+Selected
+Can be setup to automatically create a Pipeline build process for all branches and pull requests
+
+Unselected
+Full automation - does not allow any human intervention in the pipeline
+
+Selected
+Code review/iteration on the Pipeline
+
+Selected
+Single source of truth for the pipeline
+
+Selected
+Audit trail for the Pipeline
+
+Question 3		1 / 1 point
+A Pipeline is a user-defined model of a CI/CD pipeline. A Pipeline's code defines your entire build process, which typically includes stages for building an application, testing it and then delivering it.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 4		1 / 1 point
+In Jenkins declarative pipeline syntax, the pipeline is organized into the following:
+
+Question options:
+Unselected
+main function with instructions
+
+Unselected
+node block containing stages
+
+Unselected
+jenkins block containing steps
+
+Selected
+pipeline block containing stages
+
+Question 5		1 / 1 point
+A stage block defines a conceptually distinct subset of tasks performed by the Pipeline (e.g. "Build", "Test" and "Deploy" stages)
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 6		1 / 1 point
+The agent section of a declarative pipeline definition has which three characteristics from the list below.
+
+Question options:
+Selected
+Required
+
+Selected
+Specifies where the pipeline or stage will execute within the Jenkins environment
+
+Selected
+Can specify a docker image
+
+Unselected
+Validates the outputs from the pipeline
+
+Question 7		1 / 1 point
+A Jenkins pipeline should be triggered by which of the following. Choose the best answer.
+
+Question options:
+Unselected
+Fixed Schedule
+
+Selected
+Change to the Source Code
+
+Unselected
+Buildmaster
+
+Unselected
+Manually
+
+Question 8		1 / 1 point
+It is generally considered best practice to define and maintain the Jenkins pipeline definition directly within a Jenkins build job
+
+Question options:
+Unselected
+True
+Selected
+False
+
+Hide question 8 feedback
+Feedback
+It is generally considered best practice to define the Pipeline in a Jenkinsfile and check that in to source control
+
+Question 9		1 / 1 point
+A Step in a Jenkins pipeline is a single task. Fundamentally, a step tells Jenkins what to do at a particular point in time.
+
+An example of a step would be a shell command, such as executing the make command, i.e., sh 'make'
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 10		1 / 1 point
+Jenkins pipelines support parallel execution and definition of shared libraries (for reuse).
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 11		1 / 1 point
+The Jenkins web server and "brains" of the system. Select the best answer.
+
+Question options:
+Unselected
+Executor
+
+Selected
+Controller
+
+Unselected
+Builtin Node
+
+Unselected
+Agent
+
+Question 12		1 / 1 point
+Manages the execution of tasks on a node. Select the best answer.
+
+Question options:
+Unselected
+Executor
+
+Unselected
+Controller
+
+Selected
+Agent
+
+Unselected
+Builtin Node
+
+Question 13		0 / 1 point
+Runs the stages in a pipeline. Select the best answer.
+
+Question options:
+Unselected
+Builtin Node
+
+Unselected
+Controller
+
+Selected
+Agent
+
+Unselected
+Executor
+
+Question 14		0 / 1 point
+An Agent is a Java application that connects to the Controller and is meant to be highly reliable. Because it is Java based it can run on any platform that supports Java.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 15 (Bonus)		1 / 1 point
+An Agent and a Node are effectively the same thing
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 16		1 / 1 point
+Identify 2 key reasons for using Jenkins Agent Nodes that are separate from the Jenkins Controller and its built-in Node.
+
+Question options:
+Unselected
+Cross Platform Support
+
+Unselected
+Simpler to Setup
+
+Unselected
+Cross Browser Support
+
+Selected
+Scalability
+
+Unselected
+Interoperability
+
+Selected
+Security
+
+

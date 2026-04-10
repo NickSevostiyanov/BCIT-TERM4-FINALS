@@ -1,0 +1,150 @@
+ck Sevostiyanov
+Week 4 - Quiz 3 - Results
+Attempt 1 of 1
+Written Jan 27, 2026 8:41 AM - Jan 27, 2026 8:47 AM
+You successfully submitted your quiz.
+Attempt Score	
+10 / 10 - 100 %
+Overall Grade (Highest Attempt)	
+10 / 10 - 100 %
+Question 1		1 / 1 point
+KeyLogger, which monitors keystrokes typed by user, is an example of what type of malicious software?
+
+Unselected
+adware
+
+Unselected
+Trojan
+
+Selected
+spyware
+
+Unselected
+ransomware
+
+Question 2		1 / 1 point
+Botnets could be used in situations where computing power, storage, or network connectivity is a key resource e.g. performing brute force attacks against passwords.
+
+Selected	True
+Unselected	False
+Question 3		1 / 1 point
+Who runs the command and control systems over legitimate systems that are compromised?
+
+Selected
+the botmaster
+
+Unselected
+the rootkit
+
+Unselected
+the zombies
+
+Unselected
+the worms
+
+Question 4		1 / 1 point
+What type of phishing attack focuses specifically on senior executives of a targeted organization?
+
+Unselected
+pharming
+
+Unselected
+vishing
+
+Selected
+whaling
+
+Unselected
+spear phishing
+
+Question 5		1 / 1 point
+Which of the following statements is true about a zero-day exploit?
+
+Selected
+It is code written to take advantage of a software flaw unknown to its vendor.
+
+Unselected
+It is a cyber weapon developed exclusively by a nation-state adversary.
+
+Unselected
+It is a flaw in a piece of software of which the vendor is unaware.
+
+Unselected
+It is the day on which a vendor is notified of a flaw in its software.
+
+Question 6		1 / 1 point
+Your computer has been infected, and is sending out traffic to a targeted system upon receiving a command from a botmaster. What condition is your computer currently in?
+
+Unselected
+It has become a money mule.
+
+Selected
+It has become a zombie.
+
+Unselected
+It has become a bastion host.
+
+Unselected
+It has become a botnet.
+
+Question 7		1 / 1 point
+What type of malware prevention is most effective against known malwares?
+
+Unselected
+Behavior analysis
+
+Unselected
+Heuristic detection
+
+Selected
+Signature detection
+
+Unselected
+Anomaly detection
+
+Question 8		1 / 1 point
+Executing a suspicious code in a contained environment and monitoring it for signs of malicious activity before allowing it to run on the protected system is called __________
+
+Unselected
+signature detection
+
+Unselected
+file system integrity monitoring 
+
+Selected
+sandboxing
+
+Unselected
+endpoint monitoring
+
+Question 9		1 / 1 point
+A(n)  __________ virus implements techniques designed to prevent disassembly and debugging while a __________ virus can change form or signature each time it is executed to avoid detection.
+
+Unselected
+stealth, armored
+
+Unselected
+polymorphic, armored
+
+Unselected
+polymorphic, non-resident
+
+Selected
+armored, polymorphic
+
+Question 10		1 / 1 point
+Which one of the following types of malware can spread without any user interaction?
+
+Selected
+worm
+
+Unselected
+virus
+
+Unselected
+back door
+
+Unselected
+Trojan
+
+

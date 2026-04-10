@@ -1,0 +1,39 @@
+Instructions
+# Reading Review week 1
+
+Split up into groups of 2-3.
+
+## Part 1
+
+In your groups imagine that you are part of a team responsible for provisioning and maintaining the infrastructure used for a calendar/productivity app (something like [Morgen](https://www.morgen.so/) or [Akiflow](https://akiflow.com/) ). Your team has decided to use AWS.
+
+- What are some of the AWS services you would use?
+    - Why would you use these services?
+    - What do they do that would help to make deployment of the app successful?
+    - Where do you think you would encounter difficulty?
+        - Try to think of what you might be missing. This can include resources that you don't feel you entirely understand.
+        - Where might you want to evaluate several tools as a team to help you pick the most suitable tool? Why?
+- Map out and diagram parts of your application infrastructure.
+    - These diagrams can be very rudimentary (pen and paper is fine)
+    - These diagrams serve 2 purposes for today:
+        - In the context of this-is-a-school-exercise they help to demonstrate your understanding of the material
+        - In the context of the exercise itself they can help your team understand the infrastructure you are creating. They can also help identify missing components and short comings.
+- Be prepared to do a short (5 min), informal presentation (you don't need slides...)
+
+## Part 2
+
+In your group define each of the following computing execution environments:
+
+1. Bare Metal
+2. Virtual Machine
+3. Container
+4. IaaS
+5. PaaS
+6. SaaS
+7. Serverless Functions (i.e. AWS Lambda)
+
+Provide links to any resources that you used. Always try to use a reliable (prefereably peer reviewed) resource. Instead of AI or a random blog, look for official documentation or material published in a text book or a blog or document created by RedHat, IBM... or another authority on the subject.
+
+Submit any material your team generated for both parts in a single pdf document 'reading-review-one.pdf' on D2L.   
+Include a note on who is in your team.   
+Only 1 team member needs to submit the document.

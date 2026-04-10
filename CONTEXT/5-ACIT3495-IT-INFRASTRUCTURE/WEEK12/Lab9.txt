@@ -1,0 +1,20 @@
+kubectl create configmap config1 --from-literal=sleep-interval=25
+
+kubectl create configmap myconfigmap --from-literal=foo=bar --from-literal=bar=baz
+
+kubectl get configmap config1 -o yaml
+
+kubectl get configmaps
+
+kubectl create -f fortune-config.yaml
+
+kubectl create -f fortune-pod-env-configmap.yaml
+
+kubectl get secrets
+
+kubectl describe secrets
+
+kubectl create secret generic my-secret --from-literal=pwd=password
+
+kubectl get secrets my-secret -o yaml
+

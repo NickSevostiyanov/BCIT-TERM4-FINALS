@@ -1,0 +1,180 @@
+ck Sevostiyanov
+Quiz 10 - Results
+Attempt 1 of 1
+Written Apr 9, 2026 2:05 PM - Apr 9, 2026 2:08 PM
+Released Nov 29, 2023 12:41 AM
+Attempt Score	
+12 / 12 - 100 %
+Overall Grade (Highest Attempt)	
+12 / 12 - 100 %
+Question 1		1 / 1 point
+In a blue/green deployment, the blue is the new version of the deployment and the green is the existing version of the deployment. 
+
+Question options:
+Unselected
+True
+Selected
+False
+Question 2		1 / 1 point
+What is the default load balancing strategy for NGINX?
+
+Question options:
+Unselected
+IP Hash
+
+Unselected
+Least Time
+
+Unselected
+Hash
+
+Selected
+Round Robin
+
+Unselected
+Random with Two Choices
+
+Unselected
+Least Connected
+
+Question 3		1 / 1 point
+A canary deployment strategy allows testing of a new feature in production. Who can you leverage to test this new feature in the production environment?
+
+Question options:
+Unselected
+Developer
+
+Unselected
+Sales Team
+
+Unselected
+Testers
+
+Selected
+End Users
+
+Question 4		1 / 1 point
+Which deployment strategy does Docker Compose provide?
+
+Question options:
+Unselected
+Ramped
+
+Selected
+Recreate
+
+Unselected
+Blue/Green
+
+Unselected
+Canary
+
+Question 5		1 / 1 point
+What non-functional characteristics (from the list below) does a load balancer provide? Select the best 2 from the list below
+
+Question options:
+Selected
+Availability
+
+Unselected
+Maintainability
+
+Selected
+Scalability
+
+Unselected
+Usability
+
+Unselected
+Security
+
+
+Hide question 5 feedback
+Feedback
+If a server goes down, it can redirect traffic to those that are still up
+
+We can add or remove servers from the server group
+
+Question 6		1 / 1 point
+A blue/green deployment strategy is a high-availability deployment strategy and allows for instance rollback to the previous version if there is a problem.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 7		1 / 1 point
+NGINX is an example of a hardware load balancer
+
+Question options:
+Unselected
+True
+Selected
+False
+
+Hide question 7 feedback
+Feedback
+NGINX is an example of a software load balancer
+
+Question 8		1 / 1 point
+The Recreate deployment strategy for an application deployed to Kubernetes is a high-availability deployment strategy.
+
+Question options:
+Unselected
+True
+Selected
+False
+
+Hide question 8 feedback
+Feedback
+This is not a high-availability deployment strategy because the existing application instances have to go down before the new application instances are deployed. So the service is down during this time.
+
+Question 9		1 / 1 point
+Load balancing refers to efficiently distributing incoming network traffic across a group of backend servers (i.e., the server farm or server pool). In our system, the backend servers would correspond to instances of our services.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 10		1 / 1 point
+We can use the "docker-compose up" command with the --scale option to set the number of container replicas of a service when we start our system.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 11		1 / 1 point
+What three primary functions does a load balancer provide?
+
+Question options:
+Selected
+Distributes traffic across multiple servers
+
+Unselected
+Authenticates incoming requests
+
+Selected
+Only sending requests to servers that are online
+
+Selected
+Allows servers to be added or removed based on system load
+
+Question 12		1 / 1 point
+What algorithm best describes Round Robin load balancing?
+
+Question options:
+Unselected
+Picks two servers at random and selects one using the Least Connections algorithm
+
+Unselected
+Sends the request to the server with the fewest current connections to clients
+
+Selected
+Requests are distributed across a group of servers sequentially
+
+Unselected
+The IP address of the client is used to determine which server receives the request
+
+

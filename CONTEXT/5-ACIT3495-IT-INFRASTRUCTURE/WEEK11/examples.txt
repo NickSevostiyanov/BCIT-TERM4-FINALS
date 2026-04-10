@@ -1,0 +1,31 @@
+kubectl create -f pod-with-vol.yaml
+kubectl get pod business-app
+kubectl exec business-app -it -c nginx -- /bin/sh
+kubectl exec business-app -it -c app -- /bin/sh
+
+kubectl create -f db-pv.yaml
+kubectl get pv db-pv
+
+kubectl create -f db-pvc.yaml
+kubectl get pvc db-pvc
+kubectl describe pvc db-pvc
+
+kubectl create -f app-consuming-pvc.yaml
+kubectl get pods
+kubectl describe pod app-consuming-pvc
+
+kubectl describe pvc db-pvc
+kubectl exec app-consuming-pvc -it -- /bin/sh
+
+kubectl create -f pod.yml
+kubectl create -f service.yml
+
+kubectl create -f web-app.yml
+kubectl create -f sidecar.yaml
+kubectl get pods webserver
+kubectl logs webserver -c sidecar
+ kubectl exec webserver -it -c sidecar -- /bin/sh
+wget -O- localhost?unknown
+cat /var/log/nginx/error.log
+
+

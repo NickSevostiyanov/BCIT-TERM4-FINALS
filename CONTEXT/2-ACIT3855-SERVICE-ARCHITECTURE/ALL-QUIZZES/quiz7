@@ -1,0 +1,158 @@
+ck Sevostiyanov
+Quiz 7 - Results
+Attempt 1 of 1
+Written Mar 12, 2026 1:40 PM - Mar 12, 2026 1:45 PM
+Released Nov 21, 2023 9:01 AM
+Attempt Score	
+9 / 10 - 90 %
+Overall Grade (Highest Attempt)	
+9 / 10 - 90 %
+Question 1		1 / 1 point
+From the following list, what would be two examples of items obtained from externalized configuration files.
+
+Question options:
+Selected
+Database Credentials
+
+Selected
+3rd Party Service URL
+
+Unselected
+Constant
+
+Unselected
+All Variables
+
+Question 2		0 / 1 point
+For the externalized configuration pattern, a service must run in multiple environments - dev, test, qa, staging, production - without modification and/or recompilation.
+
+The containerized services in our sample application can run in multiple environments without rebuilding the images.
+
+Question options:
+Selected
+True
+Unselected
+False
+
+Hide question 2 feedback
+Feedback
+Right now, we have to rebuild the images if we change the app_conf.yml file.
+
+Question 3		1 / 1 point
+Each of our services generates log messages in its Docker container. A centralized logging service aggregates logs from each service instance.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 4		1 / 1 point
+A potential problem with using log aggregation in a microservices architecture is (select the best answer from the reading):
+
+Question options:
+Unselected
+Configuring a log aggregation service
+
+Selected
+Handling a large volume of log messages
+
+Unselected
+Standardizing the log messages
+
+Unselected
+Defining alerts on log messages
+
+Question 5		1 / 1 point
+Our services generate log messages that, based on our log_conf.yml files, write the message to both stdout and an app.log file.
+
+Given that the log messages are written to stdout, we can see log messages in the following ways (there are three from the list below):
+
+Question options:
+Selected
+docker logs <container id>
+
+Selected
+docker-compose logs
+
+Unselected
+docker exec
+
+Selected
+Running our Docker containers in the foreground (i.e., not using the -d option on docker run or docker-compose up)
+
+Unselected
+docker ps
+
+Question 6		1 / 1 point
+A volume is a form of persistent storage for Docker containers that:
+
+Question options:
+Selected
+Is completely managed by Docker
+
+Unselected
+Mounts a file or directory from the Host VM
+
+Unselected
+Stores data in memory on the Host VM
+
+Unselected
+Encrypts the data by default for data privacy
+
+Question 7		1 / 1 point
+The data stored within the filesystem on a Docker container (not in a volume or bind mount) is deleted in the following case:
+
+Question options:
+Selected
+When the container is removed
+
+Unselected
+When the image is built
+
+Unselected
+When the container is stopped
+
+Unselected
+When the image is removed
+
+Question 8		1 / 1 point
+The volume associated with a container is automatically removed when the container is removed.
+
+Question options:
+Unselected
+True
+Selected
+False
+
+Hide question 8 feedback
+Feedback
+There is a separate step required to remove the volume
+
+Question 9		1 / 1 point
+Three types of mounts you can apply to a Docker container are:
+
+Question options:
+Selected
+tmpfs
+
+Unselected
+source
+
+Selected
+volume
+
+Selected
+bind
+
+Unselected
+volume-opt
+
+Question 10		1 / 1 point
+If you start a container that uses a volume, using either Docker or Docker Compose, the volume will be automatically created if it does not exists.
+
+Question options:
+Selected
+True
+Unselected
+False
+

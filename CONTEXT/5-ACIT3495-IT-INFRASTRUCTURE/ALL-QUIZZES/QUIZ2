@@ -1,0 +1,123 @@
+ck Sevostiyanov
+Quiz2 - Results
+Attempt 1 of 1
+Written Feb 13, 2026 8:43 AM - Feb 13, 2026 8:48 AM
+Attempt Score	
+6 / 6 - 100 %
+Overall Grade (Highest Attempt)	
+6 / 6 - 100 %
+Question 1		1 / 1 point
+In Kubernetes, what is the smallest deployable unit that can be created and managed, typically containing one or more containers that share storage and network resources?
+
+Question options:
+Unselected
+ReplicaSet
+
+Unselected
+Node
+
+Unselected
+Service
+
+Selected
+Pod
+
+Unselected
+Deployment
+
+Question 2		1 / 1 point
+What Kubernetes object is used to declare the desired state for a set of Pods, ensuring a specified number of replicas are running and facilitating rolling updates and rollbacks?
+
+Question options:
+Unselected
+ConfigMap
+
+Unselected
+Ingress
+
+Unselected
+StatefulSet
+
+Selected
+Deployment
+
+Unselected
+Service
+
+Question 3		1 / 1 point
+How do Kubernetes Services primarily enable network access to a set of Pods, abstracting away their individual IP addresses and providing a stable endpoint?
+
+Question options:
+Unselected
+By directly exposing Pod IP addresses to external networks.
+
+Unselected
+By modifying the host's `/etc/hosts` file for each Pod.
+
+Unselected
+By requiring manual configuration of firewall rules for each Pod.
+
+Selected
+By creating a stable IP address and DNS name that routes traffic to a dynamic set of Pods.
+
+Unselected
+By using a separate load balancer for every individual Pod.
+
+Question 4		1 / 1 point
+When installing Kubernetes on Docker Desktop, which statement accurately describes its integration and functionality?
+
+Question options:
+Unselected
+Docker Desktop installs a full-fledged production-grade Kubernetes cluster with multiple master nodes.
+
+Unselected
+Kubernetes on Docker Desktop runs as a standalone virtual machine completely separate from Docker containers.
+
+Unselected
+Kubernetes on Docker Desktop requires a separate cloud account (AWS/GCP) to function.
+
+Selected
+It provides a lightweight, single-node Kubernetes cluster integrated directly within the Docker Desktop application.
+
+Unselected
+It only supports deploying applications written in Docker Compose format, not standard Kubernetes manifests.
+
+Question 5		1 / 1 point
+What is the primary purpose of Kubernetes in a containerized environment?
+
+Question options:
+Unselected
+To monitor application performance metrics.
+
+Unselected
+To provide a secure virtual private network (VPN) for containers.
+
+Unselected
+To develop container images from source code.
+
+Selected
+To automate the deployment, scaling, and management of containerized applications.
+
+Unselected
+To create and manage virtual machines for legacy applications.
+
+Question 6		1 / 1 point
+Which managed Kubernetes service is offered by Amazon Web Services (AWS) for deploying and managing containerized applications?
+
+Question options:
+Unselected
+Google Kubernetes Engine (GKE)
+
+Unselected
+OpenShift
+
+Unselected
+Azure Kubernetes Service (AKS)
+
+Selected
+Elastic Kubernetes Service (EKS)
+
+Unselected
+DigitalOcean Kubernetes (DOKS)
+
+

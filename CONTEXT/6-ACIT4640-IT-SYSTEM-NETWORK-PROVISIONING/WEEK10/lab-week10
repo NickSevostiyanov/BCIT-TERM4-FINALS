@@ -1,0 +1,62 @@
+Start by cloning the starter code from the repo below.
+
+https://gitlab.com/cit_4640/4640-w10-lab-start-w25
+
+Setup:
+
+add a new ssh public key to your AWS account using the "scripts/import_lab_key" script
+
+create a new AMI using the Packer and Ansible configuration
+
+Tasks:
+
+Breakout the creation of the EC2 instance from the Terraform configuration into a new module "web-server".
+
+include variables for the following in your modules:
+
+- project name
+- ami
+- instance type (with t2.micro default)
+- key name
+- vpc security group ids (list(string))
+- subnet id
+
+include outputs for the following in your module
+
+- instance ip address
+- instance dns name
+- instance id
+
+In root main use:
+
+- the local for project name defined in the root main
+- the ami for the instance created by the Packer template
+- default instance type
+- the key imported with the import script
+- the vpc security group defined in main
+- the subnet id defined in main
+
+output all outputs from the module in root main.
+
+Deliverables:
+
+Submit the a public Git repository that contains the following:
+
+Things ending in "/" are directories.
+
+- terraform/
+- main.tf
+- provider.tf
+- modules/
+- web-server/
+- main.tf
+- variables.tf
+- outputs.tf
+
+Clean Up:
+
+Run terraform destroy
+
+Remove your AMI and snapshot built with Packer
+
+Delete the ssh key you used for the lab.

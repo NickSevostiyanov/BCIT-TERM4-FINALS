@@ -1,0 +1,95 @@
+Instructions
+In This lab you are going to write two small scripts to install nginx and write an HTML document that will be served by nginx.
+
+Complete this lab in a group of 2-3
+
+Work in the us-west-2 region.
+
+Have one team member create a document to submit. Only one team member needs to submit something. For your own records every team member should keep a copy of the document.
+
+Part 1.
+
+Create a new SSH key pair in your local development environment. Add the public key to your AWS account.
+
+- Key type: ed25519
+- Key name: wkone
+
+Document this with a screeenshot of the command used to create your key and a screenshot of the aws console window where you added your ssh key.
+
+Add both screenshots to your document
+
+Part 2.
+
+Create a new EC2 instance running Debian that uses the ssh key you created for part 1.
+
+You don't need to document this step
+
+You will need to have access to your EC2 instance via SSH and HTTP
+
+Part 3.
+
+Write two scripts that will connect to your remote server via SSH using the key you created in part 1.
+
+Create a new directory in your Linux environment. For WSL users make sure this is in your Linux environment.&nbsp;
+
+Create both scripts and the environment variables file in this new directory
+
+In addition to the two scripts create another file that will create environment variables for your
+
+- username
+- IP address
+- SSH key path
+This file doesn't need a shebang and can be sourced, with the `source` built-in to make your environment variables available in your environment.
+
+Name this file ".envrc"
+
+You should be running your scripts from your development environment, not the EC2 instance created in step 2.
+
+Your scripts should reference the environment variables from the file created above.
+
+The Debian EC2 instances have an "admin" user.
+
+Script 1
+
+Will install nginx and start and enable the service.
+
+Script 2
+
+Will write The HTML document below over the default HTML document served by Nginx in Debian.
+
+Complete the HTML document so that the p tag displays the current date. Get the date from your local machine, not your EC2 instance.
+
+Use command substitution to get the date in the format "day/month/year" in your script.
+
+Reload nginx after updating the HTML document
+
+---
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Hello World</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <p>Today's date is: </p>
+</body>
+</html>
+---
+
+Both scripts should make use of a heredoc
+
+After running both of your scripts in your local development environment you should have a running Nginx server serving the HTML document above, modified to display today's date.
+
+Scripts should be well commented.
+
+Copy and paste both scripts and your environment variables file into the document.
+
+Before shutting down your server show me that you have a working server setup.
+
+Submit a "lab-w2.pdf" using the D2L dropbox
+
+Make sure that all of the group members names are included in your submission.
+
+

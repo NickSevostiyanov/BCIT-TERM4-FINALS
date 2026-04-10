@@ -1,0 +1,179 @@
+ck Sevostiyanov
+Quiz 2 - Results
+Attempt 1 of 1
+Written Jan 22, 2026 1:57 PM - Jan 22, 2026 2:01 PM
+You successfully submitted your quiz.
+Attempt Score	
+9 / 12 - 75 %
+Overall Grade (Highest Attempt)	
+9 / 12 - 75 %
+Question 1		
+Select the best definition of Polyglot Persistence in Microservices
+
+Selected
+Each Service Manages Its Own Database
+
+Unselected
+Each Service Uses a Different Programming Language
+
+Unselected
+Each Service Uses a NoSQL DB
+
+Unselected
+Each Service Must Use A Different Database
+
+Question 2		
+A Monolith cannot use Polyglot Persistence
+
+Unselected	True
+Selected	False
+
+Hide question 2 feedback
+Feedback
+A Monolith can use Polyglot Persistence, it is just less common
+
+Question 3		
+Decentralizing responsibility for data across microservices has implications for managing updates. Identify one of these implications from the list below.
+
+Selected
+Database transactions cannot be used to guarantee consistency
+
+Unselected
+Services cannot reliably store data
+
+Unselected
+Database transactions must be used to guarantee consistency
+
+Unselected
+Services become coupled to guarantee consistency of data
+
+Question 4		
+In a Microservices based application, it would be reasonable to use a MySQL database in one service, a SQLite database in another service, a JSON file in another service and an in-memory database for another service if it meets the needs of those services.
+
+Selected	True
+Unselected	False
+
+Hide question 4 feedback
+Feedback
+This is acceptable when using the concept of Polyglot Persistence.
+
+Question 5		
+Identify two reasons for the Database Per Service architectural pattern for Microservices
+
+Selected
+Different services have different data storage requirements
+
+Selected
+Services must be loosely coupled so that they can be developed, deployed and scaled independently
+
+Unselected
+Services use the same database technology to ensure the transferability of data across data transactions
+
+Unselected
+Services must be tightly coupled to maintain the consistency of data in all cases
+
+Question 6		
+The solution for the Database Per Service architectural pattern is as follows:
+
+Keep each microservice’s persistent data private to that service and accessible only via its API. A service’s transactions are integrated into a central database.
+
+Unselected	True
+Selected	False
+
+Hide question 6 feedback
+Feedback
+Keep each microservice’s persistent data private to that service and accessible only via its API. A service’s transactions only involve its database.
+
+Question 7		
+Which of the following are valid options for implementing the Database Per Service architectural pattern using a SQL database?
+
+Selected
+Private-tables-per-service – each service owns a set of tables that must only be accessed by that service
+
+Selected
+Database-server-per-service – each service has it’s own database server.
+
+Selected
+Schema-per-service – each service has a database schema that’s private to that service
+
+Unselected
+Datafile-per-service - each service has it's own text file containing data in a structured format like JSON or YAML
+
+Question 8		
+Identify two valid benefits of the Database Per Service architectural pattern?
+
+Incorrect ResponseSelected
+Helps to ensure services are tightly coupled.
+
+Unselected
+Enforces consistent persistence technology across multiple services.
+
+Correct AnswerIncorrect ResponseUnselected
+Helps ensure that the services are loosely coupled. 
+
+Unselected
+Implementing queries that join data across services becomes easier.
+
+Correct AnswerSelected
+Each service can use the type of database that is best suited to its needs.
+
+Question 9		
+Identify three drawbacks of using the Database Per Service architectural pattern?
+
+Selected
+Complexity of managing multiple SQL and NoSQL databases.
+
+Selected
+Implementing business transactions that span multiple services is not straightforward.
+
+Unselected
+Helps ensure that the services are loosely coupled. 
+
+Selected
+Implementing queries that join data that is now in multiple databases is challenging.
+
+Unselected
+Each service can use the type of database that is best suited to its needs. 
+
+Question 10		
+The following identifies a key difference between SQLite and MySQL:
+
+SQLite is a server-less database and is self-contained. It runs embedded into an application.
+MySQL requires a server to run. MySQL will require a client and server architecture to interact over a network.
+Selected	True
+Unselected	False
+Question 11		
+
+
+In the above code snippet, what type is all_readings? Select the best answer.
+
+Incorrect ResponseSelected
+Object
+
+Unselected
+String
+
+Correct AnswerUnselected
+List
+
+Unselected
+Dictionary
+
+Question 12		
+
+
+How would you best describe the code above (in terms of SQLAlchemy)?
+
+Incorrect ResponseSelected
+Class
+
+Correct AnswerUnselected
+Declarative
+
+Unselected
+Table Mapper
+
+Unselected
+Column Mapper
+
+

@@ -1,0 +1,267 @@
+ck Sevostiyanov
+Week 3 - Quiz 2 - Results
+Attempt 1 of 1
+Written Jan 20, 2026 8:36 AM - Jan 20, 2026 8:42 AM
+Attempt Score	
+15.8 / 18 - 87.78 %
+Overall Grade (Highest Attempt)	
+15.8 / 18 - 87.78 %
+Question 1		1.8 / 3 points
+When it comes to Configuration Vulnerabilities:
+
+__3__		
+Follow
+
+Incorrect Response	__4__	(5)	
+Apply
+
+__2__		
+Verify
+
+Incorrect Response	__5__	(4)	
+Choose
+
+__1__		
+Avoid
+
+1.	
+default configurations
+
+2.	
+device security before network integration
+
+3.	
+documented security standards and best practices
+
+4.	
+secure cryptographic protocols and strong ciphers
+
+5.	
+the principle of least privilege
+
+Question 2		1 / 1 point
+Which of the following is an example of a server vulnerability?
+
+Selected
+An outdated web server that allows malicious code execution
+
+Unselected
+An employee's stolen laptop
+
+Unselected
+A user's weak password
+
+Unselected
+A misconfigured firewall on an end-user device
+
+Question 3		1 / 1 point
+Which stage of Vulnerability Management involves patching systems and fixing issues?
+
+Unselected
+Validate
+
+Unselected
+Discover
+
+Unselected
+Monitor
+
+Selected
+Remediate
+
+Question 4		1 / 1 point
+What is one key use of Data Flow Diagrams in security?
+
+Unselected
+Identifying data ownership
+
+Unselected
+Designing databases
+
+Selected
+Identifying points where data is at risk
+
+Unselected
+Creating software specifications
+
+Question 5		1 / 1 point
+Which of the following is the first stage of Vulnerability Management?
+
+Unselected
+Remediate
+
+Unselected
+Validate
+
+Selected
+Discover
+
+Unselected
+Prioritize
+
+Question 6		1 / 1 point
+What is a Data Flow Diagram (DFD)?
+
+Unselected
+A type of database management system
+
+Unselected
+A textual explanation of system components
+
+Unselected
+A method for encrypting data
+
+Selected
+A graphical representation of the flow of data through an information system
+
+Question 7		1 / 1 point
+What is the mnemonic STRIDE used for in cybersecurity?
+
+Unselected
+To define firewall configurations
+
+Selected
+To identify different types of security threats
+
+Unselected
+To outline network defense strategies
+
+Unselected
+To categorize types of encryption
+
+Question 8		1 / 1 point
+What does CVE stand for?
+
+Unselected
+Computer Vulnerability Entity
+
+Unselected
+Common Vulnerability Evaluation
+
+Unselected
+Cyber Vulnerability Examination
+
+Selected
+Common Vulnerabilities and Exposures
+
+Question 9		1 / 1 point
+What is the purpose of the NVD?
+
+Unselected
+To list security hardware products
+
+Selected
+To provide additional details such as patch availability and severity scores for CVEs
+
+Unselected
+To prevent vulnerabilities from being exploited
+
+Unselected
+To store encrypted data for organizations
+
+Question 10		1 / 1 point
+What type of vulnerability is introduced through third-party components or services?
+
+Unselected
+Configuration Vulnerabilities
+
+Unselected
+Endpoint Vulnerabilities
+
+Unselected
+Architectural Vulnerabilities
+
+Selected
+Supply Chain Vulnerabilities
+
+Question 11		0 / 1 point
+In a Data Flow Diagram, what does a "Privilege Boundary" represent?
+
+Unselected
+A method of encryption
+
+Correct AnswerUnselected
+The point where a web server communicates with the database with different privilege levels
+
+Unselected
+A point where unauthorized access is possible
+
+Incorrect ResponseSelected
+The boundary between different systems
+
+Question 12		1 / 1 point
+During the "Prioritize" stage of Vulnerability Management, what is the primary focus?
+
+Unselected
+Auditing system logs
+
+Unselected
+Assigning patches to vulnerabilities
+
+Unselected
+Reviewing patch implementation
+
+Selected
+Deciding which vulnerabilities need immediate attention based on risk
+
+Question 13		1 / 1 point
+What are Endpoint Vulnerabilities?
+
+Unselected
+Security weaknesses in network devices
+
+Selected
+Security weaknesses in end-user devices like computers and smartphones
+
+Unselected
+Vulnerabilities in servers and databases
+
+Unselected
+Risks introduced through third-party software
+
+Question 14		1 / 1 point
+What security threat does "Tampering" in STRIDE refer to?
+
+Unselected
+Attacking by spoofing user identities
+
+Unselected
+Denying service to authorized users
+
+Selected
+Unauthorized modification of data
+
+Unselected
+Disclosing sensitive information
+
+Question 15		1 / 1 point
+What does CVSS stand for?
+
+Unselected
+Computer Virus Scoring System
+
+Selected
+Common Vulnerability Scoring System
+
+Unselected
+Cybersecurity Vulnerability Scanning System
+
+Unselected
+Critical Vulnerability Security System
+
+Question 16		1 / 1 point
+What does the "S" in STRIDE stand for?
+
+Unselected
+Stealth
+
+Unselected
+Securing
+
+Selected
+Spoofing
+
+Unselected
+Scanning
+
+

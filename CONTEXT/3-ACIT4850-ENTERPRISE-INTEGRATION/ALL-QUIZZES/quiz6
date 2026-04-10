@@ -1,0 +1,181 @@
+ck Sevostiyanov
+Quiz 6 - Results
+Attempt 1 of 1
+Written Feb 18, 2026 11:47 AM - Feb 18, 2026 11:48 AM
+Released Jul 7, 2023 8:33 AM
+Attempt Score	
+7 / 10 - 70 %
+Overall Grade (Highest Attempt)	
+7 / 10 - 70 %
+Question 1		1 / 1 point
+Static code analysis is best described as...
+
+Question options:
+Unselected
+Automated inspection of code
+
+Selected
+Inspection of code without execution
+
+Unselected
+Inspection of code during execution
+
+Unselected
+Visual inspection of code
+
+Question 2		0 / 1 point
+Three benefits of static code analysis include:
+
+Question options:
+Selected
+It can reveal errors that do not manifest themselves until a disaster occurs weeks, months or years after release
+
+Unselected
+Automated tools can find most code errors without running the program
+
+Unselected
+Automated tools can reduce manual code review effort
+
+Unselected
+Finds errors that only occur when the program is run
+
+Unselected
+Ensure code complies with industry standards
+
+Question 3		0 / 1 point
+Static and dynamic code analysis, considered together, are sometimes referred to as which of the following?
+
+Question options:
+Unselected
+Black box testing
+
+Unselected
+Red box testing
+
+Selected
+White box testing
+
+Unselected
+Glass box testing
+
+
+Hide question 3 feedback
+Feedback
+Glass box testing - Static and dynamic code analysis
+
+White box testing - Testing with understanding of the internal program flow/logic. Testing program/function/method flow.
+
+Black box testing - Testing without understanding of the internal program flow/logic. Testing the interfaces.
+
+Question 4		1 / 1 point
+A Quality Gate is a set of conditions that tells you whether or not your project is ready for release.
+
+You should not set and enforce a quality gate until all code, new and old, will meet the standard.
+
+Question options:
+Unselected
+True
+Selected
+False
+
+Hide question 4 feedback
+Feedback
+Your Quality Gate should initially apply to new code only:
+
+When standards are set and enforced on New Code, you aren't worried about having to meet those standards in old code and having to clean up someone else's code. You can take pride in meeting high standards on your code.
+
+Question 5		1 / 1 point
+What are the types of issues that SonarQube can track in your code?
+
+Question options:
+Selected
+Vulnerabilites
+
+Unselected
+Errors
+
+Unselected
+Change Requests
+
+Selected
+Bugs
+
+Selected
+Code Smells
+
+Unselected
+Warnings
+
+Question 6		1 / 1 point
+SonarQube's definition of Technical Debt is:
+
+The estimated time required to fix all maintainability issues and code smells identified in the code
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 7		1 / 1 point
+In SonarQube, a snapshot is a set of measures and issues on a given project at a given time. It is generated for each analysis.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 8		1 / 1 point
+In SonarQube, what best describes a scanner?
+
+Question options:
+Selected
+A client application that analyzes the source code to compute snapshots.
+
+Unselected
+Stores configuration and snapshots
+
+Unselected
+An analysis of code quality
+
+Unselected
+Web interface that is used to browse snapshot data and make configuration changes
+
+Question 9		0 / 1 point
+What are the four main components of the SonarQube platform?
+
+Question options:
+Unselected
+REST API
+
+Selected
+Scanners for Code Analysis
+
+Selected
+Database
+
+Unselected
+Plugins
+
+Selected
+Cluster
+
+Selected
+Server (including Web Server, Search Server, Compute Engine Server)
+
+Question 10		1 / 1 point
+Where should code analysis first be performed using the SonarQube platform. Choose the best answer.
+
+Question options:
+Unselected
+Source Code Management - i.e. Git
+
+Unselected
+SonarQube Server
+
+Unselected
+SonarScanner
+
+Selected
+SonarLint in the IDE
+
+

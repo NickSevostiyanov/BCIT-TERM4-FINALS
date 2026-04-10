@@ -1,0 +1,85 @@
+SSESSMENT REPORT
+Student Information
+Field Value
+Student Name abhi
+Email Address
+Student ID #119
+Account Status Approved
+Registration Date March 06, 2026
+Assessment Details
+Field Value
+Form Title ACIT3495Q3Friday
+Form Purpose Learning
+Submission Date 06/03/2026, 09:45:35
+Report Generated On March 06, 2026 at 05:46 PM
+Performance Summary
+Metric Value
+Submission Date 06/03/2026, 09:45:35
+Student Name abhi
+Student Email
+MCQ Score 7/10
+Descriptive Score 0/0
+Total Score 7/10
+Percentage 70.0%
+Status [X] Evaluated
+Questions & Answers
+Question 1 (Multiple Choice) - 1 points
+What is the fundamental unit of execution in Kubernetes, representing a single instance of a running
+process in a cluster?
+Selected Answer: Pod
+Correct Answer: Pod
+Status: [CORRECT]
+Question 2 (Multiple Choice) - 1 points
+Which Kubernetes object directly ensures a specified number of identical pod replicas are running at all
+times, automatically replacing failed pods to maintain the desired state?
+Selected Answer: ReplicaSet
+Correct Answer: ReplicaSet
+Status: [CORRECT]
+Question 3 (Multiple Choice) - 1 points
+A Kubernetes Service of type NodePort exposes a service on a static port on each Node. What is the
+typical range for these NodePort ports?
+Selected Answer: 30000-32767
+Correct Answer: 30000-32767
+Status: [CORRECT]
+Question 4 (Multiple Choice) - 1 points
+What is the primary role of the kube-apiserver component in Kubernetes?
+Selected Answer: To manage network policies
+Correct Answer: To expose the Kubernetes API
+Status: [INCORRECT]
+Question 5 (Multiple Choice) - 1 points
+How do multiple containers within the same Kubernetes Pod share resources and communicate with
+each other efficiently?
+Selected Answer: They use a shared network namespace and can communicate via localhost
+Correct Answer: They use a shared network namespace and can communicate via localhost
+Status: [CORRECT]
+Question 6 (Multiple Choice) - 1 points
+What is the default and most common type of Kubernetes Service that exposes the service on an
+internal IP in the cluster, making it only reachable from within the cluster?
+Selected Answer: LoadBalancer
+Correct Answer: ClusterIP
+Status: [INCORRECT]
+Question 7 (Multiple Choice) - 1 points
+What is the primary purpose of Kubernetes?
+Selected Answer: To manage and orchestrate containerized applications at scale.
+Correct Answer: To manage and orchestrate containerized applications at scale.
+Status: [CORRECT]
+Question 8 (Multiple Choice) - 1 points
+Which statement best describes a Kubernetes Pod?
+Selected Answer: It is the smallest deployable unit that encapsulates one or more containers, sharing
+network and storage resources.
+Correct Answer: It is the smallest deployable unit that encapsulates one or more containers, sharing
+network and storage resources.
+Status: [CORRECT]
+Question 9 (Multiple Choice) - 1 points
+For a Kubernetes Service of type LoadBalancer deployed in a cloud environment, what typically
+happens when it is created?
+Selected Answer: It assigns an internal DNS name to the service, only reachable within the cluster
+Correct Answer: It provisions an external load balancer from the cloud provider
+Status: [INCORRECT]
+Question 10 (Multiple Choice) - 1 points
+What is the primary function of Labels in Kubernetes?
+Selected Answer: To logically group and select related Kubernetes objects (e.g., Pods, Deployments,
+Services) using key-value pairs.
+Correct Answer: To logically group and select related Kubernetes objects (e.g., Pods, Deployments,
+Services) using key-value pairs.
+Status: [CORRECT]

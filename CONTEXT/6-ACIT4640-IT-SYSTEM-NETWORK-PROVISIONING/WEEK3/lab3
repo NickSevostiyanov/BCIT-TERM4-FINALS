@@ -1,0 +1,51 @@
+Instructions
+Complete the exercise below in a group of 2-3.
+
+Submit a link to a public Git repo that contains your scripts and a README.md that includes links to the specific documenation you used for each script.
+
+Git repo name: "lab-week3-aws-cli"
+
+Create your scripts using AWS CLI Command Reference documentation: 
+
+https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
+
+Example format for documentation
+
+script 1:
+- link-to-relevant-documenation-section
+
+Starter files: https://gitlab.com/cit_4640/4640-w3-lab-start-w25
+
+Script 1.
+
+Write a script that will "import" the public key from a locally created key pair into your AWS account. 
+
+Name your key "bcitkey". You need this for script 3.
+
+Script 2.
+
+Complete the create-bucket script included in the starter files
+
+Notes: 
+pay attention to the documentation on --create-bucket-configuration LocationConstraint
+
+Remember that bucket names must be unique.
+
+You can delete your bucket with the command
+
+aws s3api delete-bucket --bucket <your-bucket-name> --region us-west-2
+
+Script 3 and 4
+
+copy the create-vpc and create-ec2 scripts from the starter files
+
+Complete the create-vpc and create-ec2 scripts, see comments in scripts
+
+- use the AMI provided by the "debian_ami" variable
+- use the security group provided by the "security_group_id" variable.
+- use the key pair you imported above in part 1.
+- write the public IP address of your EC2 instance to a new "instance_data" file.
+
+After you have provisioned your infrastructure with these scripts test that you can connect to your EC2 instance via ssh using the key you created in part 2.
+
+Include a note on D2L with your group members names.

@@ -1,0 +1,221 @@
+ck Sevostiyanov
+Quiz 9 - Results
+Attempt 1 of 1
+Written Mar 25, 2026 11:34 AM - Mar 25, 2026 11:40 AM
+Released Aug 10, 2023 2:19 AM
+Attempt Score	
+8 / 10 - 80 %
+Overall Grade (Highest Attempt)	
+8 / 10 - 80 %
+Question 1		1 / 1 point
+When we deploy software more frequently, we must accept lower levels of stability and reliability in our systems.
+
+Question options:
+Unselected
+True
+Selected
+False
+
+Hide question 1 feedback
+Feedback
+High performance teams can consistently deliver services faster and more reliably than their low performing competition.
+
+Question 2		0 / 1 point
+Identify three benefits of adopting Continuous Delivery practices.
+
+Question options:
+Selected
+Higher quality
+
+Unselected
+Lower costs
+
+Selected
+Higher revenues
+
+Selected
+Low risk releases
+
+Unselected
+Fewer developers needed
+
+
+Hide question 2 feedback
+Feedback
+By building a deployment pipeline, these activities can be performed continuously throughout the delivery process, ensuring quality is built in to products and services from the beginning.
+
+This allows developers to focus on other activities like testing and addressing technical debt.
+
+Releases are typically smaller and using deployment patterns like blue/green deployments allows high-available and rollback (if necessary)
+
+Question 3		0 / 1 point
+There are five principles at the heart of continuous delivery:
+
+Build quality in
+Work in small batches
+Computers perform repetitive tasks, people solve problems
+Relentlessly pursue continuous improvement
+Everyone is responsible
+Match the principle with the most appropriate description below.
+
+__2__	
+It reduces the time it takes to get feedback on our work, makes it easier to triage and remediate problems, increases efficiency and motivation, and prevents us from succumbing to the sunk cost fallacy.
+
+__1__	
+Creating and evolving feedback loops to detect problems as early as possible is essential and never-ending work in continuous delivery. 
+
+__3__	
+In high performing organizations, nothing is “somebody else’s problem.” Developers are responsible for the quality and stability of the software they build. Operations teams are responsible for helping developers build quality in. Everyone works together to achieve the organizational level goals, rather than optimizing for what’s best for their team or department.
+
+__4__	
+The goal is for computers to perform simple, repetitive tasks, such as regression testing, so that humans can focus on problem-solving. Thus computers and people complement each other.
+
+__5__	
+The best organizations are those where everybody treats improvement work as an essential part of their daily work, and where nobody is satisfied with the status quo.
+
+1.	
+Build quality in
+
+2.	
+Work in small batches
+
+3.	
+Computers perform repetitive tasks, people solve problems
+
+4.	
+Relentlessly pursue continuous improvement
+
+5.	
+Everyone is responsible
+
+Question 4		1 / 1 point
+One key goal of Continuous Delivery is to automate manual repetitive processes. In order to do that we need to version control everything required to perform these processes, including source code, test and deployment scripts, infrastructure and application configuration information, and the many libraries and packages we depend upon. This is referred to as Configuration Management.
+
+What are two overriding goals of Configuration Management?
+
+Question options:
+Selected
+Reproducability
+
+Selected
+Traceability
+
+Unselected
+Disaster Recovery
+
+Unselected
+Higher Quality
+
+Unselected
+Lower Costs
+
+
+Hide question 4 feedback
+Feedback
+We should be able to provision any environment in a fully automated fashion, and know that any new environment reproduced from the same configuration is identical.
+
+We should be able to pick any environment and be able to determine quickly and precisely the versions of every dependency used to create that environment. We also want to to be able to compare previous versions of an environment and see what has changed between them.
+
+Question 5		1 / 1 point
+The practice of continuous integration was invented to address problems such as:
+
+Painful integration of long-lived branches into the mainline (i.e., main or master)
+Long integration and test phases prior to a release
+ 
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 6		1 / 1 point
+Continuous Testing can best be defined as...
+
+Question options:
+Selected
+Running tests continually throughout the delivery process
+
+Unselected
+Manual testing at every stage in the development process
+
+Unselected
+Developers testing as they code a new feature
+
+Unselected
+Running unit tests
+
+Question 7		1 / 1 point
+Once we have continuous integration and test automation in place, we can create a deployment pipeline. This is the key pattern in continuous delivery.
+
+In the deployment pipeline pattern, every change runs a build that does which of the following (hint: includes both CI and CD portions of the build)? Select four from the list below.
+
+Question options:
+Selected
+Creates packages that can be deployed to any environment
+
+Unselected
+Waits for testers to manually verify changes before completing.
+
+Selected
+Allows for self-service deployment of packages that pass all automated tests
+
+Selected
+Runs unit tests (and possibly other tests) to give developers feedback
+
+Selected
+Runs additional tests on packages that pass unit tests
+
+Question 8		1 / 1 point
+In the deployment pipeline, every change is effectively a release candidate (assuming it passes all the stages). 
+
+Question options:
+Selected
+True
+Unselected
+False
+
+Hide question 8 feedback
+Feedback
+The job of the deployment pipeline is to catch known issues. If we can't detect any known problems, we should feel totally comfortable releasing any packages that have gone through it. If we aren't, or if we discover defects later, it means we need to improve our pipeline, perhaps adding or updating some tests.
+
+Question 9		1 / 1 point
+Docker enables the following three use cases:
+
+Question options:
+Selected
+Responsive deployment and scaling
+
+Selected
+Fast, consistent delivery of your applications
+
+Unselected
+Keeping DevOps Engineers employed
+
+Selected
+Running more workloads on the same hardware
+
+
+Hide question 9 feedback
+Feedback
+Can deploy more containers as needed
+
+Docker image contains the predefined runtime for the application
+
+Can have multiple containers running on the same hardware
+
+Question 10		1 / 1 point
+Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to start and stop multiple Docker containers with single commands.
+
+Question options:
+Selected
+True
+Unselected
+False
+
+Hide question 10 feedback
+Feedback
+Use docker-compose start to start all the applications defined in a docker-compose.yml file
+
+Use docker-compose stop to stop all the applications defined in a docker-compose.yml file
+
+

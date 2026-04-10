@@ -1,0 +1,133 @@
+ck Sevostiyanov
+Quiz 7 - Results
+Attempt 1 of 1
+Written Mar 4, 2026 12:09 PM - Mar 4, 2026 12:10 PM
+Attempt Score	
+9 / 10 - 90 %
+Overall Grade (Highest Attempt)	
+9 / 10 - 90 %
+Question 1		1 / 1 point
+The agents that run your jobs in GitLab CI
+
+Question options:
+Unselected
+CI/CD Variables
+
+Unselected
+CI/CD Components
+
+Selected
+Runners
+
+Unselected
+Pipelines
+
+Question 2		1 / 1 point
+Made up of jobs and stages in GitLab CI
+
+Question options:
+Unselected
+CI/CD Components
+
+Unselected
+CI/CD Variables
+
+Unselected
+Runners
+
+Selected
+Pipelines
+
+Question 3		1 / 1 point
+A way to store values you want to re-use in a GitLab CI pipeline
+
+Question options:
+Unselected
+CI/CD Components
+
+Unselected
+Pipelines
+
+Selected
+CI/CD Variables
+
+Unselected
+Runners
+
+Question 4		1 / 1 point
+A reusable single pipeline configuration unit in GitLab CI
+
+Question options:
+Unselected
+Pipelines
+
+Unselected
+Runners
+
+Selected
+CI/CD Components
+
+Unselected
+CI/CD Variables
+
+Question 5		1 / 1 point
+A GitLab runner is an agent that can run on physical machines or virtual instances. They are effectively equivalent to a Jenkins agent node.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 6		1 / 1 point
+Self-managed runners are hosted on your own infrastructure
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 7		1 / 1 point
+A GitLab runner with a Shell executor has access to all the dependencies install on the machine it is running on
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 8		1 / 1 point
+A GitLab runner with a Docker executor runs pipeline jobs on containers based on Docker images
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 9		1 / 1 point
+The .gitlab-ci.yml file in GitLab CI is analogous to the Jenkinsfile in Jenkins
+
+Question options:
+Selected
+True
+Unselected
+False
+
+Hide question 9 feedback
+Feedback
+Stages in a gitlab-ci.yml file are equivalent to stages in a Jenkinsfile
+
+Stages in gitlab-ci.yml can have jobs which can run in parallel
+
+Question 10		0 / 1 point
+In a pipeline defined in a gitlab-ci.yml file, each stage belongs to a job
+
+Question options:
+Selected
+True
+Unselected
+False
+
+Hide question 10 feedback
+Feedback
+Each job belongs to a stage. A stage can have multiple jobs.
+
+

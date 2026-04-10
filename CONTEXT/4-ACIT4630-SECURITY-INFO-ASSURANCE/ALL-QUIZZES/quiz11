@@ -1,0 +1,107 @@
+tion 1 		1 / 1 point
+
+Using firewalls, routers, and servers as VPN endpoints can cause performance issues, because VPN traffic requires resource intensive encryption, and these devices usually don't contain specialized hardware that accelerates encryption. 
+	Selected	True
+	Unselected	False
+Question 2 		1 / 1 point
+
+What does SSH provide?
+Unselected
+	
+
+an efficient method for creating a site-to-site VPN
+Unselected
+	
+
+very little security
+Unselected
+	
+
+an efficient method for creating a site-to-site VPN
+Selected
+	
+
+a secure shell for remote users, which can also be used to forward ports securely
+Question 3 		1 / 1 point
+
+When a DNS name server gets the response for a recursive query, it will cache not only the IP address of the domain in the query but also the location of all the nameservers it encounters along the way. This way it doesn't have to traverse the entire hierarchy from the root level down as long as the data lives in the cache.
+	Selected	True
+	Unselected	False
+Question 4 		0 / 1 point
+
+DNS sinkholes, which are basically the same thing as the DNS poisoning attack, are used by security professionals to prevent users from carrying out botnet instructions.
+Correct Answer
+	Unselected	True
+Incorrect Response
+	Selected	False
+Question 5 		1 / 1 point
+
+Placing content on a legitimate site that automatically forwards a user from that legitimate site to a malicious site is an example of __________ attack
+Selected
+	
+
+URL Redirection
+Unselected
+	
+
+Domain Hijacking
+Unselected
+	
+
+Typosquatting
+Unselected
+	
+
+DNS Poisoning
+Question 6 		1 / 1 point
+
+A VPN is a solution developed to provide access to the private network services of an organization over a public network infrastructure. 
+	Selected	True
+	Unselected	False
+Question 7 		0 / 1 point
+In a(n)
+___split-tunnel VPN___Incorrect Response(split)
+-tunnel VPN, the traffic specifically intended for the protected network is sent through the VPN tunnel, while general web browsing is routed directly over the internet.
+Question 8 		1 / 1 point
+
+Imagine that your network has suffered a botnet infestation. Which one of the following deception technologies would be helpful in limiting the ability of botnets to reach their command-and-control servers?
+Unselected
+	
+
+Honeynet
+Unselected
+	
+
+Honeypot
+Unselected
+	
+
+Darknet
+Selected
+	
+
+DNS sinkhole
+Question 9 		1 / 1 point
+
+ARP poisoning only works on a local network
+	Selected	True
+	Unselected	False
+Question 10 		1 / 1 point
+
+Imagine you are trying to visit you bank's website, but an attacker has inserted false DNS records to fool you to visit their fake website which closely resembles he ban's website. This is an example of __________ attack.
+Unselected
+	
+
+Denial of service
+Unselected
+	
+
+URL Redirection
+Unselected
+	
+
+Domain Hijacking
+Selected
+	
+
+DNS poisoning

@@ -1,0 +1,181 @@
+ck Sevostiyanov
+Quiz 3 - Results
+Attempt 1 of 1
+Written Jan 28, 2026 11:38 AM - Jan 28, 2026 11:44 AM
+Released Feb 10, 2024 8:02 AM
+Attempt Score	
+9 / 12 - 75 %
+Overall Grade (Highest Attempt)	
+9 / 12 - 75 %
+Question 1		1 / 1 point
+The following is a practical definition of DevOps:
+
+DevOps is the practice of operations and development engineers participating together in the entire service lifecycle, from design through the development process to production support.
+
+ 
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 2		1 / 1 point
+Identify the three primary practice areas of DevOps.
+
+Question options:
+Unselected
+On-Call Developers
+
+Selected
+Infrastructure Automation
+
+Selected
+Site Reliability Engineering
+
+Unselected
+Agile Practices
+
+Unselected
+DevOps Practices
+
+Selected
+Continuous Delivery
+
+Question 3		1 / 1 point
+Infrastructure Automation refers to creating your systems, OS configs, and app deployments as code. This code is stored in a source code management system.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 4		1 / 1 point
+Continuous Delivery means having developers and operations engineers manually build, test, deploy your apps daily.
+
+Question options:
+Unselected
+True
+Selected
+False
+Question 5		1 / 1 point
+Site Reliability Engineering includes operating your systems; monitoring and orchestration. It also includes designing for operability in the first place.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 6		1 / 1 point
+What should go in your project's single source code repository?
+
+Question options:
+Unselected
+Binaries compiled from your source code
+
+Selected
+Database Schema
+
+Selected
+Install Scripts
+
+Selected
+Code
+
+Selected
+Test Scripts
+
+Unselected
+Operating System
+
+Question 7		1 / 1 point
+A continuous integration server is where (select the best answer):
+
+Question options:
+Unselected
+The build is run automatically on a daily basis
+
+Selected
+The build is run automatically every time the code changes
+
+Unselected
+The build is run automatically every 5 minutes
+
+Unselected
+The build is run manually on a daily basis
+
+Question 8		1 / 1 point
+Frequently committing to the mainline in the source code repository helps developers quickly find out if there's a conflict between two developers (in terms of their code changes).
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 9		0 / 1 point
+When a build breaks, "nobody has a higher priority task than fixing the build" (Kent Beck).
+
+This means that all developers on the team should immediately focus on fixing the build.
+
+Question options:
+Selected
+True
+Unselected
+False
+
+Hide question 9 feedback
+Feedback
+Usually 1 or 2 developers working on fixing the build is sufficient.
+
+Question 10		0 / 1 point
+Which of the following are important characteristics of a good Continuous Integration pipeline?
+
+Question options:
+Selected
+Automated Tests
+
+Unselected
+Runs on Every Checkin to the Source Code Repository
+
+Selected
+Visibility (of the status)
+
+Unselected
+Manual Processes
+
+Selected
+Fast Build and Test
+
+Selected
+Automated Build
+
+Question 11		1 / 1 point
+A stakeholder is anyone that has an interest (or concern) in the realization of the system or tools you are evaluating and planning to bring into the enterprise. The interests of your stakeholders may include features, cost, deployment, operations.
+
+Question options:
+Selected
+True
+Unselected
+False
+Question 12		0 / 1 point
+From the following list, who would most likely be considered stakeholders (or stakeholder groups) for our Enterprise Development Environment?
+
+Question options:
+Selected
+Project Manager (PM)
+
+Selected
+IT Operations Team
+
+Selected
+Test Team
+
+Selected
+Human Resources (HR) Manager
+
+Selected
+Development Team
+
+Unselected
+Office Receptionist
+
+

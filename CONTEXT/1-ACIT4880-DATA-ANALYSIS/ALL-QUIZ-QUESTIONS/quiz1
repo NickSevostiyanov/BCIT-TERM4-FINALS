@@ -1,0 +1,230 @@
+ck Sevostiyanov
+Quiz1 - Results
+Attempt 1 of 1
+Written Feb 3, 2026 1:53 PM - Feb 3, 2026 2:03 PM
+You successfully submitted your quiz.
+Attempt Score	
+7 / 17 - 41.18 %
+Overall Grade (Highest Attempt)	
+7 / 17 - 41.18 %
+Question 1		0 / 1 point
+df.shape returns a tuple of (rows, columns).
+
+Correct Answer
+Unselected	True
+Incorrect Response
+Selected	False
+Question 2		0 / 1 point
+df.head() without arguments returns the first 10 rows by default.
+
+Incorrect Response
+Selected	True
+Correct Answer
+Unselected	False
+Question 3		1 / 1 point
+NumPy arrays support element-wise arithmetic operations without the need for loops.
+
+Selected	True
+Unselected	False
+Question 4		1 / 1 point
+NumPy arrays are more memory-efficient and faster than Python lists for numerical computations.
+
+Selected	True
+Unselected	False
+Question 5		0 / 1 point
+What happens when you perform
+
+arr1 = np.array([1, 2, 3]);
+
+arr2 = arr1;
+
+arr2[0] = 99
+
+Unselected
+Error: cannot modify arr2
+
+Correct AnswerUnselected
+Both arr1 and arr2 become [99, 2, 3]
+
+Unselected
+arr1 becomes [99, 2, 3] and arr2 remains [1, 2, 3]
+
+Incorrect ResponseSelected
+arr1 remains [1, 2, 3] and arr2 becomes [99, 2, 3]
+
+Question 6		0 / 1 point
+What is the main data structure used in pandas for handling tabular data?
+
+Incorrect ResponseSelected
+Dictionary
+
+Correct AnswerUnselected
+DataFrame
+
+Unselected
+Series
+
+Unselected
+Array
+
+Question 7		0 / 1 point
+What will df.iloc[2:5, 1:3] return when df is a pandas DataFrame?
+
+Correct AnswerUnselected
+Rows 2 to 4 and columns 1 to 2
+
+Unselected
+Rows 2 to 4 and columns 1 to 3
+
+Unselected
+Rows 2 to 5 and columns 1 to 2
+
+Incorrect ResponseSelected
+Rows 2 to 5 (inclusive) and columns 1 to 3 (inclusive)
+
+Question 8		0 / 1 point
+Which method permanently modifies the original DataFrame?
+
+Incorrect ResponseSelected
+df.drop('column')
+
+Correct AnswerUnselected
+df.sort_values('column', inplace=True)
+
+Unselected
+df.fillna(0)
+
+Unselected
+df.sort_values('column')
+
+Question 9		1 / 1 point
+How do you select all rows but only the second column from a 2D NumPy array arr?
+
+Selected
+arr[:, 1]
+
+Unselected
+arr[:, 2]
+
+Unselected
+arr[1]
+
+Unselected
+arr[1, :]
+
+Question 10		0 / 1 point
+The iloc[] method in pandas is used for label-based indexing.
+
+Incorrect Response
+Selected	True
+Correct Answer
+Unselected	False
+Question 11		1 / 1 point
+How can you select a specific column named "Age" from a pandas DataFrame df?
+
+Unselected
+df.Age
+
+Unselected
+df["Age"]
+
+Selected
+All of the above
+
+Unselected
+df.loc[:, "Age"]
+
+Question 12		1 / 1 point
+The shape of a NumPy array can be modified using the reshape() method.
+
+Selected	True
+Unselected	False
+Question 13		1 / 1 point
+What function in NumPy is used to find the mean of an array?
+
+Unselected
+np.median()
+
+Unselected
+np.avg()
+
+Selected
+np.mean()
+
+Unselected
+np.mode()
+
+Question 14		0 / 1 point
+What will be the output of the following NumPy code?
+
+import numpy as np  
+arr = np.array([10, 20, 30, 40, 50])  
+print(arr[1:4])
+
+Correct AnswerUnselected
+[20, 30, 40]
+
+Unselected
+[10, 20, 30, 40]
+
+Incorrect ResponseSelected
+[20, 30, 40, 50]
+
+Unselected
+[10, 20, 30]
+
+Question 15		1 / 1 point
+What does df.iloc[:, -1] return when applied to a pandas DataFrame?
+
+Unselected
+The first column
+
+Unselected
+The last row
+
+Selected
+The last column
+
+Unselected
+The first row
+
+Question 16		0 / 1 point
+You run:
+
+import pandas as pd
+df = pd.DataFrame({
+    'Age': [22, 35, 58, 42, 35, None],
+    'Salary': [50000, 80000, 120000, None, 75000, 90000]
+})
+df.describe()
+
+Which statement is TRUE? 
+
+Correct AnswerUnselected
+It excludes None and NaN values from all calculations.
+
+Incorrect ResponseSelected
+It includes missing values as zeros.
+
+Unselected
+It summarizes both numeric and non-numeric columns.
+
+Unselected
+It replaces missing values with column mean before computing.
+
+Question 17		0 / 1 point
+What's the primary difference between a NumPy array and a Pandas Series?
+
+Correct AnswerUnselected
+Series has an index and can hold different data types, arrays are homogeneous
+
+Unselected
+Arrays are always faster
+
+Incorrect ResponseSelected
+Series can only hold numeric data
+
+Unselected
+No significant difference
+
+

@@ -1,0 +1,26 @@
+Instructions
+- q1
+    - Which of below can you use Packer to create an image for?
+        - cloud provider VMs (AWS, GCP...)
+        - containers (docker, podman...)
+        - on premise server VMs
+- q2
+    - True or False: You can use a single Packer template to build images for multiple platforms.
+- q3
+    - Can a packer template can contain multiple build blocks? 
+- q4
+    - Briefly describe the purpose of the following Packer blocks
+        - Source
+        - Build
+        - Provisioner
+- q5
+    - How do you enable and configure logging in Packer and Terraform?
+    - Broad strokes, the method used.
+- q6
+    - How does Packer communicate with a source AWS image when it is creating a new image?
+- q7
+    - When your new image is complete what does packer do with the source image used to creat the new image?
+- q8
+    - In the Packer workflow video some other AWS resources were created by Packer to make a new image. What are some of those resources?
+
+

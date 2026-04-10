@@ -1,0 +1,136 @@
+tion 1 		0 / 1 point
+
+Select the best definition of a Functional Requirement.
+Incorrect ResponseSelected
+	
+
+Defines how the software source code functions
+Correct AnswerUnselected
+	
+
+Defines a function of a system or its component
+Unselected
+	
+
+Defines function points in the software
+Unselected
+	
+
+Defines a function in a procedural program (i.e., a Python function)
+Question 2 		1 / 1 point
+
+Select the best definition of a Non-Functional Requirement.
+Selected
+	
+
+Defines constraints on the design or implementation of a system or its component
+Unselected
+	
+
+Defines the design of the software source code
+Unselected
+	
+
+Defines all code defined outside of functions
+Unselected
+	
+
+Defines the infrastructure needed to support the Functional Requirements
+Question 3 		0 / 1 point
+
+Which of the following are examples of Functional Requirement(s)?
+Unselected
+	
+
+The system should be capable of being restored from database backups within 8 hours of detecting data corruption.
+Correct AnswerIncorrect ResponseUnselected
+	
+
+The system should bill the user's credit card immediately after the user confirms their order.
+Incorrect ResponseSelected
+	
+
+The system should be capable of failing over to a backup installation within 20 minutes of failure on the primary installation.
+Unselected
+	
+
+All data with personally identifiable information (i.e., private data) stored in the database should be encrypted.
+Question 4 		1 / 1 point
+
+For Functional Requirements, a function is described as a specification of behavior between outputs and inputs
+	Selected	True
+	Unselected	False
+Question 5 		1 / 1 point
+
+Functional requirements may involve calculations, technical details, data manipulation and processing, and other specific functionality that define what a system is supposed to accomplish.
+	Selected	True
+	Unselected	False
+Question 6 		1 / 1 point
+
+Non-Functional Requirements are also referred to as Architecturally Significant Requirements. 
+	Selected	True
+	Unselected	False
+Question 7 		1 / 1 point
+
+Non-Functional Requirements are also referred to as System Quality Attributes.
+	Selected	True
+	Unselected	False
+Question 8 		1 / 1 point
+
+Non-Functional Requirements are also referred to as "ilities".
+	Selected	True
+	Unselected	False
+Question 9 		0 / 1 point
+
+Which of the following are categories of Non-Functional Requirements? Select all that apply.
+Correct AnswerIncorrect ResponseUnselected
+	
+
+Security
+Correct Answer
+Selected
+	
+
+Scalability
+Correct Answer
+Selected
+	
+
+Availability
+Correct AnswerIncorrect ResponseUnselected
+	
+
+Usability
+Correct Answer
+Selected
+	
+
+Testability
+Correct Answer
+Selected
+	
+
+Maintainability
+	
+Feedback
+
+All of these are categories of non-functional requirements.
+Question 10 		0 / 1 point
+
+Which of the following would be considered examples of Non-Functional Requirement(s)?
+Incorrect ResponseSelected
+	
+
+A web application should allow users to enter orders and be informed when the order completes.
+Unselected
+	
+
+A web application should provide e-mail notification when an order completes.
+Correct AnswerIncorrect ResponseUnselected
+	
+
+A web application should work on the Chrome, Firefox and Safari browsers.
+Correct AnswerIncorrect ResponseUnselected
+	
+
+A web application should be capable enough to handle 2 million concurrent users without affecting its performance.

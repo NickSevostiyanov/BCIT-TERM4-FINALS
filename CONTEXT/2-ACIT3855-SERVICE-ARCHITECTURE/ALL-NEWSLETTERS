@@ -1,0 +1,163 @@
+kip to main content
+
+ACIT-3855-0 - Service Based Architectures (merge 202610 89228 88348 87422 88346)
+
+
+
+
+Update alerts - You have new alerts
+
+NS
+
+Course Home
+Content
+
+Activities
+Grades
+
+Course Tools
+
+myTools
+E-Mail
+Help!
+Edit Course
+News
+Search For…
+Show Search Options
+Title	Start Date
+Assignment 1
+Mar 25, 2026 7:28 AM
+Your one (and only) assignment for the course has been posted (Content -> Assignment 1).
+
+It is due before the end of your last class for both the demo and submission. It will be good practice for the final exam.
+
+Lesson 10 Pre-Reading
+Mar 20, 2026 8:54 AM
+Reading
+
+Document ACIT3855_Winter2026_Lesson10_PreReading.pdf in the Lesson 10 folder
+Quiz Topics
+
+Docker and Microservices
+Same Origin Policy and CORS
+Lesson 8 Pre-Reading
+Mar 2, 2026 8:58 AM
+Reading
+
+Document ACIT3855_Winter2026_Lesson8_PreReading.pdf in the Lesson 8 folder
+Quiz Topics
+
+Questions on Docker and Virtual Environments from the above reading.
+Midterm Exam
+Feb 19, 2026 9:12 AM
+The midterm exam will take place next week: Tuesday, Feb. 24th from 2-4pm (2 hours).
+
+The exam is delivered on paper - you cannot use any electronic devices during the exam. However, it is fully open book - you can bring as many printouts, cheatsheets and paper notes as you want.
+
+During the exam, you will have to:
+
+answer multiple choice questions
+provide (short) written answers to questions
+implement a very simple API
+fill the blanks in an OpenAPI YAML file
+write basic Python code for the API endpoints (app.py)
+The exam will cover all topics (lectures and labs) that you have been working on in weeks 1 to 7.
+
+Lesson 7 - No Quiz
+Feb 13, 2026 8:19 AM
+There will be no quiz in Week 7. You will be demoing your Lab 6 and continuing with Kafka and Event Sourcing in Lab 7.
+
+We will also do a review/preview of the midterm exam.
+
+Lesson 6 Pre-Reading
+Feb 9, 2026 6:08 AM
+Reading
+
+Document ACIT3855_Winter2026_Lesson5_PreReading.pdf in the Lesson 6 folder
+Quiz Topics
+
+5 Benefits of Messaging with Microservices
+Kafka
+Definitions
+Use Cases, Topics, Publishers, Consumers, Brokers
+Lesson 5 Pre-Reading
+Feb 2, 2026 7:05 AM
+Reading
+
+Document ACIT3855_Winter2026_Lesson5_PreReading.pdf in the Lesson 5 folder
+Quiz Topics
+
+OpenAPI 3.0 Specification, including:
+Metadata
+Paths
+Requests/Responses
+Parameters
+Reuse
+Periodic Processing
+What does the apscheduler module do?
+Office Hours - Jan 29th Canceled
+Jan 28, 2026 5:35 PM
+Just a note that I will not have office hours at noon in the Tech Hub on Thursday, Jan 29th due to a faculty meeting.
+
+I will be available by appointment after class or via Discord.
+
+Lesson 4 Pre-Reading
+Jan 26, 2026 5:57 AM
+Reading
+
+Document ACIT3855_Winter2026_Lesson4_PreReading.pdf in the Lesson 4 folder
+Quiz Topics
+
+The quiz will cover the following from the reading:
+Tracing and Event Logging
+Python Logging Module
+Configuration File Types
+Attention to today's morning set
+Jan 14, 2026 8:06 AM
+Several Canada line sky train stations are closed this morning causing trains to cancel their services. I’m on my way with a mix of different transportations which might delay my arrival. Please be patient and wait for the morning class to start a little bit late. 
+
+
+Best,
+
+rafi. 
+
+Lesson 2 Preparation
+Jan 11, 2026 9:57 AM
+The Lesson 2 reading has been posted to Content -> Lesson 2 - Microservices
+
+Please review it prior to Lesson 2 class as the Quiz and Lab will be based on it.
+
+You should also install JMeter in preparation for Lab 2: http://jmeter.apache.org (look for the Download Releases page and download and extract the binary)
+
+Instructor Office Hours
+Jan 4, 2026 8:00 AM
+Below are the office hours for each 3855 instructor:
+
+Mike Mulder (email: mmulder10@bcit.ca):
+In Person on Tuesdays and Thursdays from noon to 1 p.m. in the Tech Hub
+Discord (asynchronous)
+Rafi Mohammad (email: rafi_mohammad@bcit.ca):
+Monday 4:30 PM to 6:30 PM online
+Tuesday 12:30 PM to 1:30 PM @DTC01-528A
+Thursday 11:30 AM to 1:30 PM @DTC01-528A
+Welcome to ACIT 3855
+Jan 4, 2026 7:56 AM
+Welcome to ACIT 3855 - Service Based Architectures - where you will be introduced to the development and deployment of service based applications typical of enterprise environments.
+
+You will be coding throughout the course, so please make sure you have Python and your IDE (i.e., VS Code, PyCharm, etc) setup and ready to go for the labs.
+
+There is a Discord server you may join to ask questions outside of class-time or office hours:
+
+https://discord.gg/yrCFYZEnQj
+
+And if you have any questions for your instructor, here is our contact information:
+
+Mike Mulder - Contact me on Discord or by e-mail (mmulder10@bcit.ca)
+Rafi Mohammad - Contact me by e-mail (rafi_mohammad@bcit.ca)
+See you in class.
+
+Rafi and Mike
+
+Results Per Page
+20 per page
+

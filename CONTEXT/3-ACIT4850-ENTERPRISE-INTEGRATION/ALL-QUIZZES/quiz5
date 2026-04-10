@@ -1,0 +1,164 @@
+ck Sevostiyanov
+Quiz 5 - Results
+Attempt 1 of 1
+Written Feb 11, 2026 11:51 AM - Feb 11, 2026 11:54 AM
+Released Jun 22, 2023 5:21 AM
+Attempt Score	
+8 / 10 - 80 %
+Overall Grade (Highest Attempt)	
+8 / 10 - 80 %
+Question 1		1 / 1 point
+In Jenkins pipeline, a shared library consists of three items (one of which is optional). What are those three items?
+
+Selected
+Name
+
+Selected
+Source Code Retrieval Method
+
+Unselected
+Jenkinsfile
+
+Unselected
+DRY
+
+Selected
+Version
+
+Question 2		1 / 1 point
+Shared Libraries in Jenkins pipelines let us share parts of Pipelines between various projects to reduce redundancies and keep code "DRY".
+
+Selected	True
+Unselected	False
+Question 3		1 / 1 point
+Shared libraries for Jenkins pipelines can include code written in which language?
+
+Unselected
+Java
+
+Unselected
+Python
+
+Selected
+Groovy
+
+Unselected
+Ruby
+
+Question 4		0 / 1 point
+Given the shared library below in the file vars/evenOrOdd.groovy in my-shared-library, how would you import and call the code:
+
+// vars/evenOrOdd.groovy
+def call(int buildNumber) {
+  if (buildNumber % 2 == 0) {
+    pipeline {
+      agent any
+      stages {
+        stage('Even Stage') {
+          steps {
+            echo "The build number is even"
+          }
+        }
+      }
+    }
+  } else {
+    pipeline {
+      agent any
+      stages {
+        stage('Odd Stage') {
+          steps {
+            echo "The build number is odd"
+          }
+        }
+      }
+    }
+  }
+}
+Incorrect ResponseSelected
+@Library('my-shared-library') _
+
+my-shared-library.evenOrOdd(currentBuild.getNumber())
+
+Unselected
+@Library('my-shared-library')
+
+evenOrOdd(currentBuild.getNumber())
+
+Correct AnswerUnselected
+@Library('my-shared-library') _
+
+evenOrOdd(currentBuild.getNumber())
+
+Unselected
+@Library('my-shared-library') _
+
+my-shared-library.call(currentBuild.getNumber())
+
+Question 5		1 / 1 point
+A Shared Library Repository is organized into the following folders:
+
+/src - Holds Groovy source files, typically as classes
+
+/vars - Holds script files that are exposed as variables in Pipelines
+
+/resources - Holds non-Groovy files
+
+Selected	True
+Unselected	False
+Question 6		2 / 2 points
+There are several tools and resources that may help with development of Jenkins Pipelines. Select the tools available from the list below (hint: there are four)
+
+Selected
+Blue Ocean Editor
+
+Unselected
+Jenkinsfile IDE
+
+Selected
+Replay Pipeline Runs with Modifications
+
+Unselected
+Microsoft Word
+
+Selected
+IDE Plugin (for Eclipse, VisualCode, etc).
+
+Selected
+Command-Line Pipeline Linter
+
+Question 7		0 / 1 point
+In Lab 5 you created a Jenkinfile that defined a pipeline for a Python program. What were the stages in that pipeline?
+
+Unselected
+Requirements, Unit Test, Deploy
+
+Correct AnswerUnselected
+Build, Unit Test, Integration Test
+
+Incorrect ResponseSelected
+Requirements, Unit Test, Integration Test
+
+Unselected
+Build, Unit Test, Deploy
+
+Question 8		1 / 1 point
+Why would we want to use shared libraries for Jenkins pipelines?
+
+Unselected
+Complexity
+
+Selected
+Code Reuse
+
+Unselected
+Code Structure
+
+Unselected
+Code Quality
+
+Question 9		1 / 1 point
+Global Pipeline Libraries, defined in the Jenkins Configuration, are only available to specific pipeline jobs in the Jenkins server.
+
+Unselected	True
+Selected	False
+
