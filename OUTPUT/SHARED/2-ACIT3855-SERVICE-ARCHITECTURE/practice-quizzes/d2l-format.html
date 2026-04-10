@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT3855 — Final Exam Practice Quiz (D2L Format)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 14px; background: #f4f4f4; color: #222; }
+  .header { background: #1a3a5c; color: white; padding: 20px 30px; }
+  .header h1 { font-size: 20px; }
+  .header p { font-size: 13px; margin-top: 5px; opacity: 0.85; }
+  .container { max-width: 880px; margin: 24px auto; padding: 0 16px 60px; }
+  .quiz-info { background: #fff; border: 1px solid #ccc; border-left: 5px solid #1a3a5c; padding: 14px 18px; margin-bottom: 24px; border-radius: 3px; font-size: 13px; }
+  .quiz-info p { margin: 4px 0; }
+  .question-block { background: #fff; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 18px; }
+  .question-header { background: #e8edf2; padding: 10px 16px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; font-size: 12px; color: #555; }
+  .question-body { padding: 16px 18px; }
+  .question-text { font-size: 14px; font-weight: bold; margin-bottom: 14px; line-height: 1.7; }
+  .code-block { background: #f5f5f5; border: 1px solid #ddd; padding: 10px 14px; font-family: monospace; font-size: 13px; margin: 8px 0 12px; border-radius: 3px; white-space: pre; overflow-x: auto; }
+  .option { display: flex; align-items: flex-start; margin: 8px 0; cursor: pointer; padding: 8px 10px; border-radius: 3px; transition: background 0.15s; }
+  .option:hover { background: #eef2ff; }
+  .option input { margin-right: 10px; margin-top: 2px; flex-shrink: 0; }
+  .option label { cursor: pointer; line-height: 1.5; }
+  .option.correct-highlight { background: #d4edda !important; border: 1px solid #28a745; }
+  .option.wrong-highlight { background: #f8d7da !important; border: 1px solid #dc3545; }
+  .submit-section { text-align: center; margin: 30px 0 10px; }
+  .submit-btn { background: #1a3a5c; color: white; border: none; padding: 12px 40px; font-size: 15px; border-radius: 4px; cursor: pointer; }
+  .submit-btn:hover { background: #2a5080; }
+  .result-box { display: none; background: #fff; border: 2px solid #1a3a5c; border-radius: 6px; padding: 24px; text-align: center; margin-top: 24px; }
+  .result-box h2 { font-size: 22px; color: #1a3a5c; }
+  .score { font-size: 42px; font-weight: bold; margin: 12px 0; }
+  .score.pass { color: #28a745; }
+  .score.fail { color: #dc3545; }
+  .type-label { font-size: 11px; text-transform: uppercase; font-weight: bold; color: #777; letter-spacing: 0.5px; }
+  .multi-note { font-size: 11px; color: #888; font-style: italic; margin-top: -8px; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ACIT3855 — Service Based Architectures</h1>
+  <p>Final Exam Practice Quiz &nbsp;|&nbsp; D2L Format &nbsp;|&nbsp; 30 Questions &nbsp;|&nbsp; Multi-select where noted</p>
+</div>
+
+<div class="container">
+  <div class="quiz-info">
+    <p><strong>Instructions:</strong> Select all correct answers where noted. Single-best-answer questions use radio buttons. Click <strong>Submit Quiz</strong> to see your score and highlighted answers.</p>
+    <p><strong>Exam:</strong> Mon Apr 20, 2026 &nbsp;|&nbsp; 2:30–5:30 PM &nbsp;|&nbsp; DTC 825 &nbsp;|&nbsp; ⭐ OPEN BOOK — bring printed cheatsheets</p>
+    <p><strong>Format on real exam:</strong> MC + short answers + implement simple API + fill OpenAPI YAML + write Python app.py code</p>
+  </div>
+
+  <form id="quizForm">
+
+    <!-- Q1 multi-select -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Select All That Apply</span><span>Question 1 of 30 &nbsp;|&nbsp; 3 correct answers</span></div>
+      <div class="question-body">
+        <div class="question-text">1. Based on Martin Fowler's Microservices Guide, identify the BENEFITS of a Microservices Architecture.</div>
+        <p class="multi-note">Select all that apply</p>
+        <div class="option"><input type="checkbox" name="q1" value="A"><label>Technology Diversity</label></div>
+        <div class="option"><input type="checkbox" name="q1" value="B"><label>Distribution</label></div>
+        <div class="option"><input type="checkbox" name="q1" value="C"><label>Strong Module Boundaries</label></div>
+        <div class="option"><input type="checkbox" name="q1" value="D"><label>Eventual Consistency</label></div>
+        <div class="option"><input type="checkbox" name="q1" value="E"><label>Independent Deployment</label></div>
+      </div>
+    </div>
+
+    <!-- Q2 multi-select -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Select All That Apply</span><span>Question 2 of 30 &nbsp;|&nbsp; 3 correct answers</span></div>
+      <div class="question-body">
+        <div class="question-text">2. Identify the COSTS of a Microservices Architecture.</div>
+        <p class="multi-note">Select all that apply</p>
+        <div class="option"><input type="checkbox" name="q2" value="A"><label>Independent Deployment</label></div>
+        <div class="option"><input type="checkbox" name="q2" value="B"><label>Eventual Consistency</label></div>
+        <div class="option"><input type="checkbox" name="q2" value="C"><label>Technology Diversity</label></div>
+        <div class="option"><input type="checkbox" name="q2" value="D"><label>Operational Complexity</label></div>
+        <div class="option"><input type="checkbox" name="q2" value="E"><label>Distribution</label></div>
+      </div>
+    </div>
+
+    <!-- Q3 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 3 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">3. What is the API of a service typically implemented as?</div>
+        <div class="option"><input type="radio" name="q3" value="A"><label>Class Methods</label></div>
+        <div class="option"><input type="radio" name="q3" value="B"><label>Instance Methods</label></div>
+        <div class="option"><input type="radio" name="q3" value="C"><label>Public Methods</label></div>
+        <div class="option"><input type="radio" name="q3" value="D"><label>HTTP Methods</label></div>
+      </div>
+    </div>
+
+    <!-- Q4 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 4 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">4. Microservices are typically organized around business capabilities (not technology layers).</div>
+        <div class="option"><input type="radio" name="q4" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q4" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q5 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 5 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">5. How do you explicitly route an endpoint from your OpenAPI specification to a Python function in a Connexion application?</div>
+        <div class="option"><input type="radio" name="q5" value="A"><label>path</label></div>
+        <div class="option"><input type="radio" name="q5" value="B"><label>function</label></div>
+        <div class="option"><input type="radio" name="q5" value="C"><label>operationId</label></div>
+        <div class="option"><input type="radio" name="q5" value="D"><label>paths</label></div>
+      </div>
+    </div>
+
+    <!-- Q6 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 6 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">6. What parameter do you add when creating a Connexion app to enable automatic request parameter validation against your OpenAPI spec?</div>
+        <div class="option"><input type="radio" name="q6" value="A"><label>validator_map</label></div>
+        <div class="option"><input type="radio" name="q6" value="B"><label>validation</label></div>
+        <div class="option"><input type="radio" name="q6" value="C"><label>strict_validation</label></div>
+        <div class="option"><input type="radio" name="q6" value="D"><label>validate_responses</label></div>
+      </div>
+    </div>
+
+    <!-- Q7 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 7 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">7. Why would we use components in an OpenAPI 3.0 specification?</div>
+        <div class="option"><input type="radio" name="q7" value="A"><label>Organization</label></div>
+        <div class="option"><input type="radio" name="q7" value="B"><label>Reuse</label></div>
+        <div class="option"><input type="radio" name="q7" value="C"><label>Supports multiple properties</label></div>
+        <div class="option"><input type="radio" name="q7" value="D"><label>It's required in every spec</label></div>
+      </div>
+    </div>
+
+    <!-- Q8 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 8 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">8. OpenAPI specifications should be written in JSON because it is easier to read and write than YAML.</div>
+        <div class="option"><input type="radio" name="q8" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q8" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q9 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 9 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">9. What is the best definition of Polyglot Persistence in Microservices?</div>
+        <div class="option"><input type="radio" name="q9" value="A"><label>Each Service Manages Its Own Database</label></div>
+        <div class="option"><input type="radio" name="q9" value="B"><label>Each Service Uses a Different Programming Language</label></div>
+        <div class="option"><input type="radio" name="q9" value="C"><label>Each Service Uses a NoSQL DB</label></div>
+        <div class="option"><input type="radio" name="q9" value="D"><label>Each Service Must Use A Different Database Technology</label></div>
+      </div>
+    </div>
+
+    <!-- Q10 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 10 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">10. A Monolith cannot use Polyglot Persistence.</div>
+        <div class="option"><input type="radio" name="q10" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q10" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q11 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 11 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">11. Which of the following are characteristics of EVENT LOGGING? (select the best answer)</div>
+        <div class="option"><input type="radio" name="q11" value="A"><label>Consumed primarily by developers</label></div>
+        <div class="option"><input type="radio" name="q11" value="B"><label>Logs low-level information and can be noisy</label></div>
+        <div class="option"><input type="radio" name="q11" value="C"><label>Logs high-level information, used by system administrators, must not be noisy</label></div>
+        <div class="option"><input type="radio" name="q11" value="D"><label>Used primarily for debugging purposes</label></div>
+      </div>
+    </div>
+
+    <!-- Q12 multi-select -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Select All That Apply</span><span>Question 12 of 30 &nbsp;|&nbsp; 5 correct answers</span></div>
+      <div class="question-body">
+        <div class="question-text">12. Which of the following are valid configuration file formats that may be used by a Python program?</div>
+        <p class="multi-note">Select all that apply</p>
+        <div class="option"><input type="checkbox" name="q12" value="A"><label>XML</label></div>
+        <div class="option"><input type="checkbox" name="q12" value="B"><label>INI</label></div>
+        <div class="option"><input type="checkbox" name="q12" value="C"><label>YAML</label></div>
+        <div class="option"><input type="checkbox" name="q12" value="D"><label>Python</label></div>
+        <div class="option"><input type="checkbox" name="q12" value="E"><label>JSON</label></div>
+        <div class="option"><input type="checkbox" name="q12" value="F"><label>CSV</label></div>
+      </div>
+    </div>
+
+    <!-- Q13 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 13 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">13. In the Python logging module, what does the <code>level</code> represent in the configuration?</div>
+        <div class="option"><input type="radio" name="q13" value="A"><label>The minimum severity logging level reported</label></div>
+        <div class="option"><input type="radio" name="q13" value="B"><label>The maximum severity logging level before the program crashes</label></div>
+        <div class="option"><input type="radio" name="q13" value="C"><label>The number of logging levels reported</label></div>
+        <div class="option"><input type="radio" name="q13" value="D"><label>The maximum severity logging level reported</label></div>
+      </div>
+    </div>
+
+    <!-- Q14 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 14 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">14. RESTful APIs using HTTP is a form of:</div>
+        <div class="option"><input type="radio" name="q14" value="A"><label>Asynchronous Communication</label></div>
+        <div class="option"><input type="radio" name="q14" value="B"><label>Synchronous Communication</label></div>
+        <div class="option"><input type="radio" name="q14" value="C"><label>Pub/Sub Messaging</label></div>
+        <div class="option"><input type="radio" name="q14" value="D"><label>Decoupling</label></div>
+      </div>
+    </div>
+
+    <!-- Q15 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 15 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">15. Messaging is a form of:</div>
+        <div class="option"><input type="radio" name="q15" value="A"><label>Synchronous Communication</label></div>
+        <div class="option"><input type="radio" name="q15" value="B"><label>Database Communication</label></div>
+        <div class="option"><input type="radio" name="q15" value="C"><label>Asynchronous Communication</label></div>
+        <div class="option"><input type="radio" name="q15" value="D"><label>Coupling</label></div>
+      </div>
+    </div>
+
+    <!-- Q16 multi-select -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Select All That Apply</span><span>Question 16 of 30 &nbsp;|&nbsp; 4 correct answers</span></div>
+      <div class="question-body">
+        <div class="question-text">16. What are the advantages of using messaging when deploying microservices?</div>
+        <p class="multi-note">Select 4 correct answers</p>
+        <div class="option"><input type="checkbox" name="q16" value="A"><label>Scalability</label></div>
+        <div class="option"><input type="checkbox" name="q16" value="B"><label>High-Availability</label></div>
+        <div class="option"><input type="checkbox" name="q16" value="C"><label>Producer/Consumer Decoupling</label></div>
+        <div class="option"><input type="checkbox" name="q16" value="D"><label>Producer/Consumer Coupling</label></div>
+        <div class="option"><input type="checkbox" name="q16" value="E"><label>Publish/Subscribe Pattern</label></div>
+        <div class="option"><input type="checkbox" name="q16" value="F"><label>High-Security</label></div>
+      </div>
+    </div>
+
+    <!-- Q17 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 17 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">17. Every instance of Kafka responsible for message exchange is called a Broker. Kafka can only be deployed on a single stand-alone machine.</div>
+        <div class="option"><input type="radio" name="q17" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q17" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q18 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 18 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">18. A Docker volume associated with a container is automatically removed when the container is removed.</div>
+        <div class="option"><input type="radio" name="q18" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q18" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q19 multi-select -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Select All That Apply</span><span>Question 19 of 30 &nbsp;|&nbsp; 3 correct answers</span></div>
+      <div class="question-body">
+        <div class="question-text">19. The three types of mounts you can apply to a Docker container are:</div>
+        <p class="multi-note">Select 3 correct answers</p>
+        <div class="option"><input type="checkbox" name="q19" value="A"><label>tmpfs</label></div>
+        <div class="option"><input type="checkbox" name="q19" value="B"><label>source</label></div>
+        <div class="option"><input type="checkbox" name="q19" value="C"><label>volume</label></div>
+        <div class="option"><input type="checkbox" name="q19" value="D"><label>bind</label></div>
+        <div class="option"><input type="checkbox" name="q19" value="E"><label>volume-opt</label></div>
+      </div>
+    </div>
+
+    <!-- Q20 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 20 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">20. Data stored within the filesystem on a Docker container (not in a volume or bind mount) is deleted in which case?</div>
+        <div class="option"><input type="radio" name="q20" value="A"><label>When the container is stopped</label></div>
+        <div class="option"><input type="radio" name="q20" value="B"><label>When the image is built</label></div>
+        <div class="option"><input type="radio" name="q20" value="C"><label>When the container is removed</label></div>
+        <div class="option"><input type="radio" name="q20" value="D"><label>When the image is removed</label></div>
+      </div>
+    </div>
+
+    <!-- Q21 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 21 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">21. In a blue/green deployment, the BLUE is the new version and the GREEN is the existing version.</div>
+        <div class="option"><input type="radio" name="q21" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q21" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q22 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 22 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">22. What is the default load balancing strategy for NGINX?</div>
+        <div class="option"><input type="radio" name="q22" value="A"><label>IP Hash</label></div>
+        <div class="option"><input type="radio" name="q22" value="B"><label>Least Connected</label></div>
+        <div class="option"><input type="radio" name="q22" value="C"><label>Round Robin</label></div>
+        <div class="option"><input type="radio" name="q22" value="D"><label>Random with Two Choices</label></div>
+      </div>
+    </div>
+
+    <!-- Q23 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 23 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">23. A canary deployment strategy allows testing of a new feature in production. Who tests this feature?</div>
+        <div class="option"><input type="radio" name="q23" value="A"><label>Developer</label></div>
+        <div class="option"><input type="radio" name="q23" value="B"><label>Sales Team</label></div>
+        <div class="option"><input type="radio" name="q23" value="C"><label>Testers</label></div>
+        <div class="option"><input type="radio" name="q23" value="D"><label>End Users</label></div>
+      </div>
+    </div>
+
+    <!-- Q24 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 24 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">24. Which deployment strategy does Docker Compose provide?</div>
+        <div class="option"><input type="radio" name="q24" value="A"><label>Ramped</label></div>
+        <div class="option"><input type="radio" name="q24" value="B"><label>Recreate</label></div>
+        <div class="option"><input type="radio" name="q24" value="C"><label>Blue/Green</label></div>
+        <div class="option"><input type="radio" name="q24" value="D"><label>Canary</label></div>
+      </div>
+    </div>
+
+    <!-- Q25 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 25 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">25. The Recreate deployment strategy for Kubernetes is a high-availability strategy because it minimizes downtime.</div>
+        <div class="option"><input type="radio" name="q25" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q25" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q26 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 26 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">26. NGINX is an example of a hardware load balancer.</div>
+        <div class="option"><input type="radio" name="q26" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q26" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q27 multi-select -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Select All That Apply</span><span>Question 27 of 30 &nbsp;|&nbsp; 4 correct answers</span></div>
+      <div class="question-body">
+        <div class="question-text">27. From the list below, what are examples of automated microservice testing segments?</div>
+        <p class="multi-note">Select 4 correct answers</p>
+        <div class="option"><input type="checkbox" name="q27" value="A"><label>Database Validity Testing</label></div>
+        <div class="option"><input type="checkbox" name="q27" value="B"><label>End to End Testing</label></div>
+        <div class="option"><input type="checkbox" name="q27" value="C"><label>UI Functional Testing</label></div>
+        <div class="option"><input type="checkbox" name="q27" value="D"><label>Unit Testing</label></div>
+        <div class="option"><input type="checkbox" name="q27" value="E"><label>Integration Testing</label></div>
+        <div class="option"><input type="checkbox" name="q27" value="F"><label>Code Branch Testing</label></div>
+      </div>
+    </div>
+
+    <!-- Q28 T/F -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span><span>Question 28 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">28. An example of Distributed Tracing in our system would be observations of a single event as it is received by the Receiver Service, stored by the Storage Service, and processed by the Processing Service.</div>
+        <div class="option"><input type="radio" name="q28" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q28" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q29 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 29 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">29. What algorithm best describes Round Robin load balancing?</div>
+        <div class="option"><input type="radio" name="q29" value="A"><label>Picks two servers at random and selects one using the Least Connections algorithm</label></div>
+        <div class="option"><input type="radio" name="q29" value="B"><label>Sends the request to the server with the fewest current connections</label></div>
+        <div class="option"><input type="radio" name="q29" value="C"><label>Requests are distributed across a group of servers sequentially</label></div>
+        <div class="option"><input type="radio" name="q29" value="D"><label>The IP address of the client determines which server receives the request</label></div>
+      </div>
+    </div>
+
+    <!-- Q30 radio -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Single Best Answer</span><span>Question 30 of 30</span></div>
+      <div class="question-body">
+        <div class="question-text">30. When a Producer or Consumer loses its connection to the Kafka cluster, what is the best practice?</div>
+        <div class="option"><input type="radio" name="q30" value="A"><label>Log the error and do nothing — Kafka will reconnect automatically</label></div>
+        <div class="option"><input type="radio" name="q30" value="B"><label>Restart the consumer or producer object to re-establish the connection</label></div>
+        <div class="option"><input type="radio" name="q30" value="C"><label>Restart the entire Docker container</label></div>
+        <div class="option"><input type="radio" name="q30" value="D"><label>Switch to a REST API call instead</label></div>
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <button type="button" class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+  </form>
+
+  <div class="result-box" id="resultBox">
+    <h2>Quiz Complete</h2>
+    <div class="score" id="scoreDisplay"></div>
+    <div id="gradeDisplay" style="font-size:16px; color:#555; margin-top:8px;"></div>
+    <p style="margin-top:16px; font-size:13px; color:#666;">Scroll up to review highlighted answers (green = correct, red = wrong selection).</p>
+  </div>
+</div>
+
+<script>
+// Answers: for multi-select, correct values are arrays
+const answers = {
+  q1:  { correct: ['A','C','E'], type: 'multi' },
+  q2:  { correct: ['B','D','E'], type: 'multi' },
+  q3:  { correct: 'D', type: 'single' },
+  q4:  { correct: 'A', type: 'single' },
+  q5:  { correct: 'C', type: 'single' },
+  q6:  { correct: 'C', type: 'single' },
+  q7:  { correct: 'B', type: 'single' },
+  q8:  { correct: 'B', type: 'single' },
+  q9:  { correct: 'A', type: 'single' },
+  q10: { correct: 'B', type: 'single' },
+  q11: { correct: 'C', type: 'single' },
+  q12: { correct: ['A','B','C','D','E'], type: 'multi' },
+  q13: { correct: 'A', type: 'single' },
+  q14: { correct: 'B', type: 'single' },
+  q15: { correct: 'C', type: 'single' },
+  q16: { correct: ['A','B','C','E'], type: 'multi' },
+  q17: { correct: 'B', type: 'single' },
+  q18: { correct: 'B', type: 'single' },
+  q19: { correct: ['A','C','D'], type: 'multi' },
+  q20: { correct: 'C', type: 'single' },
+  q21: { correct: 'A', type: 'single' },
+  q22: { correct: 'C', type: 'single' },
+  q23: { correct: 'D', type: 'single' },
+  q24: { correct: 'B', type: 'single' },
+  q25: { correct: 'B', type: 'single' },
+  q26: { correct: 'B', type: 'single' },
+  q27: { correct: ['B','C','D','E'], type: 'multi' },
+  q28: { correct: 'A', type: 'single' },
+  q29: { correct: 'C', type: 'single' },
+  q30: { correct: 'B', type: 'single' }
+};
+
+function arraysEqual(a, b) {
+  return a.length === b.length && [...a].sort().every((v, i) => v === [...b].sort()[i]);
+}
+
+function submitQuiz() {
+  let score = 0;
+  const total = Object.keys(answers).length;
+
+  for (const [qName, ans] of Object.entries(answers)) {
+    const allOptions = document.querySelectorAll(`input[name="${qName}"]`);
+
+    if (ans.type === 'single') {
+      const selected = document.querySelector(`input[name="${qName}"]:checked`);
+      allOptions.forEach(input => {
+        const div = input.closest('.option');
+        div.classList.remove('correct-highlight','wrong-highlight');
+        if (input.value === ans.correct) div.classList.add('correct-highlight');
+      });
+      if (selected && selected.value === ans.correct) score++;
+      else if (selected) selected.closest('.option').classList.add('wrong-highlight');
+    } else {
+      const selected = [...document.querySelectorAll(`input[name="${qName}"]:checked`)].map(i => i.value);
+      allOptions.forEach(input => {
+        const div = input.closest('.option');
+        div.classList.remove('correct-highlight','wrong-highlight');
+        if (ans.correct.includes(input.value)) div.classList.add('correct-highlight');
+      });
+      selected.forEach(v => {
+        if (!ans.correct.includes(v)) {
+          document.querySelector(`input[name="${qName}"][value="${v}"]`).closest('.option').classList.add('wrong-highlight');
+        }
+      });
+      if (arraysEqual(selected, ans.correct)) score++;
+    }
+  }
+
+  const pct = Math.round((score / total) * 100);
+  const sc = document.getElementById('scoreDisplay');
+  sc.textContent = `${score} / ${total}`;
+  sc.className = 'score ' + (pct >= 70 ? 'pass' : 'fail');
+  let letter = pct >= 90 ? 'A' : pct >= 80 ? 'B' : pct >= 70 ? 'C' : pct >= 60 ? 'D' : 'F';
+  document.getElementById('gradeDisplay').innerHTML = `${pct}% &nbsp;|&nbsp; Grade: <strong>${letter}</strong> &nbsp;|&nbsp; ${pct >= 70 ? '✓ Pass' : '✗ Review study guide + cheatsheet'}`;
+  const rb = document.getElementById('resultBox');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

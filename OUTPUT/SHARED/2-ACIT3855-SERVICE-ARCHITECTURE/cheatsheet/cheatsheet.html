@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT3855 — Final Exam Cheatsheet</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11px; color: #111; background: white; }
+  @media print {
+    body { font-size: 10px; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+  }
+  .page { max-width: 1100px; margin: 0 auto; padding: 10px 14px; }
+  h1 { font-size: 16px; background: #1a3a5c; color: white; padding: 8px 12px; margin-bottom: 6px; }
+  h2 { font-size: 13px; background: #2a5080; color: white; padding: 5px 10px; margin: 10px 0 4px; }
+  h3 { font-size: 11px; color: #1a3a5c; border-bottom: 1px solid #1a3a5c; padding-bottom: 2px; margin: 8px 0 4px; font-weight: bold; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+  .box { border: 1px solid #ccc; padding: 6px 8px; border-radius: 2px; background: #fafafa; }
+  .box.blue { background: #edf2fa; border-color: #3a6ea5; }
+  .box.green { background: #edfaed; border-color: #3a9a3a; }
+  .box.yellow { background: #fafaed; border-color: #9a9a3a; }
+  .box.red { background: #faeaed; border-color: #9a3a3a; }
+  code { background: #f0f0f0; padding: 1px 4px; font-family: monospace; font-size: 10px; border-radius: 2px; }
+  pre { background: #f0f0f0; padding: 6px 8px; font-family: monospace; font-size: 10px; border-radius: 2px; margin: 4px 0; white-space: pre-wrap; border: 1px solid #ddd; line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0; font-size: 10px; }
+  th { background: #1a3a5c; color: white; padding: 3px 6px; text-align: left; }
+  td { padding: 3px 6px; border-bottom: 1px solid #eee; }
+  tr:nth-child(even) td { background: #f5f5f5; }
+  ul { padding-left: 16px; margin: 3px 0; }
+  li { margin: 2px 0; line-height: 1.4; }
+  .t { color: #28a745; font-weight: bold; }
+  .f { color: #dc3545; font-weight: bold; }
+  .warn { background: #fff3cd; border: 1px solid #ffc107; padding: 4px 8px; border-radius: 2px; margin: 4px 0; font-size: 10px; }
+  .key { background: #1a3a5c; color: white; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+  .divider { border: none; border-top: 2px solid #1a3a5c; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>ACIT3855 — Service Based Architectures | FINAL EXAM CHEATSHEET | Apr 20, 2026 @ 2:30PM | DTC 825 | OPEN BOOK ✓</h1>
+
+<!-- ============================================================ -->
+<h2>1. MICROSERVICES vs MONOLITH (Martin Fowler)</h2>
+<div class="grid2">
+<div class="box blue">
+<h3>Benefits of Microservices ✓</h3>
+<ul>
+  <li><strong>Technology Diversity</strong> — mix languages, frameworks, DBs per service (polyglot)</li>
+  <li><strong>Strong Module Boundaries</strong> — enforces modularity, important for large teams</li>
+  <li><strong>Independent Deployment</strong> — deploy one service without touching others</li>
+  <li><strong>Scalability</strong> — scale ONLY the bottleneck service</li>
+</ul>
+</div>
+<div class="box red">
+<h3>Costs of Microservices ✗</h3>
+<ul>
+  <li><strong>Eventual Consistency</strong> — no cross-service DB transactions; everyone manages it</li>
+  <li><strong>Operational Complexity</strong> — need mature ops team, many services being redeployed</li>
+  <li><strong>Distribution</strong> — remote calls slow, always at risk of failure</li>
+</ul>
+</div>
+</div>
+
+<div class="grid3">
+<div class="box">
+<h3>Key Terms</h3>
+<ul>
+  <li><strong>Polyglot</strong> — each service uses different language/tech</li>
+  <li><strong>Conway's Law</strong> — system design mirrors org communication structure</li>
+  <li><strong>Tech-layer orgs</strong> → time-consuming approval process</li>
+  <li><strong>Business capability teams</strong> → better autonomy</li>
+</ul>
+</div>
+<div class="box">
+<h3>True/False Traps</h3>
+<table>
+<tr><th>Statement</th><th>Answer</th></tr>
+<tr><td>Independent Deployment is a COST</td><td class="f">FALSE — BENEFIT</td></tr>
+<tr><td>Eventual Consistency is a COST</td><td class="t">TRUE</td></tr>
+<tr><td>CI/CD only for microservices</td><td class="f">FALSE</td></tr>
+<tr><td>Monolith organized by tech layers</td><td class="t">TRUE</td></tr>
+<tr><td>Microservices by business capability</td><td class="t">TRUE</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Service API = HTTP Methods</h3>
+<table>
+<tr><th>Method</th><th>Purpose</th></tr>
+<tr><td>GET</td><td>Retrieve resource</td></tr>
+<tr><td>POST</td><td>Create resource</td></tr>
+<tr><td>PUT</td><td>Update/replace</td></tr>
+<tr><td>DELETE</td><td>Remove resource</td></tr>
+</table>
+<p style="margin-top:4px">API implemented as <strong>HTTP Methods</strong> (not class/instance/public methods)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2. CONNEXION + OPENAPI 3.0</h2>
+
+<div class="grid2">
+<div class="box blue">
+<h3>app.py — Minimal Connexion Setup</h3>
+<pre>import connexion
+
+app = connexion.FlaskApp(__name__, specification_dir='')
+app.add_api(
+    'openapi.yaml',
+    strict_validation=True,   # validates REQUEST params ← KEY
+    validate_responses=True   # validates RESPONSES (separate flag)
+)
+
+def init_scheduler():
+    from apscheduler.schedulers.background import BackgroundScheduler
+    sched = BackgroundScheduler(daemon=True)
+    sched.add_job(populate_stats, 'interval',
+                  seconds=app_config['scheduler']['period_sec'])
+    sched.start()
+
+if __name__ == "__main__":
+    init_scheduler()
+    app.run(port=8080, use_reloader=False)</pre>
+</div>
+<div class="box">
+<h3>Connexion Key Facts</h3>
+<ul>
+  <li><code>operationId: app.my_function</code> → routes endpoint to Python function</li>
+  <li><code>strict_validation=True</code> → validates REQUEST parameters ← most tested</li>
+  <li><code>validate_responses=True</code> → validates RESPONSES (different flag!)</li>
+  <li>apscheduler runs in background daemon thread</li>
+  <li>Period stored in <code>app_conf.yml</code> (not hardcoded)</li>
+  <li>Both API + scheduler run in same application</li>
+  <li>Use <code>use_reloader=False</code> to prevent double scheduler start</li>
+</ul>
+<div class="warn">⚠ Trap: validation="validation" is WRONG. Must be strict_validation=True</div>
+</div>
+</div>
+
+<div class="grid2">
+<div class="box green">
+<h3>OpenAPI 3.0 — Full Example YAML</h3>
+<pre>openapi: "3.0.0"
+info:                        # META INFORMATION
+  title: Sensor Readings API
+  version: "1.0"
+  description: API for IoT sensors
+
+paths:                       # ENDPOINTS
+  /readings:
+    post:
+      summary: Store a reading
+      operationId: app.post_reading   # → calls app.py:post_reading()
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reading'
+      responses:
+        '201':
+          description: Reading stored
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /readings:
+    get:
+      operationId: app.get_readings
+      parameters:
+        - name: start_timestamp
+          in: query           # query | path | header | cookie
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: end_timestamp
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: List of readings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reading'
+
+components:                  # REUSABLE DEFINITIONS (for REUSE not organization)
+  schemas:
+    Reading:
+      type: object
+      required:
+        - sensor_id
+        - value
+        - timestamp
+      properties:
+        sensor_id:
+          type: string
+        value:
+          type: number
+          format: float
+        timestamp:
+          type: string
+          format: date-time</pre>
+</div>
+<div>
+<div class="box" style="margin-bottom:8px">
+<h3>OpenAPI Structure Quick Ref</h3>
+<table>
+<tr><th>Section</th><th>Purpose</th><th>Contains</th></tr>
+<tr><td><code>info</code></td><td>Meta Information</td><td>title, version, description, contact, security</td></tr>
+<tr><td><code>paths</code></td><td>Endpoints</td><td>HTTP verbs, parameters, responses, operationId</td></tr>
+<tr><td><code>components</code></td><td>Reuse</td><td>schemas, parameters, responses, requestBodies</td></tr>
+</table>
+</div>
+<div class="box" style="margin-bottom:8px">
+<h3>Path Items include:</h3>
+<ul>
+  <li>parameters (query, path, header, cookie)</li>
+  <li>responses (status codes + content)</li>
+  <li>request body definitions</li>
+  <li>operationId (routing to function)</li>
+</ul>
+<p style="margin-top:4px"><strong>Why components?</strong> → <strong>REUSE</strong> (define once, $ref many times)</p>
+<p><strong>YAML vs JSON?</strong> → YAML preferred (easier to read/write)</p>
+</div>
+<div class="box yellow">
+<h3>Query Params — why use them?</h3>
+<p>Use query parameters in GET endpoints to <strong>limit the amount of data returned</strong>: <code>?limit=5&offset=10</code>, <code>?start=2024-01-01&end=2024-02-01</code></p>
+<p style="margin-top:4px">Valid URI example: <code>https://api.io/v1/artists?limit=5&offset=10</code></p>
+</div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>3. DATA PERSISTENCE</h2>
+<div class="grid3">
+<div class="box blue">
+<h3>Polyglot Persistence</h3>
+<ul>
+  <li>Each service manages its OWN DB</li>
+  <li>Data accessible ONLY via service API</li>
+  <li>Transactions only involve THEIR DB (not central)</li>
+  <li>Services CAN use different DB tech (but don't HAVE to)</li>
+  <li>Monolith CAN use polyglot persistence (less common)</li>
+</ul>
+<div class="warn">⚠ "Each service must use different DB tech" = FALSE. They CAN, not must.</div>
+</div>
+<div class="box">
+<h3>DB-Per-Service Pattern</h3>
+<p><strong>Valid SQL options:</strong></p>
+<ul>
+  <li>Private-tables-per-service</li>
+  <li>Schema-per-service</li>
+  <li>Database-server-per-service</li>
+  <li>❌ Datafile-per-service — NOT valid SQL option</li>
+</ul>
+<p><strong>Benefits:</strong> loosely coupled, use best-fit DB</p>
+<p><strong>Drawbacks:</strong> complex multi-DB mgmt, cross-service transactions hard, cross-DB queries challenging</p>
+</div>
+<div class="box">
+<h3>SQLite vs MySQL</h3>
+<table>
+<tr><th>SQLite</th><th>MySQL</th></tr>
+<tr><td>Serverless</td><td>Requires server</td></tr>
+<tr><td>Self-contained</td><td>Client-server architecture</td></tr>
+<tr><td>Embedded in app</td><td>Over network</td></tr>
+<tr><td>Dev/test</td><td>Production</td></tr>
+</table>
+<h3 style="margin-top:8px">SQLAlchemy</h3>
+<pre>from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
+
+class Reading(Base):       # Declarative model
+    __tablename__ = 'readings'
+    id = Column(Integer, primary_key=True)
+    sensor_id = Column(String(36))
+    value = Column(Float)
+
+# all_readings = session.query(Reading).all()
+# Type of all_readings → LIST (not object/dict/string)</pre>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>4. LOGGING, TRACING & CONFIG</h2>
+<div class="grid3">
+<div class="box red">
+<h3>Event Logging vs Software Tracing</h3>
+<table>
+<tr><th></th><th>Event Logging</th><th>Tracing</th></tr>
+<tr><td>Audience</td><td>Sys Admins</td><td>Developers</td></tr>
+<tr><td>Level</td><td>HIGH-level</td><td>LOW-level</td></tr>
+<tr><td>Noise</td><td>Must NOT be noisy</td><td>CAN be noisy</td></tr>
+<tr><td>Purpose</td><td>Diagnostics/Auditing</td><td>Debugging</td></tr>
+</table>
+<div class="warn">⚠ "Tracing is for sys admins" = FALSE. "Logging is for developers" = FALSE.</div>
+</div>
+<div class="box">
+<h3>Python Logging Module</h3>
+<p><strong>5 standard levels (in order):</strong><br>DEBUG → INFO → WARNING → ERROR → CRITICAL</p>
+<p style="margin-top:4px"><code>level</code> in config = <strong>MINIMUM</strong> severity (floor, not ceiling)</p>
+<p>Set WARNING → only WARNING, ERROR, CRITICAL logged</p>
+<pre># Configuration methods:
+# 1. basicConfig
+logging.basicConfig(level=logging.INFO)
+# 2. Default Root Logger
+# 3. External file (log_conf.yml)</pre>
+<p><strong>Most common in course:</strong> <code>log_conf.yml</code></p>
+</div>
+<div class="box blue">
+<h3>Externalized Config Pattern</h3>
+<pre># app_conf.yml
+datastore:
+  user: root
+  password: mypassword
+  hostname: db
+  port: 3306
+  db: readings
+
+scheduler:
+  period_sec: 5
+
+kafka:
+  hostname: kafka
+  port: 9092
+  topic: events</pre>
+<p><strong>Goal:</strong> service runs in dev/test/staging/prod without modification</p>
+<p><strong>Current limitation:</strong> rebuilding Docker image required when app_conf.yml changes</p>
+<p><strong>From external config:</strong> DB credentials, 3rd party URLs, scheduler period</p>
+</div>
+</div>
+
+<div class="grid2">
+<div class="box">
+<h3>Log Aggregation (Docker)</h3>
+<ul>
+  <li>Each service → logs in its container</li>
+  <li>Centralized logging aggregates from all instances</li>
+  <li>Problem: <strong>large volume</strong> of log messages</li>
+</ul>
+<p><strong>View Docker logs via:</strong></p>
+<ul>
+  <li><code>docker logs &lt;container_id&gt;</code></li>
+  <li><code>docker-compose logs</code></li>
+  <li>Running containers in foreground (no <code>-d</code> flag)</li>
+  <li>❌ <code>docker exec</code> — does NOT show logs</li>
+  <li>❌ <code>docker ps</code> — just lists containers</li>
+</ul>
+</div>
+<div class="box green">
+<h3>Distributed Tracing</h3>
+<p>Tracks a single event/request across multiple service boundaries:</p>
+<p><code>Receiver Service → Storage Service → Processing Service</code></p>
+<p><strong>Advantages:</strong></p>
+<ul>
+  <li>End-to-end visibility of requests</li>
+  <li>Faster for developers to trace issues</li>
+</ul>
+<p><strong>Logging Best Practices (3):</strong></p>
+<ul>
+  <li>Searchable logs</li>
+  <li>Invest in a logging framework (don't build your own)</li>
+  <li>Easily changeable log levels</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>5. MESSAGING & APACHE KAFKA</h2>
+<div class="grid2">
+<div class="box red">
+<h3>REST/HTTP vs Messaging — KEY DISTINCTION</h3>
+<table>
+<tr><th></th><th>REST/HTTP</th><th>Messaging (Kafka)</th></tr>
+<tr><td>Type</td><td><strong>Synchronous</strong></td><td><strong>Asynchronous</strong></td></tr>
+<tr><td>Pattern</td><td>Request/Reply</td><td>Fire-and-forget</td></tr>
+<tr><td>Waiting</td><td>Caller waits</td><td>Caller moves on</td></tr>
+<tr><td>Coupling</td><td>Tighter</td><td>Loose (decoupled)</td></tr>
+<tr><td>Good for</td><td>SOA, public APIs, request/reply</td><td>Events, multi-consumer, async</td></tr>
+</table>
+<p><strong>Why REST doesn't scale for microservices:</strong></p>
+<ul>
+  <li>Cannot deliver event to multiple places simultaneously</li>
+  <li>Cannot deliver messages asynchronously</li>
+  <li>Doesn't scale as more applications/instances added</li>
+</ul>
+</div>
+<div class="box blue">
+<h3>Messaging Advantages (4)</h3>
+<ul>
+  <li><strong>Scalability</strong> — add consumers to handle more load</li>
+  <li><strong>High-Availability</strong> — messages persist if consumer is down</li>
+  <li><strong>Producer/Consumer Decoupling</strong> — producers don't know consumers</li>
+  <li><strong>Publish/Subscribe Pattern</strong> — broadcast to multiple consumers</li>
+</ul>
+<p><strong>NOT advantages:</strong> Producer/Consumer Coupling (opposite!), High-Security</p>
+<h3 style="margin-top:8px">Event-Driven Architecture</h3>
+<p>Producers emit business events → messaging system → consumers subscribe to events they want</p>
+<p>Helps decouple services and enables scalability</p>
+</div>
+</div>
+
+<div class="grid3">
+<div class="box">
+<h3>Kafka Concepts</h3>
+<ul>
+  <li><strong>Topic</strong> — stream of records (key-value); each assigned an <strong>offset</strong> (sequence number)</li>
+  <li><strong>Producer</strong> — publishes messages to topics</li>
+  <li><strong>Consumer</strong> — subscribes to topics, reads messages</li>
+  <li><strong>Broker</strong> — instance of Kafka responsible for message exchange</li>
+  <li><strong>Cluster</strong> — multiple brokers for HA (NOT single machine only)</li>
+</ul>
+</div>
+<div class="box green">
+<h3>Kafka Features & Use Cases</h3>
+<p><strong>Features (4):</strong> Low-Latency, High-Throughput, Distributed, Massively Scalable</p>
+<p><strong>Use Cases (4):</strong> Activity Monitoring, Log Aggregation, Messaging, Database</p>
+<p><strong>NOT use cases:</strong> Application Config Store, Data Visualization</p>
+</div>
+<div class="box yellow">
+<h3>Kafka Error Handling</h3>
+<p><strong>Producer</strong> connection loss → catch:</p>
+<ul>
+  <li><code>LeaderNotAvailable</code></li>
+  <li><code>SocketDisconnectedError</code></li>
+</ul>
+<p><strong>Consumer</strong> connection loss → catch:</p>
+<ul>
+  <li><code>SocketDisconnectedError</code></li>
+</ul>
+<p><strong>Best practice:</strong> Restart the producer/consumer OBJECT (not whole container)</p>
+</div>
+</div>
+
+<div class="box green no-break">
+<h3>Kafka Python Code</h3>
+<div class="grid2">
+<pre><strong># Producer</strong>
+from kafka import KafkaProducer
+import json
+
+producer = KafkaProducer(
+    bootstrap_servers='kafka:9092'
+)
+
+msg = {
+    "sensor_id": "abc123",
+    "value": 42.5,
+    "timestamp": "2026-01-15T10:00:00Z"
+}
+
+try:
+    producer.send(
+        'events',
+        json.dumps(msg).encode('utf-8')
+    )
+    producer.flush()
+except Exception as e:
+    logger.error(f"Failed to send: {e}")</pre>
+<pre><strong># Consumer</strong>
+from kafka import KafkaConsumer
+import json
+
+consumer = KafkaConsumer(
+    'events',
+    bootstrap_servers='kafka:9092',
+    auto_offset_reset='earliest',
+    group_id='processing-service'
+)
+
+for msg in consumer:
+    data = json.loads(msg.value.decode('utf-8'))
+    logger.info(f"Received: {data}")
+    process(data)</pre>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<div class="page-break"></div>
+<h2>6. DOCKER</h2>
+
+<div class="grid3">
+<div class="box blue">
+<h3>Core Concepts</h3>
+<ul>
+  <li><strong>Image</strong> = blueprint (built once)</li>
+  <li><strong>Container</strong> = running instance of image</li>
+  <li>Container filesystem deleted when <strong>REMOVED</strong> (not stopped)</li>
+  <li>Stopped container = filesystem intact</li>
+  <li>Volume = persists after container removed</li>
+  <li>Volume auto-created if missing on start ✓</li>
+  <li>Volume NOT auto-deleted when container removed ✗</li>
+</ul>
+</div>
+<div class="box">
+<h3>Mount Types (3)</h3>
+<table>
+<tr><th>Type</th><th>Storage</th><th>Use Case</th></tr>
+<tr><td><strong>volume</strong></td><td>Docker-managed</td><td>Prod data, DB files</td></tr>
+<tr><td><strong>bind</strong></td><td>Host filesystem</td><td>Dev, config files</td></tr>
+<tr><td><strong>tmpfs</strong></td><td>Host memory</td><td>Secrets, temp data</td></tr>
+</table>
+<div class="warn">❌ "source" and "volume-opt" are NOT mount types</div>
+</div>
+<div class="box">
+<h3>Useful Commands</h3>
+<pre>docker logs &lt;container_id&gt;
+docker-compose logs
+docker-compose up -d
+docker-compose up --scale svc=3
+docker-compose down -v    # remove volumes
+docker volume rm &lt;name&gt;
+docker exec -it &lt;id&gt; bash
+docker ps                 # list running containers
+docker build -t myapp .
+docker run -p 8080:8080 myapp</pre>
+</div>
+</div>
+
+<div class="grid2">
+<div class="box green">
+<h3>docker-compose.yml Example</h3>
+<pre>version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: readings
+    volumes:
+      - db_data:/var/lib/mysql   # named volume
+    networks:
+      - app-network
+
+  receiver:
+    build: ./receiver
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config/app_conf.yml:/app/app_conf.yml  # bind mount
+      - ./logs:/app/logs                          # bind mount for logs
+    depends_on:
+      - db
+      - kafka
+    networks:
+      - app-network
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    networks:
+      - app-network
+
+volumes:
+  db_data:    # Docker-managed named volume
+
+networks:
+  app-network:</pre>
+</div>
+<div class="box">
+<h3>Externalized Config Pattern</h3>
+<pre># log_conf.yml
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename: app.log
+loggers:
+  basicLogger:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no</pre>
+<pre># app.py — loading config
+import yaml
+import logging.config
+
+with open('app_conf.yml', 'r') as f:
+    app_config = yaml.safe_load(f.read())
+
+with open('log_conf.yml', 'r') as f:
+    log_config = yaml.safe_load(f.read())
+    logging.config.dictConfig(log_config)
+
+logger = logging.getLogger('basicLogger')</pre>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>7. SAME ORIGIN POLICY (SOP) & CORS</h2>
+
+<div class="grid2">
+<div class="box blue">
+<h3>Same Origin Policy (SOP)</h3>
+<ul>
+  <li>Browser security feature — prevents cross-origin requests by default</li>
+  <li><strong>Origin</strong> = scheme + host + port (all 3 must match)</li>
+  <li>Example: <code>http://app.com:3000</code> ≠ <code>http://api.com:8080</code> (different host + port)</li>
+  <li>Only applies to <strong>browser-initiated</strong> requests (not server-to-server)</li>
+  <li>Problem: frontend on port 3000 cannot call backend on port 8080 without CORS</li>
+</ul>
+</div>
+<div class="box yellow">
+<h3>CORS (Cross-Origin Resource Sharing)</h3>
+<ul>
+  <li>Mechanism to <strong>relax SOP</strong> when cross-origin requests are needed</li>
+  <li>Server adds response headers to allow specific origins/methods</li>
+</ul>
+<p><strong>Key Headers:</strong></p>
+<ul>
+  <li><code>Access-Control-Allow-Origin: *</code> or specific origin</li>
+  <li><code>Access-Control-Allow-Methods: GET, POST, PUT, DELETE</code></li>
+  <li><code>Access-Control-Allow-Headers: Content-Type, Authorization</code></li>
+</ul>
+<p><strong>Preflight request:</strong> Browser sends <code>OPTIONS</code> request first for non-simple requests. Server must respond with CORS headers for browser to proceed.</p>
+<pre># Flask-CORS setup
+from flask_cors import CORS
+CORS(app)
+# or specific origins:
+CORS(app, origins=['http://localhost:3000'])</pre>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>8. DEPLOYMENT STRATEGIES</h2>
+
+<div class="grid4">
+<div class="box red">
+<h3>Recreate ❌ HA</h3>
+<ul>
+  <li>Stop ALL old instances</li>
+  <li>THEN start new ones</li>
+  <li>Service DOWN during update</li>
+  <li>Docker Compose uses this</li>
+  <li>Kubernetes: NOT HA</li>
+</ul>
+</div>
+<div class="box yellow">
+<h3>Ramped (Rolling) ✓ HA</h3>
+<ul>
+  <li>Gradually replace old with new</li>
+  <li>1-by-1 or in batches</li>
+  <li>Always some instances running</li>
+  <li>Slow rollout</li>
+  <li>Kubernetes: default</li>
+</ul>
+</div>
+<div class="box green">
+<h3>Blue/Green ✓ HA</h3>
+<ul>
+  <li><strong>Blue = NEW version</strong></li>
+  <li><strong>Green = EXISTING version</strong></li>
+  <li>Both run in parallel</li>
+  <li>Switch traffic from green→blue</li>
+  <li>Easy rollback to green</li>
+  <li>High-availability ✓</li>
+</ul>
+</div>
+<div class="box blue">
+<h3>Canary ✓ HA</h3>
+<ul>
+  <li>Small % traffic → new version</li>
+  <li>Tested by <strong>End Users</strong></li>
+  <li>Monitor for errors</li>
+  <li>Gradually increase to 100%</li>
+  <li>Real production testing</li>
+</ul>
+</div>
+</div>
+<div class="warn">⚠ TRAPS: "Blue/Green: Blue=old, Green=new" = FALSE (it's reversed). "Docker Compose provides blue/green" = FALSE (provides Recreate). "Recreate = HA" = FALSE.</div>
+
+<!-- ============================================================ -->
+<h2>9. LOAD BALANCING (NGINX)</h2>
+
+<div class="grid2">
+<div class="box blue">
+<h3>NGINX Facts</h3>
+<ul>
+  <li>NGINX = <strong>SOFTWARE</strong> load balancer (NOT hardware)</li>
+  <li>Hardware LBs are dedicated physical appliances (F5, Citrix)</li>
+  <li><strong>Default strategy: Round Robin</strong></li>
+  <li><code>docker-compose up --scale service=3</code> → 3 replicas</li>
+</ul>
+<p><strong>Non-functional characteristics a LB provides:</strong></p>
+<ul>
+  <li><strong>Availability</strong> — redirect if server down</li>
+  <li><strong>Scalability</strong> — add/remove servers from pool</li>
+</ul>
+<p><strong>3 Primary LB functions:</strong></p>
+<ul>
+  <li>Distribute traffic across servers</li>
+  <li>Send only to online servers</li>
+  <li>Allow adding/removing servers based on load</li>
+</ul>
+</div>
+<div class="box">
+<h3>Load Balancing Algorithms</h3>
+<table>
+<tr><th>Algorithm</th><th>How it works</th></tr>
+<tr><td><strong>Round Robin (DEFAULT)</strong></td><td>Requests distributed sequentially: 1→A, 2→B, 3→C, 4→A...</td></tr>
+<tr><td>Least Connected</td><td>Send to server with fewest active connections</td></tr>
+<tr><td>IP Hash</td><td>Client IP determines server (session persistence)</td></tr>
+<tr><td>Random w/ Two Choices</td><td>Pick 2 at random, use Least Connections of those 2</td></tr>
+<tr><td>Hash</td><td>User-defined key determines server</td></tr>
+<tr><td>Least Time</td><td>Fastest + fewest connections</td></tr>
+</table>
+<div class="warn">⚠ MUST memorize: NGINX default = Round Robin. "Requests distributed sequentially" = Round Robin definition.</div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>10. TESTING & TECHNICAL DEBT</h2>
+
+<div class="grid3">
+<div class="box">
+<h3>Automated Testing Types (4)</h3>
+<ul>
+  <li><strong>Unit Testing</strong> — individual functions/classes</li>
+  <li><strong>Integration Testing</strong> — components working together</li>
+  <li><strong>UI Functional Testing</strong> — browser-level behavior</li>
+  <li><strong>End to End Testing</strong> — full system flow</li>
+</ul>
+<p>❌ "Database Validity Testing" — not in reading<br>❌ "Code Branch Testing" — not standard term</p>
+</div>
+<div class="box yellow">
+<h3>Technical Debt (2 characteristics)</h3>
+<ul>
+  <li>Implied cost of rework from choosing easy (limited) solution now instead of better approach</li>
+  <li>Represented as software issues (improvement items or bugs)</li>
+</ul>
+<p>❌ "Only relevant if using SonarQube" = FALSE<br>❌ Same as bugs = FALSE (bugs = faults, tech debt = shortcuts)</p>
+</div>
+<div class="box green">
+<h3>Logging Best Practices (3)</h3>
+<ul>
+  <li>Searchable logs</li>
+  <li>Invest in a logging framework (don't build your own)</li>
+  <li>Easily changeable log levels</li>
+</ul>
+<p>❌ "Printing logs to console" — not a best practice by itself<br>❌ "Build your own framework" = FALSE (use existing)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>11. EXAM FORMAT — WHAT TO EXPECT</h2>
+<div class="grid2">
+<div class="box red">
+<h3>Exam Sections (from midterm — final similar)</h3>
+<ol style="padding-left:16px">
+  <li><strong>Multiple Choice</strong> — heavy multi-select ("select all that apply", "select 4")</li>
+  <li><strong>Short Written Answers</strong> — define concepts, explain why</li>
+  <li><strong>Implement a simple API</strong> — write app.py with endpoint functions</li>
+  <li><strong>Fill blanks in OpenAPI YAML</strong> — know the structure cold</li>
+  <li><strong>Write Python code for endpoints</strong> — app.py endpoint functions</li>
+</ol>
+</div>
+<div class="box blue">
+<h3>Common Exam Function Template</h3>
+<pre>def post_reading(body):
+    """ POST /readings """
+    global app_config
+
+    sensor_id = body.get('sensor_id')
+    value = body.get('value')
+    timestamp = body.get('timestamp')
+
+    logger.info(f"Received reading from {sensor_id}")
+
+    # Store to DB
+    session = DB_SESSION()
+    reading = Reading(
+        sensor_id=sensor_id,
+        value=value,
+        timestamp=datetime.strptime(timestamp,
+                    "%Y-%m-%dT%H:%M:%SZ")
+    )
+    session.add(reading)
+    session.commit()
+    session.close()
+
+    return NoContent, 201
+
+
+def get_readings(start_timestamp, end_timestamp):
+    """ GET /readings """
+    session = DB_SESSION()
+    results = session.query(Reading).filter(
+        Reading.timestamp >= start_timestamp,
+        Reading.timestamp <= end_timestamp
+    )
+    results_list = []
+    for r in results:
+        results_list.append(r.to_dict())
+    session.close()
+
+    logger.info(f"Returning {len(results_list)} readings")
+    return results_list, 200</pre>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>12. MASTER QUICK-REFERENCE — TRUE/FALSE TRAPS</h2>
+<div class="grid2">
+<table>
+<tr><th>Statement</th><th>Answer</th></tr>
+<tr><td>Microservices benefits: Technology Diversity, Strong Modules, Independent Deployment</td><td class="t">TRUE</td></tr>
+<tr><td>Independent Deployment is a COST of microservices</td><td class="f">FALSE — it's a BENEFIT</td></tr>
+<tr><td>CI/CD can only be applied to microservices</td><td class="f">FALSE</td></tr>
+<tr><td>Monolith CANNOT use Polyglot Persistence</td><td class="f">FALSE — can, just less common</td></tr>
+<tr><td>Service transactions use a central database</td><td class="f">FALSE — only their own</td></tr>
+<tr><td>operationId routes OpenAPI endpoint to Python function</td><td class="t">TRUE</td></tr>
+<tr><td>strict_validation=True validates request parameters</td><td class="t">TRUE</td></tr>
+<tr><td>validate_responses=True validates REQUEST parameters</td><td class="f">FALSE — validates RESPONSES</td></tr>
+<tr><td>OpenAPI specs best written in JSON</td><td class="f">FALSE — YAML preferred</td></tr>
+<tr><td>Components are REQUIRED in every OpenAPI spec</td><td class="f">FALSE — optional, for reuse</td></tr>
+<tr><td>Use components for REUSE (not organization)</td><td class="t">TRUE</td></tr>
+<tr><td>Polyglot = each service uses different language</td><td class="t">TRUE (general polyglot)</td></tr>
+<tr><td>Polyglot Persistence = each service manages own DB</td><td class="t">TRUE (polyglot persistence)</td></tr>
+</table>
+<table>
+<tr><th>Statement</th><th>Answer</th></tr>
+<tr><td>level in logging config = maximum severity</td><td class="f">FALSE — MINIMUM</td></tr>
+<tr><td>Tracing is consumed by system administrators</td><td class="f">FALSE — developers</td></tr>
+<tr><td>Event logging can be noisy</td><td class="f">FALSE — must NOT be noisy</td></tr>
+<tr><td>Messaging is synchronous communication</td><td class="f">FALSE — asynchronous</td></tr>
+<tr><td>REST/HTTP is asynchronous communication</td><td class="f">FALSE — synchronous</td></tr>
+<tr><td>Kafka can only run on single machine</td><td class="f">FALSE — cluster supported</td></tr>
+<tr><td>Volume deleted when container removed</td><td class="f">FALSE — persists, needs separate step</td></tr>
+<tr><td>Volume auto-CREATED when container starts</td><td class="t">TRUE</td></tr>
+<tr><td>Container filesystem survives container remove</td><td class="f">FALSE — deleted</td></tr>
+<tr><td>Blue = NEW version in Blue/Green</td><td class="t">TRUE ← common trap reversed</td></tr>
+<tr><td>Docker Compose provides Blue/Green deployment</td><td class="f">FALSE — provides Recreate</td></tr>
+<tr><td>Recreate in Kubernetes = High-Availability</td><td class="f">FALSE — service has downtime</td></tr>
+<tr><td>NGINX is a hardware load balancer</td><td class="f">FALSE — software</td></tr>
+<tr><td>NGINX default = Round Robin</td><td class="t">TRUE</td></tr>
+<tr><td>Canary: End Users test new version in production</td><td class="t">TRUE</td></tr>
+</table>
+</div>
+
+<div style="text-align:center; margin-top:14px; padding:10px; background:#1a3a5c; color:white; border-radius:4px;">
+  <strong>ACIT3855 Final Exam | Mon Apr 20, 2026 @ 2:30 PM | DTC 825 | 180 minutes | OPEN BOOK — You got this!</strong>
+</div>
+
+</div><!-- end .page -->
+</body>
+</html>

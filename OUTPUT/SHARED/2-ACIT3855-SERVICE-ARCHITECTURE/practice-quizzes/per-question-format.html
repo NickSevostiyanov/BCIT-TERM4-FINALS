@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT3855 — Per-Question Practice Quiz</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 15px; background: #f0f2f5; color: #222; }
+  .header { background: #1a3a5c; color: white; padding: 20px 30px; }
+  .header h1 { font-size: 20px; }
+  .header p { font-size: 13px; margin-top: 5px; opacity: 0.85; }
+  .container { max-width: 740px; margin: 30px auto; padding: 0 16px 60px; }
+  .progress-bar-wrap { background: #ddd; border-radius: 10px; height: 10px; margin-bottom: 8px; }
+  .progress-bar { background: #1a3a5c; height: 10px; border-radius: 10px; transition: width 0.4s; }
+  .progress-label { text-align: right; font-size: 12px; color: #666; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 6px; border: 1px solid #ddd; padding: 28px 26px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .q-num { font-size: 12px; font-weight: bold; text-transform: uppercase; color: #888; letter-spacing: 1px; margin-bottom: 10px; }
+  .q-text { font-size: 16px; font-weight: bold; line-height: 1.6; margin-bottom: 8px; }
+  .multi-note { font-size: 12px; color: #e67e22; font-weight: bold; margin-bottom: 16px; }
+  .code-block { background: #f5f5f5; border: 1px solid #ddd; padding: 10px 14px; font-family: monospace; font-size: 13px; border-radius: 4px; margin: 8px 0 14px; white-space: pre; overflow-x: auto; }
+  .options { list-style: none; }
+  .options li { margin: 10px 0; }
+  .opt-btn { width: 100%; text-align: left; padding: 12px 16px; border: 2px solid #ddd; border-radius: 5px; background: #fff; cursor: pointer; font-size: 14px; transition: all 0.15s; line-height: 1.5; }
+  .opt-btn:hover:not(:disabled) { border-color: #1a3a5c; background: #eef2ff; }
+  .opt-btn.correct { border-color: #28a745; background: #d4edda; color: #155724; }
+  .opt-btn.wrong { border-color: #dc3545; background: #f8d7da; color: #721c24; }
+  .opt-btn.reveal-correct { border-color: #28a745; background: #d4edda; color: #155724; }
+  .opt-btn.selected-multi { border-color: #1a3a5c; background: #dce8ff; }
+  .feedback { display: none; margin-top: 20px; padding: 16px; border-radius: 5px; line-height: 1.6; }
+  .feedback.correct { background: #d4edda; border-left: 4px solid #28a745; color: #155724; }
+  .feedback.partial { background: #fff3cd; border-left: 4px solid #ffc107; color: #856404; }
+  .feedback.wrong { background: #f8d7da; border-left: 4px solid #dc3545; color: #721c24; }
+  .feedback .verdict { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
+  .feedback .explanation { font-size: 14px; }
+  .submit-multi { background: #1a3a5c; color: white; border: none; padding: 10px 24px; border-radius: 4px; font-size: 13px; cursor: pointer; margin-top: 12px; display: none; }
+  .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; }
+  .next-btn { background: #1a3a5c; color: white; border: none; padding: 10px 28px; border-radius: 4px; font-size: 14px; cursor: pointer; display: none; }
+  .next-btn:hover { background: #2a5080; }
+  .score-display { font-size: 14px; color: #666; }
+  .final-screen { display: none; text-align: center; padding: 40px 20px; }
+  .final-screen h2 { font-size: 24px; color: #1a3a5c; }
+  .final-score { font-size: 52px; font-weight: bold; margin: 16px 0; }
+  .final-score.pass { color: #28a745; }
+  .final-score.fail { color: #dc3545; }
+  .final-grade { font-size: 18px; color: #555; margin-bottom: 20px; }
+  .restart-btn { background: #1a3a5c; color: white; border: none; padding: 12px 32px; border-radius: 4px; font-size: 15px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>ACIT3855 — Service Based Architectures</h1>
+  <p>Per-Question Practice Quiz &nbsp;|&nbsp; Instant Feedback &nbsp;|&nbsp; 30 Questions</p>
+</div>
+<div class="container">
+  <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+  <div class="progress-label" id="progressLabel">Question 1 of 30</div>
+  <div class="card" id="quizCard">
+    <div class="q-num" id="qNum"></div>
+    <div class="q-text" id="qText"></div>
+    <div class="multi-note" id="multiNote" style="display:none"></div>
+    <ul class="options" id="optionsList"></ul>
+    <button class="submit-multi" id="submitMultiBtn" onclick="submitMulti()">Submit Answer</button>
+    <div class="feedback" id="feedback">
+      <div class="verdict" id="verdict"></div>
+      <div class="explanation" id="explanation"></div>
+    </div>
+    <div class="nav-row">
+      <div class="score-display" id="scoreDisplay">Score: 0 / 0</div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next →</button>
+    </div>
+  </div>
+  <div class="final-screen" id="finalScreen">
+    <h2>Quiz Complete!</h2>
+    <div class="final-score" id="finalScore"></div>
+    <div class="final-grade" id="finalGrade"></div>
+    <button class="restart-btn" onclick="restartQuiz()">Restart Quiz</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+  {
+    text: 'Based on Martin Fowler\'s Microservices Guide, identify the BENEFITS of a Microservices Architecture.',
+    type: 'multi', multiLabel: 'Select all that apply — 3 correct answers',
+    options: ['Technology Diversity','Distribution','Strong Module Boundaries','Eventual Consistency','Independent Deployment'],
+    correct: [0,2,4],
+    explanation: '<strong>Benefits: Technology Diversity, Strong Module Boundaries, Independent Deployment.</strong><br>• Technology Diversity = mix languages/frameworks/databases (polyglot)<br>• Strong Module Boundaries = enforces modular structure for large teams<br>• Independent Deployment = deploy/redeploy one service without affecting others<br><br>Distribution and Eventual Consistency are COSTS (drawbacks).'
+  },
+  {
+    text: 'Identify the COSTS of a Microservices Architecture.',
+    type: 'multi', multiLabel: 'Select all that apply — 3 correct answers',
+    options: ['Independent Deployment','Eventual Consistency','Technology Diversity','Operational Complexity','Distribution'],
+    correct: [1,3,4],
+    explanation: '<strong>Costs: Eventual Consistency, Operational Complexity, Distribution.</strong><br>• Eventual Consistency — distributed data means no cross-service transactions<br>• Operational Complexity — need mature ops team to manage many services<br>• Distribution — remote calls are slow and can fail<br><br>Independent Deployment is a BENEFIT. Technology Diversity is a BENEFIT.'
+  },
+  {
+    text: 'What is the API of a service typically implemented as?',
+    type: 'single',
+    options: ['Class Methods','Instance Methods','Public Methods','HTTP Methods'],
+    correct: 3,
+    explanation: '<strong>HTTP Methods.</strong> Service APIs are exposed via HTTP (GET, POST, PUT, DELETE). This is the foundation of RESTful service communication. In-process methods (class/instance/public) are used WITHIN an application, not between services.'
+  },
+  {
+    text: 'Microservices are typically organized around business capabilities.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 0,
+    explanation: '<strong>TRUE.</strong> Microservices teams and services are organized around <em>business capabilities</em> (e.g., "Order Service", "Payment Service"). This is in contrast to monoliths which are often organized around technology layers (UI team, DB team, middleware team) — leading to Conway\'s Law problems.'
+  },
+  {
+    text: 'How do you explicitly route an endpoint from your OpenAPI spec to a Python function in Connexion?',
+    type: 'single',
+    options: ['path','function','operationId','paths'],
+    correct: 2,
+    explanation: '<strong>operationId.</strong> In the OpenAPI YAML, <code>operationId: app.my_function</code> tells Connexion to call <code>my_function()</code> in <code>app.py</code> when that endpoint is hit. Without operationId, Connexion won\'t know which Python function to invoke. This was tested in Quiz 1.'
+  },
+  {
+    text: 'What parameter do you add when creating a Connexion app to enable automatic request parameter validation?',
+    type: 'single',
+    options: ['validator_map','validation','strict_validation','validate_responses'],
+    correct: 2,
+    explanation: '<strong>strict_validation=True.</strong> Add <code>strict_validation=True</code> when calling <code>app.add_api()</code>. This enables Connexion to automatically validate incoming request parameters against your OpenAPI spec. <code>validate_responses=True</code> is the separate flag for response validation. This was tested in Quiz 1.'
+  },
+  {
+    text: 'Why would we use components in an OpenAPI 3.0 specification?',
+    type: 'single',
+    options: ['Organization','Reuse','Supports multiple properties','It\'s required in every spec'],
+    correct: 1,
+    explanation: '<strong>Reuse.</strong> Components allow you to define schemas, parameters, and responses once and reference them with <code>$ref</code> throughout the spec. This avoids duplication — define an "Artist" schema once, reference it in multiple endpoints. They are NOT required.'
+  },
+  {
+    text: 'OpenAPI specifications should be written in JSON because it is easier to read and write than YAML.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> YAML is recommended because it\'s easier to read and write than JSON (less punctuation, more human-readable). OpenAPI supports both JSON and YAML, but YAML is preferred for readability. This was tested in Quiz 4.'
+  },
+  {
+    text: 'What is the best definition of Polyglot Persistence in Microservices?',
+    type: 'single',
+    options: ['Each Service Manages Its Own Database','Each Service Uses a Different Programming Language','Each Service Uses a NoSQL DB','Each Service Must Use A Different Database Technology'],
+    correct: 0,
+    explanation: '<strong>Each Service Manages Its Own Database.</strong> Polyglot Persistence = each service has its own private data store, accessible ONLY through its API. Services can CHOOSE different technologies (MySQL, SQLite, Redis, etc.) but don\'t HAVE to. "Different programming language" is just "polyglot" — not "polyglot persistence".'
+  },
+  {
+    text: 'A Monolith cannot use Polyglot Persistence.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> A monolith CAN use polyglot persistence — it\'s just less common. Polyglot persistence is a pattern that\'s more naturally associated with microservices but isn\'t exclusive to them. This was tested in Quiz 2.'
+  },
+  {
+    text: 'Which describes EVENT LOGGING characteristics (best answer)?',
+    type: 'single',
+    options: ['Consumed primarily by developers','Logs low-level info and can be noisy','Logs high-level information, used by system administrators, must not be noisy','Used primarily for debugging purposes'],
+    correct: 2,
+    explanation: '<strong>High-level info, system admins, must not be noisy.</strong> Event logging is for diagnostics and auditing by system administrators. It records significant events (e.g., service start, failed login) and must not be noisy. Software TRACING is the opposite: low-level, can be noisy, used by developers for debugging. This was tested in Quiz 3.'
+  },
+  {
+    text: 'Which are valid configuration file formats that may be used by a Python program?',
+    type: 'multi', multiLabel: 'Select all that apply — 5 correct answers',
+    options: ['XML','INI','YAML','Python','JSON','CSV'],
+    correct: [0,1,2,3,4],
+    explanation: '<strong>XML, INI, YAML, Python, JSON — all 5 are valid.</strong> CSV is for data, not configuration. The course specifically covered: YAML (most common for microservice config), JSON, INI (classic config format), XML (legacy), and Python files. This was tested exactly in Quiz 3.'
+  },
+  {
+    text: 'In the Python logging module, what does the <code>level</code> represent?',
+    type: 'single',
+    options: ['The minimum severity logging level reported','The maximum severity logging level before the program crashes','The number of logging levels reported','The maximum severity logging level reported'],
+    correct: 0,
+    explanation: '<strong>Minimum severity level.</strong> If you set level to WARNING, only WARNING, ERROR, and CRITICAL messages are logged. DEBUG and INFO are ignored. It\'s a FLOOR, not a ceiling. The 5 levels in order: DEBUG &lt; INFO &lt; WARNING &lt; ERROR &lt; CRITICAL. This was tested in Quiz 3.'
+  },
+  {
+    text: 'RESTful APIs using HTTP is a form of:',
+    type: 'single',
+    options: ['Asynchronous Communication','Synchronous Communication','Pub/Sub Messaging','Decoupling'],
+    correct: 1,
+    explanation: '<strong>Synchronous Communication.</strong> With REST/HTTP, the caller sends a request and WAITS for a response before continuing. This is synchronous (blocking). Messaging/Kafka is asynchronous — fire and forget. This is a critical distinction tested in Quiz 5.'
+  },
+  {
+    text: 'Messaging (e.g., Kafka) is a form of:',
+    type: 'single',
+    options: ['Synchronous Communication','Database Communication','Asynchronous Communication','Coupling'],
+    correct: 2,
+    explanation: '<strong>Asynchronous Communication.</strong> With messaging, the producer sends a message to a broker and doesn\'t wait for a response. The consumer processes it independently, potentially later. This decouples producers from consumers and enables scalability.'
+  },
+  {
+    text: 'What are the advantages of using messaging when deploying microservices?',
+    type: 'multi', multiLabel: 'Select 4 correct answers',
+    options: ['Scalability','High-Availability','Producer/Consumer Decoupling','Producer/Consumer Coupling','Publish/Subscribe Pattern','High-Security'],
+    correct: [0,1,2,4],
+    explanation: '<strong>Scalability, High-Availability, Producer/Consumer Decoupling, Publish/Subscribe Pattern.</strong><br>• Scalability — add more consumers to handle load<br>• High-Availability — messages persist even if consumer is down<br>• Decoupling — producers don\'t know about consumers<br>• Pub/Sub — broadcast to multiple consumers at once<br><br>Coupling and High-Security are NOT messaging advantages.'
+  },
+  {
+    text: 'Kafka can only be deployed on a single stand-alone machine.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> Kafka can be deployed as a CLUSTER of brokers for high-availability. A single broker handles simple cases, but production Kafka runs as a cluster to ensure that if one broker fails, messages are still available. This was tested in Quiz 5.'
+  },
+  {
+    text: 'A Docker volume associated with a container is automatically removed when the container is removed.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> Volumes are NOT automatically removed with the container — they persist. You need a separate step (<code>docker volume rm</code> or <code>docker-compose down -v</code>) to remove a volume. This intentional separation allows data persistence across container restarts/replacements. Tested in Quiz 7.'
+  },
+  {
+    text: 'The three types of mounts you can apply to a Docker container are:',
+    type: 'multi', multiLabel: 'Select 3 correct answers',
+    options: ['tmpfs','source','volume','bind','volume-opt'],
+    correct: [0,2,3],
+    explanation: '<strong>tmpfs, volume, bind.</strong><br>• <strong>volume</strong> — managed by Docker, persists after container removal<br>• <strong>bind</strong> — mounts file/directory from host VM (e.g., for config files or code in dev)<br>• <strong>tmpfs</strong> — stores data in host memory only (not persisted, fast)<br><br>"source" and "volume-opt" are not mount types. Tested in Quiz 7.'
+  },
+  {
+    text: 'Container filesystem data (not in volume or bind mount) is deleted when:',
+    type: 'single',
+    options: ['When the container is stopped','When the image is built','When the container is removed','When the image is removed'],
+    correct: 2,
+    explanation: '<strong>When the container is REMOVED (not just stopped).</strong> A stopped container still has its filesystem intact and can be restarted. Only removing (<code>docker rm</code>) deletes the container filesystem. This is why volumes are important for persistent data. Tested in Quiz 7.'
+  },
+  {
+    text: 'In a blue/green deployment, the BLUE is the new version and the GREEN is the existing version.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 0,
+    explanation: '<strong>TRUE.</strong> Blue = NEW version. Green = EXISTING/current version. During deployment, both run simultaneously. Traffic is switched from green to blue when ready. If issues arise, roll back by pointing traffic back to green. This was tested on Quiz 10 with the reverse as the trap.'
+  },
+  {
+    text: 'What is the default load balancing strategy for NGINX?',
+    type: 'single',
+    options: ['IP Hash','Least Connected','Round Robin','Random with Two Choices'],
+    correct: 2,
+    explanation: '<strong>Round Robin.</strong> NGINX distributes requests sequentially across the server pool by default. Request 1 → server A, Request 2 → server B, Request 3 → server C, Request 4 → server A again. Simple and effective for evenly loaded servers. Tested in Quiz 10.'
+  },
+  {
+    text: 'A canary deployment allows testing of a new feature in production. Who tests it?',
+    type: 'single',
+    options: ['Developer','Sales Team','Testers','End Users'],
+    correct: 3,
+    explanation: '<strong>End Users.</strong> Canary = route a small percentage of real production traffic to the new version. Real end users unknowingly test the new version. If no issues, gradually increase to 100%. This is NOT a dev/QA environment — it\'s real production traffic with real users. Tested in Quiz 10.'
+  },
+  {
+    text: 'Which deployment strategy does Docker Compose provide?',
+    type: 'single',
+    options: ['Ramped','Recreate','Blue/Green','Canary'],
+    correct: 1,
+    explanation: '<strong>Recreate.</strong> Docker Compose\'s <code>docker-compose up</code> stops all existing containers and starts new ones — this is the Recreate strategy. It causes downtime during deployment. For zero-downtime strategies (blue/green, canary, ramped), you need Kubernetes or more advanced tooling. Tested in Quiz 10.'
+  },
+  {
+    text: 'The Recreate deployment strategy for Kubernetes is a high-availability deployment strategy.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> Recreate is NOT high-availability. It stops all existing instances BEFORE starting new ones — so the service is DOWN during the update window. High-availability strategies (Ramped, Blue/Green, Canary) maintain uptime during updates. Tested in Quiz 10.'
+  },
+  {
+    text: 'NGINX is an example of a hardware load balancer.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> NGINX is a <em>software</em> load balancer. Hardware load balancers are dedicated physical appliances (expensive, used in enterprise). Software load balancers like NGINX, HAProxy, and Envoy run on standard servers and are more common in modern microservice deployments. Tested in Quiz 10.'
+  },
+  {
+    text: 'Automated testing segments in microservices include:',
+    type: 'multi', multiLabel: 'Select 4 correct answers',
+    options: ['Database Validity Testing','End to End Testing','UI Functional Testing','Unit Testing','Integration Testing','Code Branch Testing'],
+    correct: [1,2,3,4],
+    explanation: '<strong>End to End Testing, UI Functional Testing, Unit Testing, Integration Testing.</strong><br>• Unit Testing — individual components<br>• Integration Testing — components working together<br>• UI Functional Testing — browser-level behavior<br>• End to End Testing — full system flows<br><br>"Database Validity Testing" and "Code Branch Testing" are not standard terms from the reading. Tested in Quiz 9.'
+  },
+  {
+    text: 'An example of Distributed Tracing: observations of a single event as it flows through Receiver → Storage → Processing Service.',
+    type: 'single',
+    options: ['True','False'],
+    correct: 0,
+    explanation: '<strong>TRUE.</strong> Distributed Tracing tracks a single request/event as it crosses multiple service boundaries. In this course\'s microservice system: Receiver receives event → Storage stores it → Processing processes it. Distributed tracing gives end-to-end visibility of this flow. Tested in Quiz 9.'
+  },
+  {
+    text: 'What algorithm best describes Round Robin load balancing?',
+    type: 'single',
+    options: ['Picks two servers at random, selects one via Least Connections','Sends to server with fewest current connections','Requests distributed across servers sequentially','Client IP determines which server receives the request'],
+    correct: 2,
+    explanation: '<strong>Distributed sequentially.</strong> Round Robin cycles through servers in order: 1,2,3,1,2,3... It\'s simple and effective when servers have similar capacity. "Least Connected" is a different algorithm. "IP Hash" is for session persistence. "Two Choices" is Random with Two Choices. Tested in Quiz 10.'
+  },
+  {
+    text: 'When a Producer or Consumer loses its connection to the Kafka cluster, what is the best practice?',
+    type: 'single',
+    options: ['Log the error and do nothing — Kafka auto-reconnects','Restart the consumer or producer object to re-establish connection','Restart the entire Docker container','Switch to a REST API call instead'],
+    correct: 1,
+    explanation: '<strong>Restart the consumer/producer object.</strong> On connection loss, the best practice is to catch the exception and recreate the Producer or Consumer object to re-establish the connection. The specific exceptions to catch: Producer → <code>LeaderNotAvailable</code> + <code>SocketDisconnectedError</code>. Consumer → <code>SocketDisconnectedError</code>. Tested in Quiz 9.'
+  }
+];
+
+let current = 0, score = 0, answered = 0;
+let multiSelected = [];
+
+function renderQuestion() {
+  const q = questions[current];
+  document.getElementById('qNum').textContent = `Question ${current+1} of ${questions.length}  |  ${q.type === 'multi' ? 'Multi-Select' : 'Single Answer'}`;
+  document.getElementById('qText').innerHTML = q.text;
+  const mn = document.getElementById('multiNote');
+  if (q.type === 'multi') { mn.style.display = 'block'; mn.textContent = '⚠ ' + q.multiLabel; }
+  else { mn.style.display = 'none'; }
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+  const smb = document.getElementById('submitMultiBtn');
+  smb.style.display = q.type === 'multi' ? 'inline-block' : 'none';
+  multiSelected = [];
+
+  const list = document.getElementById('optionsList');
+  list.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.innerHTML = `<strong>${String.fromCharCode(65+i)}.</strong>  ${opt}`;
+    if (q.type === 'single') {
+      btn.onclick = () => selectSingle(i, btn);
+    } else {
+      btn.onclick = () => toggleMulti(i, btn);
+    }
+    li.appendChild(btn);
+    list.appendChild(li);
+  });
+
+  const pct = Math.round((current / questions.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Question ${current+1} of ${questions.length}`;
+  document.getElementById('scoreDisplay').textContent = `Score: ${score} / ${answered}`;
+}
+
+function toggleMulti(index, btn) {
+  if (btn.disabled) return;
+  const idx = multiSelected.indexOf(index);
+  if (idx === -1) { multiSelected.push(index); btn.classList.add('selected-multi'); }
+  else { multiSelected.splice(idx,1); btn.classList.remove('selected-multi'); }
+}
+
+function submitMulti() {
+  const q = questions[current];
+  const allBtns = document.querySelectorAll('.opt-btn');
+  allBtns.forEach(b => b.disabled = true);
+  document.getElementById('submitMultiBtn').disabled = true;
+  answered++;
+
+  const correct = q.correct;
+  const isCorrect = multiSelected.length === correct.length && correct.every(c => multiSelected.includes(c));
+  if (isCorrect) score++;
+
+  allBtns.forEach((btn, i) => {
+    btn.classList.remove('selected-multi');
+    if (correct.includes(i)) btn.classList.add('correct');
+    else if (multiSelected.includes(i)) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback ' + (isCorrect ? 'correct' : 'partial');
+  document.getElementById('verdict').textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect — see green for correct answers';
+  document.getElementById('explanation').innerHTML = q.explanation;
+  fb.style.display = 'block';
+  document.getElementById('nextBtn').style.display = 'inline-block';
+  document.getElementById('nextBtn').textContent = current < questions.length-1 ? 'Next Question →' : 'See Final Score →';
+  document.getElementById('scoreDisplay').textContent = `Score: ${score} / ${answered}`;
+}
+
+function selectSingle(index, btn) {
+  const q = questions[current];
+  const allBtns = document.querySelectorAll('.opt-btn');
+  allBtns.forEach(b => b.disabled = true);
+  answered++;
+  const isCorrect = index === q.correct;
+  if (isCorrect) { btn.classList.add('correct'); score++; }
+  else { btn.classList.add('wrong'); allBtns[q.correct].classList.add('reveal-correct'); }
+
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback ' + (isCorrect ? 'correct' : 'wrong');
+  document.getElementById('verdict').textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+  document.getElementById('explanation').innerHTML = q.explanation;
+  fb.style.display = 'block';
+  document.getElementById('nextBtn').style.display = 'inline-block';
+  document.getElementById('nextBtn').textContent = current < questions.length-1 ? 'Next Question →' : 'See Final Score →';
+  document.getElementById('scoreDisplay').textContent = `Score: ${score} / ${answered}`;
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) showFinal();
+  else renderQuestion();
+}
+
+function showFinal() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('progressBar').style.width = '100%';
+  const pct = Math.round((score/questions.length)*100);
+  const fs = document.getElementById('finalScore');
+  fs.textContent = `${score} / ${questions.length}`;
+  fs.className = 'final-score ' + (pct >= 70 ? 'pass' : 'fail');
+  let letter = pct>=90?'A':pct>=80?'B':pct>=70?'C':pct>=60?'D':'F';
+  document.getElementById('finalGrade').innerHTML = `${pct}%  |  Grade: <strong>${letter}</strong>  |  ${pct>=70?'✓ Ready for the open-book exam.':'✗ Review cheatsheet — multi-selects need more work.'}`;
+  document.getElementById('finalScreen').style.display = 'block';
+}
+
+function restartQuiz() {
+  current=0; score=0; answered=0;
+  document.getElementById('quizCard').style.display='block';
+  document.getElementById('finalScreen').style.display='none';
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
