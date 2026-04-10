@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4880 — All Answers Reference</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 14px; background: #f4f4f4; color: #222; }
+  .header { background: #003366; color: white; padding: 20px 30px; }
+  .header h1 { font-size: 20px; }
+  .header p { font-size: 13px; margin-top: 5px; opacity: 0.85; }
+  .container { max-width: 860px; margin: 24px auto; padding: 0 16px 60px; }
+  .intro-box { background: #e8f4fd; border: 1px solid #b8daff; border-left: 5px solid #004a99; padding: 14px 18px; margin-bottom: 24px; border-radius: 3px; font-size: 13px; line-height: 1.7; }
+  .section-title { font-size: 16px; font-weight: bold; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 6px; margin: 28px 0 16px; }
+  .q-block { background: #fff; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 16px; }
+  .q-header { background: #f0f2f5; padding: 10px 16px; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; }
+  .q-num { font-weight: bold; font-size: 13px; color: #333; }
+  .q-type { font-size: 11px; text-transform: uppercase; color: #888; font-weight: bold; letter-spacing: 1px; }
+  .q-body { padding: 16px 18px; }
+  .q-text { font-weight: bold; line-height: 1.6; margin-bottom: 12px; font-size: 14px; }
+  .option { display: flex; align-items: flex-start; padding: 7px 10px; margin: 4px 0; border-radius: 3px; font-size: 14px; }
+  .option.correct { background: #d4edda; border: 1px solid #28a745; color: #155724; font-weight: bold; }
+  .option.incorrect { background: #f9f9f9; border: 1px solid #ddd; color: #666; }
+  .option .marker { width: 22px; flex-shrink: 0; font-size: 14px; }
+  .explanation { margin-top: 12px; padding: 12px 14px; background: #fffbea; border-left: 4px solid #ffc107; font-size: 13px; line-height: 1.7; border-radius: 0 3px 3px 0; }
+  .explanation strong { color: #856404; }
+  .code-block { background: #f8f8f8; border: 1px solid #ddd; padding: 8px 12px; font-family: monospace; font-size: 13px; border-radius: 3px; margin: 6px 0 10px; white-space: pre; }
+  .toc { background: #fff; border: 1px solid #ddd; padding: 16px 20px; border-radius: 4px; margin-bottom: 24px; }
+  .toc h3 { font-size: 13px; font-weight: bold; text-transform: uppercase; color: #666; margin-bottom: 10px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .toc-link { text-align: center; padding: 6px; background: #f0f4ff; border: 1px solid #c0cfee; border-radius: 3px; font-size: 12px; color: #003366; text-decoration: none; }
+  .toc-link:hover { background: #003366; color: white; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ACIT4880 — Introduction to Data Analytics</h1>
+  <p>All Answers Reference &nbsp;|&nbsp; 30 Questions &nbsp;|&nbsp; Full Explanations &nbsp;|&nbsp; No Interaction Needed</p>
+</div>
+
+<div class="container">
+  <div class="intro-box">
+    <strong>How to use this file:</strong> All correct answers are pre-selected (green). Incorrect options are shown in grey for context. Read each explanation carefully — these cover the exact reasoning you need to pass the final exam. No timers, no clicking. Just read and absorb.
+    <br><br>
+    <strong>Exam:</strong> Monday April 20, 2026 &nbsp;|&nbsp; 9:30–10:30 AM &nbsp;|&nbsp; DTC 825 &nbsp;|&nbsp; 60 minutes
+  </div>
+
+  <div class="toc">
+    <h3>Quick Navigation</h3>
+    <div class="toc-grid">
+      <a href="#q1" class="toc-link">Q1</a><a href="#q2" class="toc-link">Q2</a><a href="#q3" class="toc-link">Q3</a><a href="#q4" class="toc-link">Q4</a><a href="#q5" class="toc-link">Q5</a>
+      <a href="#q6" class="toc-link">Q6</a><a href="#q7" class="toc-link">Q7</a><a href="#q8" class="toc-link">Q8</a><a href="#q9" class="toc-link">Q9</a><a href="#q10" class="toc-link">Q10</a>
+      <a href="#q11" class="toc-link">Q11</a><a href="#q12" class="toc-link">Q12</a><a href="#q13" class="toc-link">Q13</a><a href="#q14" class="toc-link">Q14</a><a href="#q15" class="toc-link">Q15</a>
+      <a href="#q16" class="toc-link">Q16</a><a href="#q17" class="toc-link">Q17</a><a href="#q18" class="toc-link">Q18</a><a href="#q19" class="toc-link">Q19</a><a href="#q20" class="toc-link">Q20</a>
+      <a href="#q21" class="toc-link">Q21</a><a href="#q22" class="toc-link">Q22</a><a href="#q23" class="toc-link">Q23</a><a href="#q24" class="toc-link">Q24</a><a href="#q25" class="toc-link">Q25</a>
+      <a href="#q26" class="toc-link">Q26</a><a href="#q27" class="toc-link">Q27</a><a href="#q28" class="toc-link">Q28</a><a href="#q29" class="toc-link">Q29</a><a href="#q30" class="toc-link">Q30</a>
+    </div>
+  </div>
+
+  <div class="section-title">Part 1 — NumPy &amp; Pandas (Q1–Q6)</div>
+
+  <div class="q-block" id="q1">
+    <div class="q-header"><span class="q-num">Question 1</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text"><code>df.head()</code> without arguments returns the first 10 rows by default.</div>
+      <div class="option incorrect"><span class="marker">○</span> True</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>False</strong></div>
+      <div class="explanation"><strong>Answer: FALSE.</strong> <code>df.head()</code> returns the first <strong>5 rows</strong> by default. Use <code>df.head(10)</code> to get 10. This specific fact appeared on Quiz 1 as a wrong answer trap.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q2">
+    <div class="q-header"><span class="q-num">Question 2</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text"><code>df.shape</code> returns a tuple of (rows, columns).</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>True</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> False</div>
+      <div class="explanation"><strong>Answer: TRUE.</strong> <code>df.shape</code> returns a tuple <code>(n_rows, n_columns)</code>. For example, <code>(500, 12)</code> means 500 rows and 12 features.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q3">
+    <div class="q-header"><span class="q-num">Question 3</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">What happens when you run:<div class="code-block">arr1 = np.array([1, 2, 3])
+arr2 = arr1
+arr2[0] = 99</div></div>
+      <div class="option incorrect"><span class="marker">○</span> Error: cannot modify arr2</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Both arr1 and arr2 become [99, 2, 3]</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> arr1 becomes [99, 2, 3] and arr2 remains [1, 2, 3]</div>
+      <div class="option incorrect"><span class="marker">○</span> arr1 remains [1, 2, 3] and arr2 becomes [99, 2, 3]</div>
+      <div class="explanation"><strong>Answer: Both arrays become [99, 2, 3].</strong> <code>arr2 = arr1</code> creates a <em>reference</em> — both names point to the same memory. Changing one changes both. Use <code>arr2 = arr1.copy()</code> for a true independent copy. This exact question appeared on Quiz 1.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q4">
+    <div class="q-header"><span class="q-num">Question 4</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">What will <code>df.iloc[2:5, 1:3]</code> return?</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Rows 2 to 4 and columns 1 to 2</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Rows 2 to 4 and columns 1 to 3</div>
+      <div class="option incorrect"><span class="marker">○</span> Rows 2 to 5 and columns 1 to 2</div>
+      <div class="option incorrect"><span class="marker">○</span> Rows 2 to 5 (inclusive) and columns 1 to 3 (inclusive)</div>
+      <div class="explanation"><strong>Answer: Rows 2–4, columns 1–2.</strong> Python slices are <em>exclusive</em> of the upper bound. <code>2:5</code> → indices 2, 3, 4. <code>1:3</code> → indices 1, 2. This exact question appeared on Quiz 1 — the most common mistake is thinking the upper bound is inclusive.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q5">
+    <div class="q-header"><span class="q-num">Question 5</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">What is the primary difference between a NumPy array and a Pandas Series?</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Series has an index and can hold different data types; arrays are homogeneous</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Arrays are always faster</div>
+      <div class="option incorrect"><span class="marker">○</span> Series can only hold numeric data</div>
+      <div class="option incorrect"><span class="marker">○</span> No significant difference</div>
+      <div class="explanation"><strong>Answer: Series has index + mixed types; arrays are homogeneous.</strong> NumPy arrays must be a single dtype. Pandas Series adds a labeled index and can hold object dtype (mixed). Series can also hold strings, booleans, and mixed types as object dtype.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q6">
+    <div class="q-header"><span class="q-num">Question 6</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">The <code>iloc[]</code> method in pandas is used for label-based indexing.</div>
+      <div class="option incorrect"><span class="marker">○</span> True</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>False</strong></div>
+      <div class="explanation"><strong>Answer: FALSE.</strong> <code>iloc[]</code> = <em>integer location</em> (position). <code>loc[]</code> = <em>label</em> based. Example: <code>df.iloc[0]</code> gets the first row by position. <code>df.loc['rowlabel']</code> gets by label. This was tested directly on Quiz 1.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Part 2 — Data Preprocessing &amp; EDA (Q7–Q12)</div>
+
+  <div class="q-block" id="q7">
+    <div class="q-header"><span class="q-num">Question 7</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which transformation is most appropriate when dealing with highly skewed data?</div>
+      <div class="option incorrect"><span class="marker">○</span> Standardization (Z-score normalization)</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Logarithmic transformation</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> One-hot encoding</div>
+      <div class="option incorrect"><span class="marker">○</span> Min-max scaling</div>
+      <div class="explanation"><strong>Answer: Logarithmic transformation.</strong> Log compresses the tail of a skewed distribution, making it more symmetric/normal. Z-score and min-max change scale but not shape. One-hot is for categoricals. This appeared on Quiz 2.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q8">
+    <div class="q-header"><span class="q-num">Question 8</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">Outliers should always be removed from a dataset to ensure better model performance.</div>
+      <div class="option incorrect"><span class="marker">○</span> True</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>False</strong></div>
+      <div class="explanation"><strong>Answer: FALSE.</strong> Outliers are NOT always errors. A billionaire in a salary dataset is an outlier but valid. Blind removal loses information. Investigate: is it data entry error? Legitimate extreme? Only then decide to remove, cap, or keep. This appeared on Quiz 2.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q9">
+    <div class="q-header"><span class="q-num">Question 9</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">In supervised learning, the target variable is also known as:</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>The dependent variable</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> The predictor variable</div>
+      <div class="option incorrect"><span class="marker">○</span> The independent variable</div>
+      <div class="option incorrect"><span class="marker">○</span> The explanatory variable</div>
+      <div class="explanation"><strong>Answer: Dependent variable.</strong> The target is what we predict — it "depends" on the input features. Input features are the independent/predictor/explanatory variables. This appeared on Quiz 2. Mixing these up is a common mistake.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q10">
+    <div class="q-header"><span class="q-num">Question 10</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">In the context of data preprocessing, what does GIGO stand for?</div>
+      <div class="option incorrect"><span class="marker">○</span> General Information, General Output</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Garbage In, Garbage Out</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Great Input, Great Output</div>
+      <div class="option incorrect"><span class="marker">○</span> Grouped Input, Grouped Output</div>
+      <div class="explanation"><strong>Answer: Garbage In, Garbage Out.</strong> The fundamental principle of data quality: even the most sophisticated algorithm fails if fed dirty, incorrect, or irrelevant data. This was directly tested on Quiz 2.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q11">
+    <div class="q-header"><span class="q-num">Question 11</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">Substituting missing data with the mean is always good because measures of spread are not affected.</div>
+      <div class="option incorrect"><span class="marker">○</span> True</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>False</strong></div>
+      <div class="explanation"><strong>Answer: FALSE.</strong> Mean imputation DOES distort measures of spread. By replacing missing values with the mean, you artificially cluster values around the center, reducing variance and distorting the true distribution. This appeared on Quiz 2.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q12">
+    <div class="q-header"><span class="q-num">Question 12</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which of the following is NOT a typical activity in EDA?</div>
+      <div class="option incorrect"><span class="marker">○</span> Developing an initial idea of possible associations among predictors</div>
+      <div class="option incorrect"><span class="marker">○</span> Examining important interrelationships between attributes</div>
+      <div class="option incorrect"><span class="marker">○</span> Identifying interesting subsets of the observations</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Testing a specific statistical hypothesis</strong></div>
+      <div class="explanation"><strong>Answer: Testing a specific hypothesis.</strong> EDA is open-ended exploration. Formal hypothesis testing belongs to inferential statistics. EDA uncovers structure; inferential stats confirms or rejects specific claims with statistical rigor. This appeared on Quiz 2.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Part 3 — Machine Learning Algorithms (Q13–Q23)</div>
+
+  <div class="q-block" id="q13">
+    <div class="q-header"><span class="q-num">Question 13</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">In kNN, what happens when you choose a very low value of k?</div>
+      <div class="option incorrect"><span class="marker">○</span> The model underfits the training data</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>The model overfits — too sensitive to noise</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> The model ignores all training data</div>
+      <div class="option incorrect"><span class="marker">○</span> No effect — k doesn't matter</div>
+      <div class="explanation"><strong>Answer: Overfitting.</strong> k=1 → classify by the single nearest neighbor → memorizes training noise → overfits. Large k → smoother decision boundary → underfitting. Optimal k is found via cross-validation. Rule of thumb: try k = √n.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q14">
+    <div class="q-header"><span class="q-num">Question 14</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">What technique does Random Forest use to create diversity among its trees?</div>
+      <div class="option incorrect"><span class="marker">○</span> Each tree uses the full dataset and all features</div>
+      <div class="option incorrect"><span class="marker">○</span> Boosting — trees built sequentially to fix errors</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Bagging — random subsets of data AND features for each tree</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Pruning — each tree simplified after training</div>
+      <div class="explanation"><strong>Answer: Bagging.</strong> Bootstrap Aggregating = train each tree on a random sample (with replacement) of training data AND a random subset of features. This creates decorrelated trees. Final answer = majority vote (classification) or mean (regression). Boosting is used in AdaBoost/GBM/XGBoost — fundamentally different.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q15">
+    <div class="q-header"><span class="q-num">Question 15</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which metric is most appropriate for an imbalanced classification dataset?</div>
+      <div class="option incorrect"><span class="marker">○</span> Accuracy</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>F1 Score</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Mean Squared Error</div>
+      <div class="option incorrect"><span class="marker">○</span> R² Score</div>
+      <div class="explanation"><strong>Answer: F1 Score.</strong> With 95% class 0 and 5% class 1, a model predicting all class 0 = 95% accuracy. F1 = 0 because it caught no positives. F1 balances precision (quality of positive predictions) and recall (coverage of actual positives). Use F1, AUC-ROC, or per-class precision/recall for imbalanced datasets.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q16">
+    <div class="q-header"><span class="q-num">Question 16</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">SMOTE generates synthetic samples for the minority class to handle imbalanced datasets.</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>True</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> False</div>
+      <div class="explanation"><strong>Answer: TRUE.</strong> SMOTE (Synthetic Minority Oversampling Technique) creates new minority examples by interpolating between existing ones. Better than simple duplication because it adds diversity. Alternative: undersampling (remove majority class), or class_weight='balanced' in sklearn models.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q17">
+    <div class="q-header"><span class="q-num">Question 17</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">In a Decision Tree, what does "information gain" measure?</div>
+      <div class="option incorrect"><span class="marker">○</span> The total number of splits in the tree</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>The reduction in entropy after a split on a feature</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> The increase in the number of features used</div>
+      <div class="option incorrect"><span class="marker">○</span> The depth of the resulting tree</div>
+      <div class="explanation"><strong>Answer: Reduction in entropy.</strong> IG = Entropy(parent) − Σ weighted Entropy(children). High IG = that feature creates purer subgroups. The tree algorithm greedily picks the feature with highest IG at each node. Gini impurity is an alternative to entropy for the same purpose.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q18">
+    <div class="q-header"><span class="q-num">Question 18</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">In K-Means clustering, the "Elbow Method" is used to:</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Determine the optimal number of clusters (k)</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Find the centroid with the lowest variance</div>
+      <div class="option incorrect"><span class="marker">○</span> Remove outliers before clustering</div>
+      <div class="option incorrect"><span class="marker">○</span> Determine the distance metric to use</div>
+      <div class="explanation"><strong>Answer: Find optimal k.</strong> Plot inertia (WCSS — within-cluster sum of squares) vs k. At first, adding more clusters greatly reduces inertia. Eventually, the improvement flattens. The "elbow" = point of diminishing returns = optimal k. Example: sharp drop from k=1→3, then flattens at k=4 → use k=4.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q19">
+    <div class="q-header"><span class="q-num">Question 19</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which regression evaluation metric(s) are in the same units as the target variable?</div>
+      <div class="option incorrect"><span class="marker">○</span> MSE (Mean Squared Error) only</div>
+      <div class="option incorrect"><span class="marker">○</span> R² Score only</div>
+      <div class="option incorrect"><span class="marker">○</span> RMSE only</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Both MAE and RMSE are in the same units as the target</strong></div>
+      <div class="explanation"><strong>Answer: Both MAE and RMSE.</strong> MAE = mean of |y - ŷ|. RMSE = √MSE. Both are in original units (e.g., dollars if predicting salary). MSE is in squared units (dollars²). R² is unitless (0–1). When explaining to stakeholders, prefer MAE or RMSE over MSE.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q20">
+    <div class="q-header"><span class="q-num">Question 20</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">In an SVM, what are "support vectors"?</div>
+      <div class="option incorrect"><span class="marker">○</span> All data points used during training</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>The data points closest to the decision hyperplane</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Vectors used to transform features into higher dimensions</div>
+      <div class="option incorrect"><span class="marker">○</span> Features with the highest variance</div>
+      <div class="explanation"><strong>Answer: Closest data points to the hyperplane.</strong> Support vectors define the margin. The SVM objective is to maximize the margin between the two classes. Only support vectors matter — removing any other training point would not change the model. The kernel trick maps data to higher dimensions to find a separating hyperplane.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q21">
+    <div class="q-header"><span class="q-num">Question 21</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">kNN is a parametric learning algorithm — it builds an explicit model during training.</div>
+      <div class="option incorrect"><span class="marker">○</span> True</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>False</strong></div>
+      <div class="explanation"><strong>Answer: FALSE.</strong> kNN is <em>non-parametric</em> and a <em>lazy learner</em>. During "training" it just stores the dataset — no model is built. At prediction time, it computes distances to all training points and votes. This makes training instant but prediction slow for large datasets.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q22">
+    <div class="q-header"><span class="q-num">Question 22</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Recall (Sensitivity) is calculated as:</div>
+      <div class="option incorrect"><span class="marker">○</span> TP / (TP + FP) — this is Precision</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>TP / (TP + FN)</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> (TP + TN) / Total — this is Accuracy</div>
+      <div class="option incorrect"><span class="marker">○</span> 2 × Precision × Recall / (P + R) — this is F1</div>
+      <div class="explanation"><strong>Answer: TP / (TP + FN).</strong> Recall = of all actual positives, how many did we correctly identify? FN = false negatives = cases we missed. High recall is critical in medical diagnosis (don't miss cancer patients). High precision = when we predict positive, we're usually right.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q23">
+    <div class="q-header"><span class="q-num">Question 23</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which statement about Hierarchical Clustering is correct?</div>
+      <div class="option incorrect"><span class="marker">○</span> You must specify k before running it</div>
+      <div class="option incorrect"><span class="marker">○</span> It always uses Euclidean distance only</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>It builds a dendrogram that can be cut at any level to get clusters</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> It cannot handle more than 100 data points</div>
+      <div class="explanation"><strong>Answer: Dendrogram cut at any level.</strong> Key advantage over K-Means: no k required upfront. View the dendrogram and decide. Linkage methods: single (closest), complete (farthest), average, Ward (minimizes variance — most common). Agglomerative (bottom-up) is more common than divisive (top-down).</div>
+    </div>
+  </div>
+
+  <div class="section-title">Part 4 — Model Tuning &amp; Evaluation (Q24–Q30)</div>
+
+  <div class="q-block" id="q24">
+    <div class="q-header"><span class="q-num">Question 24</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">Feature scaling is required before applying kNN.</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>True</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> False</div>
+      <div class="explanation"><strong>Answer: TRUE.</strong> kNN computes Euclidean distance. A feature like "salary" (50,000) would completely dominate "age" (25–65) without scaling. Always normalize or standardize features before kNN, SVM, or any distance-based algorithm. Tree-based models (DT, RF) do NOT require scaling.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q25">
+    <div class="q-header"><span class="q-num">Question 25</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which scikit-learn method performs exhaustive search over ALL combinations of hyperparameters?</div>
+      <div class="option incorrect"><span class="marker">○</span> RandomizedSearchCV</div>
+      <div class="option incorrect"><span class="marker">○</span> CrossValidateCV (not a real class)</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>GridSearchCV</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> BayesianSearchCV</div>
+      <div class="explanation"><strong>Answer: GridSearchCV.</strong> Grid search tries every possible combination from the parameter grid. Slow but thorough. RandomizedSearchCV samples a random subset — faster. Both use cross-validation internally. For production hyperparameter tuning, Bayesian optimization (e.g., Optuna) is smarter but not standard sklearn.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q26">
+    <div class="q-header"><span class="q-num">Question 26</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">What does R² = 0 indicate about a regression model?</div>
+      <div class="option incorrect"><span class="marker">○</span> The model perfectly predicts the target</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>The model performs no better than predicting the mean of the target</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> The model has a 0% error rate</div>
+      <div class="option incorrect"><span class="marker">○</span> The model has 0% accuracy</div>
+      <div class="explanation"><strong>Answer: No better than mean baseline.</strong> R² measures proportion of variance explained. R²=1 = perfect. R²=0 = model explains nothing beyond the mean. R² can be NEGATIVE if the model is worse than the mean baseline. It is NOT a percentage — it is a ratio of explained variance.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q27">
+    <div class="q-header"><span class="q-num">Question 27</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which describes HIGH VARIANCE (overfitting) in a model?</div>
+      <div class="option incorrect"><span class="marker">○</span> Poor performance on both training and test sets</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Excellent training performance but poor test performance</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Equal performance on training and test regardless of complexity</div>
+      <div class="option incorrect"><span class="marker">○</span> The model predicts the same value for all inputs</div>
+      <div class="explanation"><strong>Answer: Great train, poor test.</strong> High bias (underfitting) = poor on BOTH. High variance (overfitting) = great on train (memorized it), poor on test (can't generalize). Solutions for overfitting: regularization (L1/L2), cross-validation, more training data, simpler model, ensemble (Random Forest).</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q28">
+    <div class="q-header"><span class="q-num">Question 28</span><span class="q-type">True/False</span></div>
+    <div class="q-body">
+      <div class="q-text">Decision trees are prone to overfitting and can be controlled with max_depth or pruning.</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>True</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> False</div>
+      <div class="explanation"><strong>Answer: TRUE.</strong> An unrestricted decision tree grows until it perfectly fits training data (pure leaves = overfit). Controls: <code>max_depth</code>, <code>min_samples_split</code>, <code>min_samples_leaf</code>, and pruning. Random Forest solves this by averaging many trees on different data subsets.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q29">
+    <div class="q-header"><span class="q-num">Question 29</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which imputation technique is most susceptible to introducing bias?</div>
+      <div class="option incorrect"><span class="marker">○</span> Predictive modeling-based imputation</div>
+      <div class="option incorrect"><span class="marker">○</span> k-Nearest Neighbors imputation</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>Mean imputation</strong></div>
+      <div class="option incorrect"><span class="marker">○</span> Multiple imputation</div>
+      <div class="explanation"><strong>Answer: Mean imputation.</strong> Replacing ALL missing values with a single constant (the mean) creates artificial clustering at the mean, reducing variance and distorting correlations. Multiple imputation is the gold standard. KNN uses relationships between features to impute more intelligently. This was directly tested on Quiz 2.</div>
+    </div>
+  </div>
+
+  <div class="q-block" id="q30">
+    <div class="q-header"><span class="q-num">Question 30</span><span class="q-type">Multiple Choice</span></div>
+    <div class="q-body">
+      <div class="q-text">Which transformations can ALL stabilize variance and make data more normally distributed?</div>
+      <div class="option incorrect"><span class="marker">○</span> Logarithmic transformation only</div>
+      <div class="option incorrect"><span class="marker">○</span> Square root transformation only</div>
+      <div class="option incorrect"><span class="marker">○</span> Inverse transformation only</div>
+      <div class="option correct"><span class="marker">✓</span> <strong>All of the above (log, square root, and inverse)</strong></div>
+      <div class="explanation"><strong>Answer: All of the above.</strong> All three are power transformations that compress large values and expand small values, reducing right skew. Log is most aggressive (best for heavy skew). Square root is gentler. Inverse is for very extreme skew. This exact "all of the above" pattern appeared on Quiz 2 (Q17) — this course frequently uses it as the correct answer.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top: 40px; padding: 20px; background: #003366; color: white; border-radius: 6px;">
+    <h3 style="margin-bottom:8px;">Good luck on April 20!</h3>
+    <p style="font-size: 13px; opacity: 0.85;">ACIT4880 Final Exam &nbsp;|&nbsp; 9:30 AM &nbsp;|&nbsp; DTC 825 &nbsp;|&nbsp; 60 minutes &nbsp;|&nbsp; Bring your student ID</p>
+  </div>
+
+</div>
+</body>
+</html>

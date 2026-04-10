@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4880 — Final Exam Practice Quiz (D2L Format)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 14px; background: #f4f4f4; color: #222; }
+  .header { background: #003366; color: white; padding: 20px 30px; }
+  .header h1 { font-size: 20px; }
+  .header p { font-size: 13px; margin-top: 5px; opacity: 0.85; }
+  .container { max-width: 860px; margin: 24px auto; padding: 0 16px 60px; }
+  .quiz-info { background: #fff; border: 1px solid #ccc; border-left: 5px solid #003366; padding: 14px 18px; margin-bottom: 24px; border-radius: 3px; }
+  .quiz-info p { margin: 4px 0; font-size: 13px; }
+  .question-block { background: #fff; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 18px; padding: 0; }
+  .question-header { background: #e8ecf0; padding: 10px 16px; border-bottom: 1px solid #ddd; font-size: 13px; color: #555; }
+  .question-body { padding: 16px 18px; }
+  .question-text { font-size: 14px; font-weight: bold; margin-bottom: 14px; line-height: 1.6; }
+  .option { display: flex; align-items: flex-start; margin: 8px 0; cursor: pointer; padding: 8px 10px; border-radius: 3px; transition: background 0.15s; }
+  .option:hover { background: #f0f4ff; }
+  .option input[type="radio"], .option input[type="checkbox"] { margin-right: 10px; margin-top: 2px; flex-shrink: 0; }
+  .option label { cursor: pointer; line-height: 1.5; }
+  .option.correct-highlight { background: #d4edda !important; border: 1px solid #28a745; }
+  .option.wrong-highlight { background: #f8d7da !important; border: 1px solid #dc3545; }
+  .submit-section { text-align: center; margin: 30px 0 10px; }
+  .submit-btn { background: #003366; color: white; border: none; padding: 12px 40px; font-size: 15px; border-radius: 4px; cursor: pointer; }
+  .submit-btn:hover { background: #004a99; }
+  .result-box { display: none; background: #fff; border: 2px solid #003366; border-radius: 6px; padding: 24px; text-align: center; margin-top: 24px; }
+  .result-box h2 { font-size: 22px; color: #003366; }
+  .result-box .score { font-size: 42px; font-weight: bold; margin: 12px 0; }
+  .result-box .grade { font-size: 16px; color: #555; }
+  .result-box .pass { color: #28a745; }
+  .result-box .fail { color: #dc3545; }
+  .code-block { background: #f8f8f8; border: 1px solid #ddd; padding: 8px 12px; font-family: monospace; font-size: 13px; margin: 8px 0; border-radius: 3px; white-space: pre; }
+  .type-label { font-size: 11px; text-transform: uppercase; color: #888; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ACIT4880 — Introduction to Data Analytics</h1>
+  <p>Final Exam Practice Quiz &nbsp;|&nbsp; D2L Format &nbsp;|&nbsp; 30 Questions &nbsp;|&nbsp; Covers Full Course</p>
+</div>
+
+<div class="container">
+  <div class="quiz-info">
+    <p><strong>Instructions:</strong> Select the best answer for each question. Some questions may have multiple correct answers — select all that apply. Click <strong>Submit Quiz</strong> when done to see your grade.</p>
+    <p><strong>Exam:</strong> Mon Apr 20, 2026 &nbsp;|&nbsp; 9:30–10:30 AM &nbsp;|&nbsp; DTC 825</p>
+    <p><strong>Tip:</strong> Watch for "NOT", "ALWAYS", "NEVER" — common traps in this course.</p>
+  </div>
+
+  <form id="quizForm">
+
+    <!-- Q1 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 1 of 30</div>
+      <div class="question-body">
+        <div class="question-text">1. <code>df.head()</code> without arguments returns the first 10 rows by default.</div>
+        <div class="option"><input type="radio" name="q1" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q1" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 2 of 30</div>
+      <div class="question-body">
+        <div class="question-text">2. <code>df.shape</code> returns a tuple of (rows, columns).</div>
+        <div class="option"><input type="radio" name="q2" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q2" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 3 of 30</div>
+      <div class="question-body">
+        <div class="question-text">3. What happens when you run the following code?
+          <div class="code-block">arr1 = np.array([1, 2, 3])
+arr2 = arr1
+arr2[0] = 99</div>
+        </div>
+        <div class="option"><input type="radio" name="q3" value="A"><label>Error: cannot modify arr2</label></div>
+        <div class="option"><input type="radio" name="q3" value="B"><label>Both arr1 and arr2 become [99, 2, 3]</label></div>
+        <div class="option"><input type="radio" name="q3" value="C"><label>arr1 becomes [99, 2, 3] and arr2 remains [1, 2, 3]</label></div>
+        <div class="option"><input type="radio" name="q3" value="D"><label>arr1 remains [1, 2, 3] and arr2 becomes [99, 2, 3]</label></div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 4 of 30</div>
+      <div class="question-body">
+        <div class="question-text">4. What will <code>df.iloc[2:5, 1:3]</code> return?</div>
+        <div class="option"><input type="radio" name="q4" value="A"><label>Rows 2 to 4 and columns 1 to 2</label></div>
+        <div class="option"><input type="radio" name="q4" value="B"><label>Rows 2 to 4 and columns 1 to 3</label></div>
+        <div class="option"><input type="radio" name="q4" value="C"><label>Rows 2 to 5 and columns 1 to 2</label></div>
+        <div class="option"><input type="radio" name="q4" value="D"><label>Rows 2 to 5 (inclusive) and columns 1 to 3 (inclusive)</label></div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 5 of 30</div>
+      <div class="question-body">
+        <div class="question-text">5. What is the primary difference between a NumPy array and a Pandas Series?</div>
+        <div class="option"><input type="radio" name="q5" value="A"><label>Series has an index and can hold different data types; arrays are homogeneous</label></div>
+        <div class="option"><input type="radio" name="q5" value="B"><label>Arrays are always faster</label></div>
+        <div class="option"><input type="radio" name="q5" value="C"><label>Series can only hold numeric data</label></div>
+        <div class="option"><input type="radio" name="q5" value="D"><label>No significant difference</label></div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 6 of 30</div>
+      <div class="question-body">
+        <div class="question-text">6. The <code>iloc[]</code> method in pandas is used for label-based indexing.</div>
+        <div class="option"><input type="radio" name="q6" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q6" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 7 of 30</div>
+      <div class="question-body">
+        <div class="question-text">7. Which of the following transformations is most appropriate when dealing with highly skewed data?</div>
+        <div class="option"><input type="radio" name="q7" value="A"><label>Standardization (Z-score normalization)</label></div>
+        <div class="option"><input type="radio" name="q7" value="B"><label>Logarithmic transformation</label></div>
+        <div class="option"><input type="radio" name="q7" value="C"><label>One-hot encoding</label></div>
+        <div class="option"><input type="radio" name="q7" value="D"><label>Min-max scaling</label></div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 8 of 30</div>
+      <div class="question-body">
+        <div class="question-text">8. Outliers should always be removed from a dataset to ensure better model performance.</div>
+        <div class="option"><input type="radio" name="q8" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q8" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 9 of 30</div>
+      <div class="question-body">
+        <div class="question-text">9. In supervised learning, the target variable is also known as:</div>
+        <div class="option"><input type="radio" name="q9" value="A"><label>The dependent variable</label></div>
+        <div class="option"><input type="radio" name="q9" value="B"><label>The predictor variable</label></div>
+        <div class="option"><input type="radio" name="q9" value="C"><label>The independent variable</label></div>
+        <div class="option"><input type="radio" name="q9" value="D"><label>The explanatory variable</label></div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 10 of 30</div>
+      <div class="question-body">
+        <div class="question-text">10. In the context of data preprocessing, what does GIGO stand for?</div>
+        <div class="option"><input type="radio" name="q10" value="A"><label>General Information, General Output</label></div>
+        <div class="option"><input type="radio" name="q10" value="B"><label>Garbage In, Garbage Out</label></div>
+        <div class="option"><input type="radio" name="q10" value="C"><label>Great Input, Great Output</label></div>
+        <div class="option"><input type="radio" name="q10" value="D"><label>Grouped Input, Grouped Output</label></div>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 11 of 30</div>
+      <div class="question-body">
+        <div class="question-text">11. Substituting missing data with the mean value is always good because measures of spread are not affected.</div>
+        <div class="option"><input type="radio" name="q11" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q11" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 12 of 30</div>
+      <div class="question-body">
+        <div class="question-text">12. Which of the following is NOT a typical activity in EDA (Exploratory Data Analysis)?</div>
+        <div class="option"><input type="radio" name="q12" value="A"><label>Developing an initial idea of possible associations among predictors</label></div>
+        <div class="option"><input type="radio" name="q12" value="B"><label>Examining important interrelationships between attributes</label></div>
+        <div class="option"><input type="radio" name="q12" value="C"><label>Identifying interesting subsets of the observations</label></div>
+        <div class="option"><input type="radio" name="q12" value="D"><label>Testing a specific statistical hypothesis</label></div>
+      </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 13 of 30</div>
+      <div class="question-body">
+        <div class="question-text">13. In kNN classification, what happens when you choose a very low value of k?</div>
+        <div class="option"><input type="radio" name="q13" value="A"><label>The model underfits the training data</label></div>
+        <div class="option"><input type="radio" name="q13" value="B"><label>The model overfits — too sensitive to noise</label></div>
+        <div class="option"><input type="radio" name="q13" value="C"><label>The model ignores all training data</label></div>
+        <div class="option"><input type="radio" name="q13" value="D"><label>No effect — k doesn't matter in kNN</label></div>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 14 of 30</div>
+      <div class="question-body">
+        <div class="question-text">14. What does a Random Forest use to create diversity among its trees?</div>
+        <div class="option"><input type="radio" name="q14" value="A"><label>Each tree uses the full dataset and all features</label></div>
+        <div class="option"><input type="radio" name="q14" value="B"><label>Boosting — trees are built sequentially to fix errors</label></div>
+        <div class="option"><input type="radio" name="q14" value="C"><label>Bagging — random subsets of data AND features for each tree</label></div>
+        <div class="option"><input type="radio" name="q14" value="D"><label>Pruning — each tree is simplified after training</label></div>
+      </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 15 of 30</div>
+      <div class="question-body">
+        <div class="question-text">15. Which metric is most appropriate when dealing with an imbalanced classification dataset?</div>
+        <div class="option"><input type="radio" name="q15" value="A"><label>Accuracy</label></div>
+        <div class="option"><input type="radio" name="q15" value="B"><label>F1 Score</label></div>
+        <div class="option"><input type="radio" name="q15" value="C"><label>Mean Squared Error</label></div>
+        <div class="option"><input type="radio" name="q15" value="D"><label>R² Score</label></div>
+      </div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 16 of 30</div>
+      <div class="question-body">
+        <div class="question-text">16. SMOTE generates synthetic samples for the minority class to handle imbalanced datasets.</div>
+        <div class="option"><input type="radio" name="q16" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q16" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 17 of 30</div>
+      <div class="question-body">
+        <div class="question-text">17. In a Decision Tree, what does "information gain" measure?</div>
+        <div class="option"><input type="radio" name="q17" value="A"><label>The total number of splits in the tree</label></div>
+        <div class="option"><input type="radio" name="q17" value="B"><label>The reduction in entropy after a split on a feature</label></div>
+        <div class="option"><input type="radio" name="q17" value="C"><label>The increase in the number of features used</label></div>
+        <div class="option"><input type="radio" name="q17" value="D"><label>The depth of the resulting tree</label></div>
+      </div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 18 of 30</div>
+      <div class="question-body">
+        <div class="question-text">18. In K-Means clustering, the "Elbow Method" is used to:</div>
+        <div class="option"><input type="radio" name="q18" value="A"><label>Determine the optimal number of clusters (k)</label></div>
+        <div class="option"><input type="radio" name="q18" value="B"><label>Find the centroid with the lowest variance</label></div>
+        <div class="option"><input type="radio" name="q18" value="C"><label>Remove outliers before clustering</label></div>
+        <div class="option"><input type="radio" name="q18" value="D"><label>Determine the distance metric to use</label></div>
+      </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 19 of 30</div>
+      <div class="question-body">
+        <div class="question-text">19. What regression evaluation metric is in the same units as the target variable?</div>
+        <div class="option"><input type="radio" name="q19" value="A"><label>MSE (Mean Squared Error)</label></div>
+        <div class="option"><input type="radio" name="q19" value="B"><label>R² Score</label></div>
+        <div class="option"><input type="radio" name="q19" value="C"><label>RMSE (Root Mean Squared Error)</label></div>
+        <div class="option"><input type="radio" name="q19" value="D"><label>MAE / RMSE — both are in same units</label></div>
+      </div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 20 of 30</div>
+      <div class="question-body">
+        <div class="question-text">20. In an SVM, what are "support vectors"?</div>
+        <div class="option"><input type="radio" name="q20" value="A"><label>All data points used during training</label></div>
+        <div class="option"><input type="radio" name="q20" value="B"><label>The data points closest to the decision hyperplane</label></div>
+        <div class="option"><input type="radio" name="q20" value="C"><label>Vectors used to transform features into higher dimensions</label></div>
+        <div class="option"><input type="radio" name="q20" value="D"><label>The features with the highest variance</label></div>
+      </div>
+    </div>
+
+    <!-- Q21 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 21 of 30</div>
+      <div class="question-body">
+        <div class="question-text">21. kNN is a parametric learning algorithm — it learns a model during training.</div>
+        <div class="option"><input type="radio" name="q21" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q21" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q22 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 22 of 30</div>
+      <div class="question-body">
+        <div class="question-text">22. Recall (Sensitivity) is calculated as:</div>
+        <div class="option"><input type="radio" name="q22" value="A"><label>TP / (TP + FP)</label></div>
+        <div class="option"><input type="radio" name="q22" value="B"><label>TP / (TP + FN)</label></div>
+        <div class="option"><input type="radio" name="q22" value="C"><label>(TP + TN) / Total</label></div>
+        <div class="option"><input type="radio" name="q22" value="D"><label>2 × Precision × Recall / (Precision + Recall)</label></div>
+      </div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 23 of 30</div>
+      <div class="question-body">
+        <div class="question-text">23. Which of the following statements about Hierarchical Clustering is correct?</div>
+        <div class="option"><input type="radio" name="q23" value="A"><label>You must specify the number of clusters k before running it</label></div>
+        <div class="option"><input type="radio" name="q23" value="B"><label>It always uses Euclidean distance</label></div>
+        <div class="option"><input type="radio" name="q23" value="C"><label>It builds a dendrogram that can be cut at any level to get clusters</label></div>
+        <div class="option"><input type="radio" name="q23" value="D"><label>It cannot handle more than 100 data points</label></div>
+      </div>
+    </div>
+
+    <!-- Q24 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 24 of 30</div>
+      <div class="question-body">
+        <div class="question-text">24. Feature scaling (normalization/standardization) is required before applying kNN.</div>
+        <div class="option"><input type="radio" name="q24" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q24" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q25 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 25 of 30</div>
+      <div class="question-body">
+        <div class="question-text">25. Which method in scikit-learn performs exhaustive search over all combinations of hyperparameters?</div>
+        <div class="option"><input type="radio" name="q25" value="A"><label>RandomizedSearchCV</label></div>
+        <div class="option"><input type="radio" name="q25" value="B"><label>CrossValidateCV</label></div>
+        <div class="option"><input type="radio" name="q25" value="C"><label>GridSearchCV</label></div>
+        <div class="option"><input type="radio" name="q25" value="D"><label>BayesianSearchCV</label></div>
+      </div>
+    </div>
+
+    <!-- Q26 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 26 of 30</div>
+      <div class="question-body">
+        <div class="question-text">26. What does R² = 0 indicate in a regression model?</div>
+        <div class="option"><input type="radio" name="q26" value="A"><label>The model perfectly predicts the target variable</label></div>
+        <div class="option"><input type="radio" name="q26" value="B"><label>The model performs no better than simply predicting the mean</label></div>
+        <div class="option"><input type="radio" name="q26" value="C"><label>The model has 0% accuracy</label></div>
+        <div class="option"><input type="radio" name="q26" value="D"><label>The model has a 0% error rate</label></div>
+      </div>
+    </div>
+
+    <!-- Q27 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 27 of 30</div>
+      <div class="question-body">
+        <div class="question-text">27. Which of the following describes HIGH VARIANCE (overfitting) in a model?</div>
+        <div class="option"><input type="radio" name="q27" value="A"><label>Poor performance on both training and test sets</label></div>
+        <div class="option"><input type="radio" name="q27" value="B"><label>Excellent training performance but poor test performance</label></div>
+        <div class="option"><input type="radio" name="q27" value="C"><label>Equal performance on training and test regardless of complexity</label></div>
+        <div class="option"><input type="radio" name="q27" value="D"><label>The model predicts the same value for all inputs</label></div>
+      </div>
+    </div>
+
+    <!-- Q28 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">True/False</span> &nbsp; Question 28 of 30</div>
+      <div class="question-body">
+        <div class="question-text">28. Decision trees are prone to overfitting and can be controlled with max_depth or pruning.</div>
+        <div class="option"><input type="radio" name="q28" value="A"><label>True</label></div>
+        <div class="option"><input type="radio" name="q28" value="B"><label>False</label></div>
+      </div>
+    </div>
+
+    <!-- Q29 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 29 of 30</div>
+      <div class="question-body">
+        <div class="question-text">29. Which imputation technique is most susceptible to introducing bias?</div>
+        <div class="option"><input type="radio" name="q29" value="A"><label>Predictive modeling-based imputation</label></div>
+        <div class="option"><input type="radio" name="q29" value="B"><label>k-Nearest Neighbors imputation</label></div>
+        <div class="option"><input type="radio" name="q29" value="C"><label>Mean imputation</label></div>
+        <div class="option"><input type="radio" name="q29" value="D"><label>Multiple imputation</label></div>
+      </div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="question-block">
+      <div class="question-header"><span class="type-label">Multiple Choice</span> &nbsp; Question 30 of 30</div>
+      <div class="question-body">
+        <div class="question-text">30. Which of the following transformations can ALL stabilize variance and make data more normally distributed?</div>
+        <div class="option"><input type="radio" name="q30" value="A"><label>Logarithmic transformation only</label></div>
+        <div class="option"><input type="radio" name="q30" value="B"><label>Square root transformation only</label></div>
+        <div class="option"><input type="radio" name="q30" value="C"><label>Inverse transformation only</label></div>
+        <div class="option"><input type="radio" name="q30" value="D"><label>All of the above</label></div>
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <button type="button" class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+  </form>
+
+  <div class="result-box" id="resultBox">
+    <h2>Quiz Complete</h2>
+    <div class="score" id="scoreDisplay"></div>
+    <div class="grade" id="gradeDisplay"></div>
+    <p style="margin-top:16px; font-size:13px; color:#666;">Scroll up to review highlighted answers (green = correct, red = wrong selection).</p>
+  </div>
+</div>
+
+<script>
+const answers = {
+  q1: 'B', q2: 'A', q3: 'B', q4: 'A', q5: 'A',
+  q6: 'B', q7: 'B', q8: 'B', q9: 'A', q10: 'B',
+  q11: 'B', q12: 'D', q13: 'B', q14: 'C', q15: 'B',
+  q16: 'A', q17: 'B', q18: 'A', q19: 'D', q20: 'B',
+  q21: 'B', q22: 'B', q23: 'C', q24: 'A', q25: 'C',
+  q26: 'B', q27: 'B', q28: 'A', q29: 'C', q30: 'D'
+};
+
+function submitQuiz() {
+  let score = 0;
+  const total = Object.keys(answers).length;
+
+  for (const [qName, correctVal] of Object.entries(answers)) {
+    const selected = document.querySelector(`input[name="${qName}"]:checked`);
+    const allOptions = document.querySelectorAll(`input[name="${qName}"]`);
+
+    allOptions.forEach(input => {
+      const optionDiv = input.closest('.option');
+      optionDiv.classList.remove('correct-highlight', 'wrong-highlight');
+      if (input.value === correctVal) {
+        optionDiv.classList.add('correct-highlight');
+      }
+    });
+
+    if (selected) {
+      if (selected.value === correctVal) {
+        score++;
+      } else {
+        selected.closest('.option').classList.add('wrong-highlight');
+      }
+    }
+  }
+
+  const pct = Math.round((score / total) * 100);
+  const resultBox = document.getElementById('resultBox');
+  const scoreDisplay = document.getElementById('scoreDisplay');
+  const gradeDisplay = document.getElementById('gradeDisplay');
+
+  scoreDisplay.textContent = `${score} / ${total}`;
+  scoreDisplay.className = 'score ' + (pct >= 70 ? 'pass' : 'fail');
+
+  let letter = pct >= 90 ? 'A' : pct >= 80 ? 'B' : pct >= 70 ? 'C' : pct >= 60 ? 'D' : 'F';
+  gradeDisplay.innerHTML = `${pct}% &nbsp;|&nbsp; Grade: <strong>${letter}</strong> &nbsp;|&nbsp; ${pct >= 70 ? '✓ Pass' : '✗ Below passing — review study guide'}`;
+
+  resultBox.style.display = 'block';
+  resultBox.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

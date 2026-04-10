@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4880 — Per-Question Practice Quiz</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 15px; background: #f0f2f5; color: #222; }
+  .header { background: #003366; color: white; padding: 20px 30px; }
+  .header h1 { font-size: 20px; }
+  .header p { font-size: 13px; margin-top: 5px; opacity: 0.85; }
+  .container { max-width: 720px; margin: 30px auto; padding: 0 16px 60px; }
+  .progress-bar-wrap { background: #ddd; border-radius: 10px; height: 10px; margin-bottom: 8px; }
+  .progress-bar { background: #003366; height: 10px; border-radius: 10px; transition: width 0.4s; }
+  .progress-label { text-align: right; font-size: 12px; color: #666; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 6px; border: 1px solid #ddd; padding: 28px 26px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .q-num { font-size: 12px; font-weight: bold; text-transform: uppercase; color: #888; letter-spacing: 1px; margin-bottom: 10px; }
+  .q-text { font-size: 16px; font-weight: bold; line-height: 1.6; margin-bottom: 20px; }
+  .code-block { background: #f8f8f8; border: 1px solid #ddd; padding: 10px 14px; font-family: monospace; font-size: 13px; border-radius: 4px; margin: 10px 0 14px; white-space: pre; }
+  .options { list-style: none; }
+  .options li { margin: 10px 0; }
+  .opt-btn { width: 100%; text-align: left; padding: 12px 16px; border: 2px solid #ddd; border-radius: 5px; background: #fff; cursor: pointer; font-size: 14px; transition: all 0.15s; line-height: 1.5; }
+  .opt-btn:hover:not(:disabled) { border-color: #003366; background: #f0f4ff; }
+  .opt-btn.correct { border-color: #28a745; background: #d4edda; color: #155724; }
+  .opt-btn.wrong { border-color: #dc3545; background: #f8d7da; color: #721c24; }
+  .opt-btn.reveal-correct { border-color: #28a745; background: #d4edda; color: #155724; }
+  .feedback { display: none; margin-top: 20px; padding: 16px; border-radius: 5px; line-height: 1.6; }
+  .feedback.correct { background: #d4edda; border-left: 4px solid #28a745; color: #155724; }
+  .feedback.wrong { background: #fff3cd; border-left: 4px solid #ffc107; color: #856404; }
+  .feedback .verdict { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
+  .feedback .explanation { font-size: 14px; }
+  .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; }
+  .next-btn { background: #003366; color: white; border: none; padding: 10px 28px; border-radius: 4px; font-size: 14px; cursor: pointer; display: none; }
+  .next-btn:hover { background: #004a99; }
+  .score-display { font-size: 14px; color: #666; }
+  .final-screen { display: none; text-align: center; padding: 40px 20px; }
+  .final-screen h2 { font-size: 24px; color: #003366; }
+  .final-score { font-size: 52px; font-weight: bold; margin: 16px 0; }
+  .final-score.pass { color: #28a745; }
+  .final-score.fail { color: #dc3545; }
+  .final-grade { font-size: 18px; color: #555; margin-bottom: 20px; }
+  .restart-btn { background: #003366; color: white; border: none; padding: 12px 32px; border-radius: 4px; font-size: 15px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ACIT4880 — Introduction to Data Analytics</h1>
+  <p>Per-Question Practice Quiz &nbsp;|&nbsp; Instant Feedback &nbsp;|&nbsp; 30 Questions</p>
+</div>
+
+<div class="container">
+  <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+  <div class="progress-label" id="progressLabel">Question 1 of 30</div>
+
+  <div class="card" id="quizCard">
+    <div class="q-num" id="qNum"></div>
+    <div class="q-text" id="qText"></div>
+    <ul class="options" id="optionsList"></ul>
+    <div class="feedback" id="feedback">
+      <div class="verdict" id="verdict"></div>
+      <div class="explanation" id="explanation"></div>
+    </div>
+    <div class="nav-row">
+      <div class="score-display" id="scoreDisplay">Score: 0 / 0</div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+    </div>
+  </div>
+
+  <div class="final-screen" id="finalScreen">
+    <h2>Quiz Complete!</h2>
+    <div class="final-score" id="finalScore"></div>
+    <div class="final-grade" id="finalGrade"></div>
+    <button class="restart-btn" onclick="restartQuiz()">Restart Quiz</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+  {
+    text: '<code>df.head()</code> without arguments returns the first 10 rows by default.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 1,
+    explanation: 'FALSE. <code>df.head()</code> returns the first <strong>5 rows</strong> by default. To get 10 rows, use <code>df.head(10)</code>. This is a classic trick question.'
+  },
+  {
+    text: '<code>df.shape</code> returns a tuple of (rows, columns).',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 0,
+    explanation: 'TRUE. <code>df.shape</code> returns a tuple: <strong>(number_of_rows, number_of_columns)</strong>. For example, (1000, 15) means 1000 rows and 15 columns.'
+  },
+  {
+    text: 'What happens when you run:<br><div class="code-block">arr1 = np.array([1, 2, 3])\narr2 = arr1\narr2[0] = 99</div>',
+    type: 'Multiple Choice',
+    options: [
+      'Error: cannot modify arr2',
+      'Both arr1 and arr2 become [99, 2, 3]',
+      'arr1 becomes [99, 2, 3] and arr2 remains [1, 2, 3]',
+      'arr1 remains [1, 2, 3] and arr2 becomes [99, 2, 3]'
+    ],
+    correct: 1,
+    explanation: '<strong>Both become [99, 2, 3].</strong> <code>arr2 = arr1</code> creates a <em>reference</em>, not a copy. Both variables point to the same array in memory. To get an independent copy, use <code>arr2 = arr1.copy()</code>.'
+  },
+  {
+    text: 'What will <code>df.iloc[2:5, 1:3]</code> return?',
+    type: 'Multiple Choice',
+    options: [
+      'Rows 2 to 4 and columns 1 to 2',
+      'Rows 2 to 4 and columns 1 to 3',
+      'Rows 2 to 5 and columns 1 to 2',
+      'Rows 2 to 5 (inclusive) and columns 1 to 3 (inclusive)'
+    ],
+    correct: 0,
+    explanation: '<strong>Rows 2–4, columns 1–2.</strong> Python slicing is <em>exclusive</em> of the upper bound. <code>2:5</code> = indices 2,3,4 (NOT 5). <code>1:3</code> = indices 1,2 (NOT 3). This is consistently tested!'
+  },
+  {
+    text: 'What is the primary difference between a NumPy array and a Pandas Series?',
+    type: 'Multiple Choice',
+    options: [
+      'Series has an index and can hold different data types; arrays are homogeneous',
+      'Arrays are always faster',
+      'Series can only hold numeric data',
+      'No significant difference'
+    ],
+    correct: 0,
+    explanation: '<strong>Series has an index and supports mixed types.</strong> NumPy arrays are homogeneous (all same dtype). A Pandas Series adds a labeled index and can technically hold objects (mixed types), making it more flexible for data work.'
+  },
+  {
+    text: 'The <code>iloc[]</code> method in pandas is used for label-based indexing.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> <code>iloc[]</code> is <em>integer position</em>-based indexing (i = integer). <code>loc[]</code> is <em>label</em>-based. Swap these two and you will get wrong answers every time!'
+  },
+  {
+    text: 'Which transformation is most appropriate when dealing with highly skewed data?',
+    type: 'Multiple Choice',
+    options: [
+      'Standardization (Z-score normalization)',
+      'Logarithmic transformation',
+      'One-hot encoding',
+      'Min-max scaling'
+    ],
+    correct: 1,
+    explanation: '<strong>Logarithmic transformation.</strong> Log transform compresses large values and expands small values, effectively reducing skewness. Z-score and Min-max scale but do not fix shape/skewness. One-hot encoding is for categorical features.'
+  },
+  {
+    text: 'Outliers should always be removed from a dataset to ensure better model performance.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> Outliers are NOT always errors. They can be valid, meaningful data points. Removing them blindly can cause you to lose important signal. Always investigate the cause of an outlier before deciding to remove it.'
+  },
+  {
+    text: 'In supervised learning, the target variable is also known as:',
+    type: 'Multiple Choice',
+    options: [
+      'The dependent variable',
+      'The predictor variable',
+      'The independent variable',
+      'The explanatory variable'
+    ],
+    correct: 0,
+    explanation: '<strong>Dependent variable.</strong> The target (label/output) is what we are trying to predict. It "depends" on the input features. "Predictor", "independent", and "explanatory" variables are all names for the INPUT features.'
+  },
+  {
+    text: 'In the context of data preprocessing, what does GIGO stand for?',
+    type: 'Multiple Choice',
+    options: [
+      'General Information, General Output',
+      'Garbage In, Garbage Out',
+      'Great Input, Great Output',
+      'Grouped Input, Grouped Output'
+    ],
+    correct: 1,
+    explanation: '<strong>Garbage In, Garbage Out.</strong> This principle means that poor quality input data will produce poor quality output (results). No matter how good your algorithm, if your data is dirty, your model will fail. Clean data is foundational.'
+  },
+  {
+    text: 'Substituting missing data with the mean is always good because measures of spread are not affected.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> Mean imputation DOES affect measures of spread (variance, std deviation). It artificially compresses the distribution by clustering values around the mean, reducing variance and distorting the original data distribution.'
+  },
+  {
+    text: 'Which of the following is NOT a typical activity in EDA?',
+    type: 'Multiple Choice',
+    options: [
+      'Developing an initial idea of possible associations among predictors',
+      'Examining important interrelationships between attributes',
+      'Identifying interesting subsets of the observations',
+      'Testing a specific statistical hypothesis'
+    ],
+    correct: 3,
+    explanation: '<strong>Testing a specific statistical hypothesis.</strong> EDA is <em>exploratory</em> — open-ended discovery. Hypothesis testing is part of <em>inferential statistics</em>, not EDA. EDA is for understanding data structure, patterns, and relationships before formal modeling.'
+  },
+  {
+    text: 'In kNN classification, what happens when you choose a very low value of k (e.g., k=1)?',
+    type: 'Multiple Choice',
+    options: [
+      'The model underfits the training data',
+      'The model overfits — too sensitive to noise',
+      'The model ignores all training data',
+      'No effect — k doesn\'t matter in kNN'
+    ],
+    correct: 1,
+    explanation: '<strong>Overfitting.</strong> With k=1, the model classifies based on just the single nearest neighbor. It perfectly fits training data but is highly sensitive to noise. High k = smoother boundary = underfitting. Low k = rough boundary = overfitting.'
+  },
+  {
+    text: 'What technique does Random Forest use to create diversity among its trees?',
+    type: 'Multiple Choice',
+    options: [
+      'Each tree uses the full dataset and all features',
+      'Boosting — trees built sequentially to fix previous errors',
+      'Bagging — random subsets of data AND features for each tree',
+      'Pruning — each tree is simplified after training'
+    ],
+    correct: 2,
+    explanation: '<strong>Bagging (Bootstrap Aggregating).</strong> Each decision tree in the forest is trained on a random bootstrap sample of the data AND a random subset of features. This creates diverse, decorrelated trees. Final prediction = majority vote. Boosting is used by AdaBoost/XGBoost — different algorithm.'
+  },
+  {
+    text: 'Which metric is most appropriate when dealing with an imbalanced classification dataset?',
+    type: 'Multiple Choice',
+    options: [
+      'Accuracy',
+      'F1 Score',
+      'Mean Squared Error',
+      'R² Score'
+    ],
+    correct: 1,
+    explanation: '<strong>F1 Score.</strong> With imbalanced data, accuracy is misleading (e.g., 90% accuracy by always predicting the majority class). F1 score balances precision and recall, giving a fair picture of performance on minority classes. MSE and R² are for regression.'
+  },
+  {
+    text: 'SMOTE generates synthetic samples for the minority class to handle imbalanced datasets.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 0,
+    explanation: '<strong>TRUE.</strong> SMOTE (Synthetic Minority Oversampling Technique) creates new synthetic samples by interpolating between existing minority class samples. It\'s more effective than simple oversampling (duplicating) because it adds variety rather than repeats.'
+  },
+  {
+    text: 'In a Decision Tree, what does "information gain" measure?',
+    type: 'Multiple Choice',
+    options: [
+      'The total number of splits in the tree',
+      'The reduction in entropy after a split on a feature',
+      'The increase in the number of features used',
+      'The depth of the resulting tree'
+    ],
+    correct: 1,
+    explanation: '<strong>Reduction in entropy.</strong> Information Gain = Entropy(parent) − weighted average Entropy(children). A feature with high information gain splits the data in a way that creates purer (lower entropy) subsets. The feature with highest IG is chosen for the split.'
+  },
+  {
+    text: 'In K-Means clustering, the "Elbow Method" is used to:',
+    type: 'Multiple Choice',
+    options: [
+      'Determine the optimal number of clusters (k)',
+      'Find the centroid with the lowest variance',
+      'Remove outliers before clustering',
+      'Determine the distance metric to use'
+    ],
+    correct: 0,
+    explanation: '<strong>Find the optimal k.</strong> The Elbow Method plots inertia (within-cluster sum of squares) against different values of k. As k increases, inertia drops. The "elbow" is where the drop rate slows sharply — that\'s your optimal k.'
+  },
+  {
+    text: 'Which regression evaluation metric is in the same units as the target variable?',
+    type: 'Multiple Choice',
+    options: [
+      'MSE (Mean Squared Error)',
+      'R² Score',
+      'RMSE (Root Mean Squared Error) only',
+      'Both MAE and RMSE are in the same units as the target'
+    ],
+    correct: 3,
+    explanation: '<strong>Both MAE and RMSE are in the same units.</strong> MAE averages absolute errors; RMSE takes the root of MSE — both are in the same unit as the target. MSE is in squared units (harder to interpret). R² is unitless (0 to 1).'
+  },
+  {
+    text: 'In an SVM, what are "support vectors"?',
+    type: 'Multiple Choice',
+    options: [
+      'All data points used during training',
+      'The data points closest to the decision hyperplane',
+      'Vectors used to transform features into higher dimensions',
+      'The features with the highest variance'
+    ],
+    correct: 1,
+    explanation: '<strong>Data points closest to the hyperplane.</strong> Support vectors are the critical training samples that define the margin. The hyperplane is positioned to maximize the margin (gap) between the two classes\' support vectors. Only these points matter — removing others doesn\'t change the model.'
+  },
+  {
+    text: 'kNN is a parametric learning algorithm — it builds an explicit model during training.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 1,
+    explanation: '<strong>FALSE.</strong> kNN is a <em>non-parametric, lazy learner</em>. It does NOT build a model during training. Instead, it memorizes the entire training set and computes distances at prediction time. This makes it slow at inference but trivial to "train".'
+  },
+  {
+    text: 'Recall (Sensitivity) is calculated as:',
+    type: 'Multiple Choice',
+    options: [
+      'TP / (TP + FP)',
+      'TP / (TP + FN)',
+      '(TP + TN) / Total',
+      '2 × Precision × Recall / (Precision + Recall)'
+    ],
+    correct: 1,
+    explanation: '<strong>TP / (TP + FN).</strong> Recall = of all actual positives, how many did we correctly catch? FN = cases we missed. High recall = we find most positive cases (important in medical diagnosis). TP/(TP+FP) is Precision. (TP+TN)/Total is Accuracy. The last formula is F1.'
+  },
+  {
+    text: 'Which statement about Hierarchical Clustering is correct?',
+    type: 'Multiple Choice',
+    options: [
+      'You must specify k (number of clusters) before running it',
+      'It always uses Euclidean distance only',
+      'It builds a dendrogram that can be cut at any level to get clusters',
+      'It cannot handle more than 100 data points'
+    ],
+    correct: 2,
+    explanation: '<strong>Dendrogram can be cut at any level.</strong> One advantage of hierarchical clustering over K-Means is that you don\'t need to specify k upfront. Build the full dendrogram, then cut it at whatever level gives you the desired number of clusters. Multiple linkage methods are supported (not just Euclidean).'
+  },
+  {
+    text: 'Feature scaling (normalization/standardization) is required before applying kNN.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 0,
+    explanation: '<strong>TRUE.</strong> kNN is distance-based. Without scaling, features with large numeric ranges (e.g., salary: 50,000) dominate over features with small ranges (e.g., age: 25). This skews distances and ruins classification. Always scale before kNN, SVM, and other distance-based algorithms.'
+  },
+  {
+    text: 'Which scikit-learn method performs exhaustive search over ALL combinations of hyperparameters?',
+    type: 'Multiple Choice',
+    options: [
+      'RandomizedSearchCV',
+      'CrossValidateCV',
+      'GridSearchCV',
+      'BayesianSearchCV'
+    ],
+    correct: 2,
+    explanation: '<strong>GridSearchCV.</strong> Grid search tries every single combination in the parameter grid — exhaustive but slow. RandomizedSearchCV is faster (random sample of combinations). Bayesian optimization is smarter but not standard sklearn. CrossValidateCV is not a real class.'
+  },
+  {
+    text: 'What does R² = 0 indicate about a regression model?',
+    type: 'Multiple Choice',
+    options: [
+      'The model perfectly predicts the target variable',
+      'The model performs no better than simply predicting the mean of the target',
+      'The model has a 0% error rate',
+      'The model has 0% accuracy'
+    ],
+    correct: 1,
+    explanation: '<strong>Performs no better than the mean baseline.</strong> R² = 1.0 = perfect. R² = 0 = the model is equivalent to always predicting the mean. R² can be negative if the model is WORSE than the mean baseline. It\'s not a percentage — it measures proportion of variance explained.'
+  },
+  {
+    text: 'Which describes HIGH VARIANCE (overfitting) in a machine learning model?',
+    type: 'Multiple Choice',
+    options: [
+      'Poor performance on both training and test sets',
+      'Excellent training performance but poor test performance',
+      'Equal performance on training and test regardless of complexity',
+      'The model predicts the same value for all inputs'
+    ],
+    correct: 1,
+    explanation: '<strong>Great on train, poor on test.</strong> High variance = model memorized training data, fails to generalize. High bias = poor on BOTH (underfitting). The goal is low bias AND low variance — the bias-variance tradeoff. Reduce variance with regularization, more data, or Random Forest over single Decision Tree.'
+  },
+  {
+    text: 'Decision trees are prone to overfitting and can be controlled with max_depth or pruning.',
+    type: 'True/False',
+    options: ['True', 'False'],
+    correct: 0,
+    explanation: '<strong>TRUE.</strong> An unconstrained decision tree will perfectly fit training data (overfitting). <code>max_depth</code> limits tree growth. Pruning removes branches that add little predictive power. Random Forest mitigates this by averaging many trees on different data subsets.'
+  },
+  {
+    text: 'Which imputation technique is most susceptible to introducing bias?',
+    type: 'Multiple Choice',
+    options: [
+      'Predictive modeling-based imputation',
+      'k-Nearest Neighbors imputation',
+      'Mean imputation',
+      'Multiple imputation'
+    ],
+    correct: 2,
+    explanation: '<strong>Mean imputation.</strong> Replacing all missing values with the mean pulls values toward the center, reducing variance and distorting the distribution. Multiple imputation is the gold standard. KNN and predictive modeling are more sophisticated and better preserve data structure.'
+  },
+  {
+    text: 'Which of the following transformations can ALL stabilize variance and normalize distribution?',
+    type: 'Multiple Choice',
+    options: [
+      'Logarithmic transformation only',
+      'Square root transformation only',
+      'Inverse transformation only',
+      'All of the above (log, square root, and inverse)'
+    ],
+    correct: 3,
+    explanation: '<strong>All of the above.</strong> Log, square root, and inverse transformations all compress large values to varying degrees, stabilizing variance and reducing skewness. The best choice depends on the degree of skew. For heavily skewed data, log is typically most effective.'
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = 0;
+
+function renderQuestion() {
+  const q = questions[current];
+  document.getElementById('qNum').textContent = `Question ${current + 1} of ${questions.length}  |  ${q.type}`;
+  document.getElementById('qText').innerHTML = q.text;
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+
+  const list = document.getElementById('optionsList');
+  list.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.innerHTML = `<strong>${String.fromCharCode(65+i)}.</strong>  ${opt}`;
+    btn.onclick = () => selectAnswer(i, btn);
+    li.appendChild(btn);
+    list.appendChild(li);
+  });
+
+  const pct = Math.round((current / questions.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreDisplay').textContent = `Score: ${score} / ${answered}`;
+}
+
+function selectAnswer(index, btn) {
+  const q = questions[current];
+  const allBtns = document.querySelectorAll('.opt-btn');
+  allBtns.forEach(b => b.disabled = true);
+
+  answered++;
+  const feedbackDiv = document.getElementById('feedback');
+  const verdict = document.getElementById('verdict');
+  const explanation = document.getElementById('explanation');
+
+  if (index === q.correct) {
+    btn.classList.add('correct');
+    feedbackDiv.className = 'feedback correct';
+    verdict.textContent = '✓ Correct!';
+    score++;
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.correct].classList.add('reveal-correct');
+    feedbackDiv.className = 'feedback wrong';
+    verdict.textContent = '✗ Incorrect';
+  }
+
+  explanation.innerHTML = q.explanation;
+  feedbackDiv.style.display = 'block';
+  document.getElementById('nextBtn').style.display = 'inline-block';
+  document.getElementById('nextBtn').textContent = current < questions.length - 1 ? 'Next Question →' : 'See Final Score →';
+  document.getElementById('scoreDisplay').textContent = `Score: ${score} / ${answered}`;
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) {
+    showFinal();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showFinal() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('progressBar').style.width = '100%';
+  document.getElementById('progressLabel').textContent = 'Complete!';
+  const pct = Math.round((score / questions.length) * 100);
+  const fs = document.getElementById('finalScore');
+  fs.textContent = `${score} / ${questions.length}`;
+  fs.className = 'final-score ' + (pct >= 70 ? 'pass' : 'fail');
+  let letter = pct >= 90 ? 'A' : pct >= 80 ? 'B' : pct >= 70 ? 'C' : pct >= 60 ? 'D' : 'F';
+  document.getElementById('finalGrade').innerHTML = `${pct}%  |  Grade: <strong>${letter}</strong>  |  ${pct >= 70 ? '✓ Solid. Ready for exam.' : '✗ Review the study guide before exam day.'}`;
+  document.getElementById('finalScreen').style.display = 'block';
+}
+
+function restartQuiz() {
+  current = 0; score = 0; answered = 0;
+  document.getElementById('quizCard').style.display = 'block';
+  document.getElementById('finalScreen').style.display = 'none';
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>
