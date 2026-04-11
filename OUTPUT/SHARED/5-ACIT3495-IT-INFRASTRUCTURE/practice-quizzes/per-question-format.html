@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT3495 — Per-Question Practice Quiz</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:14px;background:#f4f4f4;color:#222}
+  .hdr{background:#1a4a5c;color:white;padding:18px 28px}.hdr h1{font-size:19px}.hdr p{font-size:12px;margin-top:4px;opacity:.85}
+  .wrap{max-width:760px;margin:24px auto;padding:0 14px 60px}
+  .progress{background:#fff;border-radius:4px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-size:13px}
+  .pbar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
+  .pfill{height:100%;background:#1a4a5c;transition:width .3s}
+  .card{background:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden;display:none}
+  .card.active{display:block}
+  .ch{background:#e8f0f3;padding:9px 14px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;font-size:12px;color:#555}
+  .cb{padding:18px 20px}
+  .qt{font-size:15px;font-weight:bold;margin-bottom:10px;line-height:1.6}
+  code{background:#f0f0f0;padding:1px 5px;border-radius:2px;font-family:monospace;font-size:12px}
+  .opt{display:flex;align-items:flex-start;margin:7px 0;padding:9px 11px;border-radius:4px;border:1px solid #ddd;cursor:pointer;transition:background .15s}
+  .opt:hover{background:#e8f0f3}.opt input{margin-right:10px;margin-top:2px;flex-shrink:0}.opt label{cursor:pointer;line-height:1.4}
+  .opt.ch-opt{background:#d4edda;border-color:#28a745}.opt.wh-opt{background:#f8d7da;border-color:#dc3545}
+  .feedback{margin-top:14px;padding:12px 14px;border-radius:4px;font-size:13px;display:none;line-height:1.6}
+  .feedback.correct{background:#d4edda;border-left:4px solid #28a745;color:#155724}
+  .feedback.wrong{background:#f8d7da;border-left:4px solid #dc3545;color:#721c24}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+  .btn{background:#1a4a5c;color:white;border:none;padding:9px 24px;border-radius:4px;cursor:pointer;font-size:13px}
+  .btn:hover{background:#255f75}.btn:disabled{background:#aaa;cursor:default}
+  .btn-sec{background:#fff;color:#1a4a5c;border:1px solid #1a4a5c}.btn-sec:hover{background:#e8f0f3}
+  .results{display:none;text-align:center;padding:32px 20px}
+  .results h2{color:#1a4a5c;font-size:22px;margin-bottom:12px}
+  .big-score{font-size:52px;font-weight:bold;margin:10px 0}
+  .pass{color:#28a745}.fail{color:#dc3545}
+  .grade-line{font-size:16px;color:#555;margin-bottom:20px}
+  .restart{background:#1a4a5c;color:white;border:none;padding:10px 28px;border-radius:4px;cursor:pointer;font-size:14px}
+  .restart:hover{background:#255f75}
+  .tl{font-size:11px;text-transform:uppercase;font-weight:bold;color:#777}
+  .qnum{font-weight:bold;color:#1a4a5c}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ACIT3495 — Advanced Topics in IT Infrastructure</h1><p>Final Exam Practice Quiz &nbsp;|&nbsp; Per-Question Format &nbsp;|&nbsp; 30 Questions</p></div>
+<div class="wrap">
+<div class="progress">
+  <span id="ptext" style="font-weight:bold;white-space:nowrap">Q 1 / 30</span>
+  <div class="pbar"><div class="pfill" id="pfill" style="width:3%"></div></div>
+  <span id="pscore" style="white-space:nowrap;color:#555">Score: 0</span>
+</div>
+
+<!-- Q1 -->
+<div class="card active" id="card-1">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 1 of 30</span></div>
+<div class="cb">
+<div class="qt">Which Docker command creates AND starts a new container from an image?</div>
+<div class="opt"><input type="radio" name="q1" value="A" onchange="checkSingle(1,'C')"><label>docker pull</label></div>
+<div class="opt"><input type="radio" name="q1" value="B" onchange="checkSingle(1,'C')"><label>docker build</label></div>
+<div class="opt"><input type="radio" name="q1" value="C" onchange="checkSingle(1,'C')"><label>docker run</label></div>
+<div class="opt"><input type="radio" name="q1" value="D" onchange="checkSingle(1,'C')"><label>docker create</label></div>
+<div class="feedback" id="fb-1"></div>
+<div class="nav"><span></span><button class="btn" id="next-1" onclick="next(1)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q2 -->
+<div class="card" id="card-2">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 2 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the primary purpose of a Docker volume?</div>
+<div class="opt"><input type="radio" name="q2" value="A" onchange="checkSingle(2,'B')"><label>To bind mount a directory from the host</label></div>
+<div class="opt"><input type="radio" name="q2" value="B" onchange="checkSingle(2,'B')"><label>To persist data even after the container is deleted</label></div>
+<div class="opt"><input type="radio" name="q2" value="C" onchange="checkSingle(2,'B')"><label>To expose container ports to the host</label></div>
+<div class="opt"><input type="radio" name="q2" value="D" onchange="checkSingle(2,'B')"><label>To store Docker build logs</label></div>
+<div class="feedback" id="fb-2"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(2)">← Back</button><button class="btn" id="next-2" onclick="next(2)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q3 -->
+<div class="card" id="card-3">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 3 of 30</span></div>
+<div class="cb">
+<div class="qt">Which Docker command is used to connect to (or run a command in) a running container?</div>
+<div class="opt"><input type="radio" name="q3" value="A" onchange="checkSingle(3,'C')"><label>docker run</label></div>
+<div class="opt"><input type="radio" name="q3" value="B" onchange="checkSingle(3,'C')"><label>docker attach</label></div>
+<div class="opt"><input type="radio" name="q3" value="C" onchange="checkSingle(3,'C')"><label>docker exec</label></div>
+<div class="opt"><input type="radio" name="q3" value="D" onchange="checkSingle(3,'C')"><label>docker start</label></div>
+<div class="feedback" id="fb-3"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(3)">← Back</button><button class="btn" id="next-3" onclick="next(3)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q4 -->
+<div class="card" id="card-4">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 4 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the difference between a Docker image and a Docker container?</div>
+<div class="opt"><input type="radio" name="q4" value="A" onchange="checkSingle(4,'B')"><label>A Docker image is the runtime; a Docker container is the blueprint</label></div>
+<div class="opt"><input type="radio" name="q4" value="B" onchange="checkSingle(4,'B')"><label>A Docker image is the blueprint; a Docker container is the runtime</label></div>
+<div class="opt"><input type="radio" name="q4" value="C" onchange="checkSingle(4,'B')"><label>Both are blueprints for running applications</label></div>
+<div class="opt"><input type="radio" name="q4" value="D" onchange="checkSingle(4,'B')"><label>Both are runtime environments</label></div>
+<div class="feedback" id="fb-4"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(4)">← Back</button><button class="btn" id="next-4" onclick="next(4)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q5 -->
+<div class="card" id="card-5">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 5 of 30</span></div>
+<div class="cb">
+<div class="qt">Docker is an orchestration tool used to manage containerized applications at scale.</div>
+<div class="opt"><input type="radio" name="q5" value="A" onchange="checkSingle(5,'B')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q5" value="B" onchange="checkSingle(5,'B')"><label>False</label></div>
+<div class="feedback" id="fb-5"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(5)">← Back</button><button class="btn" id="next-5" onclick="next(5)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q6 -->
+<div class="card" id="card-6">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 6 of 30</span></div>
+<div class="cb">
+<div class="qt">Which command removes a Docker image from the local system?</div>
+<div class="opt"><input type="radio" name="q6" value="A" onchange="checkSingle(6,'C')"><label>docker rm</label></div>
+<div class="opt"><input type="radio" name="q6" value="B" onchange="checkSingle(6,'C')"><label>docker delete</label></div>
+<div class="opt"><input type="radio" name="q6" value="C" onchange="checkSingle(6,'C')"><label>docker rmi</label></div>
+<div class="opt"><input type="radio" name="q6" value="D" onchange="checkSingle(6,'C')"><label>docker images --remove</label></div>
+<div class="feedback" id="fb-6"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(6)">← Back</button><button class="btn" id="next-6" onclick="next(6)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q7 -->
+<div class="card" id="card-7">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 7 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the purpose of a Dockerfile?</div>
+<div class="opt"><input type="radio" name="q7" value="A" onchange="checkSingle(7,'B')"><label>To run a Docker container</label></div>
+<div class="opt"><input type="radio" name="q7" value="B" onchange="checkSingle(7,'B')"><label>To store Docker build instructions</label></div>
+<div class="opt"><input type="radio" name="q7" value="C" onchange="checkSingle(7,'B')"><label>To define Docker volume mounts</label></div>
+<div class="opt"><input type="radio" name="q7" value="D" onchange="checkSingle(7,'B')"><label>To configure Docker networking</label></div>
+<div class="feedback" id="fb-7"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(7)">← Back</button><button class="btn" id="next-7" onclick="next(7)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q8 -->
+<div class="card" id="card-8">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 8 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the purpose of a Docker container restart policy?</div>
+<div class="opt"><input type="radio" name="q8" value="A" onchange="checkSingle(8,'B')"><label>To create a new container when one is stopped</label></div>
+<div class="opt"><input type="radio" name="q8" value="B" onchange="checkSingle(8,'B')"><label>To restart a container when it exits</label></div>
+<div class="opt"><input type="radio" name="q8" value="C" onchange="checkSingle(8,'B')"><label>To pause a container after a timeout</label></div>
+<div class="opt"><input type="radio" name="q8" value="D" onchange="checkSingle(8,'B')"><label>To back up container data on restart</label></div>
+<div class="feedback" id="fb-8"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(8)">← Back</button><button class="btn" id="next-8" onclick="next(8)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q9 -->
+<div class="card" id="card-9">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 9 of 30</span></div>
+<div class="cb">
+<div class="qt">How do you expose a port from a Docker container to the host machine?</div>
+<div class="opt"><input type="radio" name="q9" value="A" onchange="checkSingle(9,'C')"><label>Using a Docker volume</label></div>
+<div class="opt"><input type="radio" name="q9" value="B" onchange="checkSingle(9,'C')"><label>Using a Docker restart policy</label></div>
+<div class="opt"><input type="radio" name="q9" value="C" onchange="checkSingle(9,'C')"><label>Using Docker port mapping (<code>-p</code> flag)</label></div>
+<div class="opt"><input type="radio" name="q9" value="D" onchange="checkSingle(9,'C')"><label>Using a Docker network</label></div>
+<div class="feedback" id="fb-9"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(9)">← Back</button><button class="btn" id="next-9" onclick="next(9)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q10 -->
+<div class="card" id="card-10">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 10 of 30</span></div>
+<div class="cb">
+<div class="qt">Which command is used to create a new Docker network?</div>
+<div class="opt"><input type="radio" name="q10" value="A" onchange="checkSingle(10,'B')"><label>docker network join</label></div>
+<div class="opt"><input type="radio" name="q10" value="B" onchange="checkSingle(10,'B')"><label>docker network create</label></div>
+<div class="opt"><input type="radio" name="q10" value="C" onchange="checkSingle(10,'B')"><label>docker network exec</label></div>
+<div class="opt"><input type="radio" name="q10" value="D" onchange="checkSingle(10,'B')"><label>docker network ls</label></div>
+<div class="feedback" id="fb-10"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(10)">← Back</button><button class="btn" id="next-10" onclick="next(10)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q11 -->
+<div class="card" id="card-11">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 11 of 30</span></div>
+<div class="cb">
+<div class="qt"><code>docker pull</code> both downloads an image AND starts a new container from it.</div>
+<div class="opt"><input type="radio" name="q11" value="A" onchange="checkSingle(11,'B')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q11" value="B" onchange="checkSingle(11,'B')"><label>False</label></div>
+<div class="feedback" id="fb-11"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(11)">← Back</button><button class="btn" id="next-11" onclick="next(11)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q12 -->
+<div class="card" id="card-12">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 12 of 30</span></div>
+<div class="cb">
+<div class="qt">In Kubernetes, what is the smallest deployable unit that can be created and managed?</div>
+<div class="opt"><input type="radio" name="q12" value="A" onchange="checkSingle(12,'C')"><label>Deployment</label></div>
+<div class="opt"><input type="radio" name="q12" value="B" onchange="checkSingle(12,'C')"><label>ReplicaSet</label></div>
+<div class="opt"><input type="radio" name="q12" value="C" onchange="checkSingle(12,'C')"><label>Pod</label></div>
+<div class="opt"><input type="radio" name="q12" value="D" onchange="checkSingle(12,'C')"><label>Service</label></div>
+<div class="feedback" id="fb-12"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(12)">← Back</button><button class="btn" id="next-12" onclick="next(12)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q13 -->
+<div class="card" id="card-13">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 13 of 30</span></div>
+<div class="cb">
+<div class="qt">What Kubernetes object declares the desired state for a set of Pods and facilitates rolling updates and rollbacks?</div>
+<div class="opt"><input type="radio" name="q13" value="A" onchange="checkSingle(13,'D')"><label>Service</label></div>
+<div class="opt"><input type="radio" name="q13" value="B" onchange="checkSingle(13,'D')"><label>ReplicaSet</label></div>
+<div class="opt"><input type="radio" name="q13" value="C" onchange="checkSingle(13,'D')"><label>ConfigMap</label></div>
+<div class="opt"><input type="radio" name="q13" value="D" onchange="checkSingle(13,'D')"><label>Deployment</label></div>
+<div class="feedback" id="fb-13"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(13)">← Back</button><button class="btn" id="next-13" onclick="next(13)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q14 -->
+<div class="card" id="card-14">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 14 of 30</span></div>
+<div class="cb">
+<div class="qt">How do Kubernetes Services primarily enable network access to a set of Pods?</div>
+<div class="opt"><input type="radio" name="q14" value="A" onchange="checkSingle(14,'B')"><label>By directly exposing Pod IP addresses to external networks</label></div>
+<div class="opt"><input type="radio" name="q14" value="B" onchange="checkSingle(14,'B')"><label>By creating a stable IP address and DNS name that routes traffic to a dynamic set of Pods</label></div>
+<div class="opt"><input type="radio" name="q14" value="C" onchange="checkSingle(14,'B')"><label>By requiring manual firewall configuration for each Pod</label></div>
+<div class="opt"><input type="radio" name="q14" value="D" onchange="checkSingle(14,'B')"><label>By using a separate load balancer for every individual Pod</label></div>
+<div class="feedback" id="fb-14"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(14)">← Back</button><button class="btn" id="next-14" onclick="next(14)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q15 -->
+<div class="card" id="card-15">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 15 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the primary purpose of Kubernetes?</div>
+<div class="opt"><input type="radio" name="q15" value="A" onchange="checkSingle(15,'C')"><label>To build container images from source code</label></div>
+<div class="opt"><input type="radio" name="q15" value="B" onchange="checkSingle(15,'C')"><label>To provide a secure VPN for containers</label></div>
+<div class="opt"><input type="radio" name="q15" value="C" onchange="checkSingle(15,'C')"><label>To automate the deployment, scaling, and management of containerized applications</label></div>
+<div class="opt"><input type="radio" name="q15" value="D" onchange="checkSingle(15,'C')"><label>To monitor application performance metrics</label></div>
+<div class="feedback" id="fb-15"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(15)">← Back</button><button class="btn" id="next-15" onclick="next(15)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q16 -->
+<div class="card" id="card-16">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 16 of 30</span></div>
+<div class="cb">
+<div class="qt">Which managed Kubernetes service is offered by Amazon Web Services (AWS)?</div>
+<div class="opt"><input type="radio" name="q16" value="A" onchange="checkSingle(16,'C')"><label>Google Kubernetes Engine (GKE)</label></div>
+<div class="opt"><input type="radio" name="q16" value="B" onchange="checkSingle(16,'C')"><label>Azure Kubernetes Service (AKS)</label></div>
+<div class="opt"><input type="radio" name="q16" value="C" onchange="checkSingle(16,'C')"><label>Elastic Kubernetes Service (EKS)</label></div>
+<div class="opt"><input type="radio" name="q16" value="D" onchange="checkSingle(16,'C')"><label>OpenShift</label></div>
+<div class="feedback" id="fb-16"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(16)">← Back</button><button class="btn" id="next-16" onclick="next(16)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q17 -->
+<div class="card" id="card-17">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 17 of 30</span></div>
+<div class="cb">
+<div class="qt">Which Kubernetes object directly ensures a specified number of identical Pod replicas are running at all times?</div>
+<div class="opt"><input type="radio" name="q17" value="A" onchange="checkSingle(17,'D')"><label>Deployment</label></div>
+<div class="opt"><input type="radio" name="q17" value="B" onchange="checkSingle(17,'D')"><label>Pod</label></div>
+<div class="opt"><input type="radio" name="q17" value="C" onchange="checkSingle(17,'D')"><label>Service</label></div>
+<div class="opt"><input type="radio" name="q17" value="D" onchange="checkSingle(17,'D')"><label>ReplicaSet</label></div>
+<div class="feedback" id="fb-17"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(17)">← Back</button><button class="btn" id="next-17" onclick="next(17)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q18 -->
+<div class="card" id="card-18">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 18 of 30</span></div>
+<div class="cb">
+<div class="qt">A Kubernetes Service of type NodePort exposes a service on a static port on each node. What is the typical range for these NodePort ports?</div>
+<div class="opt"><input type="radio" name="q18" value="A" onchange="checkSingle(18,'C')"><label>1024–5000</label></div>
+<div class="opt"><input type="radio" name="q18" value="B" onchange="checkSingle(18,'C')"><label>8000–9000</label></div>
+<div class="opt"><input type="radio" name="q18" value="C" onchange="checkSingle(18,'C')"><label>30000–32767</label></div>
+<div class="opt"><input type="radio" name="q18" value="D" onchange="checkSingle(18,'C')"><label>0–1024</label></div>
+<div class="feedback" id="fb-18"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(18)">← Back</button><button class="btn" id="next-18" onclick="next(18)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q19 -->
+<div class="card" id="card-19">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 19 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the primary role of the <code>kube-apiserver</code> component in Kubernetes?</div>
+<div class="opt"><input type="radio" name="q19" value="A" onchange="checkSingle(19,'B')"><label>To manage network policies</label></div>
+<div class="opt"><input type="radio" name="q19" value="B" onchange="checkSingle(19,'B')"><label>To expose the Kubernetes API</label></div>
+<div class="opt"><input type="radio" name="q19" value="C" onchange="checkSingle(19,'B')"><label>To schedule Pods onto nodes</label></div>
+<div class="opt"><input type="radio" name="q19" value="D" onchange="checkSingle(19,'B')"><label>To monitor cluster health</label></div>
+<div class="feedback" id="fb-19"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(19)">← Back</button><button class="btn" id="next-19" onclick="next(19)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q20 -->
+<div class="card" id="card-20">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 20 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the default Kubernetes Service type that exposes the service on an internal IP, only reachable from within the cluster?</div>
+<div class="opt"><input type="radio" name="q20" value="A" onchange="checkSingle(20,'C')"><label>NodePort</label></div>
+<div class="opt"><input type="radio" name="q20" value="B" onchange="checkSingle(20,'C')"><label>LoadBalancer</label></div>
+<div class="opt"><input type="radio" name="q20" value="C" onchange="checkSingle(20,'C')"><label>ClusterIP</label></div>
+<div class="opt"><input type="radio" name="q20" value="D" onchange="checkSingle(20,'C')"><label>ExternalName</label></div>
+<div class="feedback" id="fb-20"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(20)">← Back</button><button class="btn" id="next-20" onclick="next(20)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q21 -->
+<div class="card" id="card-21">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 21 of 30</span></div>
+<div class="cb">
+<div class="qt">Which Kubernetes Service type exposes an application externally by provisioning a cloud provider load balancer?</div>
+<div class="opt"><input type="radio" name="q21" value="A" onchange="checkSingle(21,'D')"><label>NodePort</label></div>
+<div class="opt"><input type="radio" name="q21" value="B" onchange="checkSingle(21,'D')"><label>ClusterIP</label></div>
+<div class="opt"><input type="radio" name="q21" value="C" onchange="checkSingle(21,'D')"><label>ExternalName</label></div>
+<div class="opt"><input type="radio" name="q21" value="D" onchange="checkSingle(21,'D')"><label>LoadBalancer</label></div>
+<div class="feedback" id="fb-21"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(21)">← Back</button><button class="btn" id="next-21" onclick="next(21)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q22 -->
+<div class="card" id="card-22">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 22 of 30</span></div>
+<div class="cb">
+<div class="qt">When installing Kubernetes on Docker Desktop, which statement best describes it?</div>
+<div class="opt"><input type="radio" name="q22" value="A" onchange="checkSingle(22,'B')"><label>It installs a full production-grade multi-master Kubernetes cluster</label></div>
+<div class="opt"><input type="radio" name="q22" value="B" onchange="checkSingle(22,'B')"><label>It provides a lightweight, single-node Kubernetes cluster integrated within Docker Desktop</label></div>
+<div class="opt"><input type="radio" name="q22" value="C" onchange="checkSingle(22,'B')"><label>It requires a separate AWS or GCP cloud account to function</label></div>
+<div class="opt"><input type="radio" name="q22" value="D" onchange="checkSingle(22,'B')"><label>It only supports Docker Compose format, not standard K8s manifests</label></div>
+<div class="feedback" id="fb-22"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(22)">← Back</button><button class="btn" id="next-22" onclick="next(22)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q23 -->
+<div class="card" id="card-23">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 23 of 30</span></div>
+<div class="cb">
+<div class="qt">Containers within the same Kubernetes Pod share a network namespace and can communicate with each other via localhost.</div>
+<div class="opt"><input type="radio" name="q23" value="A" onchange="checkSingle(23,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q23" value="B" onchange="checkSingle(23,'A')"><label>False</label></div>
+<div class="feedback" id="fb-23"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(23)">← Back</button><button class="btn" id="next-23" onclick="next(23)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q24 -->
+<div class="card" id="card-24">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 24 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the main purpose of a PersistentVolumeClaim (PVC) in Kubernetes?</div>
+<div class="opt"><input type="radio" name="q24" value="A" onchange="checkSingle(24,'C')"><label>To expose Pods outside the cluster</label></div>
+<div class="opt"><input type="radio" name="q24" value="B" onchange="checkSingle(24,'C')"><label>To define how many replicas a Deployment should run</label></div>
+<div class="opt"><input type="radio" name="q24" value="C" onchange="checkSingle(24,'C')"><label>To request storage resources from available PersistentVolumes</label></div>
+<div class="opt"><input type="radio" name="q24" value="D" onchange="checkSingle(24,'C')"><label>To automatically back up container images</label></div>
+<div class="feedback" id="fb-24"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(24)">← Back</button><button class="btn" id="next-24" onclick="next(24)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q25 -->
+<div class="card" id="card-25">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 25 of 30</span></div>
+<div class="cb">
+<div class="qt">Data stored on a properly mounted PersistentVolume is deleted when the Pod using it is deleted and recreated.</div>
+<div class="opt"><input type="radio" name="q25" value="A" onchange="checkSingle(25,'B')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q25" value="B" onchange="checkSingle(25,'B')"><label>False</label></div>
+<div class="feedback" id="fb-25"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(25)">← Back</button><button class="btn" id="next-25" onclick="next(25)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q26 -->
+<div class="card" id="card-26">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 26 of 30</span></div>
+<div class="cb">
+<div class="qt">Which field in a PersistentVolume specification indicates how much storage is available to be claimed?</div>
+<div class="opt"><input type="radio" name="q26" value="A" onchange="checkSingle(26,'C')"><label>volumeMode</label></div>
+<div class="opt"><input type="radio" name="q26" value="B" onchange="checkSingle(26,'C')"><label>accessModes</label></div>
+<div class="opt"><input type="radio" name="q26" value="C" onchange="checkSingle(26,'C')"><label>capacity</label></div>
+<div class="opt"><input type="radio" name="q26" value="D" onchange="checkSingle(26,'C')"><label>storageClassName</label></div>
+<div class="feedback" id="fb-26"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(26)">← Back</button><button class="btn" id="next-26" onclick="next(26)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q27 -->
+<div class="card" id="card-27">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 27 of 30</span></div>
+<div class="cb">
+<div class="qt">Which Kubernetes Deployment strategy is commonly used to update Pods gradually with minimal downtime?</div>
+<div class="opt"><input type="radio" name="q27" value="A" onchange="checkSingle(27,'D')"><label>Recreate</label></div>
+<div class="opt"><input type="radio" name="q27" value="B" onchange="checkSingle(27,'D')"><label>ImmediateReplace</label></div>
+<div class="opt"><input type="radio" name="q27" value="C" onchange="checkSingle(27,'D')"><label>OnDelete</label></div>
+<div class="opt"><input type="radio" name="q27" value="D" onchange="checkSingle(27,'D')"><label>RollingUpdate</label></div>
+<div class="feedback" id="fb-27"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(27)">← Back</button><button class="btn" id="next-27" onclick="next(27)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q28 -->
+<div class="card" id="card-28">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 28 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the primary purpose of a Kubernetes ConfigMap?</div>
+<div class="opt"><input type="radio" name="q28" value="A" onchange="checkSingle(28,'B')"><label>To store sensitive data such as passwords and API keys</label></div>
+<div class="opt"><input type="radio" name="q28" value="B" onchange="checkSingle(28,'B')"><label>To store non-sensitive configuration data as key-value pairs</label></div>
+<div class="opt"><input type="radio" name="q28" value="C" onchange="checkSingle(28,'B')"><label>To expose Pods to external traffic</label></div>
+<div class="opt"><input type="radio" name="q28" value="D" onchange="checkSingle(28,'B')"><label>To manage PersistentVolume bindings</label></div>
+<div class="feedback" id="fb-28"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(28)">← Back</button><button class="btn" id="next-28" onclick="next(28)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q29 -->
+<div class="card" id="card-29">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 29 of 30</span></div>
+<div class="cb">
+<div class="qt">An initContainer in a Kubernetes Pod __________.</div>
+<div class="opt"><input type="radio" name="q29" value="A" onchange="checkSingle(29,'C')"><label>Runs alongside the main container to provide logging</label></div>
+<div class="opt"><input type="radio" name="q29" value="B" onchange="checkSingle(29,'C')"><label>Runs after the main container starts to initialize configuration</label></div>
+<div class="opt"><input type="radio" name="q29" value="C" onchange="checkSingle(29,'C')"><label>Runs to completion before the main container starts</label></div>
+<div class="opt"><input type="radio" name="q29" value="D" onchange="checkSingle(29,'C')"><label>Replaces the main container if it fails</label></div>
+<div class="feedback" id="fb-29"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(29)">← Back</button><button class="btn" id="next-29" onclick="next(29)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q30 -->
+<div class="card" id="card-30">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 30 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the primary difference between a Kubernetes Secret and a ConfigMap?</div>
+<div class="opt"><input type="radio" name="q30" value="A" onchange="checkSingle(30,'B')"><label>Secrets are for non-sensitive config; ConfigMaps are for sensitive data</label></div>
+<div class="opt"><input type="radio" name="q30" value="B" onchange="checkSingle(30,'B')"><label>Secrets store sensitive data (base64-encoded); ConfigMaps store non-sensitive config</label></div>
+<div class="opt"><input type="radio" name="q30" value="C" onchange="checkSingle(30,'B')"><label>There is no difference; they are interchangeable</label></div>
+<div class="opt"><input type="radio" name="q30" value="D" onchange="checkSingle(30,'B')"><label>ConfigMaps are encrypted at rest; Secrets are stored in plain text</label></div>
+<div class="feedback" id="fb-30"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(30)">← Back</button><button class="btn" id="next-30" onclick="finish()" disabled>Finish →</button></div>
+</div></div>
+
+<div class="results" id="results">
+  <h2>Quiz Complete!</h2>
+  <div class="big-score" id="final-score"></div>
+  <div class="grade-line" id="grade-line"></div>
+  <button class="restart" onclick="restart()">Restart Quiz</button>
+</div>
+</div>
+
+<script>
+const EX={
+  1:"docker run = CREATE + START a container. docker pull = download image only (no container created). docker build = build image from Dockerfile. docker create = create container without starting it.",
+  2:"Docker volume purpose = persist data AFTER the container is deleted. Bind mounting is one implementation of a volume, but it's not the purpose. Volumes outlive the container lifecycle.",
+  3:"docker exec = connect to / run commands in a RUNNING container (e.g., docker exec -it mycontainer /bin/sh). docker run creates a NEW container — don't confuse the two.",
+  4:"Image = BLUEPRINT (read-only template). Container = RUNTIME instance (created from an image and currently running or stopped). You got this wrong on Quiz 1 — image is blueprint, container is runtime.",
+  5:"FALSE. Docker is a CONTAINER PLATFORM — it builds, runs, and ships containers. Kubernetes (K8s) is the ORCHESTRATION tool for managing containers at scale.",
+  6:"docker rmi = remove IMAGE. docker rm = remove CONTAINER. This is a common mix-up — 'i' in rmi stands for 'image'.",
+  7:"Dockerfile = stores BUILD INSTRUCTIONS (e.g., FROM, RUN, COPY, CMD). You run `docker build` against a Dockerfile to create an image.",
+  8:"Restart policy = controls what happens when a container exits. `--restart always` restarts the container whenever it stops or when Docker itself restarts.",
+  9:"Port mapping (-p flag) = exposes container ports to the host. E.g., `docker run -p 8080:80 nginx` maps host port 8080 to container port 80.",
+  10:"docker network create = create a new Docker network. docker network ls = list networks. Networks allow containers to communicate with each other.",
+  11:"FALSE. `docker pull` ONLY downloads the image from a registry. It does NOT create or start a container. Use `docker run` to create AND start.",
+  12:"Pod = smallest deployable unit in Kubernetes. A Pod contains one or more containers that share network and storage. Deployment and ReplicaSet manage sets of Pods.",
+  13:"Deployment = declares desired state + manages rolling updates and rollbacks. ReplicaSet only ensures replica count. Deployment is the higher-level object that manages ReplicaSets.",
+  14:"K8s Service = stable IP address + DNS name that routes to a dynamic set of Pods. Pod IPs change when Pods restart — Services provide stable endpoints.",
+  15:"Kubernetes = automates DEPLOYMENT, SCALING, and MANAGEMENT of containerized applications. Docker builds and runs containers; K8s manages them at scale.",
+  16:"EKS = Elastic Kubernetes Service = AWS managed K8s. GKE = Google, AKS = Azure, DOKS = DigitalOcean.",
+  17:"ReplicaSet = directly ensures specified number of Pod replicas. Deployment manages ReplicaSets (higher level). You usually create a Deployment, which automatically creates and manages a ReplicaSet.",
+  18:"NodePort range = 30000–32767. This is a fixed Kubernetes specification. Remember it exactly.",
+  19:"kube-apiserver = exposes the Kubernetes API (front-end of the control plane). kube-scheduler = assigns Pods to nodes. You got this wrong on a quiz — network policies are NOT managed by kube-apiserver.",
+  20:"ClusterIP = DEFAULT Service type. Only reachable within the cluster (internal). NodePort and LoadBalancer provide external access. You got this wrong on a quiz (confused with LoadBalancer).",
+  21:"LoadBalancer Service = provisions an EXTERNAL load balancer from the cloud provider (AWS ELB, GCP LB, etc.). You got this wrong on Quiz 4 (chose NodePort instead).",
+  22:"Docker Desktop K8s = lightweight SINGLE-NODE cluster integrated within Docker Desktop. Not multi-master, not production-grade, requires no cloud account.",
+  23:"TRUE. Containers in same Pod share the same network namespace (same IP address) and communicate via localhost. They also share storage volumes.",
+  24:"PVC = request storage resources from available PVs. PV = the actual storage resource. PVC = the claim/request. You got this right on Quiz 4.",
+  25:"FALSE. Data on a PersistentVolume persists INDEPENDENTLY of the Pod lifecycle. Deleting/recreating the Pod does NOT delete PV data — that's the whole point of PersistentVolumes.",
+  26:"capacity field = indicates how much storage is available on the PV. You chose volumeMode on Quiz 4 — that's wrong. volumeMode = Filesystem or Block. capacity = storage size.",
+  27:"RollingUpdate = gradual pod replacement with minimal downtime (default). Recreate = terminate all old pods first (causes downtime). ImmediateReplace and RecreateAlways are not real K8s strategies.",
+  28:"ConfigMap = non-sensitive config as key-value pairs. Secret = sensitive data (passwords, tokens, keys). Never store passwords in a ConfigMap.",
+  29:"initContainer = runs to COMPLETION BEFORE the main container starts. Used to set up prerequisites (write config files, wait for dependencies). Sidecar = runs ALONGSIDE main container.",
+  30:"Secret = sensitive data stored base64-encoded (NOT plain text, NOT encrypted by default). ConfigMap = non-sensitive key-value config. They are NOT interchangeable — use the right one for the right data."
+};
+
+let score=0,answered={},cur=1,total=30;
+
+function checkSingle(n,correct){
+  if(answered[n])return;
+  answered[n]=true;
+  const sel=document.querySelector(`input[name="q${n}"]:checked`);
+  if(!sel)return;
+  const ok=sel.value===correct;
+  if(ok)score++;
+  document.querySelectorAll(`input[name="q${n}"]`).forEach(i=>{
+    const d=i.closest('.opt');
+    if(i.value===correct)d.classList.add('ch-opt');
+    else if(i===sel&&!ok)d.classList.add('wh-opt');
+    i.disabled=true;
+  });
+  showFb(n,ok);
+  document.getElementById(`next-${n}`).disabled=false;
+  updateProg();
+}
+
+function showFb(n,ok){
+  const fb=document.getElementById(`fb-${n}`);
+  fb.className='feedback '+(ok?'correct':'wrong');
+  fb.innerHTML=(ok?'<strong>Correct!</strong> ':'<strong>Incorrect.</strong> ')+EX[n];
+  fb.style.display='block';
+}
+
+function updateProg(){
+  document.getElementById('ptext').textContent=`Q ${cur} / ${total}`;
+  document.getElementById('pfill').style.width=((cur/total)*100)+'%';
+  document.getElementById('pscore').textContent=`Score: ${score}`;
+}
+
+function next(n){
+  document.getElementById(`card-${n}`).classList.remove('active');
+  cur=n+1;document.getElementById(`card-${cur}`).classList.add('active');
+  updateProg();window.scrollTo({top:0,behavior:'smooth'});
+}
+function prev(n){
+  document.getElementById(`card-${n}`).classList.remove('active');
+  cur=n-1;document.getElementById(`card-${cur}`).classList.add('active');
+  updateProg();window.scrollTo({top:0,behavior:'smooth'});
+}
+function finish(){
+  document.getElementById('card-30').classList.remove('active');
+  const r=document.getElementById('results');r.style.display='block';
+  const p=Math.round(score/total*100);
+  const el=document.getElementById('final-score');
+  el.textContent=`${score} / ${total}`;el.className='big-score '+(p>=70?'pass':'fail');
+  const l=p>=90?'A':p>=80?'B':p>=70?'C':p>=60?'D':'F';
+  document.getElementById('grade-line').innerHTML=`${p}% — Grade <strong>${l}</strong> — ${p>=70?'Pass ✓':'Review study guide ✗'}`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restart(){
+  score=0;answered={};cur=1;
+  document.getElementById('results').style.display='none';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('card-1').classList.add('active');
+  document.querySelectorAll('input').forEach(i=>{i.checked=false;i.disabled=false;});
+  document.querySelectorAll('.opt').forEach(o=>o.classList.remove('ch-opt','wh-opt'));
+  document.querySelectorAll('.feedback').forEach(f=>{f.style.display='none';f.className='feedback';});
+  document.querySelectorAll('[id^=next-]').forEach(b=>b.disabled=true);
+  updateProg();window.scrollTo({top:0,behavior:'smooth'});
+}
+updateProg();
+</script>
+</body></html>
