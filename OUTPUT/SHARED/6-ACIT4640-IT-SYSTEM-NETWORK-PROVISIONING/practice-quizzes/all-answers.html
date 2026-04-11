@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4640 — All Answers</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:13px;background:#f4f4f4;color:#222}
+  .hdr{background:#2c5f2e;color:white;padding:16px 28px}.hdr h1{font-size:18px}.hdr p{font-size:12px;margin-top:3px;opacity:.85}
+  .wrap{max-width:860px;margin:20px auto;padding:0 14px 60px}
+  .toc{background:#fff;border-left:5px solid #2c5f2e;border-radius:3px;padding:14px 18px;margin-bottom:20px}
+  .toc h3{font-size:13px;margin-bottom:10px;color:#2c5f2e;text-transform:uppercase}
+  .toc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+  .toc a{display:block;text-align:center;padding:5px;background:#e8f0e8;border-radius:3px;text-decoration:none;font-size:12px;font-weight:bold;color:#2c5f2e}
+  .toc a:hover{background:#2c5f2e;color:#fff}
+  .qb{background:#fff;border:1px solid #ddd;border-radius:4px;margin-bottom:14px;scroll-margin-top:20px}
+  .qh{background:#e8f0e8;padding:8px 14px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#555}
+  .qbody{padding:14px 16px}
+  .qt{font-size:14px;font-weight:bold;margin-bottom:12px;line-height:1.6}
+  code{background:#f0f0f0;padding:1px 5px;border-radius:2px;font-family:monospace;font-size:12px}
+  .opt{display:flex;align-items:flex-start;margin:5px 0;padding:7px 9px;border-radius:3px;border:1px solid transparent}
+  .opt.correct{background:#d4edda;border-color:#28a745}
+  .opt label{line-height:1.4;margin-left:9px}
+  .opt input{margin-top:2px;flex-shrink:0;accent-color:#28a745}
+  .expl{margin-top:12px;padding:10px 12px;background:#f8fff8;border-left:3px solid #2c5f2e;font-size:12px;line-height:1.6;color:#333;border-radius:0 3px 3px 0}
+  .badge{font-size:11px;font-weight:bold;padding:2px 8px;border-radius:10px;background:#2c5f2e;color:white}
+  .tl{font-size:11px;text-transform:uppercase;font-weight:bold;color:#777}
+  .summary{background:#2c5f2e;color:white;text-align:center;padding:16px;border-radius:4px;margin-bottom:20px;font-size:14px}
+  .summary strong{font-size:20px}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ACIT4640 — IT System and Network Provisioning</h1><p>All Answers &nbsp;|&nbsp; 25 Questions with Correct Answers &amp; Explanations</p></div>
+<div class="wrap">
+
+<div class="summary">25 Questions — All answers pre-selected &nbsp;|&nbsp; <strong>Study Reference</strong> &nbsp;|&nbsp; Exam: Fri Apr 24, 2026</div>
+
+<div class="toc">
+  <h3>Jump to Question</h3>
+  <div class="toc-grid">
+    <a href="#q1">Q1</a><a href="#q2">Q2</a><a href="#q3">Q3</a><a href="#q4">Q4</a><a href="#q5">Q5</a>
+    <a href="#q6">Q6</a><a href="#q7">Q7</a><a href="#q8">Q8</a><a href="#q9">Q9</a><a href="#q10">Q10</a>
+    <a href="#q11">Q11</a><a href="#q12">Q12</a><a href="#q13">Q13</a><a href="#q14">Q14</a><a href="#q15">Q15</a>
+    <a href="#q16">Q16</a><a href="#q17">Q17</a><a href="#q18">Q18</a><a href="#q19">Q19</a><a href="#q20">Q20</a>
+    <a href="#q21">Q21</a><a href="#q22">Q22</a><a href="#q23">Q23</a><a href="#q24">Q24</a><a href="#q25">Q25</a>
+  </div>
+</div>
+
+<!-- Q1 -->
+<div class="qb" id="q1"><div class="qh"><span class="tl">MC</span><span>Q1 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">1. What is the correct AWS CLI command pattern?</div>
+<div class="opt"><input type="radio" disabled><label>aws [options] &lt;operation&gt; &lt;service&gt;</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>aws [options] &lt;service&gt; &lt;operation&gt;</label></div>
+<div class="opt"><input type="radio" disabled><label>aws &lt;service&gt; --operation [params]</label></div>
+<div class="opt"><input type="radio" disabled><label>aws --service &lt;name&gt; --operation &lt;name&gt;</label></div>
+<div class="expl"><strong>Explanation:</strong> AWS CLI always follows: <code>aws [options] &lt;service&gt; &lt;operation&gt; [parameters]</code>. Example: <code>aws ec2 describe-instances</code> — service = ec2, operation = describe-instances.</div>
+</div></div>
+
+<!-- Q2 -->
+<div class="qb" id="q2"><div class="qh"><span class="tl">T/F</span><span>Q2 / 25</span><span class="badge">True</span></div>
+<div class="qbody"><div class="qt">2. <code>aws configure</code> stores credentials in <code>~/.aws/credentials</code> and config in <code>~/.aws/config</code>.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>True</label></div>
+<div class="opt"><input type="radio" disabled><label>False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. <code>~/.aws/credentials</code> holds <code>aws_access_key_id</code> and <code>aws_secret_access_key</code>. <code>~/.aws/config</code> holds <code>region</code> and <code>output</code> format. Named profiles can be used with <code>--profile dev</code>.</div>
+</div></div>
+
+<!-- Q3 -->
+<div class="qb" id="q3"><div class="qh"><span class="tl">MC</span><span>Q3 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">3. You want to verify AWS CLI permissions WITHOUT making any changes. Which flag do you use?</div>
+<div class="opt"><input type="radio" disabled><label>--no-paginate</label></div>
+<div class="opt"><input type="radio" disabled><label>--validate</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>--dry-run</label></div>
+<div class="opt"><input type="radio" disabled><label>--check</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>--dry-run</code> checks if you have the necessary permissions without actually executing the API call. <code>--check</code> is the Ansible equivalent. <code>--no-paginate</code> disables pagination on list commands.</div>
+</div></div>
+
+<!-- Q4 -->
+<div class="qb" id="q4"><div class="qh"><span class="tl">MC</span><span>Q4 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">4. After creating a .pem key file, what permission must you set before using it with SSH?</div>
+<div class="opt"><input type="radio" disabled><label>chmod 400</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>chmod 600</label></div>
+<div class="opt"><input type="radio" disabled><label>chmod 700</label></div>
+<div class="opt"><input type="radio" disabled><label>chmod 644</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>chmod 600</code> = owner read+write only. SSH refuses to use key files that are group- or world-readable (e.g., 644). The course teaches 600 as the standard. chmod 400 (read-only) also works in practice.</div>
+</div></div>
+
+<!-- Q5 -->
+<div class="qb" id="q5"><div class="qh"><span class="tl">MC</span><span>Q5 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">5. What is the default SSH username for an Ubuntu EC2 instance?</div>
+<div class="opt"><input type="radio" disabled><label>admin</label></div>
+<div class="opt"><input type="radio" disabled><label>ec2-user</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>ubuntu</label></div>
+<div class="opt"><input type="radio" disabled><label>root</label></div>
+<div class="expl"><strong>Explanation:</strong> Ubuntu AMIs → <code>ubuntu</code>. Amazon Linux AMIs → <code>ec2-user</code>. This is a classic exam trap. The Packer source AMI in the course uses Ubuntu with <code>ssh_username = "ubuntu"</code>.</div>
+</div></div>
+
+<!-- Q6 -->
+<div class="qb" id="q6"><div class="qh"><span class="tl">MC</span><span>Q6 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">6. What is the correct SSH command to connect to an Ubuntu EC2 instance using a .pem key?</div>
+<div class="opt"><input type="radio" disabled><label>ssh ec2-user@PUBLIC_IP -key demo-key.pem</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>ssh -i demo-key.pem ubuntu@PUBLIC_IP</label></div>
+<div class="opt"><input type="radio" disabled><label>ssh -k demo-key.pem ubuntu@PUBLIC_IP</label></div>
+<div class="opt"><input type="radio" disabled><label>ssh ubuntu@PUBLIC_IP --identity demo-key.pem</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>-i</code> = identity file (private key). <code>-k</code> is not a valid SSH flag for key files. The full command: <code>ssh -i demo-key.pem ubuntu@PUBLIC_IP</code>.</div>
+</div></div>
+
+<!-- Q7 -->
+<div class="qb" id="q7"><div class="qh"><span class="tl">MC</span><span>Q7 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">7. Which AWS resource allows instances in a VPC to communicate with the internet?</div>
+<div class="opt"><input type="radio" disabled><label>Security Group</label></div>
+<div class="opt"><input type="radio" disabled><label>Route Table</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>Internet Gateway</label></div>
+<div class="opt"><input type="radio" disabled><label>Subnet</label></div>
+<div class="expl"><strong>Explanation:</strong> The Internet Gateway (IGW) is attached to the VPC and enables internet connectivity. You then add a route in the Route Table pointing <code>0.0.0.0/0</code> to the IGW. Without an IGW, the subnet is private even if you add routes.</div>
+</div></div>
+
+<!-- Q8 -->
+<div class="qb" id="q8"><div class="qh"><span class="tl">MC</span><span>Q8 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">8. What CIDR block notation represents ALL IP addresses (anywhere on the internet)?</div>
+<div class="opt"><input type="radio" disabled><label>10.0.0.0/8</label></div>
+<div class="opt"><input type="radio" disabled><label>192.168.0.0/16</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>0.0.0.0/0</label></div>
+<div class="opt"><input type="radio" disabled><label>255.255.255.255/32</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>0.0.0.0/0</code> = all IPs. Used in security group rules for public access (SSH from anywhere, HTTP from anywhere). <code>/32</code> = exactly 1 IP address. <code>/16</code> = 65,536 IPs. <code>/24</code> = 256 IPs.</div>
+</div></div>
+
+<!-- Q9 -->
+<div class="qb" id="q9"><div class="qh"><span class="tl">T/F</span><span>Q9 / 25</span><span class="badge">True</span></div>
+<div class="qbody"><div class="qt">9. A security group in AWS is stateful — if inbound traffic is allowed, the return traffic is automatically allowed.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>True</label></div>
+<div class="opt"><input type="radio" disabled><label>False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. Security groups are stateful — response traffic is tracked and automatically allowed. Network ACLs (NACLs) are stateless and require explicit inbound AND outbound rules. Know the difference.</div>
+</div></div>
+
+<!-- Q10 -->
+<div class="qb" id="q10"><div class="qh"><span class="tl">MC</span><span>Q10 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">10. What is the correct Terraform workflow order?</div>
+<div class="opt"><input type="radio" disabled><label>plan → init → apply → destroy</label></div>
+<div class="opt"><input type="radio" disabled><label>init → apply → plan → destroy</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>init → plan → apply → destroy</label></div>
+<div class="opt"><input type="radio" disabled><label>apply → init → plan → destroy</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>init</code> → downloads providers/modules (required first). <code>plan</code> → preview changes (dry run). <code>apply</code> → create/update resources. <code>destroy</code> → tear down. You cannot run plan or apply without init first.</div>
+</div></div>
+
+<!-- Q11 -->
+<div class="qb" id="q11"><div class="qh"><span class="tl">MC</span><span>Q11 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">11. Which Terraform command shows what changes WILL be made WITHOUT actually making them?</div>
+<div class="opt"><input type="radio" disabled><label>terraform init</label></div>
+<div class="opt"><input type="radio" disabled><label>terraform validate</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>terraform plan</label></div>
+<div class="opt"><input type="radio" disabled><label>terraform apply --dry-run</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>terraform plan</code> is the dry-run for Terraform — it shows + (create), ~ (modify), - (destroy) but makes NO changes. <code>terraform apply --dry-run</code> does not exist. <code>terraform validate</code> only checks HCL syntax.</div>
+</div></div>
+
+<!-- Q12 -->
+<div class="qb" id="q12"><div class="qh"><span class="tl">T/F</span><span>Q12 / 25</span><span class="badge">True</span></div>
+<div class="qbody"><div class="qt">12. Terraform is a declarative IaC tool — you describe the desired state and Terraform figures out how to achieve it.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>True</label></div>
+<div class="opt"><input type="radio" disabled><label>False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. Terraform = declarative (describe WHAT you want). AWS CLI = imperative (specify HOW each step). Declarative tools calculate the diff between current state and desired state automatically.</div>
+</div></div>
+
+<!-- Q13 -->
+<div class="qb" id="q13"><div class="qh"><span class="tl">MC</span><span>Q13 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">13. Where does Terraform track the state of managed infrastructure?</div>
+<div class="opt"><input type="radio" disabled><label>providers.tf</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>terraform.tfstate</label></div>
+<div class="opt"><input type="radio" disabled><label>variables.tf</label></div>
+<div class="opt"><input type="radio" disabled><label>main.tf</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>terraform.tfstate</code> is the state file — it maps your HCL resources to real AWS resource IDs. NEVER delete it. If lost, Terraform cannot track, update, or destroy existing resources.</div>
+</div></div>
+
+<!-- Q14 -->
+<div class="qb" id="q14"><div class="qh"><span class="tl">MC</span><span>Q14 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">14. In a Terraform project, which file typically contains resource definitions and provider configuration?</div>
+<div class="opt"><input type="radio" disabled><label>variables.tf</label></div>
+<div class="opt"><input type="radio" disabled><label>outputs.tf</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>main.tf</label></div>
+<div class="opt"><input type="radio" disabled><label>terraform.tfstate</label></div>
+<div class="expl"><strong>Explanation:</strong> Convention: <code>main.tf</code> = provider + resource blocks. <code>variables.tf</code> = variable declarations. <code>outputs.tf</code> = output values. <code>providers.tf</code> = optional separate provider config. <code>terraform.tfstate</code> = auto-generated state (not edited manually).</div>
+</div></div>
+
+<!-- Q15 -->
+<div class="qb" id="q15"><div class="qh"><span class="tl">MC</span><span>Q15 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">15. Ansible is an agentless tool. How does it communicate with managed hosts?</div>
+<div class="opt"><input type="radio" disabled><label>It installs a daemon on each target host</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>Via SSH</label></div>
+<div class="opt"><input type="radio" disabled><label>Via HTTP REST API calls</label></div>
+<div class="opt"><input type="radio" disabled><label>Via a message broker (Kafka)</label></div>
+<div class="expl"><strong>Explanation:</strong> Ansible is agentless — no software needs to be installed on managed nodes. It connects over SSH using credentials defined in the inventory file (<code>ansible_user</code>, <code>ansible_ssh_private_key_file</code>). Push-based architecture.</div>
+</div></div>
+
+<!-- Q16 -->
+<div class="qb" id="q16"><div class="qh"><span class="tl">MC</span><span>Q16 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">16. In an Ansible inventory file, what does the <code>[web]</code> line define?</div>
+<div class="opt"><input type="radio" disabled><label>A variable for web server URL</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>A host group named "web"</label></div>
+<div class="opt"><input type="radio" disabled><label>A playbook task</label></div>
+<div class="opt"><input type="radio" disabled><label>A connection timeout setting</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>[web]</code> is a group header in the INI-format inventory. All hosts listed below it belong to the "web" group. Target with: <code>ansible web -m ping</code> or <code>hosts: web</code> in a playbook.</div>
+</div></div>
+
+<!-- Q17 -->
+<div class="qb" id="q17"><div class="qh"><span class="tl">MC</span><span>Q17 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">17. Which Ansible command tests connectivity to all hosts and returns "pong" on success?</div>
+<div class="opt"><input type="radio" disabled><label>ansible all -m test</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>ansible all -m ping</label></div>
+<div class="opt"><input type="radio" disabled><label>ansible-playbook ping.yml</label></div>
+<div class="opt"><input type="radio" disabled><label>ansible all --check</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>ansible all -m ping</code> uses the built-in ping module. Success response = <code>pong</code>. Use <code>web</code> instead of <code>all</code> to target a specific group. The <code>-m</code> flag specifies the module.</div>
+</div></div>
+
+<!-- Q18 -->
+<div class="qb" id="q18"><div class="qh"><span class="tl">T/F</span><span>Q18 / 25</span><span class="badge">True</span></div>
+<div class="qbody"><div class="qt">18. In an Ansible playbook, <code>become: yes</code> means the task will run with elevated (sudo) privileges.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>True</label></div>
+<div class="opt"><input type="radio" disabled><label>False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. <code>become: yes</code> enables privilege escalation (equivalent to sudo). Required for tasks like installing packages with <code>apt</code>, managing services, or writing files to system directories like <code>/var/www/html/</code>.</div>
+</div></div>
+
+<!-- Q19 -->
+<div class="qb" id="q19"><div class="qh"><span class="tl">MC</span><span>Q19 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">19. Which Ansible module is used to install packages on Ubuntu/Debian systems?</div>
+<div class="opt"><input type="radio" disabled><label>yum</label></div>
+<div class="opt"><input type="radio" disabled><label>package</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>apt</label></div>
+<div class="opt"><input type="radio" disabled><label>install</label></div>
+<div class="expl"><strong>Explanation:</strong> <code>apt</code> module = Ubuntu/Debian. <code>yum</code> module = RHEL/CentOS/Amazon Linux. The course focuses on Ubuntu EC2 instances. Key parameter: <code>state: present</code> to install, <code>state: absent</code> to remove.</div>
+</div></div>
+
+<!-- Q20 -->
+<div class="qb" id="q20"><div class="qh"><span class="tl">MC</span><span>Q20 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">20. What does Packer produce as its output?</div>
+<div class="opt"><input type="radio" disabled><label>A running EC2 instance</label></div>
+<div class="opt"><input type="radio" disabled><label>A Terraform state file</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>A machine image (e.g., AMI)</label></div>
+<div class="opt"><input type="radio" disabled><label>An Ansible playbook</label></div>
+<div class="expl"><strong>Explanation:</strong> Packer builds machine images (AMIs on AWS). The process: launch a temporary EC2 → run provisioners (shell scripts / Ansible) → create an AMI → terminate the instance. No running instances remain after the build.</div>
+</div></div>
+
+<!-- Q21 -->
+<div class="qb" id="q21"><div class="qh"><span class="tl">MC</span><span>Q21 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">21. What is the purpose of <code>packer validate .</code>?</div>
+<div class="opt"><input type="radio" disabled><label>Build the machine image</label></div>
+<div class="opt"><input type="radio" disabled><label>Download Packer plugins</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>Check the HCL syntax without building</label></div>
+<div class="opt"><input type="radio" disabled><label>Deploy the image to EC2</label></div>
+<div class="expl"><strong>Explanation:</strong> Packer commands: <code>packer init .</code> = download plugins. <code>packer validate .</code> = check HCL syntax (no build). <code>packer build .</code> = execute the full build and produce the AMI.</div>
+</div></div>
+
+<!-- Q22 -->
+<div class="qb" id="q22"><div class="qh"><span class="tl">MC</span><span>Q22 / 25</span><span class="badge">B</span></div>
+<div class="qbody"><div class="qt">22. What is Infrastructure as Code (IaC)?</div>
+<div class="opt"><input type="radio" disabled><label>Writing scripts to manually deploy servers</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>Defining and managing infrastructure through machine-readable configuration files</label></div>
+<div class="opt"><input type="radio" disabled><label>Using a GUI console to provision cloud resources</label></div>
+<div class="opt"><input type="radio" disabled><label>A type of containerization technology</label></div>
+<div class="expl"><strong>Explanation:</strong> IaC = infrastructure defined in code files (version-controlled, repeatable, automatable). Benefits: consistency, peer review, rollback, automation. Declarative IaC (Terraform) describes desired state. Imperative (CLI scripts) describes steps.</div>
+</div></div>
+
+<!-- Q23 -->
+<div class="qb" id="q23"><div class="qh"><span class="tl">MC</span><span>Q23 / 25</span><span class="badge">C</span></div>
+<div class="qbody"><div class="qt">23. A VPC has CIDR block <code>10.0.0.0/16</code>. A subnet has CIDR <code>10.0.1.0/24</code>. How many IP addresses does the subnet provide?</div>
+<div class="opt"><input type="radio" disabled><label>65,536</label></div>
+<div class="opt"><input type="radio" disabled><label>16</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>256</label></div>
+<div class="opt"><input type="radio" disabled><label>1024</label></div>
+<div class="expl"><strong>Explanation:</strong> /24 = 2^(32-24) = 2^8 = 256 addresses. /16 = 65,536. /32 = 1. Formula: 2^(32 - prefix). Quick reference: /24 = 256, /16 = 65,536, /32 = 1 (single host), 0.0.0.0/0 = all IPs.</div>
+</div></div>
+
+<!-- Q24 -->
+<div class="qb" id="q24"><div class="qh"><span class="tl">MC</span><span>Q24 / 25</span><span class="badge">D</span></div>
+<div class="qbody"><div class="qt">24. Which tool is best described as a <em>configuration management</em> tool (installs/configures software on existing servers)?</div>
+<div class="opt"><input type="radio" disabled><label>Terraform</label></div>
+<div class="opt"><input type="radio" disabled><label>Packer</label></div>
+<div class="opt"><input type="radio" disabled><label>AWS CLI</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>Ansible</label></div>
+<div class="expl"><strong>Explanation:</strong> Tool roles: Ansible = configuration management (configures running servers). Terraform = infrastructure provisioning (creates VMs, networks). Packer = image building (bakes AMIs). AWS CLI = imperative cloud management (any AWS API call).</div>
+</div></div>
+
+<!-- Q25 -->
+<div class="qb" id="q25"><div class="qh"><span class="tl">T/F</span><span>Q25 / 25</span><span class="badge">True</span></div>
+<div class="qbody"><div class="qt">25. <code>terraform destroy</code> tears down all infrastructure managed by the current Terraform state.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>True</label></div>
+<div class="opt"><input type="radio" disabled><label>False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. <code>terraform destroy</code> reads <code>terraform.tfstate</code> and destroys every resource it tracks. It prompts for confirmation (or use <code>-auto-approve</code> to skip). This is why the state file must be preserved — without it, Terraform can't destroy cleanly.</div>
+</div></div>
+
+</div>
+</body></html>

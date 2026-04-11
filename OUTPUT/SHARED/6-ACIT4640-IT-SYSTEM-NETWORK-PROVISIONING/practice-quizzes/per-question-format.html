@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4640 — Per-Question Practice Quiz</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:14px;background:#f4f4f4;color:#222}
+  .hdr{background:#2c5f2e;color:white;padding:18px 28px}.hdr h1{font-size:19px}.hdr p{font-size:12px;margin-top:4px;opacity:.85}
+  .wrap{max-width:760px;margin:24px auto;padding:0 14px 60px}
+  .progress{background:#fff;border-radius:4px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-size:13px}
+  .pbar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
+  .pfill{height:100%;background:#2c5f2e;transition:width .3s}
+  .card{background:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden;display:none}
+  .card.active{display:block}
+  .ch{background:#e8f0e8;padding:9px 14px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;font-size:12px;color:#555}
+  .cb{padding:18px 20px}
+  .qt{font-size:15px;font-weight:bold;margin-bottom:14px;line-height:1.6}
+  code{background:#f0f0f0;padding:1px 5px;border-radius:2px;font-family:monospace;font-size:13px}
+  .opt{display:flex;align-items:flex-start;margin:7px 0;padding:9px 11px;border-radius:4px;border:1px solid #ddd;cursor:pointer;transition:background .15s}
+  .opt:hover{background:#f0f8f0}.opt input{margin-right:10px;margin-top:2px;flex-shrink:0}.opt label{cursor:pointer;line-height:1.4}
+  .opt.ch-opt{background:#d4edda;border-color:#28a745}.opt.wh-opt{background:#f8d7da;border-color:#dc3545}
+  .feedback{margin-top:14px;padding:12px 14px;border-radius:4px;font-size:13px;display:none;line-height:1.6}
+  .feedback.correct{background:#d4edda;border-left:4px solid #28a745;color:#155724}
+  .feedback.wrong{background:#f8d7da;border-left:4px solid #dc3545;color:#721c24}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+  .btn{background:#2c5f2e;color:white;border:none;padding:9px 24px;border-radius:4px;cursor:pointer;font-size:13px}
+  .btn:hover{background:#3d7a40}.btn:disabled{background:#aaa;cursor:default}
+  .btn-sec{background:#fff;color:#2c5f2e;border:1px solid #2c5f2e}
+  .btn-sec:hover{background:#f0f8f0}
+  .results{display:none;text-align:center;padding:32px 20px}
+  .results h2{color:#2c5f2e;font-size:22px;margin-bottom:12px}
+  .big-score{font-size:52px;font-weight:bold;margin:10px 0}
+  .pass{color:#28a745}.fail{color:#dc3545}
+  .grade-line{font-size:16px;color:#555;margin-bottom:20px}
+  .restart{background:#2c5f2e;color:white;border:none;padding:10px 28px;border-radius:4px;cursor:pointer;font-size:14px}
+  .restart:hover{background:#3d7a40}
+  .tl{font-size:11px;text-transform:uppercase;font-weight:bold;color:#777}
+  .qnum{font-weight:bold;color:#2c5f2e}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ACIT4640 — IT System and Network Provisioning</h1><p>Final Exam Practice Quiz &nbsp;|&nbsp; Per-Question Format &nbsp;|&nbsp; 25 Questions</p></div>
+<div class="wrap">
+<div class="progress">
+  <span id="ptext" style="font-weight:bold;white-space:nowrap">Q 1 / 25</span>
+  <div class="pbar"><div class="pfill" id="pfill" style="width:4%"></div></div>
+  <span id="pscore" style="white-space:nowrap;color:#555">Score: 0</span>
+</div>
+
+<!-- Q1 -->
+<div class="card active" id="card-1">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 1 of 25</span></div>
+<div class="cb">
+<div class="qt">What is the correct AWS CLI command pattern?</div>
+<div class="opt"><input type="radio" name="q1" value="A" onchange="check(1,'B')"><label>aws [options] &lt;operation&gt; &lt;service&gt;</label></div>
+<div class="opt"><input type="radio" name="q1" value="B" onchange="check(1,'B')"><label>aws [options] &lt;service&gt; &lt;operation&gt;</label></div>
+<div class="opt"><input type="radio" name="q1" value="C" onchange="check(1,'B')"><label>aws &lt;service&gt; --operation [params]</label></div>
+<div class="opt"><input type="radio" name="q1" value="D" onchange="check(1,'B')"><label>aws --service &lt;name&gt; --operation &lt;name&gt;</label></div>
+<div class="feedback" id="fb-1"></div>
+<div class="nav"><span></span><button class="btn" id="next-1" onclick="next(1)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q2 -->
+<div class="card" id="card-2">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 2 of 25</span></div>
+<div class="cb">
+<div class="qt"><code>aws configure</code> stores credentials in <code>~/.aws/credentials</code> and config in <code>~/.aws/config</code>.</div>
+<div class="opt"><input type="radio" name="q2" value="A" onchange="check(2,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q2" value="B" onchange="check(2,'A')"><label>False</label></div>
+<div class="feedback" id="fb-2"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(2)">← Back</button><button class="btn" id="next-2" onclick="next(2)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q3 -->
+<div class="card" id="card-3">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 3 of 25</span></div>
+<div class="cb">
+<div class="qt">You want to verify AWS CLI permissions WITHOUT making any changes. Which flag do you use?</div>
+<div class="opt"><input type="radio" name="q3" value="A" onchange="check(3,'C')"><label>--no-paginate</label></div>
+<div class="opt"><input type="radio" name="q3" value="B" onchange="check(3,'C')"><label>--validate</label></div>
+<div class="opt"><input type="radio" name="q3" value="C" onchange="check(3,'C')"><label>--dry-run</label></div>
+<div class="opt"><input type="radio" name="q3" value="D" onchange="check(3,'C')"><label>--check</label></div>
+<div class="feedback" id="fb-3"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(3)">← Back</button><button class="btn" id="next-3" onclick="next(3)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q4 -->
+<div class="card" id="card-4">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 4 of 25</span></div>
+<div class="cb">
+<div class="qt">After creating a .pem key file, what permission must you set before using it with SSH?</div>
+<div class="opt"><input type="radio" name="q4" value="A" onchange="check(4,'B')"><label>chmod 400</label></div>
+<div class="opt"><input type="radio" name="q4" value="B" onchange="check(4,'B')"><label>chmod 600</label></div>
+<div class="opt"><input type="radio" name="q4" value="C" onchange="check(4,'B')"><label>chmod 700</label></div>
+<div class="opt"><input type="radio" name="q4" value="D" onchange="check(4,'B')"><label>chmod 644</label></div>
+<div class="feedback" id="fb-4"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(4)">← Back</button><button class="btn" id="next-4" onclick="next(4)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q5 -->
+<div class="card" id="card-5">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 5 of 25</span></div>
+<div class="cb">
+<div class="qt">What is the default SSH username for an Ubuntu EC2 instance?</div>
+<div class="opt"><input type="radio" name="q5" value="A" onchange="check(5,'C')"><label>admin</label></div>
+<div class="opt"><input type="radio" name="q5" value="B" onchange="check(5,'C')"><label>ec2-user</label></div>
+<div class="opt"><input type="radio" name="q5" value="C" onchange="check(5,'C')"><label>ubuntu</label></div>
+<div class="opt"><input type="radio" name="q5" value="D" onchange="check(5,'C')"><label>root</label></div>
+<div class="feedback" id="fb-5"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(5)">← Back</button><button class="btn" id="next-5" onclick="next(5)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q6 -->
+<div class="card" id="card-6">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 6 of 25</span></div>
+<div class="cb">
+<div class="qt">What is the correct SSH command to connect to an Ubuntu EC2 instance using a .pem key?</div>
+<div class="opt"><input type="radio" name="q6" value="A" onchange="check(6,'B')"><label>ssh ec2-user@PUBLIC_IP -key demo-key.pem</label></div>
+<div class="opt"><input type="radio" name="q6" value="B" onchange="check(6,'B')"><label>ssh -i demo-key.pem ubuntu@PUBLIC_IP</label></div>
+<div class="opt"><input type="radio" name="q6" value="C" onchange="check(6,'B')"><label>ssh -k demo-key.pem ubuntu@PUBLIC_IP</label></div>
+<div class="opt"><input type="radio" name="q6" value="D" onchange="check(6,'B')"><label>ssh ubuntu@PUBLIC_IP --identity demo-key.pem</label></div>
+<div class="feedback" id="fb-6"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(6)">← Back</button><button class="btn" id="next-6" onclick="next(6)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q7 -->
+<div class="card" id="card-7">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 7 of 25</span></div>
+<div class="cb">
+<div class="qt">Which AWS resource allows instances in a VPC to communicate with the internet?</div>
+<div class="opt"><input type="radio" name="q7" value="A" onchange="check(7,'C')"><label>Security Group</label></div>
+<div class="opt"><input type="radio" name="q7" value="B" onchange="check(7,'C')"><label>Route Table</label></div>
+<div class="opt"><input type="radio" name="q7" value="C" onchange="check(7,'C')"><label>Internet Gateway</label></div>
+<div class="opt"><input type="radio" name="q7" value="D" onchange="check(7,'C')"><label>Subnet</label></div>
+<div class="feedback" id="fb-7"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(7)">← Back</button><button class="btn" id="next-7" onclick="next(7)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q8 -->
+<div class="card" id="card-8">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 8 of 25</span></div>
+<div class="cb">
+<div class="qt">What CIDR block notation represents ALL IP addresses (anywhere on the internet)?</div>
+<div class="opt"><input type="radio" name="q8" value="A" onchange="check(8,'C')"><label>10.0.0.0/8</label></div>
+<div class="opt"><input type="radio" name="q8" value="B" onchange="check(8,'C')"><label>192.168.0.0/16</label></div>
+<div class="opt"><input type="radio" name="q8" value="C" onchange="check(8,'C')"><label>0.0.0.0/0</label></div>
+<div class="opt"><input type="radio" name="q8" value="D" onchange="check(8,'C')"><label>255.255.255.255/32</label></div>
+<div class="feedback" id="fb-8"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(8)">← Back</button><button class="btn" id="next-8" onclick="next(8)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q9 -->
+<div class="card" id="card-9">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 9 of 25</span></div>
+<div class="cb">
+<div class="qt">A security group in AWS is stateful — if inbound traffic is allowed, the return traffic is automatically allowed.</div>
+<div class="opt"><input type="radio" name="q9" value="A" onchange="check(9,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q9" value="B" onchange="check(9,'A')"><label>False</label></div>
+<div class="feedback" id="fb-9"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(9)">← Back</button><button class="btn" id="next-9" onclick="next(9)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q10 -->
+<div class="card" id="card-10">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 10 of 25</span></div>
+<div class="cb">
+<div class="qt">What is the correct Terraform workflow order?</div>
+<div class="opt"><input type="radio" name="q10" value="A" onchange="check(10,'C')"><label>plan → init → apply → destroy</label></div>
+<div class="opt"><input type="radio" name="q10" value="B" onchange="check(10,'C')"><label>init → apply → plan → destroy</label></div>
+<div class="opt"><input type="radio" name="q10" value="C" onchange="check(10,'C')"><label>init → plan → apply → destroy</label></div>
+<div class="opt"><input type="radio" name="q10" value="D" onchange="check(10,'C')"><label>apply → init → plan → destroy</label></div>
+<div class="feedback" id="fb-10"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(10)">← Back</button><button class="btn" id="next-10" onclick="next(10)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q11 -->
+<div class="card" id="card-11">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 11 of 25</span></div>
+<div class="cb">
+<div class="qt">Which Terraform command shows what changes WILL be made WITHOUT actually making them?</div>
+<div class="opt"><input type="radio" name="q11" value="A" onchange="check(11,'C')"><label>terraform init</label></div>
+<div class="opt"><input type="radio" name="q11" value="B" onchange="check(11,'C')"><label>terraform validate</label></div>
+<div class="opt"><input type="radio" name="q11" value="C" onchange="check(11,'C')"><label>terraform plan</label></div>
+<div class="opt"><input type="radio" name="q11" value="D" onchange="check(11,'C')"><label>terraform apply --dry-run</label></div>
+<div class="feedback" id="fb-11"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(11)">← Back</button><button class="btn" id="next-11" onclick="next(11)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q12 -->
+<div class="card" id="card-12">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 12 of 25</span></div>
+<div class="cb">
+<div class="qt">Terraform is a declarative IaC tool — you describe the desired state and Terraform figures out how to achieve it.</div>
+<div class="opt"><input type="radio" name="q12" value="A" onchange="check(12,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q12" value="B" onchange="check(12,'A')"><label>False</label></div>
+<div class="feedback" id="fb-12"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(12)">← Back</button><button class="btn" id="next-12" onclick="next(12)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q13 -->
+<div class="card" id="card-13">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 13 of 25</span></div>
+<div class="cb">
+<div class="qt">Where does Terraform track the state of managed infrastructure?</div>
+<div class="opt"><input type="radio" name="q13" value="A" onchange="check(13,'B')"><label>providers.tf</label></div>
+<div class="opt"><input type="radio" name="q13" value="B" onchange="check(13,'B')"><label>terraform.tfstate</label></div>
+<div class="opt"><input type="radio" name="q13" value="C" onchange="check(13,'B')"><label>variables.tf</label></div>
+<div class="opt"><input type="radio" name="q13" value="D" onchange="check(13,'B')"><label>main.tf</label></div>
+<div class="feedback" id="fb-13"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(13)">← Back</button><button class="btn" id="next-13" onclick="next(13)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q14 -->
+<div class="card" id="card-14">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 14 of 25</span></div>
+<div class="cb">
+<div class="qt">In a Terraform project, which file typically contains resource definitions and provider configuration?</div>
+<div class="opt"><input type="radio" name="q14" value="A" onchange="check(14,'C')"><label>variables.tf</label></div>
+<div class="opt"><input type="radio" name="q14" value="B" onchange="check(14,'C')"><label>outputs.tf</label></div>
+<div class="opt"><input type="radio" name="q14" value="C" onchange="check(14,'C')"><label>main.tf</label></div>
+<div class="opt"><input type="radio" name="q14" value="D" onchange="check(14,'C')"><label>terraform.tfstate</label></div>
+<div class="feedback" id="fb-14"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(14)">← Back</button><button class="btn" id="next-14" onclick="next(14)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q15 -->
+<div class="card" id="card-15">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 15 of 25</span></div>
+<div class="cb">
+<div class="qt">Ansible is an agentless tool. How does it communicate with managed hosts?</div>
+<div class="opt"><input type="radio" name="q15" value="A" onchange="check(15,'B')"><label>It installs a daemon on each target host</label></div>
+<div class="opt"><input type="radio" name="q15" value="B" onchange="check(15,'B')"><label>Via SSH</label></div>
+<div class="opt"><input type="radio" name="q15" value="C" onchange="check(15,'B')"><label>Via HTTP REST API calls</label></div>
+<div class="opt"><input type="radio" name="q15" value="D" onchange="check(15,'B')"><label>Via a message broker (Kafka)</label></div>
+<div class="feedback" id="fb-15"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(15)">← Back</button><button class="btn" id="next-15" onclick="next(15)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q16 -->
+<div class="card" id="card-16">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 16 of 25</span></div>
+<div class="cb">
+<div class="qt">In an Ansible inventory file, what does the <code>[web]</code> line define?</div>
+<div class="opt"><input type="radio" name="q16" value="A" onchange="check(16,'B')"><label>A variable for web server URL</label></div>
+<div class="opt"><input type="radio" name="q16" value="B" onchange="check(16,'B')"><label>A host group named "web"</label></div>
+<div class="opt"><input type="radio" name="q16" value="C" onchange="check(16,'B')"><label>A playbook task</label></div>
+<div class="opt"><input type="radio" name="q16" value="D" onchange="check(16,'B')"><label>A connection timeout setting</label></div>
+<div class="feedback" id="fb-16"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(16)">← Back</button><button class="btn" id="next-16" onclick="next(16)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q17 -->
+<div class="card" id="card-17">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 17 of 25</span></div>
+<div class="cb">
+<div class="qt">Which Ansible command tests connectivity to all hosts and returns "pong" on success?</div>
+<div class="opt"><input type="radio" name="q17" value="A" onchange="check(17,'B')"><label>ansible all -m test</label></div>
+<div class="opt"><input type="radio" name="q17" value="B" onchange="check(17,'B')"><label>ansible all -m ping</label></div>
+<div class="opt"><input type="radio" name="q17" value="C" onchange="check(17,'B')"><label>ansible-playbook ping.yml</label></div>
+<div class="opt"><input type="radio" name="q17" value="D" onchange="check(17,'B')"><label>ansible all --check</label></div>
+<div class="feedback" id="fb-17"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(17)">← Back</button><button class="btn" id="next-17" onclick="next(17)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q18 -->
+<div class="card" id="card-18">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 18 of 25</span></div>
+<div class="cb">
+<div class="qt">In an Ansible playbook, <code>become: yes</code> means the task will run with elevated (sudo) privileges.</div>
+<div class="opt"><input type="radio" name="q18" value="A" onchange="check(18,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q18" value="B" onchange="check(18,'A')"><label>False</label></div>
+<div class="feedback" id="fb-18"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(18)">← Back</button><button class="btn" id="next-18" onclick="next(18)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q19 -->
+<div class="card" id="card-19">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 19 of 25</span></div>
+<div class="cb">
+<div class="qt">Which Ansible module is used to install packages on Ubuntu/Debian systems?</div>
+<div class="opt"><input type="radio" name="q19" value="A" onchange="check(19,'C')"><label>yum</label></div>
+<div class="opt"><input type="radio" name="q19" value="B" onchange="check(19,'C')"><label>package</label></div>
+<div class="opt"><input type="radio" name="q19" value="C" onchange="check(19,'C')"><label>apt</label></div>
+<div class="opt"><input type="radio" name="q19" value="D" onchange="check(19,'C')"><label>install</label></div>
+<div class="feedback" id="fb-19"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(19)">← Back</button><button class="btn" id="next-19" onclick="next(19)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q20 -->
+<div class="card" id="card-20">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 20 of 25</span></div>
+<div class="cb">
+<div class="qt">What does Packer produce as its output?</div>
+<div class="opt"><input type="radio" name="q20" value="A" onchange="check(20,'C')"><label>A running EC2 instance</label></div>
+<div class="opt"><input type="radio" name="q20" value="B" onchange="check(20,'C')"><label>A Terraform state file</label></div>
+<div class="opt"><input type="radio" name="q20" value="C" onchange="check(20,'C')"><label>A machine image (e.g., AMI)</label></div>
+<div class="opt"><input type="radio" name="q20" value="D" onchange="check(20,'C')"><label>An Ansible playbook</label></div>
+<div class="feedback" id="fb-20"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(20)">← Back</button><button class="btn" id="next-20" onclick="next(20)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q21 -->
+<div class="card" id="card-21">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 21 of 25</span></div>
+<div class="cb">
+<div class="qt">What is the purpose of <code>packer validate .</code>?</div>
+<div class="opt"><input type="radio" name="q21" value="A" onchange="check(21,'C')"><label>Build the machine image</label></div>
+<div class="opt"><input type="radio" name="q21" value="B" onchange="check(21,'C')"><label>Download Packer plugins</label></div>
+<div class="opt"><input type="radio" name="q21" value="C" onchange="check(21,'C')"><label>Check the HCL syntax without building</label></div>
+<div class="opt"><input type="radio" name="q21" value="D" onchange="check(21,'C')"><label>Deploy the image to EC2</label></div>
+<div class="feedback" id="fb-21"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(21)">← Back</button><button class="btn" id="next-21" onclick="next(21)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q22 -->
+<div class="card" id="card-22">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 22 of 25</span></div>
+<div class="cb">
+<div class="qt">What is Infrastructure as Code (IaC)?</div>
+<div class="opt"><input type="radio" name="q22" value="A" onchange="check(22,'B')"><label>Writing scripts to manually deploy servers</label></div>
+<div class="opt"><input type="radio" name="q22" value="B" onchange="check(22,'B')"><label>Defining and managing infrastructure through machine-readable configuration files</label></div>
+<div class="opt"><input type="radio" name="q22" value="C" onchange="check(22,'B')"><label>Using a GUI console to provision cloud resources</label></div>
+<div class="opt"><input type="radio" name="q22" value="D" onchange="check(22,'B')"><label>A type of containerization technology</label></div>
+<div class="feedback" id="fb-22"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(22)">← Back</button><button class="btn" id="next-22" onclick="next(22)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q23 -->
+<div class="card" id="card-23">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 23 of 25</span></div>
+<div class="cb">
+<div class="qt">A VPC has CIDR block <code>10.0.0.0/16</code>. A subnet has CIDR <code>10.0.1.0/24</code>. How many IP addresses does the subnet provide?</div>
+<div class="opt"><input type="radio" name="q23" value="A" onchange="check(23,'C')"><label>65,536</label></div>
+<div class="opt"><input type="radio" name="q23" value="B" onchange="check(23,'C')"><label>16</label></div>
+<div class="opt"><input type="radio" name="q23" value="C" onchange="check(23,'C')"><label>256</label></div>
+<div class="opt"><input type="radio" name="q23" value="D" onchange="check(23,'C')"><label>1024</label></div>
+<div class="feedback" id="fb-23"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(23)">← Back</button><button class="btn" id="next-23" onclick="next(23)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q24 -->
+<div class="card" id="card-24">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 24 of 25</span></div>
+<div class="cb">
+<div class="qt">Which tool is best described as a <em>configuration management</em> tool (installs/configures software on existing servers)?</div>
+<div class="opt"><input type="radio" name="q24" value="A" onchange="check(24,'D')"><label>Terraform</label></div>
+<div class="opt"><input type="radio" name="q24" value="B" onchange="check(24,'D')"><label>Packer</label></div>
+<div class="opt"><input type="radio" name="q24" value="C" onchange="check(24,'D')"><label>AWS CLI</label></div>
+<div class="opt"><input type="radio" name="q24" value="D" onchange="check(24,'D')"><label>Ansible</label></div>
+<div class="feedback" id="fb-24"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(24)">← Back</button><button class="btn" id="next-24" onclick="next(24)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q25 -->
+<div class="card" id="card-25">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 25 of 25</span></div>
+<div class="cb">
+<div class="qt"><code>terraform destroy</code> tears down all infrastructure managed by the current Terraform state.</div>
+<div class="opt"><input type="radio" name="q25" value="A" onchange="check(25,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q25" value="B" onchange="check(25,'A')"><label>False</label></div>
+<div class="feedback" id="fb-25"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(25)">← Back</button><button class="btn" id="next-25" onclick="finish()" disabled>Finish →</button></div>
+</div></div>
+
+<!-- Results -->
+<div class="results" id="results">
+  <h2>Quiz Complete!</h2>
+  <div class="big-score" id="final-score"></div>
+  <div class="grade-line" id="grade-line"></div>
+  <button class="restart" onclick="restart()">Restart Quiz</button>
+</div>
+
+</div>
+<script>
+const EXPLAIN={
+  1:"AWS CLI syntax is always: aws [options] <service> <operation> [parameters]. Example: aws ec2 describe-instances",
+  2:"TRUE. aws configure writes access keys to ~/.aws/credentials and region/output format to ~/.aws/config.",
+  3:"--dry-run validates that you have the required permissions without actually executing the API call. Note: --check is the Ansible equivalent, not AWS CLI.",
+  4:"chmod 600 sets owner read/write only. SSH rejects key files with looser permissions (e.g. 644 = world-readable). chmod 400 also works but 600 is the taught standard.",
+  5:"Ubuntu AMIs use 'ubuntu' as the default login user. Amazon Linux uses 'ec2-user'. Mixing these up is a common exam trap.",
+  6:"The -i flag specifies the identity (private key) file. Full command: ssh -i demo-key.pem ubuntu@PUBLIC_IP",
+  7:"The Internet Gateway (IGW) is attached to the VPC and referenced in a route table (0.0.0.0/0 → IGW) to enable internet access. A route table alone doesn't connect to internet without the IGW.",
+  8:"0.0.0.0/0 means 'all IPs anywhere'. Used in security group rules for public access. /32 = single IP, /16 = 65536 IPs.",
+  9:"TRUE. Security groups are stateful: response traffic is automatically allowed. Network ACLs (not security groups) are stateless and require explicit rules for both directions.",
+  10:"init → plan → apply → destroy. You MUST run init first (downloads providers). plan previews, apply creates, destroy removes.",
+  11:"terraform plan shows a dry-run preview. It does NOT create or change anything. 'terraform apply --dry-run' is not a valid Terraform command.",
+  12:"TRUE. Terraform is declarative — you write what you want (desired state) and Terraform calculates the steps. AWS CLI is imperative (you specify each step).",
+  13:"terraform.tfstate tracks all managed resources. NEVER delete this file — Terraform loses track of what it created and can't update/destroy correctly.",
+  14:"main.tf is the conventional home for resource blocks and the provider block. variables.tf = variable definitions, outputs.tf = output values.",
+  15:"Ansible is agentless — no software installed on targets. It connects over SSH using the key specified in the inventory file.",
+  16:"[web] defines a host group. All IP addresses/hostnames listed below it belong to that group. You can target groups with: ansible web -m ping",
+  17:"ansible all -m ping sends a connectivity test to all hosts. A successful response is 'pong'. The -m flag specifies the module name.",
+  18:"TRUE. become: yes enables privilege escalation (sudo). Required for tasks like installing packages (apt), managing services, or writing to system directories.",
+  19:"apt is the correct module for Ubuntu/Debian. yum is for RHEL/CentOS/Amazon Linux. Don't mix them up based on the OS.",
+  20:"Packer BUILDS machine images (AMIs) — it does not leave running instances. The final output is an AMI ID you can reference in Terraform or launch manually.",
+  21:"packer validate checks syntax and configuration without launching any instances. packer init downloads plugins, packer build creates the image.",
+  22:"IaC = managing infrastructure through version-controlled config files. Key benefits: repeatable, auditable, automatable. Not just scripts — declarative state-based definition.",
+  23:"/24 = 256 IP addresses. /16 = 65,536. Quick rule: 32 - prefix = host bits. 2^(32-24) = 2^8 = 256.",
+  24:"Ansible = configuration management (configures software on running servers). Terraform = infrastructure provisioning. Packer = image building. AWS CLI = imperative cloud management.",
+  25:"TRUE. terraform destroy removes ALL resources tracked in terraform.tfstate. It reads the state file to know what to delete — this is why the state file must be preserved."
+};
+
+let score=0,answered={},cur=1,total=25;
+
+function check(n,correct){
+  if(answered[n])return;
+  answered[n]=true;
+  const sel=document.querySelector(`input[name="q${n}"]:checked`);
+  if(!sel)return;
+  const isCorrect=sel.value===correct;
+  if(isCorrect)score++;
+  document.querySelectorAll(`input[name="q${n}"]`).forEach(i=>{
+    const d=i.closest('.opt');
+    if(i.value===correct)d.classList.add('ch-opt');
+    else if(i===sel&&!isCorrect)d.classList.add('wh-opt');
+    i.disabled=true;
+  });
+  const fb=document.getElementById(`fb-${n}`);
+  fb.className='feedback '+(isCorrect?'correct':'wrong');
+  fb.innerHTML=(isCorrect?'<strong>Correct!</strong> ':'<strong>Incorrect.</strong> ')+EXPLAIN[n];
+  fb.style.display='block';
+  document.getElementById(`next-${n}`).disabled=false;
+  updateProgress();
+}
+
+function updateProgress(){
+  const done=Object.keys(answered).length;
+  document.getElementById('ptext').textContent=`Q ${cur} / ${total}`;
+  document.getElementById('pfill').style.width=((cur/total)*100)+'%';
+  document.getElementById('pscore').textContent=`Score: ${score}`;
+}
+
+function next(n){
+  document.getElementById(`card-${n}`).classList.remove('active');
+  cur=n+1;
+  document.getElementById(`card-${cur}`).classList.add('active');
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function prev(n){
+  document.getElementById(`card-${n}`).classList.remove('active');
+  cur=n-1;
+  document.getElementById(`card-${cur}`).classList.add('active');
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function finish(){
+  document.getElementById(`card-25`).classList.remove('active');
+  const r=document.getElementById('results');
+  r.style.display='block';
+  const p=Math.round(score/total*100);
+  const el=document.getElementById('final-score');
+  el.textContent=`${score} / ${total}`;
+  el.className='big-score '+(p>=70?'pass':'fail');
+  const l=p>=90?'A':p>=80?'B':p>=70?'C':p>=60?'D':'F';
+  document.getElementById('grade-line').innerHTML=`${p}% — Grade <strong>${l}</strong> — ${p>=70?'Pass ✓':'Review study guide ✗'}`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function restart(){
+  score=0;answered={};cur=1;
+  document.getElementById('results').style.display='none';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('card-1').classList.add('active');
+  document.querySelectorAll('input[type=radio]').forEach(i=>{i.checked=false;i.disabled=false;});
+  document.querySelectorAll('.opt').forEach(o=>o.classList.remove('ch-opt','wh-opt'));
+  document.querySelectorAll('.feedback').forEach(f=>{f.style.display='none';f.className='feedback';});
+  document.querySelectorAll('[id^=next-]').forEach(b=>b.disabled=true);
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+updateProgress();
+</script>
+</body></html>

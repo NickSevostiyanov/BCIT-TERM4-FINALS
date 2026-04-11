@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4640 — Final Exam Practice Quiz</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:14px;background:#f4f4f4;color:#222}
+  .hdr{background:#2c5f2e;color:white;padding:18px 28px}.hdr h1{font-size:19px}.hdr p{font-size:12px;margin-top:4px;opacity:.85}
+  .wrap{max-width:860px;margin:20px auto;padding:0 14px 60px}
+  .info{background:#fff;border-left:5px solid #2c5f2e;padding:12px 16px;margin-bottom:20px;border-radius:3px;font-size:13px}
+  .info p{margin:3px 0}
+  .qb{background:#fff;border:1px solid #ddd;border-radius:4px;margin-bottom:14px}
+  .qh{background:#e8f0e8;padding:9px 14px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;font-size:12px;color:#555}
+  .qbody{padding:14px 16px}
+  .qt{font-size:14px;font-weight:bold;margin-bottom:12px;line-height:1.6}
+  pre{background:#f5f5f5;border:1px solid #ddd;padding:8px 10px;font-family:monospace;font-size:12px;border-radius:3px;margin:6px 0 10px;white-space:pre-wrap}
+  .opt{display:flex;align-items:flex-start;margin:7px 0;cursor:pointer;padding:7px 9px;border-radius:3px;transition:background .15s}
+  .opt:hover{background:#f0f8f0}.opt input{margin-right:9px;margin-top:2px;flex-shrink:0}.opt label{cursor:pointer;line-height:1.4}
+  .opt.ch{background:#d4edda!important;border:1px solid #28a745}.opt.wh{background:#f8d7da!important;border:1px solid #dc3545}
+  .sub{text-align:center;margin:26px 0 8px}.sub-btn{background:#2c5f2e;color:white;border:none;padding:11px 36px;font-size:14px;border-radius:4px;cursor:pointer}
+  .sub-btn:hover{background:#3d7a40}
+  .res{display:none;background:#fff;border:2px solid #2c5f2e;border-radius:6px;padding:22px;text-align:center;margin-top:20px}
+  .res h2{color:#2c5f2e;font-size:20px}.score{font-size:40px;font-weight:bold;margin:10px 0}
+  .pass{color:#28a745}.fail{color:#dc3545}
+  .tl{font-size:11px;text-transform:uppercase;font-weight:bold;color:#777}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ACIT4640 — IT System and Network Provisioning</h1><p>Final Exam Practice Quiz &nbsp;|&nbsp; D2L Format &nbsp;|&nbsp; 25 Questions</p></div>
+<div class="wrap">
+<div class="info">
+  <p><strong>Instructions:</strong> Select the best answer. Click <strong>Submit Quiz</strong> to see your score.</p>
+  <p><strong>Exam:</strong> Fri Apr 24, 2026 &nbsp;|&nbsp; 9:30–11:00 AM &nbsp;|&nbsp; DTC 825 &nbsp;|&nbsp; Closed book — bring ID + pen/pencil</p>
+</div>
+<form id="qf">
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q1 / 25</span></div><div class="qbody">
+<div class="qt">1. What is the correct AWS CLI command pattern?</div>
+<div class="opt"><input type="radio" name="q1" value="A"><label>aws [options] &lt;operation&gt; &lt;service&gt;</label></div>
+<div class="opt"><input type="radio" name="q1" value="B"><label>aws [options] &lt;service&gt; &lt;operation&gt;</label></div>
+<div class="opt"><input type="radio" name="q1" value="C"><label>aws &lt;service&gt; --operation [params]</label></div>
+<div class="opt"><input type="radio" name="q1" value="D"><label>aws --service &lt;name&gt; --operation &lt;name&gt;</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">T/F</span><span>Q2 / 25</span></div><div class="qbody">
+<div class="qt">2. <code>aws configure</code> stores credentials in <code>~/.aws/credentials</code> and config in <code>~/.aws/config</code>.</div>
+<div class="opt"><input type="radio" name="q2" value="A"><label>True</label></div>
+<div class="opt"><input type="radio" name="q2" value="B"><label>False</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q3 / 25</span></div><div class="qbody">
+<div class="qt">3. You want to verify AWS CLI permissions WITHOUT making any changes. Which flag do you use?</div>
+<div class="opt"><input type="radio" name="q3" value="A"><label>--no-paginate</label></div>
+<div class="opt"><input type="radio" name="q3" value="B"><label>--validate</label></div>
+<div class="opt"><input type="radio" name="q3" value="C"><label>--dry-run</label></div>
+<div class="opt"><input type="radio" name="q3" value="D"><label>--check</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q4 / 25</span></div><div class="qbody">
+<div class="qt">4. After creating a .pem key file, what permission must you set before using it with SSH?</div>
+<div class="opt"><input type="radio" name="q4" value="A"><label>chmod 400</label></div>
+<div class="opt"><input type="radio" name="q4" value="B"><label>chmod 600</label></div>
+<div class="opt"><input type="radio" name="q4" value="C"><label>chmod 700</label></div>
+<div class="opt"><input type="radio" name="q4" value="D"><label>chmod 644</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q5 / 25</span></div><div class="qbody">
+<div class="qt">5. What is the default SSH username for an Ubuntu EC2 instance?</div>
+<div class="opt"><input type="radio" name="q5" value="A"><label>admin</label></div>
+<div class="opt"><input type="radio" name="q5" value="B"><label>ec2-user</label></div>
+<div class="opt"><input type="radio" name="q5" value="C"><label>ubuntu</label></div>
+<div class="opt"><input type="radio" name="q5" value="D"><label>root</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q6 / 25</span></div><div class="qbody">
+<div class="qt">6. What is the correct SSH command to connect to an Ubuntu EC2 instance using a .pem key?</div>
+<div class="opt"><input type="radio" name="q6" value="A"><label>ssh ec2-user@PUBLIC_IP -key demo-key.pem</label></div>
+<div class="opt"><input type="radio" name="q6" value="B"><label>ssh -i demo-key.pem ubuntu@PUBLIC_IP</label></div>
+<div class="opt"><input type="radio" name="q6" value="C"><label>ssh -k demo-key.pem ubuntu@PUBLIC_IP</label></div>
+<div class="opt"><input type="radio" name="q6" value="D"><label>ssh ubuntu@PUBLIC_IP --identity demo-key.pem</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q7 / 25</span></div><div class="qbody">
+<div class="qt">7. Which AWS resource allows instances in a VPC to communicate with the internet?</div>
+<div class="opt"><input type="radio" name="q7" value="A"><label>Security Group</label></div>
+<div class="opt"><input type="radio" name="q7" value="B"><label>Route Table</label></div>
+<div class="opt"><input type="radio" name="q7" value="C"><label>Internet Gateway</label></div>
+<div class="opt"><input type="radio" name="q7" value="D"><label>Subnet</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q8 / 25</span></div><div class="qbody">
+<div class="qt">8. What CIDR block notation represents ALL IP addresses (anywhere on the internet)?</div>
+<div class="opt"><input type="radio" name="q8" value="A"><label>10.0.0.0/8</label></div>
+<div class="opt"><input type="radio" name="q8" value="B"><label>192.168.0.0/16</label></div>
+<div class="opt"><input type="radio" name="q8" value="C"><label>0.0.0.0/0</label></div>
+<div class="opt"><input type="radio" name="q8" value="D"><label>255.255.255.255/32</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">T/F</span><span>Q9 / 25</span></div><div class="qbody">
+<div class="qt">9. A security group in AWS is stateful — if inbound traffic is allowed, the return traffic is automatically allowed.</div>
+<div class="opt"><input type="radio" name="q9" value="A"><label>True</label></div>
+<div class="opt"><input type="radio" name="q9" value="B"><label>False</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q10 / 25</span></div><div class="qbody">
+<div class="qt">10. What is the correct Terraform workflow order?</div>
+<div class="opt"><input type="radio" name="q10" value="A"><label>plan → init → apply → destroy</label></div>
+<div class="opt"><input type="radio" name="q10" value="B"><label>init → apply → plan → destroy</label></div>
+<div class="opt"><input type="radio" name="q10" value="C"><label>init → plan → apply → destroy</label></div>
+<div class="opt"><input type="radio" name="q10" value="D"><label>apply → init → plan → destroy</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q11 / 25</span></div><div class="qbody">
+<div class="qt">11. Which Terraform command shows what changes WILL be made WITHOUT actually making them?</div>
+<div class="opt"><input type="radio" name="q11" value="A"><label>terraform init</label></div>
+<div class="opt"><input type="radio" name="q11" value="B"><label>terraform validate</label></div>
+<div class="opt"><input type="radio" name="q11" value="C"><label>terraform plan</label></div>
+<div class="opt"><input type="radio" name="q11" value="D"><label>terraform apply --dry-run</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">T/F</span><span>Q12 / 25</span></div><div class="qbody">
+<div class="qt">12. Terraform is a declarative IaC tool — you describe the desired state and Terraform figures out how to achieve it.</div>
+<div class="opt"><input type="radio" name="q12" value="A"><label>True</label></div>
+<div class="opt"><input type="radio" name="q12" value="B"><label>False</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q13 / 25</span></div><div class="qbody">
+<div class="qt">13. Where does Terraform track the state of managed infrastructure?</div>
+<div class="opt"><input type="radio" name="q13" value="A"><label>providers.tf</label></div>
+<div class="opt"><input type="radio" name="q13" value="B"><label>terraform.tfstate</label></div>
+<div class="opt"><input type="radio" name="q13" value="C"><label>variables.tf</label></div>
+<div class="opt"><input type="radio" name="q13" value="D"><label>main.tf</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q14 / 25</span></div><div class="qbody">
+<div class="qt">14. In a Terraform project, which file typically contains resource definitions and provider configuration?</div>
+<div class="opt"><input type="radio" name="q14" value="A"><label>variables.tf</label></div>
+<div class="opt"><input type="radio" name="q14" value="B"><label>outputs.tf</label></div>
+<div class="opt"><input type="radio" name="q14" value="C"><label>main.tf</label></div>
+<div class="opt"><input type="radio" name="q14" value="D"><label>terraform.tfstate</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q15 / 25</span></div><div class="qbody">
+<div class="qt">15. Ansible is an agentless tool. How does it communicate with managed hosts?</div>
+<div class="opt"><input type="radio" name="q15" value="A"><label>It installs a daemon on each target host</label></div>
+<div class="opt"><input type="radio" name="q15" value="B"><label>Via SSH</label></div>
+<div class="opt"><input type="radio" name="q15" value="C"><label>Via HTTP REST API calls</label></div>
+<div class="opt"><input type="radio" name="q15" value="D"><label>Via a message broker (Kafka)</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q16 / 25</span></div><div class="qbody">
+<div class="qt">16. In an Ansible inventory file, what does the <code>[web]</code> line define?</div>
+<div class="opt"><input type="radio" name="q16" value="A"><label>A variable for web server URL</label></div>
+<div class="opt"><input type="radio" name="q16" value="B"><label>A host group named "web"</label></div>
+<div class="opt"><input type="radio" name="q16" value="C"><label>A playbook task</label></div>
+<div class="opt"><input type="radio" name="q16" value="D"><label>A connection timeout setting</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q17 / 25</span></div><div class="qbody">
+<div class="qt">17. Which Ansible command tests connectivity to all hosts and returns "pong" on success?</div>
+<div class="opt"><input type="radio" name="q17" value="A"><label>ansible all -m test</label></div>
+<div class="opt"><input type="radio" name="q17" value="B"><label>ansible all -m ping</label></div>
+<div class="opt"><input type="radio" name="q17" value="C"><label>ansible-playbook ping.yml</label></div>
+<div class="opt"><input type="radio" name="q17" value="D"><label>ansible all --check</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">T/F</span><span>Q18 / 25</span></div><div class="qbody">
+<div class="qt">18. In an Ansible playbook, <code>become: yes</code> means the task will run with elevated (sudo) privileges.</div>
+<div class="opt"><input type="radio" name="q18" value="A"><label>True</label></div>
+<div class="opt"><input type="radio" name="q18" value="B"><label>False</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q19 / 25</span></div><div class="qbody">
+<div class="qt">19. Which Ansible module is used to install packages on Ubuntu/Debian systems?</div>
+<div class="opt"><input type="radio" name="q19" value="A"><label>yum</label></div>
+<div class="opt"><input type="radio" name="q19" value="B"><label>package</label></div>
+<div class="opt"><input type="radio" name="q19" value="C"><label>apt</label></div>
+<div class="opt"><input type="radio" name="q19" value="D"><label>install</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q20 / 25</span></div><div class="qbody">
+<div class="qt">20. What does Packer produce as its output?</div>
+<div class="opt"><input type="radio" name="q20" value="A"><label>A running EC2 instance</label></div>
+<div class="opt"><input type="radio" name="q20" value="B"><label>A Terraform state file</label></div>
+<div class="opt"><input type="radio" name="q20" value="C"><label>A machine image (e.g., AMI)</label></div>
+<div class="opt"><input type="radio" name="q20" value="D"><label>An Ansible playbook</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q21 / 25</span></div><div class="qbody">
+<div class="qt">21. What is the purpose of <code>packer validate .</code>?</div>
+<div class="opt"><input type="radio" name="q21" value="A"><label>Build the machine image</label></div>
+<div class="opt"><input type="radio" name="q21" value="B"><label>Download Packer plugins</label></div>
+<div class="opt"><input type="radio" name="q21" value="C"><label>Check the HCL syntax without building</label></div>
+<div class="opt"><input type="radio" name="q21" value="D"><label>Deploy the image to EC2</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q22 / 25</span></div><div class="qbody">
+<div class="qt">22. What is Infrastructure as Code (IaC)?</div>
+<div class="opt"><input type="radio" name="q22" value="A"><label>Writing scripts to manually deploy servers</label></div>
+<div class="opt"><input type="radio" name="q22" value="B"><label>Defining and managing infrastructure through machine-readable configuration files</label></div>
+<div class="opt"><input type="radio" name="q22" value="C"><label>Using a GUI console to provision cloud resources</label></div>
+<div class="opt"><input type="radio" name="q22" value="D"><label>A type of containerization technology</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q23 / 25</span></div><div class="qbody">
+<div class="qt">23. A VPC has CIDR block <code>10.0.0.0/16</code>. A subnet has CIDR <code>10.0.1.0/24</code>. How many IP addresses does the subnet provide?</div>
+<div class="opt"><input type="radio" name="q23" value="A"><label>65,536</label></div>
+<div class="opt"><input type="radio" name="q23" value="B"><label>16</label></div>
+<div class="opt"><input type="radio" name="q23" value="C"><label>256</label></div>
+<div class="opt"><input type="radio" name="q23" value="D"><label>1024</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">MC</span><span>Q24 / 25</span></div><div class="qbody">
+<div class="qt">24. Which tool is best described as a <em>configuration management</em> tool (installs/configures software on existing servers)?</div>
+<div class="opt"><input type="radio" name="q24" value="A"><label>Terraform</label></div>
+<div class="opt"><input type="radio" name="q24" value="B"><label>Packer</label></div>
+<div class="opt"><input type="radio" name="q24" value="C"><label>AWS CLI</label></div>
+<div class="opt"><input type="radio" name="q24" value="D"><label>Ansible</label></div>
+</div></div>
+
+<div class="qb"><div class="qh"><span class="tl">T/F</span><span>Q25 / 25</span></div><div class="qbody">
+<div class="qt">25. <code>terraform destroy</code> tears down all infrastructure managed by the current Terraform state.</div>
+<div class="opt"><input type="radio" name="q25" value="A"><label>True</label></div>
+<div class="opt"><input type="radio" name="q25" value="B"><label>False</label></div>
+</div></div>
+
+<div class="sub"><button type="button" class="sub-btn" onclick="go()">Submit Quiz</button></div>
+</form>
+<div class="res" id="res"><h2>Quiz Complete</h2><div class="score" id="sc"></div><div id="gr" style="font-size:15px;color:#555;margin-top:6px"></div><p style="margin-top:12px;font-size:12px;color:#666">Scroll up to review answers (green=correct, red=wrong).</p></div>
+</div>
+<script>
+const A={q1:'B',q2:'A',q3:'C',q4:'B',q5:'C',q6:'B',q7:'C',q8:'C',q9:'A',q10:'C',q11:'C',q12:'A',q13:'B',q14:'C',q15:'B',q16:'B',q17:'B',q18:'A',q19:'C',q20:'C',q21:'C',q22:'B',q23:'C',q24:'D',q25:'A'};
+function go(){
+  let s=0,t=Object.keys(A).length;
+  for(const[q,c]of Object.entries(A)){
+    const sel=document.querySelector(`input[name="${q}"]:checked`);
+    document.querySelectorAll(`input[name="${q}"]`).forEach(i=>{
+      const d=i.closest('.opt');d.classList.remove('ch','wh');
+      if(i.value===c)d.classList.add('ch');
+    });
+    if(sel){if(sel.value===c)s++;else sel.closest('.opt').classList.add('wh');}
+  }
+  const p=Math.round(s/t*100),el=document.getElementById('sc');
+  el.textContent=`${s} / ${t}`;el.className='score '+(p>=70?'pass':'fail');
+  const l=p>=90?'A':p>=80?'B':p>=70?'C':p>=60?'D':'F';
+  document.getElementById('gr').innerHTML=`${p}% | Grade: <strong>${l}</strong> | ${p>=70?'✓ Pass':'✗ Review study guide'}`;
+  const r=document.getElementById('res');r.style.display='block';r.scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body></html>
