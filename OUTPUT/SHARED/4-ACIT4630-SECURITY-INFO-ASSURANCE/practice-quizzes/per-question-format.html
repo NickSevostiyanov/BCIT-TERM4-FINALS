@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4630 — Per-Question Practice Quiz</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:14px;background:#f4f4f4;color:#222}
+  .hdr{background:#7b2d2d;color:white;padding:18px 28px}.hdr h1{font-size:19px}.hdr p{font-size:12px;margin-top:4px;opacity:.85}
+  .wrap{max-width:760px;margin:24px auto;padding:0 14px 60px}
+  .progress{background:#fff;border-radius:4px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-size:13px}
+  .pbar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
+  .pfill{height:100%;background:#7b2d2d;transition:width .3s}
+  .card{background:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden;display:none}
+  .card.active{display:block}
+  .ch{background:#f5eaea;padding:9px 14px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;font-size:12px;color:#555}
+  .cb{padding:18px 20px}
+  .qt{font-size:15px;font-weight:bold;margin-bottom:10px;line-height:1.6}
+  code{background:#f0f0f0;padding:1px 5px;border-radius:2px;font-family:monospace;font-size:12px}
+  .multi-hint{font-size:11px;color:#777;margin-bottom:10px;font-style:italic}
+  .opt{display:flex;align-items:flex-start;margin:7px 0;padding:9px 11px;border-radius:4px;border:1px solid #ddd;cursor:pointer;transition:background .15s}
+  .opt:hover{background:#fdf0f0}.opt input{margin-right:10px;margin-top:2px;flex-shrink:0}.opt label{cursor:pointer;line-height:1.4}
+  .opt.ch-opt{background:#d4edda;border-color:#28a745}.opt.wh-opt{background:#f8d7da;border-color:#dc3545}
+  .feedback{margin-top:14px;padding:12px 14px;border-radius:4px;font-size:13px;display:none;line-height:1.6}
+  .feedback.correct{background:#d4edda;border-left:4px solid #28a745;color:#155724}
+  .feedback.wrong{background:#f8d7da;border-left:4px solid #dc3545;color:#721c24}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+  .btn{background:#7b2d2d;color:white;border:none;padding:9px 24px;border-radius:4px;cursor:pointer;font-size:13px}
+  .btn:hover{background:#9e3a3a}.btn:disabled{background:#aaa;cursor:default}
+  .btn-sec{background:#fff;color:#7b2d2d;border:1px solid #7b2d2d}.btn-sec:hover{background:#fdf0f0}
+  .sub-multi{background:#7b2d2d;color:white;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-size:13px;margin-top:12px}
+  .sub-multi:hover{background:#9e3a3a}
+  .results{display:none;text-align:center;padding:32px 20px}
+  .results h2{color:#7b2d2d;font-size:22px;margin-bottom:12px}
+  .big-score{font-size:52px;font-weight:bold;margin:10px 0}
+  .pass{color:#28a745}.fail{color:#dc3545}
+  .grade-line{font-size:16px;color:#555;margin-bottom:20px}
+  .restart{background:#7b2d2d;color:white;border:none;padding:10px 28px;border-radius:4px;cursor:pointer;font-size:14px}
+  .restart:hover{background:#9e3a3a}
+  .tl{font-size:11px;text-transform:uppercase;font-weight:bold;color:#777}
+  .qnum{font-weight:bold;color:#7b2d2d}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ACIT4630 — Information Assurance and Security</h1><p>Final Exam Practice Quiz &nbsp;|&nbsp; Per-Question Format &nbsp;|&nbsp; 30 Questions</p></div>
+<div class="wrap">
+<div class="progress">
+  <span id="ptext" style="font-weight:bold;white-space:nowrap">Q 1 / 30</span>
+  <div class="pbar"><div class="pfill" id="pfill" style="width:3%"></div></div>
+  <span id="pscore" style="white-space:nowrap;color:#555">Score: 0</span>
+</div>
+
+<!-- Q1 -->
+<div class="card active" id="card-1">
+<div class="ch"><span class="tl">Multi-Select</span><span class="qnum">Question 1 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the main objective of information security? Select the THREE that best apply.</div>
+<div class="multi-hint">Select 3, then click Submit Answer</div>
+<div class="opt"><input type="checkbox" name="q1" value="A"><label>Configuration</label></div>
+<div class="opt"><input type="checkbox" name="q1" value="B"><label>Availability</label></div>
+<div class="opt"><input type="checkbox" name="q1" value="C"><label>Integrity</label></div>
+<div class="opt"><input type="checkbox" name="q1" value="D"><label>Identification</label></div>
+<div class="opt"><input type="checkbox" name="q1" value="E"><label>Confidentiality</label></div>
+<button class="sub-multi" onclick="checkMulti(1,['B','C','E'])">Submit Answer</button>
+<div class="feedback" id="fb-1"></div>
+<div class="nav"><span></span><button class="btn" id="next-1" onclick="next(1)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q2 -->
+<div class="card" id="card-2">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 2 of 30</span></div>
+<div class="cb">
+<div class="qt">Using redundant components (e.g. RAID technology) in a system enforces what goal of information security?</div>
+<div class="opt"><input type="radio" name="q2" value="A" onchange="checkSingle(2,'B')"><label>Integrity</label></div>
+<div class="opt"><input type="radio" name="q2" value="B" onchange="checkSingle(2,'B')"><label>Availability</label></div>
+<div class="opt"><input type="radio" name="q2" value="C" onchange="checkSingle(2,'B')"><label>Confidentiality</label></div>
+<div class="opt"><input type="radio" name="q2" value="D" onchange="checkSingle(2,'B')"><label>Nonrepudiation</label></div>
+<div class="feedback" id="fb-2"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(2)">← Back</button><button class="btn" id="next-2" onclick="next(2)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q3 -->
+<div class="card" id="card-3">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 3 of 30</span></div>
+<div class="cb">
+<div class="qt">Encryption protects __________, whereas hashing helps protect __________.</div>
+<div class="opt"><input type="radio" name="q3" value="A" onchange="checkSingle(3,'C')"><label>integrity, confidentiality</label></div>
+<div class="opt"><input type="radio" name="q3" value="B" onchange="checkSingle(3,'C')"><label>confidentiality, availability</label></div>
+<div class="opt"><input type="radio" name="q3" value="C" onchange="checkSingle(3,'C')"><label>confidentiality, integrity</label></div>
+<div class="opt"><input type="radio" name="q3" value="D" onchange="checkSingle(3,'C')"><label>authentication, confidentiality</label></div>
+<div class="feedback" id="fb-3"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(3)">← Back</button><button class="btn" id="next-3" onclick="next(3)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q4 -->
+<div class="card" id="card-4">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 4 of 30</span></div>
+<div class="cb">
+<div class="qt">Denial of service threat compromises __________, whereas tampering threat compromises __________ of a system.</div>
+<div class="opt"><input type="radio" name="q4" value="A" onchange="checkSingle(4,'A')"><label>availability, integrity</label></div>
+<div class="opt"><input type="radio" name="q4" value="B" onchange="checkSingle(4,'A')"><label>integrity, confidentiality</label></div>
+<div class="opt"><input type="radio" name="q4" value="C" onchange="checkSingle(4,'A')"><label>integrity, availability</label></div>
+<div class="opt"><input type="radio" name="q4" value="D" onchange="checkSingle(4,'A')"><label>availability, confidentiality</label></div>
+<div class="feedback" id="fb-4"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(4)">← Back</button><button class="btn" id="next-4" onclick="next(4)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q5 -->
+<div class="card" id="card-5">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 5 of 30</span></div>
+<div class="cb">
+<div class="qt">Which type of threat actor is normally the most sophisticated?</div>
+<div class="opt"><input type="radio" name="q5" value="A" onchange="checkSingle(5,'A')"><label>APT</label></div>
+<div class="opt"><input type="radio" name="q5" value="B" onchange="checkSingle(5,'A')"><label>Insider</label></div>
+<div class="opt"><input type="radio" name="q5" value="C" onchange="checkSingle(5,'A')"><label>Script kiddie</label></div>
+<div class="opt"><input type="radio" name="q5" value="D" onchange="checkSingle(5,'A')"><label>Hacktivist</label></div>
+<div class="feedback" id="fb-5"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(5)">← Back</button><button class="btn" id="next-5" onclick="next(5)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q6 -->
+<div class="card" id="card-6">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 6 of 30</span></div>
+<div class="cb">
+<div class="qt">What does the "S" in STRIDE stand for?</div>
+<div class="opt"><input type="radio" name="q6" value="A" onchange="checkSingle(6,'B')"><label>Stealth</label></div>
+<div class="opt"><input type="radio" name="q6" value="B" onchange="checkSingle(6,'B')"><label>Spoofing</label></div>
+<div class="opt"><input type="radio" name="q6" value="C" onchange="checkSingle(6,'B')"><label>Securing</label></div>
+<div class="opt"><input type="radio" name="q6" value="D" onchange="checkSingle(6,'B')"><label>Scanning</label></div>
+<div class="feedback" id="fb-6"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(6)">← Back</button><button class="btn" id="next-6" onclick="next(6)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q7 -->
+<div class="card" id="card-7">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 7 of 30</span></div>
+<div class="cb">
+<div class="qt">What does CVE stand for?</div>
+<div class="opt"><input type="radio" name="q7" value="A" onchange="checkSingle(7,'C')"><label>Computer Vulnerability Entity</label></div>
+<div class="opt"><input type="radio" name="q7" value="B" onchange="checkSingle(7,'C')"><label>Common Vulnerability Evaluation</label></div>
+<div class="opt"><input type="radio" name="q7" value="C" onchange="checkSingle(7,'C')"><label>Common Vulnerabilities and Exposures</label></div>
+<div class="opt"><input type="radio" name="q7" value="D" onchange="checkSingle(7,'C')"><label>Cyber Vulnerability Examination</label></div>
+<div class="feedback" id="fb-7"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(7)">← Back</button><button class="btn" id="next-7" onclick="next(7)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q8 -->
+<div class="card" id="card-8">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 8 of 30</span></div>
+<div class="cb">
+<div class="qt">Which stage of Vulnerability Management involves patching systems and fixing issues?</div>
+<div class="opt"><input type="radio" name="q8" value="A" onchange="checkSingle(8,'C')"><label>Discover</label></div>
+<div class="opt"><input type="radio" name="q8" value="B" onchange="checkSingle(8,'C')"><label>Prioritize</label></div>
+<div class="opt"><input type="radio" name="q8" value="C" onchange="checkSingle(8,'C')"><label>Remediate</label></div>
+<div class="opt"><input type="radio" name="q8" value="D" onchange="checkSingle(8,'C')"><label>Validate</label></div>
+<div class="feedback" id="fb-8"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(8)">← Back</button><button class="btn" id="next-8" onclick="next(8)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q9 -->
+<div class="card" id="card-9">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 9 of 30</span></div>
+<div class="cb">
+<div class="qt">KeyLogger, which monitors keystrokes typed by a user, is an example of what type of malicious software?</div>
+<div class="opt"><input type="radio" name="q9" value="A" onchange="checkSingle(9,'C')"><label>Adware</label></div>
+<div class="opt"><input type="radio" name="q9" value="B" onchange="checkSingle(9,'C')"><label>Trojan</label></div>
+<div class="opt"><input type="radio" name="q9" value="C" onchange="checkSingle(9,'C')"><label>Spyware</label></div>
+<div class="opt"><input type="radio" name="q9" value="D" onchange="checkSingle(9,'C')"><label>Ransomware</label></div>
+<div class="feedback" id="fb-9"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(9)">← Back</button><button class="btn" id="next-9" onclick="next(9)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q10 -->
+<div class="card" id="card-10">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 10 of 30</span></div>
+<div class="cb">
+<div class="qt">Which one of the following types of malware can spread without any user interaction?</div>
+<div class="opt"><input type="radio" name="q10" value="A" onchange="checkSingle(10,'B')"><label>Virus</label></div>
+<div class="opt"><input type="radio" name="q10" value="B" onchange="checkSingle(10,'B')"><label>Worm</label></div>
+<div class="opt"><input type="radio" name="q10" value="C" onchange="checkSingle(10,'B')"><label>Back door</label></div>
+<div class="opt"><input type="radio" name="q10" value="D" onchange="checkSingle(10,'B')"><label>Trojan</label></div>
+<div class="feedback" id="fb-10"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(10)">← Back</button><button class="btn" id="next-10" onclick="next(10)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q11 -->
+<div class="card" id="card-11">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 11 of 30</span></div>
+<div class="cb">
+<div class="qt">What type of phishing attack focuses specifically on senior executives of a targeted organization?</div>
+<div class="opt"><input type="radio" name="q11" value="A" onchange="checkSingle(11,'D')"><label>Pharming</label></div>
+<div class="opt"><input type="radio" name="q11" value="B" onchange="checkSingle(11,'D')"><label>Vishing</label></div>
+<div class="opt"><input type="radio" name="q11" value="C" onchange="checkSingle(11,'D')"><label>Spear phishing</label></div>
+<div class="opt"><input type="radio" name="q11" value="D" onchange="checkSingle(11,'D')"><label>Whaling</label></div>
+<div class="feedback" id="fb-11"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(11)">← Back</button><button class="btn" id="next-11" onclick="next(11)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q12 -->
+<div class="card" id="card-12">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 12 of 30</span></div>
+<div class="cb">
+<div class="qt">Executing suspicious code in a contained environment before allowing it to run on the protected system is called __________.</div>
+<div class="opt"><input type="radio" name="q12" value="A" onchange="checkSingle(12,'B')"><label>Signature detection</label></div>
+<div class="opt"><input type="radio" name="q12" value="B" onchange="checkSingle(12,'B')"><label>Sandboxing</label></div>
+<div class="opt"><input type="radio" name="q12" value="C" onchange="checkSingle(12,'B')"><label>File system integrity monitoring</label></div>
+<div class="opt"><input type="radio" name="q12" value="D" onchange="checkSingle(12,'B')"><label>Endpoint monitoring</label></div>
+<div class="feedback" id="fb-12"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(12)">← Back</button><button class="btn" id="next-12" onclick="next(12)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q13 -->
+<div class="card" id="card-13">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 13 of 30</span></div>
+<div class="cb">
+<div class="qt">What type of backup includes only those files that have changed since the most recent full OR incremental backup?</div>
+<div class="opt"><input type="radio" name="q13" value="A" onchange="checkSingle(13,'C')"><label>Full</label></div>
+<div class="opt"><input type="radio" name="q13" value="B" onchange="checkSingle(13,'C')"><label>Differential</label></div>
+<div class="opt"><input type="radio" name="q13" value="C" onchange="checkSingle(13,'C')"><label>Incremental</label></div>
+<div class="opt"><input type="radio" name="q13" value="D" onchange="checkSingle(13,'C')"><label>Partial</label></div>
+<div class="feedback" id="fb-13"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(13)">← Back</button><button class="btn" id="next-13" onclick="next(13)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q14 -->
+<div class="card" id="card-14">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 14 of 30</span></div>
+<div class="cb">
+<div class="qt">Differential backup uses more storage than incremental backup, but is faster to recover since it only needs the full backup and the most recent differential backup.</div>
+<div class="opt"><input type="radio" name="q14" value="A" onchange="checkSingle(14,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q14" value="B" onchange="checkSingle(14,'A')"><label>False</label></div>
+<div class="feedback" id="fb-14"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(14)">← Back</button><button class="btn" id="next-14" onclick="next(14)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q15 -->
+<div class="card" id="card-15">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 15 of 30</span></div>
+<div class="cb">
+<div class="qt">All adverse security events are considered security incidents.</div>
+<div class="opt"><input type="radio" name="q15" value="A" onchange="checkSingle(15,'B')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q15" value="B" onchange="checkSingle(15,'B')"><label>False</label></div>
+<div class="feedback" id="fb-15"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(15)">← Back</button><button class="btn" id="next-15" onclick="next(15)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q16 -->
+<div class="card" id="card-16">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 16 of 30</span></div>
+<div class="cb">
+<div class="qt">How are public and private keys used in asymmetric cryptography?</div>
+<div class="opt"><input type="radio" name="q16" value="A" onchange="checkSingle(16,'C')"><label>Public key for encryption; private key for decryption (always)</label></div>
+<div class="opt"><input type="radio" name="q16" value="B" onchange="checkSingle(16,'C')"><label>Private key for encryption; public key for decryption (always)</label></div>
+<div class="opt"><input type="radio" name="q16" value="C" onchange="checkSingle(16,'C')"><label>Anything encrypted with one key from a pair can be decrypted with the other key from that same pair</label></div>
+<div class="opt"><input type="radio" name="q16" value="D" onchange="checkSingle(16,'C')"><label>Same key is used for both encryption and decryption</label></div>
+<div class="feedback" id="fb-16"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(16)">← Back</button><button class="btn" id="next-16" onclick="next(16)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q17 -->
+<div class="card" id="card-17">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 17 of 30</span></div>
+<div class="cb">
+<div class="qt">What is used to create a digital signature?</div>
+<div class="opt"><input type="radio" name="q17" value="A" onchange="checkSingle(17,'B')"><label>Encrypting the hash value of the message with sender's public key</label></div>
+<div class="opt"><input type="radio" name="q17" value="B" onchange="checkSingle(17,'B')"><label>Encrypting the hash value of the message with sender's private key</label></div>
+<div class="opt"><input type="radio" name="q17" value="C" onchange="checkSingle(17,'B')"><label>Encrypting the message with sender's public key</label></div>
+<div class="opt"><input type="radio" name="q17" value="D" onchange="checkSingle(17,'B')"><label>Encrypting the message with recipient's public key</label></div>
+<div class="feedback" id="fb-17"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(17)">← Back</button><button class="btn" id="next-17" onclick="next(17)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q18 -->
+<div class="card" id="card-18">
+<div class="ch"><span class="tl">Multi-Select</span><span class="qnum">Question 18 of 30</span></div>
+<div class="cb">
+<div class="qt">Select all that's true about a secure cryptographic hash function.</div>
+<div class="multi-hint">Select all that apply, then click Submit Answer</div>
+<div class="opt"><input type="checkbox" name="q18" value="A"><label>Output is fixed-length, regardless of input size</label></div>
+<div class="opt"><input type="checkbox" name="q18" value="B"><label>It's one-way</label></div>
+<div class="opt"><input type="checkbox" name="q18" value="C"><label>It is collision resistant</label></div>
+<div class="opt"><input type="checkbox" name="q18" value="D"><label>It's easy to find two inputs that produce the same output</label></div>
+<div class="opt"><input type="checkbox" name="q18" value="E"><label>Original content can be easily retrieved from the hash value</label></div>
+<button class="sub-multi" onclick="checkMulti(18,['A','B','C'])">Submit Answer</button>
+<div class="feedback" id="fb-18"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(18)">← Back</button><button class="btn" id="next-18" onclick="next(18)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q19 -->
+<div class="card" id="card-19">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 19 of 30</span></div>
+<div class="cb">
+<div class="qt">What standard governs the structure and content of digital certificates?</div>
+<div class="opt"><input type="radio" name="q19" value="A" onchange="checkSingle(19,'C')"><label>X.500</label></div>
+<div class="opt"><input type="radio" name="q19" value="B" onchange="checkSingle(19,'C')"><label>802.1x</label></div>
+<div class="opt"><input type="radio" name="q19" value="C" onchange="checkSingle(19,'C')"><label>X.509</label></div>
+<div class="opt"><input type="radio" name="q19" value="D" onchange="checkSingle(19,'C')"><label>802.11ac</label></div>
+<div class="feedback" id="fb-19"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(19)">← Back</button><button class="btn" id="next-19" onclick="next(19)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q20 -->
+<div class="card" id="card-20">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 20 of 30</span></div>
+<div class="cb">
+<div class="qt">Which certificate type provides the lowest level of trust?</div>
+<div class="opt"><input type="radio" name="q20" value="A" onchange="checkSingle(20,'C')"><label>Extended Validation (EV)</label></div>
+<div class="opt"><input type="radio" name="q20" value="B" onchange="checkSingle(20,'C')"><label>Organization Validation (OV)</label></div>
+<div class="opt"><input type="radio" name="q20" value="C" onchange="checkSingle(20,'C')"><label>Domain Validation (DV)</label></div>
+<div class="opt"><input type="radio" name="q20" value="D" onchange="checkSingle(20,'C')"><label>They all provide the same trust level</label></div>
+<div class="feedback" id="fb-20"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(20)">← Back</button><button class="btn" id="next-20" onclick="next(20)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q21 -->
+<div class="card" id="card-21">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 21 of 30</span></div>
+<div class="cb">
+<div class="qt">What is the most effective method of revoking digital certificates?</div>
+<div class="opt"><input type="radio" name="q21" value="A" onchange="checkSingle(21,'B')"><label>Certificate Revocation Lists (CRL)</label></div>
+<div class="opt"><input type="radio" name="q21" value="B" onchange="checkSingle(21,'B')"><label>Online Certificate Status Protocol (OCSP)</label></div>
+<div class="opt"><input type="radio" name="q21" value="C" onchange="checkSingle(21,'B')"><label>Transport Layer Security (TLS)</label></div>
+<div class="opt"><input type="radio" name="q21" value="D" onchange="checkSingle(21,'B')"><label>Certificate Pinning</label></div>
+<div class="feedback" id="fb-21"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(21)">← Back</button><button class="btn" id="next-21" onclick="next(21)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q22 -->
+<div class="card" id="card-22">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 22 of 30</span></div>
+<div class="cb">
+<div class="qt">What's the first step to initiate a TLS secure session between two systems?</div>
+<div class="opt"><input type="radio" name="q22" value="A" onchange="checkSingle(22,'C')"><label>Server sends its digital certificate</label></div>
+<div class="opt"><input type="radio" name="q22" value="B" onchange="checkSingle(22,'C')"><label>Client sends its digital certificate</label></div>
+<div class="opt"><input type="radio" name="q22" value="C" onchange="checkSingle(22,'C')"><label>Client sends a request including a list of supported cipher suites</label></div>
+<div class="opt"><input type="radio" name="q22" value="D" onchange="checkSingle(22,'C')"><label>Server sends a request including a list of cipher suites</label></div>
+<div class="feedback" id="fb-22"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(22)">← Back</button><button class="btn" id="next-22" onclick="next(22)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q23 -->
+<div class="card" id="card-23">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 23 of 30</span></div>
+<div class="cb">
+<div class="qt">Which one is NOT a secure protocol to transfer files between two systems?</div>
+<div class="opt"><input type="radio" name="q23" value="A" onchange="checkSingle(23,'C')"><label>SCP</label></div>
+<div class="opt"><input type="radio" name="q23" value="B" onchange="checkSingle(23,'C')"><label>FTPS</label></div>
+<div class="opt"><input type="radio" name="q23" value="C" onchange="checkSingle(23,'C')"><label>FTP</label></div>
+<div class="opt"><input type="radio" name="q23" value="D" onchange="checkSingle(23,'C')"><label>SFTP</label></div>
+<div class="feedback" id="fb-23"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(23)">← Back</button><button class="btn" id="next-23" onclick="next(23)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q24 -->
+<div class="card" id="card-24">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 24 of 30</span></div>
+<div class="cb">
+<div class="qt">Systems that must accept direct connections from the outside world (e.g., public web servers) should be placed on __________.</div>
+<div class="opt"><input type="radio" name="q24" value="A" onchange="checkSingle(24,'C')"><label>Intranet</label></div>
+<div class="opt"><input type="radio" name="q24" value="B" onchange="checkSingle(24,'C')"><label>Internal network</label></div>
+<div class="opt"><input type="radio" name="q24" value="C" onchange="checkSingle(24,'C')"><label>DMZ</label></div>
+<div class="opt"><input type="radio" name="q24" value="D" onchange="checkSingle(24,'C')"><label>Extranet</label></div>
+<div class="feedback" id="fb-24"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(24)">← Back</button><button class="btn" id="next-24" onclick="next(24)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q25 -->
+<div class="card" id="card-25">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 25 of 30</span></div>
+<div class="cb">
+<div class="qt">What type of firewall rule error occurs when a service is decommissioned but the related firewall rules are not removed?</div>
+<div class="opt"><input type="radio" name="q25" value="A" onchange="checkSingle(25,'C')"><label>Shadowed rule</label></div>
+<div class="opt"><input type="radio" name="q25" value="B" onchange="checkSingle(25,'C')"><label>Promiscuous rule</label></div>
+<div class="opt"><input type="radio" name="q25" value="C" onchange="checkSingle(25,'C')"><label>Orphaned rule</label></div>
+<div class="opt"><input type="radio" name="q25" value="D" onchange="checkSingle(25,'C')"><label>Typographical error</label></div>
+<div class="feedback" id="fb-25"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(25)">← Back</button><button class="btn" id="next-25" onclick="next(25)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q26 -->
+<div class="card" id="card-26">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 26 of 30</span></div>
+<div class="cb">
+<div class="qt">During the very first step of the TCP/IP handshake, a SYN/ACK packet is sent to the server.</div>
+<div class="opt"><input type="radio" name="q26" value="A" onchange="checkSingle(26,'B')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q26" value="B" onchange="checkSingle(26,'B')"><label>False</label></div>
+<div class="feedback" id="fb-26"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(26)">← Back</button><button class="btn" id="next-26" onclick="next(26)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q27 -->
+<div class="card" id="card-27">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 27 of 30</span></div>
+<div class="cb">
+<div class="qt">Both TCP and UDP perform a three-way handshake before transmitting data.</div>
+<div class="opt"><input type="radio" name="q27" value="A" onchange="checkSingle(27,'B')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q27" value="B" onchange="checkSingle(27,'B')"><label>False</label></div>
+<div class="feedback" id="fb-27"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(27)">← Back</button><button class="btn" id="next-27" onclick="next(27)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q28 -->
+<div class="card" id="card-28">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 28 of 30</span></div>
+<div class="cb">
+<div class="qt">An attacker inserted false DNS records to redirect you from your bank's website to a fake site. This is an example of:</div>
+<div class="opt"><input type="radio" name="q28" value="A" onchange="checkSingle(28,'C')"><label>URL Redirection</label></div>
+<div class="opt"><input type="radio" name="q28" value="B" onchange="checkSingle(28,'C')"><label>Domain Hijacking</label></div>
+<div class="opt"><input type="radio" name="q28" value="C" onchange="checkSingle(28,'C')"><label>DNS Poisoning</label></div>
+<div class="opt"><input type="radio" name="q28" value="D" onchange="checkSingle(28,'C')"><label>Denial of Service</label></div>
+<div class="feedback" id="fb-28"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(28)">← Back</button><button class="btn" id="next-28" onclick="next(28)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q29 -->
+<div class="card" id="card-29">
+<div class="ch"><span class="tl">T/F</span><span class="qnum">Question 29 of 30</span></div>
+<div class="cb">
+<div class="qt">DNS sinkholes, which are basically the same technique as DNS poisoning, can be used by security professionals to prevent users from carrying out botnet instructions.</div>
+<div class="opt"><input type="radio" name="q29" value="A" onchange="checkSingle(29,'A')"><label>True</label></div>
+<div class="opt"><input type="radio" name="q29" value="B" onchange="checkSingle(29,'A')"><label>False</label></div>
+<div class="feedback" id="fb-29"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(29)">← Back</button><button class="btn" id="next-29" onclick="next(29)" disabled>Next →</button></div>
+</div></div>
+
+<!-- Q30 -->
+<div class="card" id="card-30">
+<div class="ch"><span class="tl">MC</span><span class="qnum">Question 30 of 30</span></div>
+<div class="cb">
+<div class="qt">In a split-tunnel VPN, traffic is handled as follows:</div>
+<div class="opt"><input type="radio" name="q30" value="A" onchange="checkSingle(30,'B')"><label>All traffic is sent through the VPN tunnel</label></div>
+<div class="opt"><input type="radio" name="q30" value="B" onchange="checkSingle(30,'B')"><label>Traffic intended for the protected network goes through VPN; general web browsing goes directly over internet</label></div>
+<div class="opt"><input type="radio" name="q30" value="C" onchange="checkSingle(30,'B')"><label>General web browsing goes through VPN; org traffic goes directly over internet</label></div>
+<div class="opt"><input type="radio" name="q30" value="D" onchange="checkSingle(30,'B')"><label>No traffic is routed through the VPN</label></div>
+<div class="feedback" id="fb-30"></div>
+<div class="nav"><button class="btn btn-sec" onclick="prev(30)">← Back</button><button class="btn" id="next-30" onclick="finish()" disabled>Finish →</button></div>
+</div></div>
+
+<div class="results" id="results">
+  <h2>Quiz Complete!</h2>
+  <div class="big-score" id="final-score"></div>
+  <div class="grade-line" id="grade-line"></div>
+  <button class="restart" onclick="restart()">Restart Quiz</button>
+</div>
+</div>
+
+<script>
+const EX={
+  1:"CIA = Confidentiality + Integrity + Availability. These are the three main objectives of information security.",
+  2:"RAID = Availability. Redundant components keep the system running even if one component fails. Common exam trap: students pick Integrity.",
+  3:"Encryption protects CONFIDENTIALITY (only authorized parties can read the data). Hashing protects INTEGRITY (detects if data was tampered with).",
+  4:"DoS = Availability (denies service). Tampering = Integrity (modifies data). Know your STRIDE threat-to-CIA mappings.",
+  5:"APT (Advanced Persistent Threat) = most sophisticated actors, often nation-state backed. Script kiddies = least sophisticated.",
+  6:"STRIDE = Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege.",
+  7:"CVE = Common Vulnerabilities and Exposures. CVSS = scoring system. NVD = adds patch/severity details to CVEs.",
+  8:"Vulnerability Management: Discover → Prioritize → Remediate → Validate → Monitor. Remediate = fix/patch.",
+  9:"Keylogger = Spyware. Spyware monitors user activity. Trojan = disguised software. Ransomware = encrypts files.",
+  10:"Worm = spreads WITHOUT user interaction. Virus = requires user action (opening a file, running a program). Classic exam distinction.",
+  11:"Whaling = phishing targeting senior executives specifically. Spear phishing = targeted at a specific individual (not necessarily exec).",
+  12:"Sandboxing = running suspicious code in an isolated environment to observe behavior before allowing it to execute on the real system.",
+  13:"Incremental = changes since last full OR incremental. Differential = changes since last FULL backup only.",
+  14:"TRUE. Differential: more storage, faster restore (just 2 files). Incremental: less storage, slower restore (must merge entire chain).",
+  15:"FALSE. Not all adverse security events become security incidents. A login attempt is a security EVENT. Only events that violate security policy become INCIDENTS.",
+  16:"Asymmetric crypto: anything encrypted with one key → decrypted with the OTHER key from the same pair. This allows both secure communication and digital signatures.",
+  17:"Digital signature = HASH of the message encrypted with sender's PRIVATE key. Verifier decrypts with sender's PUBLIC key to confirm authenticity.",
+  18:"Secure hash: fixed-length output + one-way + collision resistant. NOT reversible, NOT easy to find collisions.",
+  19:"X.509 = certificate standard. Not X.500 (directory standard). Not 802.1x (port-based network access control).",
+  20:"DV < OV < EV (trust level). DV only verifies domain ownership. EV verifies organization identity — shows green bar in browsers.",
+  21:"OCSP = most effective revocation method (real-time check). CRL = older, downloaded list that may be outdated.",
+  22:"TLS first step = CLIENT sends request with list of supported cipher suites. Server then selects and responds.",
+  23:"FTP = NOT secure (plaintext). Use SFTP (over SSH), SCP (over SSH), or FTPS (FTP over TLS) instead.",
+  24:"DMZ = Demilitarized Zone. Public-facing servers (web, email) go here, isolated from the internal network.",
+  25:"Orphaned rule = leftover after service decommission. Shadowed rule = rule that is unreachable because a previous rule already matches the traffic.",
+  26:"FALSE. First step = SYN (client → server). Then server responds with SYN/ACK. Then client sends ACK. SYN/ACK is the SECOND step.",
+  27:"FALSE. Only TCP does 3-way handshake (SYN → SYN/ACK → ACK). UDP has no handshake — connectionless.",
+  28:"DNS Poisoning = injecting false DNS records to redirect users to malicious sites. URL Redirection = auto-forward from legitimate page.",
+  29:"TRUE. DNS sinkhole uses the same technique as DNS poisoning but defensively — security teams redirect botnet C2 domain queries to a controlled server.",
+  30:"Split-tunnel VPN: org traffic → VPN tunnel; general internet browsing → direct (not through VPN). Full-tunnel VPN routes ALL traffic through VPN."
+};
+
+let score=0,answered={},cur=1,total=30;
+
+function checkSingle(n,correct){
+  if(answered[n])return;
+  answered[n]=true;
+  const sel=document.querySelector(`input[name="q${n}"]:checked`);
+  if(!sel)return;
+  const ok=sel.value===correct;
+  if(ok)score++;
+  document.querySelectorAll(`input[name="q${n}"]`).forEach(i=>{
+    const d=i.closest('.opt');
+    if(i.value===correct)d.classList.add('ch-opt');
+    else if(i===sel&&!ok)d.classList.add('wh-opt');
+    i.disabled=true;
+  });
+  showFb(n,ok);
+  document.getElementById(`next-${n}`).disabled=false;
+  updateProg();
+}
+
+function checkMulti(n,correct){
+  if(answered[n])return;
+  answered[n]=true;
+  const sel=Array.from(document.querySelectorAll(`input[name="q${n}"]:checked`)).map(i=>i.value);
+  const ok=JSON.stringify(sel.slice().sort())===JSON.stringify(correct.slice().sort());
+  if(ok)score++;
+  document.querySelectorAll(`input[name="q${n}"]`).forEach(i=>{
+    const d=i.closest('.opt');
+    if(correct.includes(i.value))d.classList.add('ch-opt');
+    else if(i.checked)d.classList.add('wh-opt');
+    i.disabled=true;
+  });
+  const btn=document.querySelector(`#card-${n} .sub-multi`);if(btn)btn.disabled=true;
+  showFb(n,ok);
+  document.getElementById(`next-${n}`).disabled=false;
+  updateProg();
+}
+
+function showFb(n,ok){
+  const fb=document.getElementById(`fb-${n}`);
+  fb.className='feedback '+(ok?'correct':'wrong');
+  fb.innerHTML=(ok?'<strong>Correct!</strong> ':'<strong>Incorrect.</strong> ')+EX[n];
+  fb.style.display='block';
+}
+
+function updateProg(){
+  document.getElementById('ptext').textContent=`Q ${cur} / ${total}`;
+  document.getElementById('pfill').style.width=((cur/total)*100)+'%';
+  document.getElementById('pscore').textContent=`Score: ${score}`;
+}
+
+function next(n){
+  document.getElementById(`card-${n}`).classList.remove('active');
+  cur=n+1;document.getElementById(`card-${cur}`).classList.add('active');
+  updateProg();window.scrollTo({top:0,behavior:'smooth'});
+}
+function prev(n){
+  document.getElementById(`card-${n}`).classList.remove('active');
+  cur=n-1;document.getElementById(`card-${cur}`).classList.add('active');
+  updateProg();window.scrollTo({top:0,behavior:'smooth'});
+}
+function finish(){
+  document.getElementById('card-30').classList.remove('active');
+  const r=document.getElementById('results');r.style.display='block';
+  const p=Math.round(score/total*100);
+  const el=document.getElementById('final-score');
+  el.textContent=`${score} / ${total}`;el.className='big-score '+(p>=70?'pass':'fail');
+  const l=p>=90?'A':p>=80?'B':p>=70?'C':p>=60?'D':'F';
+  document.getElementById('grade-line').innerHTML=`${p}% — Grade <strong>${l}</strong> — ${p>=70?'Pass ✓':'Review study guide ✗'}`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restart(){
+  score=0;answered={};cur=1;
+  document.getElementById('results').style.display='none';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('card-1').classList.add('active');
+  document.querySelectorAll('input').forEach(i=>{i.checked=false;i.disabled=false;});
+  document.querySelectorAll('.opt').forEach(o=>o.classList.remove('ch-opt','wh-opt'));
+  document.querySelectorAll('.feedback').forEach(f=>{f.style.display='none';f.className='feedback';});
+  document.querySelectorAll('[id^=next-]').forEach(b=>b.disabled=true);
+  document.querySelectorAll('.sub-multi').forEach(b=>b.disabled=false);
+  updateProg();window.scrollTo({top:0,behavior:'smooth'});
+}
+updateProg();
+</script>
+</body></html>

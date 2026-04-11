@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACIT4630 — All Answers</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:14px;background:#f4f4f4;color:#222}
+  .hdr{background:#7b2d2d;color:white;padding:18px 28px}.hdr h1{font-size:19px}.hdr p{font-size:12px;margin-top:4px;opacity:.85}
+  .wrap{max-width:780px;margin:24px auto;padding:0 14px 60px}
+  .toc{background:#fff;border:1px solid #ddd;border-radius:6px;padding:14px 18px;margin-bottom:22px}
+  .toc h2{font-size:13px;color:#7b2d2d;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+  .toc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+  .toc-grid a{text-align:center;padding:5px 4px;border-radius:3px;border:1px solid #ddd;font-size:12px;color:#7b2d2d;text-decoration:none;font-weight:bold}
+  .toc-grid a:hover{background:#f5eaea}
+  .card{background:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:16px}
+  .ch{background:#f5eaea;padding:9px 14px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#555}
+  .badge{background:#7b2d2d;color:white;padding:2px 10px;border-radius:3px;font-size:11px;font-weight:bold;letter-spacing:.3px}
+  .cb{padding:18px 20px}
+  .qt{font-size:15px;font-weight:bold;margin-bottom:12px;line-height:1.6}
+  .opt{display:flex;align-items:flex-start;margin:7px 0;padding:9px 11px;border-radius:4px;border:1px solid #ddd}
+  .opt input{margin-right:10px;margin-top:2px;flex-shrink:0}.opt label{line-height:1.4}
+  .opt.correct{background:#d4edda;border-color:#28a745}
+  .expl{margin-top:14px;padding:12px 14px;border-radius:4px;background:#fff8e1;border-left:4px solid #7b2d2d;font-size:13px;line-height:1.6;color:#333}
+  .expl strong{color:#7b2d2d}
+  .tl{font-size:11px;text-transform:uppercase;font-weight:bold;color:#777}
+  .anchor{scroll-margin-top:16px}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ACIT4630 — Information Assurance and Security</h1><p>All Answers Reference Sheet &nbsp;|&nbsp; 30 Questions &nbsp;|&nbsp; Correct answers pre-selected</p></div>
+<div class="wrap">
+
+<div class="toc">
+  <h2>Jump to Question</h2>
+  <div class="toc-grid">
+    <a href="#q1">Q1</a><a href="#q2">Q2</a><a href="#q3">Q3</a><a href="#q4">Q4</a><a href="#q5">Q5</a><a href="#q6">Q6</a>
+    <a href="#q7">Q7</a><a href="#q8">Q8</a><a href="#q9">Q9</a><a href="#q10">Q10</a><a href="#q11">Q11</a><a href="#q12">Q12</a>
+    <a href="#q13">Q13</a><a href="#q14">Q14</a><a href="#q15">Q15</a><a href="#q16">Q16</a><a href="#q17">Q17</a><a href="#q18">Q18</a>
+    <a href="#q19">Q19</a><a href="#q20">Q20</a><a href="#q21">Q21</a><a href="#q22">Q22</a><a href="#q23">Q23</a><a href="#q24">Q24</a>
+    <a href="#q25">Q25</a><a href="#q26">Q26</a><a href="#q27">Q27</a><a href="#q28">Q28</a><a href="#q29">Q29</a><a href="#q30">Q30</a>
+  </div>
+</div>
+
+<!-- Q1 -->
+<div class="card anchor" id="q1">
+<div class="ch"><span class="tl">Multi-Select</span><span>Question 1 of 30</span><span class="badge">B, C, E</span></div>
+<div class="cb">
+<div class="qt">What is the main objective of information security? Select the THREE that best apply.</div>
+<div class="opt"><input type="checkbox" disabled><label>A. Configuration</label></div>
+<div class="opt correct"><input type="checkbox" checked disabled><label>B. Availability</label></div>
+<div class="opt correct"><input type="checkbox" checked disabled><label>C. Integrity</label></div>
+<div class="opt"><input type="checkbox" disabled><label>D. Identification</label></div>
+<div class="opt correct"><input type="checkbox" checked disabled><label>E. Confidentiality</label></div>
+<div class="expl"><strong>Explanation:</strong> CIA = Confidentiality + Integrity + Availability. These are the three main objectives of information security. Configuration and Identification are not part of the CIA triad.</div>
+</div></div>
+
+<!-- Q2 -->
+<div class="card anchor" id="q2">
+<div class="ch"><span class="tl">MC</span><span>Question 2 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">Using redundant components (e.g. RAID technology) in a system enforces what goal of information security?</div>
+<div class="opt"><input type="radio" disabled><label>A. Integrity</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Availability</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Confidentiality</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Nonrepudiation</label></div>
+<div class="expl"><strong>Explanation:</strong> RAID = Availability. Redundant components keep the system running even if one component fails. Common exam trap: students pick Integrity — RAID does NOT protect data integrity, it protects uptime.</div>
+</div></div>
+
+<!-- Q3 -->
+<div class="card anchor" id="q3">
+<div class="ch"><span class="tl">MC</span><span>Question 3 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">Encryption protects __________, whereas hashing helps protect __________.</div>
+<div class="opt"><input type="radio" disabled><label>A. integrity, confidentiality</label></div>
+<div class="opt"><input type="radio" disabled><label>B. confidentiality, availability</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. confidentiality, integrity</label></div>
+<div class="opt"><input type="radio" disabled><label>D. authentication, confidentiality</label></div>
+<div class="expl"><strong>Explanation:</strong> Encryption → Confidentiality (only authorized parties can read data). Hashing → Integrity (detects if data was tampered with). These are frequently swapped on exams — know them cold.</div>
+</div></div>
+
+<!-- Q4 -->
+<div class="card anchor" id="q4">
+<div class="ch"><span class="tl">MC</span><span>Question 4 of 30</span><span class="badge">A</span></div>
+<div class="cb">
+<div class="qt">Denial of service threat compromises __________, whereas tampering threat compromises __________ of a system.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>A. availability, integrity</label></div>
+<div class="opt"><input type="radio" disabled><label>B. integrity, confidentiality</label></div>
+<div class="opt"><input type="radio" disabled><label>C. integrity, availability</label></div>
+<div class="opt"><input type="radio" disabled><label>D. availability, confidentiality</label></div>
+<div class="expl"><strong>Explanation:</strong> DoS → Availability (denies users access to services). Tampering → Integrity (modifies data). These are STRIDE threats mapped to CIA properties. Know your STRIDE threat-to-CIA mappings.</div>
+</div></div>
+
+<!-- Q5 -->
+<div class="card anchor" id="q5">
+<div class="ch"><span class="tl">MC</span><span>Question 5 of 30</span><span class="badge">A</span></div>
+<div class="cb">
+<div class="qt">Which type of threat actor is normally the most sophisticated?</div>
+<div class="opt correct"><input type="radio" checked disabled><label>A. APT</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Insider</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Script kiddie</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Hacktivist</label></div>
+<div class="expl"><strong>Explanation:</strong> APT (Advanced Persistent Threat) = most sophisticated actors, often nation-state backed with long-term persistent access goals. Script kiddies = least sophisticated (use existing tools, no custom development).</div>
+</div></div>
+
+<!-- Q6 -->
+<div class="card anchor" id="q6">
+<div class="ch"><span class="tl">MC</span><span>Question 6 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">What does the "S" in STRIDE stand for?</div>
+<div class="opt"><input type="radio" disabled><label>A. Stealth</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Spoofing</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Securing</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Scanning</label></div>
+<div class="expl"><strong>Explanation:</strong> STRIDE = <strong>S</strong>poofing, <strong>T</strong>ampering, <strong>R</strong>epudiation, <strong>I</strong>nformation Disclosure, <strong>D</strong>enial of Service, <strong>E</strong>levation of Privilege. Used with data flow diagrams to identify threats.</div>
+</div></div>
+
+<!-- Q7 -->
+<div class="card anchor" id="q7">
+<div class="ch"><span class="tl">MC</span><span>Question 7 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">What does CVE stand for?</div>
+<div class="opt"><input type="radio" disabled><label>A. Computer Vulnerability Entity</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Common Vulnerability Evaluation</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Common Vulnerabilities and Exposures</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Cyber Vulnerability Examination</label></div>
+<div class="expl"><strong>Explanation:</strong> CVE = Common Vulnerabilities and Exposures (the identifier/catalog). CVSS = Common Vulnerability Scoring System (severity score). NVD = National Vulnerability Database (adds patch info and severity scores to CVEs).</div>
+</div></div>
+
+<!-- Q8 -->
+<div class="card anchor" id="q8">
+<div class="ch"><span class="tl">MC</span><span>Question 8 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">Which stage of Vulnerability Management involves patching systems and fixing issues?</div>
+<div class="opt"><input type="radio" disabled><label>A. Discover</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Prioritize</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Remediate</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Validate</label></div>
+<div class="expl"><strong>Explanation:</strong> Vulnerability Management lifecycle: <strong>Discover → Prioritize → Remediate → Validate → Monitor</strong>. Remediate = fix/patch. Validate = confirm fixes worked. Monitor = ongoing tracking.</div>
+</div></div>
+
+<!-- Q9 -->
+<div class="card anchor" id="q9">
+<div class="ch"><span class="tl">MC</span><span>Question 9 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">KeyLogger, which monitors keystrokes typed by a user, is an example of what type of malicious software?</div>
+<div class="opt"><input type="radio" disabled><label>A. Adware</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Trojan</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Spyware</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Ransomware</label></div>
+<div class="expl"><strong>Explanation:</strong> Keylogger = Spyware (monitors/records user activity). Adware = unwanted ads. Trojan = disguised as legitimate software. Ransomware = encrypts files and demands payment.</div>
+</div></div>
+
+<!-- Q10 -->
+<div class="card anchor" id="q10">
+<div class="ch"><span class="tl">MC</span><span>Question 10 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">Which one of the following types of malware can spread without any user interaction?</div>
+<div class="opt"><input type="radio" disabled><label>A. Virus</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Worm</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Back door</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Trojan</label></div>
+<div class="expl"><strong>Explanation:</strong> Worm = spreads WITHOUT user interaction (self-propagating). Virus = requires user action (opening a file, running a program). Classic exam distinction — do not mix these up.</div>
+</div></div>
+
+<!-- Q11 -->
+<div class="card anchor" id="q11">
+<div class="ch"><span class="tl">MC</span><span>Question 11 of 30</span><span class="badge">D</span></div>
+<div class="cb">
+<div class="qt">What type of phishing attack focuses specifically on senior executives of a targeted organization?</div>
+<div class="opt"><input type="radio" disabled><label>A. Pharming</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Vishing</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Spear phishing</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>D. Whaling</label></div>
+<div class="expl"><strong>Explanation:</strong> Whaling = phishing targeting senior executives specifically. Spear phishing = targeted at a specific individual (not necessarily an exec). Pharming = DNS-based redirection. Vishing = voice/phone phishing.</div>
+</div></div>
+
+<!-- Q12 -->
+<div class="card anchor" id="q12">
+<div class="ch"><span class="tl">MC</span><span>Question 12 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">Executing suspicious code in a contained environment before allowing it to run on the protected system is called __________.</div>
+<div class="opt"><input type="radio" disabled><label>A. Signature detection</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Sandboxing</label></div>
+<div class="opt"><input type="radio" disabled><label>C. File system integrity monitoring</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Endpoint monitoring</label></div>
+<div class="expl"><strong>Explanation:</strong> Sandboxing = running suspicious code in an isolated environment to observe behavior before allowing it to execute on the real system. Signature detection = matching known malware patterns.</div>
+</div></div>
+
+<!-- Q13 -->
+<div class="card anchor" id="q13">
+<div class="ch"><span class="tl">MC</span><span>Question 13 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">What type of backup includes only those files that have changed since the most recent full OR incremental backup?</div>
+<div class="opt"><input type="radio" disabled><label>A. Full</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Differential</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Incremental</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Partial</label></div>
+<div class="expl"><strong>Explanation:</strong> Incremental = changes since last full <strong>OR incremental</strong>. Differential = changes since last <strong>FULL</strong> backup only. This is a tricky distinction — incremental chains from any previous backup, differential always goes back to the last full.</div>
+</div></div>
+
+<!-- Q14 -->
+<div class="card anchor" id="q14">
+<div class="ch"><span class="tl">T/F</span><span>Question 14 of 30</span><span class="badge">A — True</span></div>
+<div class="cb">
+<div class="qt">Differential backup uses more storage than incremental backup, but is faster to recover since it only needs the full backup and the most recent differential backup.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>A. True</label></div>
+<div class="opt"><input type="radio" disabled><label>B. False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. Differential = more storage (grows with every change since last full), but faster restore (2 files: full + latest differential). Incremental = less storage (only changes since last backup), but slower restore (must merge entire chain of incrementals).</div>
+</div></div>
+
+<!-- Q15 -->
+<div class="card anchor" id="q15">
+<div class="ch"><span class="tl">T/F</span><span>Question 15 of 30</span><span class="badge">B — False</span></div>
+<div class="cb">
+<div class="qt">All adverse security events are considered security incidents.</div>
+<div class="opt"><input type="radio" disabled><label>A. True</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. False</label></div>
+<div class="expl"><strong>Explanation:</strong> FALSE. Not all adverse security events become security incidents. A security event = any observable occurrence (e.g., a login attempt, whether successful or not). A security incident = an adverse event that actually violates security policy. Events ⊃ Incidents.</div>
+</div></div>
+
+<!-- Q16 -->
+<div class="card anchor" id="q16">
+<div class="ch"><span class="tl">MC</span><span>Question 16 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">How are public and private keys used in asymmetric cryptography?</div>
+<div class="opt"><input type="radio" disabled><label>A. Public key for encryption; private key for decryption (always)</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Private key for encryption; public key for decryption (always)</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Anything encrypted with one key from a pair can be decrypted with the other key from that same pair</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Same key is used for both encryption and decryption</label></div>
+<div class="expl"><strong>Explanation:</strong> Asymmetric crypto: anything encrypted with one key → decrypted with the OTHER key from the same pair. This allows both secure messaging (encrypt with recipient's public key) and digital signatures (encrypt hash with sender's private key).</div>
+</div></div>
+
+<!-- Q17 -->
+<div class="card anchor" id="q17">
+<div class="ch"><span class="tl">MC</span><span>Question 17 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">What is used to create a digital signature?</div>
+<div class="opt"><input type="radio" disabled><label>A. Encrypting the hash value of the message with sender's public key</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Encrypting the hash value of the message with sender's private key</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Encrypting the message with sender's public key</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Encrypting the message with recipient's public key</label></div>
+<div class="expl"><strong>Explanation:</strong> Digital signature = HASH of the message encrypted with sender's <strong>PRIVATE</strong> key. Verifier decrypts signature with sender's PUBLIC key to get hash, then re-hashes message to confirm match. Proves authenticity + integrity.</div>
+</div></div>
+
+<!-- Q18 -->
+<div class="card anchor" id="q18">
+<div class="ch"><span class="tl">Multi-Select</span><span>Question 18 of 30</span><span class="badge">A, B, C</span></div>
+<div class="cb">
+<div class="qt">Select all that's true about a secure cryptographic hash function.</div>
+<div class="opt correct"><input type="checkbox" checked disabled><label>A. Output is fixed-length, regardless of input size</label></div>
+<div class="opt correct"><input type="checkbox" checked disabled><label>B. It's one-way</label></div>
+<div class="opt correct"><input type="checkbox" checked disabled><label>C. It is collision resistant</label></div>
+<div class="opt"><input type="checkbox" disabled><label>D. It's easy to find two inputs that produce the same output</label></div>
+<div class="opt"><input type="checkbox" disabled><label>E. Original content can be easily retrieved from the hash value</label></div>
+<div class="expl"><strong>Explanation:</strong> Secure hash properties: <strong>fixed-length output</strong> (regardless of input), <strong>one-way</strong> (cannot reverse), <strong>collision resistant</strong> (hard to find two inputs with same hash). D and E are the OPPOSITE of correct — hashes are NOT reversible and collision resistance means it's hard, not easy, to find collisions.</div>
+</div></div>
+
+<!-- Q19 -->
+<div class="card anchor" id="q19">
+<div class="ch"><span class="tl">MC</span><span>Question 19 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">What standard governs the structure and content of digital certificates?</div>
+<div class="opt"><input type="radio" disabled><label>A. X.500</label></div>
+<div class="opt"><input type="radio" disabled><label>B. 802.1x</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. X.509</label></div>
+<div class="opt"><input type="radio" disabled><label>D. 802.11ac</label></div>
+<div class="expl"><strong>Explanation:</strong> X.509 = the certificate standard (governs structure and content of digital certificates). X.500 = directory services standard. 802.1x = port-based network access control. 802.11ac = WiFi standard.</div>
+</div></div>
+
+<!-- Q20 -->
+<div class="card anchor" id="q20">
+<div class="ch"><span class="tl">MC</span><span>Question 20 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">Which certificate type provides the lowest level of trust?</div>
+<div class="opt"><input type="radio" disabled><label>A. Extended Validation (EV)</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Organization Validation (OV)</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Domain Validation (DV)</label></div>
+<div class="opt"><input type="radio" disabled><label>D. They all provide the same trust level</label></div>
+<div class="expl"><strong>Explanation:</strong> Trust levels (lowest to highest): DV &lt; OV &lt; EV. DV only verifies domain ownership. OV verifies the organization. EV is the highest — verifies identity rigorously (was shown as green bar in browsers).</div>
+</div></div>
+
+<!-- Q21 -->
+<div class="card anchor" id="q21">
+<div class="ch"><span class="tl">MC</span><span>Question 21 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">What is the most effective method of revoking digital certificates?</div>
+<div class="opt"><input type="radio" disabled><label>A. Certificate Revocation Lists (CRL)</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Online Certificate Status Protocol (OCSP)</label></div>
+<div class="opt"><input type="radio" disabled><label>C. Transport Layer Security (TLS)</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Certificate Pinning</label></div>
+<div class="expl"><strong>Explanation:</strong> OCSP = most effective revocation method (real-time check of certificate status). CRL = older method — a downloaded list of revoked certs that may be outdated. Certificate Pinning ≠ revocation (it prevents certs from changing).</div>
+</div></div>
+
+<!-- Q22 -->
+<div class="card anchor" id="q22">
+<div class="ch"><span class="tl">MC</span><span>Question 22 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">What's the first step to initiate a TLS secure session between two systems?</div>
+<div class="opt"><input type="radio" disabled><label>A. Server sends its digital certificate</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Client sends its digital certificate</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Client sends a request including a list of supported cipher suites</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Server sends a request including a list of cipher suites</label></div>
+<div class="expl"><strong>Explanation:</strong> TLS handshake step 1 = CLIENT sends request with list of supported cipher suites. Then server selects one and sends back its certificate. Then key exchange happens. Then encrypted communication begins. Client initiates, not server.</div>
+</div></div>
+
+<!-- Q23 -->
+<div class="card anchor" id="q23">
+<div class="ch"><span class="tl">MC</span><span>Question 23 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">Which one is NOT a secure protocol to transfer files between two systems?</div>
+<div class="opt"><input type="radio" disabled><label>A. SCP</label></div>
+<div class="opt"><input type="radio" disabled><label>B. FTPS</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. FTP</label></div>
+<div class="opt"><input type="radio" disabled><label>D. SFTP</label></div>
+<div class="expl"><strong>Explanation:</strong> FTP = NOT secure (plaintext, port 21). Secure alternatives: SFTP (FTP over SSH, port 22), SCP (Secure Copy over SSH, port 22), FTPS (FTP over TLS, port 990). Never use plain FTP or Telnet.</div>
+</div></div>
+
+<!-- Q24 -->
+<div class="card anchor" id="q24">
+<div class="ch"><span class="tl">MC</span><span>Question 24 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">Systems that must accept direct connections from the outside world (e.g., public web servers) should be placed on __________.</div>
+<div class="opt"><input type="radio" disabled><label>A. Intranet</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Internal network</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. DMZ</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Extranet</label></div>
+<div class="expl"><strong>Explanation:</strong> DMZ (Demilitarized Zone) = network segment for public-facing servers (web, email, DNS). Isolated from the internal network so that if a DMZ server is compromised, attackers cannot directly reach internal systems.</div>
+</div></div>
+
+<!-- Q25 -->
+<div class="card anchor" id="q25">
+<div class="ch"><span class="tl">MC</span><span>Question 25 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">What type of firewall rule error occurs when a service is decommissioned but the related firewall rules are not removed?</div>
+<div class="opt"><input type="radio" disabled><label>A. Shadowed rule</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Promiscuous rule</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. Orphaned rule</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Typographical error</label></div>
+<div class="expl"><strong>Explanation:</strong> Orphaned rule = leftover rule after a service is decommissioned (no longer needed but not cleaned up). Shadowed rule = rule that is unreachable because a previous rule already matches the traffic. Promiscuous rule = overly permissive rule.</div>
+</div></div>
+
+<!-- Q26 -->
+<div class="card anchor" id="q26">
+<div class="ch"><span class="tl">T/F</span><span>Question 26 of 30</span><span class="badge">B — False</span></div>
+<div class="cb">
+<div class="qt">During the very first step of the TCP/IP handshake, a SYN/ACK packet is sent to the server.</div>
+<div class="opt"><input type="radio" disabled><label>A. True</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. False</label></div>
+<div class="expl"><strong>Explanation:</strong> FALSE. The first step = <strong>SYN</strong> (client → server). Then server responds with <strong>SYN/ACK</strong> (step 2). Then client sends <strong>ACK</strong> (step 3). SYN/ACK is the SECOND step, not the first.</div>
+</div></div>
+
+<!-- Q27 -->
+<div class="card anchor" id="q27">
+<div class="ch"><span class="tl">T/F</span><span>Question 27 of 30</span><span class="badge">B — False</span></div>
+<div class="cb">
+<div class="qt">Both TCP and UDP perform a three-way handshake before transmitting data.</div>
+<div class="opt"><input type="radio" disabled><label>A. True</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. False</label></div>
+<div class="expl"><strong>Explanation:</strong> FALSE. Only <strong>TCP</strong> does the 3-way handshake (SYN → SYN/ACK → ACK). UDP is connectionless — no handshake at all. TCP = reliable (guaranteed delivery). UDP = unreliable but faster (used for voice/video/streaming).</div>
+</div></div>
+
+<!-- Q28 -->
+<div class="card anchor" id="q28">
+<div class="ch"><span class="tl">MC</span><span>Question 28 of 30</span><span class="badge">C</span></div>
+<div class="cb">
+<div class="qt">An attacker inserted false DNS records to redirect you from your bank's website to a fake site. This is an example of:</div>
+<div class="opt"><input type="radio" disabled><label>A. URL Redirection</label></div>
+<div class="opt"><input type="radio" disabled><label>B. Domain Hijacking</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>C. DNS Poisoning</label></div>
+<div class="opt"><input type="radio" disabled><label>D. Denial of Service</label></div>
+<div class="expl"><strong>Explanation:</strong> DNS Poisoning = injecting false DNS records to redirect users to malicious sites. URL Redirection = legitimate page auto-forwards to malicious site. Domain Hijacking = attacker takes over the domain registration itself.</div>
+</div></div>
+
+<!-- Q29 -->
+<div class="card anchor" id="q29">
+<div class="ch"><span class="tl">T/F</span><span>Question 29 of 30</span><span class="badge">A — True</span></div>
+<div class="cb">
+<div class="qt">DNS sinkholes, which are basically the same technique as DNS poisoning, can be used by security professionals to prevent users from carrying out botnet instructions.</div>
+<div class="opt correct"><input type="radio" checked disabled><label>A. True</label></div>
+<div class="opt"><input type="radio" disabled><label>B. False</label></div>
+<div class="expl"><strong>Explanation:</strong> TRUE. DNS sinkhole uses the same technique as DNS poisoning but <strong>defensively</strong> — security teams redirect botnet C2 domain queries to a controlled server (sinkhole), preventing compromised machines from receiving instructions. Same technique, opposite intent.</div>
+</div></div>
+
+<!-- Q30 -->
+<div class="card anchor" id="q30">
+<div class="ch"><span class="tl">MC</span><span>Question 30 of 30</span><span class="badge">B</span></div>
+<div class="cb">
+<div class="qt">In a split-tunnel VPN, traffic is handled as follows:</div>
+<div class="opt"><input type="radio" disabled><label>A. All traffic is sent through the VPN tunnel</label></div>
+<div class="opt correct"><input type="radio" checked disabled><label>B. Traffic intended for the protected network goes through VPN; general web browsing goes directly over internet</label></div>
+<div class="opt"><input type="radio" disabled><label>C. General web browsing goes through VPN; org traffic goes directly over internet</label></div>
+<div class="opt"><input type="radio" disabled><label>D. No traffic is routed through the VPN</label></div>
+<div class="expl"><strong>Explanation:</strong> Split-tunnel VPN: org/protected network traffic → VPN tunnel; general internet browsing → direct (not through VPN). Full-tunnel VPN routes ALL traffic through VPN. Split-tunnel is more efficient but offers less visibility into user activity.</div>
+</div></div>
+
+</div>
+</body></html>
